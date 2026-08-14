@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dot DiBot – Video Summaries</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; }
+    .container { max-width: 1040px; margin: 0 auto; padding: 48px 24px; }
+    .hero { text-align: center; margin-bottom: 48px; }
+    .hero .bot { font-size: 56px; margin-bottom: 12px; }
+    .hero h1 { font-size: 36px; font-weight: 900; background: linear-gradient(135deg, #58a6ff, #3fb950); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { color: var(--muted); font-size: 16px; margin-top: 8px; }
+    .stats { display: flex; justify-content: center; gap: 32px; margin: 24px 0; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat .val { font-size: 28px; font-weight: 900; color: var(--green); font-family: monospace; }
+    .stat .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .filter-bar { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+    .filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); font-size: 13px; cursor: pointer; transition: all 0.2s; }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: #1a2744; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; text-decoration: none; color: inherit; display: block; }
+    .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .card-thumb { width: 100%; aspect-ratio: 16/9; overflow: hidden; position: relative; }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .card-thumb .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%); }
+    .card-thumb .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.9); display: flex; align-items: center; justify-content: center; font-size: 18px; opacity: 0; transition: opacity 0.2s; }
+    .card:hover .play-btn { opacity: 1; }
+    .card-body { padding: 16px; }
+    .card-badges { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+    .badge-he { background: #1a3a5c; color: var(--accent); }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-stocks { background: #2d2000; color: var(--yellow); }
+    .badge-biz { background: #2d1a5c; color: #bc8cff; }
+    .badge-ai { background: #1a2744; color: var(--accent); }
+    .card-title { font-size: 15px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+    .card-meta { color: var(--muted); font-size: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .card-desc { color: var(--muted); font-size: 13px; margin-top: 8px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; text-align: center; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <div class="bot">🤖</div>
+    <h1>Dot DiBot · Video Summaries</h1>
+    <p>Auto-generated summaries of every video analyzed — stocks, business, insights &amp; more</p>
+    <div class="stats">
+      <div class="stat"><div class="val">3</div><div class="lbl">Videos Summarized</div></div>
+      <div class="stat"><div class="val">2</div><div class="lbl">Languages</div></div>
+      <div class="stat"><div class="val">Aug 14</div><div class="lbl">Last Updated</div></div>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <a class="card" href="summaries/2026-08-14_hebrew-stocks-daily.html">
+      <div class="card-thumb">
+        <img src="https://img.youtube.com/vi/A44xK7KAeD8/mqdefault.jpg" alt="thumbnail" loading="lazy">
+        <div class="overlay"></div>
+        <div class="play-btn">▶</div>
+      </div>
+      <div class="card-body">
+        <div class="card-badges">
+          <span class="badge badge-he">🇮🇱 Hebrew</span>
+          <span class="badge badge-stocks">📈 Stocks</span>
+        </div>
+        <div class="card-title">מניות All-Time High – יום חמישי 13 אוגוסט 2026</div>
+        <div class="card-meta">
+          <span>📅 Aug 14, 2026</span>
+          <span>⏱️ 19:37</span>
+          <span>🎙️ יומי פלאס</span>
+        </div>
+        <div class="card-desc">סקירת 30+ מניות שעשו 52W High. אזהרת מלטאפ – רוב המניות מתוחות. כולל: JPM, BAC, SCHW, TEVA, CP, RDDT ועוד.</div>
+      </div>
+    </a>
+
+    <a class="card" href="summaries/2026-08-14_jeremy-portfolio-stocks.html">
+      <div class="card-thumb">
+        <img src="https://img.youtube.com/vi/pPMG50H1HeY/mqdefault.jpg" alt="thumbnail" loading="lazy">
+        <div class="overlay"></div>
+        <div class="play-btn">▶</div>
+      </div>
+      <div class="card-body">
+        <div class="card-badges">
+          <span class="badge badge-en">🇺🇸 English</span>
+          <span class="badge badge-stocks">📈 Stocks</span>
+        </div>
+        <div class="card-title">Jeremy's Portfolio + $1.1M Stock Pick – Aug 14, 2026</div>
+        <div class="card-meta">
+          <span>📅 Aug 14, 2026</span>
+          <span>🎙️ Let's Talk Money</span>
+        </div>
+        <div class="card-desc">Daily gains: META +$16K, AMD +$10K, NFLX +$7.4K. #1 pick: Netflix. AMD target $1,000–2,000. Market outlook: bullish now, cautious late fall.</div>
+      </div>
+    </a>
+
+    <a class="card" href="summaries/2026-08-14_stan-ai-creator-economy.html">
+      <div class="card-thumb">
+        <img src="https://img.youtube.com/vi/OKw8N3V8Axo/mqdefault.jpg" alt="thumbnail" loading="lazy">
+        <div class="overlay"></div>
+        <div class="play-btn">▶</div>
+      </div>
+      <div class="card-body">
+        <div class="card-badges">
+          <span class="badge badge-en">🇺🇸 English</span>
+          <span class="badge badge-ai">🤖 AI</span>
+          <span class="badge badge-biz">🚀 Business</span>
+        </div>
+        <div class="card-title">Stan AI & The Creator Economy – John (Stanto Founder)</div>
+        <div class="card-meta">
+          <span>📅 Aug 14, 2026</span>
+          <span>🎙️ Callum Johnson Show</span>
+        </div>
+        <div class="card-desc">90K creators, $600M earned. Stanley AI agent demos: auto-editing, content planning, iMessage workflow. Anyone can be an entrepreneur with AI removing the grind.</div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <p>Generated automatically by <strong>Dot DiBot</strong> · <a href="https://github.com/dotdbot/VideoSummeries" target="_blank">View on GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>

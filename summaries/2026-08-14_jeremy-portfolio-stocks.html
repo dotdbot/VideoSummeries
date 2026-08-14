@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeremy's Public Portfolio + Stock Picks – Aug 14 2026</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #1a3a5c; color: var(--accent); }
+    .badge-portfolio { background: #1a3a1a; color: var(--green); }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 15px; line-height: 1.8; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th { background: var(--surface2); color: var(--muted); text-align: left; padding: 10px 14px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--surface2); }
+    .ticker { font-family: monospace; font-weight: 700; color: var(--accent); font-size: 14px; }
+    .gain { color: var(--green); font-weight: 700; font-family: monospace; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .tag-bullish { background: #0d3320; color: var(--green); }
+    .tag-lt-bullish { background: #1a3a5c; color: var(--accent); }
+    .tag-cautious { background: #2d2000; color: var(--yellow); }
+    .tag-pass { background: #2d0a0a; color: var(--red); }
+    .star { color: #f1c40f; font-size: 18px; }
+    .pick-box { background: linear-gradient(135deg, #0d3320 0%, #1a2744 100%); border: 2px solid var(--green); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .pick-box .pick-title { font-size: 13px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .pick-box .pick-ticker { font-size: 40px; font-family: monospace; font-weight: 900; color: #fff; }
+    .pick-box .pick-name { font-size: 16px; color: var(--muted); margin-bottom: 12px; }
+    .pick-box ul { list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
+    .pick-box ul li::before { content: "✅ "; }
+    .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+    .proj-card { background: var(--surface2); border-radius: 8px; padding: 14px; text-align: center; }
+    .proj-card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .proj-card .value { font-size: 22px; font-weight: 700; font-family: monospace; color: var(--green); margin: 4px 0; }
+    .proj-card .sub { font-size: 12px; color: var(--muted); }
+    .outlook-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+    .outlook-card { border-radius: 8px; padding: 16px; font-size: 14px; }
+    .outlook-bull { background: #0d3320; border: 1px solid var(--green); }
+    .outlook-warn { background: #2d2000; border: 1px solid var(--yellow); }
+    .outlook-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    .outlook-bull h3 { color: var(--green); }
+    .outlook-warn h3 { color: var(--yellow); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media(max-width:600px) { .proj-grid, .outlook-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header style="margin-bottom:32px;">
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-portfolio">💼 Portfolio</span>
+    </div>
+    <h1>Jeremy's Portfolio + Stock Picks – Aug 14, 2026</h1>
+    <div class="meta">
+      <span>📅 August 14, 2026</span>
+      <span>⏱️ ~45 min</span>
+      <span>🎙️ Jeremy (Let's Talk Money)</span>
+      <a href="https://youtu.be/pPMG50H1HeY" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/pPMG50H1HeY" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> Jeremy sold his house, got $1.1M wired. Covers: portfolio daily gains, why he passed on MU short-term, his #1 stock pick for $1.1M over 3 years (<strong>Netflix</strong>), AMD's path to $1,000+, and his market outlook for fall 2026. Macro is bullish now; expect capex anxiety late fall.
+  </div>
+
+  <div class="card">
+    <h2>💼 Public Portfolio – Daily Gains (Aug 14)</h2>
+    <table>
+      <thead><tr><th>Ticker</th><th>Name</th><th>Daily Gain</th></tr></thead>
+      <tbody>
+        <tr><td class="ticker">META</td><td>Meta Platforms</td><td class="gain">+$16,000</td></tr>
+        <tr><td class="ticker">AMD</td><td>Advanced Micro Devices</td><td class="gain">+$10,000</td></tr>
+        <tr><td class="ticker">PLTR</td><td>Palantir</td><td class="gain">+$7,500</td></tr>
+        <tr><td class="ticker">NFLX</td><td>Netflix</td><td class="gain">+$7,400</td></tr>
+        <tr><td class="ticker">CRM</td><td>Salesforce</td><td class="gain">+$7,100</td></tr>
+        <tr><td class="ticker">CELH</td><td>Celsius Holdings</td><td class="gain">+$6,700</td></tr>
+        <tr><td class="ticker">NKE</td><td>Nike</td><td class="gain">+$3,400</td></tr>
+        <tr><td class="ticker">NOW</td><td>ServiceNow</td><td class="gain">+$3,200</td></tr>
+        <tr><td class="ticker">SOFI</td><td>SoFi Technologies</td><td class="gain">+$3,200</td></tr>
+      </tbody>
+    </table>
+    <p style="color:var(--muted); font-size:13px; margin-top:12px;">Public account target: <strong style="color:var(--accent);">$5,000,000</strong></p>
+  </div>
+
+  <div class="pick-box">
+    <div class="pick-title">⭐ #1 Pick – $1.1M · 3-Year Lock-up</div>
+    <div class="pick-ticker">NFLX</div>
+    <div class="pick-name">Netflix, Inc.</div>
+    <ul>
+      <li>Forward P/E: 21 – most attractive risk/reward in the market</li>
+      <li>Recurring revenue model – ultimate SaaS-like business</li>
+      <li>No real disruption threat – competitors weaker than ever</li>
+      <li>Multiple growth levers: subscribers, price hikes, international, ads business (still a baby)</li>
+      <li>High probability of 50%+ gain; decent probability of 2x in 3 years</li>
+      <li>No out-of-control capex like Meta / Amazon</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📊 All Stocks Discussed</h2>
+    <table>
+      <thead><tr><th>Ticker</th><th>Name</th><th>Opinion</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="ticker">NFLX</td><td>Netflix</td>
+          <td><span class="tag tag-bullish">🌟 #1 Pick</span></td>
+          <td>Best 3-year risk/reward. 2x probability is "decent".</td>
+        </tr>
+        <tr>
+          <td class="ticker">AMD</td><td>Advanced Micro Devices</td>
+          <td><span class="tag tag-bullish">Very Bullish LT</span></td>
+          <td>Base: $1,000–1,200. Bull: $1,500–2,000. 60% chance at $1,000 in 12 months. Rev growth: 40→78% over next 5 Qs.</td>
+        </tr>
+        <tr>
+          <td class="ticker">CELH</td><td>Celsius Holdings</td>
+          <td><span class="tag tag-bullish">Bullish – Buying</span></td>
+          <td>Highest upside potential. Target $75–100 (from ~$20s). Owns Celsius + Alani + Rockstar brands.</td>
+        </tr>
+        <tr>
+          <td class="ticker">META</td><td>Meta Platforms</td>
+          <td><span class="tag tag-lt-bullish">Bullish LT / Cautious ST</span></td>
+          <td>Long-term target $1,000–2,000. Short-term: capex out of control, headwind to earnings.</td>
+        </tr>
+        <tr>
+          <td class="ticker">AMZN</td><td>Amazon</td>
+          <td><span class="tag tag-lt-bullish">Bullish LT</span></td>
+          <td>Loves AWS growth + e-commerce + ads. Concern: massive capex will suppress EPS for years.</td>
+        </tr>
+        <tr>
+          <td class="ticker">AXP</td><td>American Express</td>
+          <td><span class="tag tag-bullish">Solid / Consistent</span></td>
+          <td>Honorable mention. Great company. Only risk: deep recession hurting high-income customers.</td>
+        </tr>
+        <tr>
+          <td class="ticker">MU</td><td>Micron Technology</td>
+          <td><span class="tag tag-cautious">Passed (ST)</span></td>
+          <td>Down 30% from highs. Sees $1,000+ potential. MUUU (3x leveraged) already +37% in Aug. Decided against short-term gamble.</td>
+        </tr>
+        <tr>
+          <td class="ticker">MUUU</td><td>Micron 3x Leveraged ETF</td>
+          <td><span class="tag tag-pass">Passed</span></td>
+          <td>+37% in 8 trading days. Chose not to chase.</td>
+        </tr>
+        <tr>
+          <td class="ticker">GOOG / MSFT</td><td>Google / Microsoft</td>
+          <td><span class="tag tag-cautious">Mentioned</span></td>
+          <td>Both face capex depreciation headwinds alongside Meta & Amazon.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>📈 AMD Projections</h2>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="label">Base Case</div>
+        <div class="value">$1,000–1,200</div>
+        <div class="sub">Next 2–3 years</div>
+      </div>
+      <div class="proj-card">
+        <div class="label">Bull Case</div>
+        <div class="value">$1,500–2,000</div>
+        <div class="sub">If things go right</div>
+      </div>
+      <div class="proj-card">
+        <div class="label">12-Month Probability</div>
+        <div class="value">60%</div>
+        <div class="sub">Chance of hitting $1,000+</div>
+      </div>
+      <div class="proj-card">
+        <div class="label">Revenue Growth Trend</div>
+        <div class="value">40→78%</div>
+        <div class="sub">Over next 5 quarters</div>
+      </div>
+    </div>
+    <p style="color:var(--muted); font-size:13px; margin-top:14px;">Last quarter: guided $13B mid (vs analyst ~$12.5B). Market wanted $14–15B "shock and awe". Lisa Sue likely sandbagged – Jeremy expects outperformance.</p>
+  </div>
+
+  <div class="card">
+    <h2>🌡️ Market Outlook</h2>
+    <div class="outlook-grid">
+      <div class="outlook-card outlook-bull">
+        <h3>✅ NOW → Late Fall: BULLISH</h3>
+        <ul style="list-style:none; font-size:13px; display:flex; flex-direction:column; gap:5px;">
+          <li>📉 PPI flat in July – inflation fears subsiding</li>
+          <li>📉 All treasuries trending down (2yr, 10yr, 6mo)</li>
+          <li>🏦 ~$8T in money markets looking for a home</li>
+          <li>📊 Fed rate-hike probability for 2026 falling fast: ~80% → ~50%</li>
+          <li>💪 Earnings picture remains strong</li>
+        </ul>
+      </div>
+      <div class="outlook-card outlook-warn">
+        <h3>⚠️ Late Fall / Winter: CAUTIOUS</h3>
+        <ul style="list-style:none; font-size:13px; display:flex; flex-direction:column; gap:5px;">
+          <li>💸 "Capex anxiety" from Meta, Amazon, Google Q4 updates</li>
+          <li>📉 Potential hype decay: Anthropic, OpenAI</li>
+          <li>🔮 Markets will start pricing Feb 2027 guidance</li>
+          <li>😬 Semi + hyperscaler anxiety possible</li>
+          <li>🍂 Sept/Oct historically volatile</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💡 Key Takeaways</h2>
+    <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:15px;">
+      <li>🎯 <strong>Short-term trades = gambling.</strong> Jeremy's best returns always come from long-term conviction buys, not shortcuts.</li>
+      <li>📊 <strong>Treasuries down = good for stocks.</strong> As yields drop, money flows from money markets into equities.</li>
+      <li>🧠 <strong>AMD miss wasn't really a miss.</strong> $13B vs hoped-for $14–15B is a $1–2B difference, not a business implosion.</li>
+      <li>🏆 <strong>Netflix wins on risk/reward.</strong> No capex crisis, recurring revenue, no disruption threat, multiple growth levers.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Generated by <strong>Dot DiBot</strong> · 14 Aug 2026</span>
+    <a href="https://youtu.be/pPMG50H1HeY" target="_blank">▶ Watch on YouTube</a>
+  </footer>
+</div>
+</body>
+</html>

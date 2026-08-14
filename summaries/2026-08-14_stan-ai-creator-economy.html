@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stan & AI Content Creation – John (Stanto) Interview</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #1a3a5c; color: var(--accent); }
+    .badge-biz { background: #2d1a5c; color: var(--purple); }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 15px; line-height: 1.8; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+    .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; text-align: center; }
+    .stat-card .val { font-size: 28px; font-weight: 900; color: var(--green); font-family: monospace; }
+    .stat-card .lbl { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .case-study { background: var(--surface2); border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; display: flex; gap: 14px; align-items: flex-start; }
+    .case-study .emoji { font-size: 24px; flex-shrink: 0; }
+    .case-study .body strong { color: var(--green); }
+    .case-study .body { font-size: 14px; line-height: 1.6; }
+    .step { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .step:last-child { border-bottom: none; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #000; font-weight: 900; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body { font-size: 14px; line-height: 1.6; }
+    .step-body strong { color: var(--text); }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .feature { background: var(--surface2); border-radius: 8px; padding: 14px; font-size: 14px; }
+    .feature h3 { font-size: 13px; font-weight: 700; color: var(--purple); margin-bottom: 6px; }
+    .quote-box { background: #1a2410; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 12px 0; font-style: italic; font-size: 15px; color: var(--text); }
+    ul.checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+    ul.checklist li::before { content: "✅ "; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media(max-width:600px) { .stat-grid { grid-template-columns: 1fr 1fr; } .feature-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header style="margin-bottom:32px;">
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-biz">🚀 Business / AI</span>
+    </div>
+    <h1>Stan AI & The Creator Economy – Interview with John (Stanto Founder)</h1>
+    <div class="meta">
+      <span>📅 August 14, 2026</span>
+      <span>🎙️ Callum Johnson Show</span>
+      <a href="https://youtu.be/OKw8N3V8Axo" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/OKw8N3V8Axo" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> John, founder of <strong>Stan</strong> (creator monetization platform), explains how 90,000+ creators have earned $600M+ selling digital products. He demos <strong>Stanley</strong> – an AI agent that handles content creation, editing, scheduling, and monetization autonomously. Core thesis: AI removes the operational grind so anyone can be an entrepreneur.
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="val">90K+</div>
+      <div class="lbl">Creators on Stan</div>
+    </div>
+    <div class="stat-card">
+      <div class="val">$600M+</div>
+      <div class="lbl">Earned by creators</div>
+    </div>
+    <div class="stat-card">
+      <div class="val">$100K</div>
+      <div class="lbl">18yr old in 2 months</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📖 Facts – Who Are These Creators?</h2>
+    <div class="case-study">
+      <div class="emoji">👩‍👦</div>
+      <div class="body">Midwest single mom – escaped abusive relationship, built a <strong>$250K/year business</strong> in year one helping other "mompreneurs"</div>
+    </div>
+    <div class="case-study">
+      <div class="emoji">👦</div>
+      <div class="body">Stone Frederickson, 18 – made <strong>$100K in his first 2 months</strong> (first time legally old enough for a Stripe account)</div>
+    </div>
+    <div class="case-study">
+      <div class="emoji">🍞</div>
+      <div class="body">Milkmaid Farm, NC – high six figures selling a <strong>sourdough bread baking guide</strong> ($12 guide → $70,000+ revenue)</div>
+    </div>
+    <div class="case-study">
+      <div class="emoji">🏠</div>
+      <div class="body">Michael Elephante (Airbnb creator) – <strong>$200,000</strong> from a <strong>$50 Excel cash flow calculator</strong> for property analysis</div>
+    </div>
+    <div class="case-study">
+      <div class="emoji">🎨</div>
+      <div class="body">AI prompt creator – sells <strong>$12 video prompts</strong>, drops new ones every week, makes thousands of sales per drop</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🤖 Stanley – The AI Agent (Exclusive Beta)</h2>
+    <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">Stan's proprietary AI agent — not just a chatbot. An autonomous content teammate.</p>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>🎯 Voice & Style Learning</h3>
+        Connects to all socials, reads your content, learns your unique voice + stories. Can also voice-chat onboard you if you're starting from zero.
+      </div>
+      <div class="feature">
+        <h3>📊 Daily Brief</h3>
+        Sends a morning text with top-performing content in your niche + remix suggestions tailored to your style.
+      </div>
+      <div class="feature">
+        <h3>✂️ Auto Video Editing</h3>
+        Upload raw footage → Stanley transcribes, cuts dead space, adds captions/stickers/music. Turned a 1.5min video to 40s automatically.
+      </div>
+      <div class="feature">
+        <h3>📱 iMessage Workflow</h3>
+        Coming soon: send footage over iMessage, give a prompt, get back edited video as a text message.
+      </div>
+      <div class="feature">
+        <h3>🔄 Cross-Platform Repurposing</h3>
+        "Your LinkedIn post outperformed – want me to optimize and cross-post to Twitter?" Proactively maximizes distribution.
+      </div>
+      <div class="feature">
+        <h3>🛍️ Product Builder</h3>
+        Ingests your Notion, content library, voice notes → builds your digital product, sales page, and AB tests it automatically.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💡 Conclusions – What John Believes</h2>
+
+    <div class="quote-box">"The only consistent pattern between all the people who make a lot of money is just the ones who post every single day."</div>
+    <div class="quote-box">"AI is just a really cracked intern. It takes your great ingenuity and turns it into a digestible product."</div>
+    <div class="quote-box">"Goldman, Stanford, VC — when you pull back the Wizard of Oz curtain, most of those people are quite miserable."</div>
+
+    <ul class="checklist" style="margin-top:16px;">
+      <li><strong>Consistency beats everything.</strong> Daily posting is the #1 predictor of creator success — not niche, not audience size.</li>
+      <li><strong>Package what worked for you.</strong> John's first $10K came from selling his Goldman Sachs resume. The product = your proven result.</li>
+      <li><strong>Price low, ship fast.</strong> $12–$50 products with high velocity outperform expensive low-volume offers.</li>
+      <li><strong>AI removes the grind, not the creativity.</strong> Ideas + voice = you. Everything else = Stanley.</li>
+      <li><strong>Identity follows action.</strong> You become a creator by posting 100 videos, not by deciding you're a creator first.</li>
+      <li><strong>Traditional prestige ≠ fulfillment.</strong> Real security comes from skills + belief, not a resume logo.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>✅ Recommendations – Action Steps</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>Find your entry wedge.</strong> Pick ONE specific niche angle this week. Not your full self — one interesting slice of you.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body"><strong>Post 10 remixed videos.</strong> Find 10 top accounts in your niche. Copy their format, inject your story and voice. At least 1 will do well.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body"><strong>Package your result.</strong> What have you already done that worked? That's your first product. Upload to a Stan store.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body"><strong>Show, don't tell.</strong> Make content that demonstrates your product in action. CTA at the end: "Get this in my store."</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body"><strong>Optimize to fail fast.</strong> Launch imperfect. Learn from the market. Iterate. The people who win are the ones who keep going after 7 setbacks.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body"><strong>Turn your back on the audience.</strong> Create for your younger self, not for the reaction. Your most powerful content comes from authenticity, not performance.</div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Generated by <strong>Dot DiBot</strong> · 14 Aug 2026</span>
+    <a href="https://youtu.be/OKw8N3V8Axo" target="_blank">▶ Watch on YouTube</a>
+  </footer>
+</div>
+</body>
+</html>
