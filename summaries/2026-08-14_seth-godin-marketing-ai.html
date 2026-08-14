@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seth Godin – The Future of Marketing & AI</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-biz { background: #2d1a5c; color: var(--purple); }
+    .badge-ai { background: #1a2744; color: var(--accent); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .quote-block { border-left: 4px solid var(--purple); background: #1a1430; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 14px 0; font-style: italic; font-size: 15px; line-height: 1.7; color: #d2b4fe; }
+    .quote-block cite { display: block; font-style: normal; font-size: 12px; color: var(--muted); margin-top: 8px; }
+    .fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+    .fact-item { background: var(--surface2); border-radius: 8px; padding: 14px 16px; font-size: 14px; line-height: 1.6; }
+    .fact-item .label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .fact-item .value { color: var(--text); }
+    .fact-item strong { color: var(--green); }
+    .vs-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+    .vs-table th { background: var(--surface2); color: var(--muted); padding: 10px 14px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; border-bottom: 1px solid var(--border); text-align: left; }
+    .vs-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 14px; }
+    .vs-table tr:last-child td { border-bottom: none; }
+    .vs-table tr:hover td { background: var(--surface2); }
+    .col-no { color: var(--red); font-weight: 700; }
+    .col-yes { color: var(--green); font-weight: 700; }
+    .step { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .step:last-child { border-bottom: none; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--purple); color: #000; font-weight: 900; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body { font-size: 14px; line-height: 1.6; }
+    .step-body strong { color: var(--text); display: block; margin-bottom: 2px; }
+    .example-box { background: var(--surface2); border-radius: 8px; padding: 16px; margin: 12px 0; font-size: 14px; line-height: 1.6; }
+    .example-box .ex-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+    ul.checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+    ul.checklist li::before { content: "✅ "; }
+    ul.dotlist { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+    ul.dotlist li::before { content: "→ "; color: var(--accent); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media(max-width:600px) { .fact-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-biz">🚀 Marketing</span>
+      <span class="badge badge-ai">🤖 AI</span>
+    </div>
+    <h1>Seth Godin – The Future of Marketing & AI</h1>
+    <div class="meta">
+      <span>📅 August 14, 2026</span>
+      <span>🎙️ Entrepreneur Studio Podcast (host: Chris Allen)</span>
+      <a href="https://youtu.be/zFHzTy7XLbM" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/zFHzTy7XLbM" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> Seth Godin (legendary marketing author & thinker) redefines marketing for the AI era:
+    it's not about spending or hustle — it's about <strong>creating conditions for others to eagerly spread your idea</strong>.
+    Brands are promises, not logos. Consistency beats authenticity. Better beats louder.
+    And AI is your squadron of eager interns — if you learn to be a good boss.
+  </div>
+
+  <!-- KEY QUOTES -->
+  <div class="card">
+    <h2>💬 Key Quotes</h2>
+
+    <div class="quote-block">
+      "Successful brands are built with your customers talking about you, not you talking about you."
+      <cite>— Seth Godin</cite>
+    </div>
+    <div class="quote-block">
+      "Marketing is about creating the conditions for other people to eagerly spread your idea."
+      <cite>— Seth Godin</cite>
+    </div>
+    <div class="quote-block">
+      "Nike has a brand. Hyatt has a logo. If Nike announced a hotel, you know exactly what it would be like. If Hyatt announced sneakers, you have no idea."
+      <cite>— Seth Godin</cite>
+    </div>
+    <div class="quote-block">
+      "Authenticity is a crock. What you're actually asking for is consistency. Consistency is what professionals do."
+      <cite>— Seth Godin</cite>
+    </div>
+    <div class="quote-block">
+      "How do I get less famous and more trusted? Tension is relieved by people taking action."
+      <cite>— Seth Godin</cite>
+    </div>
+    <div class="quote-block">
+      "When you pick your customers, you pick your future."
+      <cite>— Seth Godin</cite>
+    </div>
+    <div class="quote-block">
+      "AI is a squadron of summer interns who work for almost free. They're not that good, but they're very eager. Learn to be a good boss."
+      <cite>— Seth Godin</cite>
+    </div>
+  </div>
+
+  <!-- FACTS -->
+  <div class="card">
+    <h2>📊 Facts & Case Studies</h2>
+    <div class="fact-grid">
+      <div class="fact-item">
+        <div class="label">📺 The Old World (pre-internet)</div>
+        <div class="value">A MASH ad reached <strong>70 million Americans</strong> at once — bigger than the Super Bowl, weekly. Mass marketing for average products to average people worked because you had no choice.</div>
+      </div>
+      <div class="fact-item">
+        <div class="label">🍝 Carmine's Restaurant (NYC, ~30 years ago)</div>
+        <div class="value">Built-in remarkability: <strong>double portions for sharing, massive garlic, reservations for 6+ only</strong>. Result: every customer had a story to tell at work the next day — and had to recruit 4 friends to return.</div>
+      </div>
+      <div class="fact-item">
+        <div class="label">🍷 Garagiste (Wine Business)</div>
+        <div class="value"><strong>$30M/year revenue</strong>, run by 1 guy + a few assistants. Pure email list of 130,000 subscribers. Deliberately stopped taking new sign-ups — chose <em>better, not bigger</em>.</div>
+      </div>
+      <div class="fact-item">
+        <div class="label">🔧 The Boiler Repairman</div>
+        <div class="value">Technician put on slippers, handed over a list of <strong>25 nearby references with phone numbers</strong>. Seth hired him on the spot, canceled the other 3 appointments. Playing a professional role = winning.</div>
+      </div>
+      <div class="fact-item">
+        <div class="label">🏦 Yahoo's Downfall</div>
+        <div class="value">3,000 employees watching the stock ticker all day. Optimized for <strong>short-term stock price</strong>, not long-term value. That false proxy destroyed the company.</div>
+      </div>
+      <div class="fact-item">
+        <div class="label">🍔 Wendy's Social Media</div>
+        <div class="value"><strong>15–20 people</strong> running Wendy's social, famous for witty insults. Seth's question: "Has it sold one Frosty?" Awareness ≠ action. Commotion ≠ trust.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCLUSIONS -->
+  <div class="card">
+    <h2>💡 Conclusions</h2>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Marketing ≠ Advertising. Marketing = Creating conditions for spread.</strong>
+        Buying ads, hustling, interrupting people — those were tools from 1973. The internet killed them. Real marketing is making something so remarkable that people can't help but talk about it.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>A Brand is a Promise, Not a Logo.</strong>
+        Trust = making a promise and keeping it, especially when it's hard. If you make audacious promises and don't keep them, you're the Wizard of Oz. Trust is built one kept promise at a time.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Authenticity is a trap. Consistency is the goal.</strong>
+        Customers don't want your real, messy inner self — they want the same reliable experience every time. Adopt a "professional role" the way an actor does. Your private life stays private; your brand role stays consistent.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>False proxies destroy companies.</strong>
+        Measuring the wrong thing (stock price, follower count, email volume, quarterly earnings) leads people to optimize for the proxy instead of the mission. What you measure in meetings is what your culture actually values.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Better beats louder. Less famous, more trusted.</strong>
+        Garagiste did $30M with 130,000 emails and zero ads. You don't need more reach — you need more resonance with the right people. "When you pick your customers, you pick your future."
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>AI: use it to make things better, not just cheaper.</strong>
+        The current wave is cost-reduction (less people, less spend). That's a dead end. The real opportunity is AI making your work more valuable — knowing your customers deeply, standing beside them, being missed if absent.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <strong>When AI is the buyer, you lose — unless you have brand.</strong>
+        AI comparison-shops and picks the cheapest. If your only edge is price, you will race to the bottom. Brand, story, and trust are what make humans override the algorithm.
+      </div>
+    </div>
+  </div>
+
+  <!-- THIS vs THAT -->
+  <div class="card">
+    <h2>⚖️ Do This, Not That</h2>
+    <table class="vs-table">
+      <thead>
+        <tr>
+          <th>❌ Stop Doing</th>
+          <th>✅ Start Doing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-no">Buying reach to interrupt strangers</td>
+          <td class="col-yes">Building permission with people who want to hear from you</td>
+        </tr>
+        <tr>
+          <td class="col-no">Chasing follower counts & impressions</td>
+          <td class="col-yes">Measuring: subscribers who open your emails, repeat customers</td>
+        </tr>
+        <tr>
+          <td class="col-no">Trying to be "authentic" (raw/unfiltered)</td>
+          <td class="col-yes">Being consistent — same promise, same delivery, every time</td>
+        </tr>
+        <tr>
+          <td class="col-no">Using AI to cut costs and headcount</td>
+          <td class="col-yes">Using AI to know your customers better & serve them more deeply</td>
+        </tr>
+        <tr>
+          <td class="col-no">Optimizing for quarterly earnings / stock price</td>
+          <td class="col-yes">Measuring what actually builds trust and repeat business</td>
+        </tr>
+        <tr>
+          <td class="col-no">Making average products for average people</td>
+          <td class="col-yes">Making remarkable things for specific people who will talk about you</td>
+        </tr>
+        <tr>
+          <td class="col-no">Getting louder (more ads, more posts, more noise)</td>
+          <td class="col-yes">Getting better — fewer, more meaningful interactions</td>
+        </tr>
+        <tr>
+          <td class="col-no">Racing to the bottom on price for AI buyers</td>
+          <td class="col-yes">Building a brand humans choose even when AI says "buy cheaper"</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <div class="card">
+    <h2>✅ Recommendations</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Start with two questions:</strong>
+        "Who do I want to help my customers become?" and "What are they hiring me to do?" If your product helps people get to where they already want to go, you barely have to push.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Put two numbers on your wall:</strong>
+        (1) How many people subscribed to hear from us? (2) What % opened our last email? These are the only metrics that matter for an email-first business. Everything else is a distraction.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Design for remarkability — build the engine in.</strong>
+        Like Carmine's restaurant: make something that forces people to tell others. Don't add a gimmick. Ask: "What is so unusual about this that someone would text their friend about it tomorrow?"
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Give people something to say.</strong>
+        People talk about things that raise their status or give them insider identity. Design your product/service so the customer feels smart, connected, or special by using it — and they'll spread the word for free.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Hire AI now and learn to be a good boss.</strong>
+        For $20/month you have a squadron of eager interns. Don't wait. Upload your tool chest, your customer list, your process — teach it everything. The brand that knows you best wins your loyalty.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>Choose "better, not bigger."</strong>
+        Garagiste stopped taking new customers at 130K. They made more money by going deeper with the right people. Ask: can I serve 20% fewer customers 200% better? That's a more durable business.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <strong>Everything your company does is marketing.</strong>
+        How you answer the phone. What you charge. What you dump in the river. If you're not involved in those decisions, you're not in charge of the brand. Marketing is a team sport — own it across the whole business.
+      </div>
+    </div>
+
+    <div class="example-box" style="margin-top:16px;">
+      <div class="ex-title">🔧 Seth's AI Vision for Brands</div>
+      Upload your tool chest to a brand's AI. Mid-project, you ask: "I can't find piece X." The AI — which has seen all your tools — says: "You don't have that tool. Want it delivered tomorrow?" The more you teach it, the more the brand is worth to you. The less likely you are to buy the cheap version on Amazon. That's the future of permission marketing.
+    </div>
+  </div>
+
+  <footer>
+    <span>Generated by <strong>Dot DiBot</strong> · 14 Aug 2026</span>
+    <a href="https://youtu.be/zFHzTy7XLbM" target="_blank">▶ Watch on YouTube</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+</body>
+</html>
