@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Million – 3 Live NYC Businesses (Haven Lifestyles, Autopilot & More)</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --purple: #bc8cff; --orange: #f0883e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-biz { background: #2d1a5c; color: var(--purple); }
+    .badge-pod { background: #1a2744; color: var(--accent); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 26px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 28px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+
+    /* Business section */
+    .biz-section { margin-bottom: 28px; }
+    .biz-header { display: flex; align-items: center; gap: 12px; padding: 20px 20px 0; }
+    .biz-num { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; flex-shrink: 0; }
+    .biz-num-1 { background: #1a3a5c; color: var(--accent); }
+    .biz-num-2 { background: #0d3320; color: var(--green); }
+    .biz-num-3 { background: #2d1a5c; color: var(--purple); }
+    .biz-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .biz-card-1 { border-color: #1a3a5c; }
+    .biz-card-2 { border-color: #1a4a20; }
+    .biz-card-3 { border-color: #3a1a5c; }
+    .biz-title { font-size: 20px; font-weight: 700; }
+    .biz-subtitle { color: var(--muted); font-size: 14px; }
+    .biz-body { padding: 16px 20px 20px; }
+
+    .stat-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+    .stat-pill { background: var(--surface2); border-radius: 6px; padding: 8px 14px; }
+    .stat-pill .s-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-pill .s-value { font-weight: 700; font-family: monospace; font-size: 15px; }
+    .s-green { color: var(--green); }
+    .s-accent { color: var(--accent); }
+    .s-yellow { color: var(--yellow); }
+    .s-purple { color: var(--purple); }
+    .s-orange { color: var(--orange); }
+
+    .insight-box { background: var(--surface2); border-radius: 8px; padding: 14px 16px; margin: 10px 0; font-size: 14px; line-height: 1.6; }
+    .insight-box .ib-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .ib-blue { color: var(--accent); }
+    .ib-green { color: var(--green); }
+    .ib-purple { color: var(--purple); }
+    .ib-yellow { color: var(--yellow); }
+
+    /* General card */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+
+    .quote-block { border-left: 4px solid var(--purple); background: #1a1430; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 12px 0; font-style: italic; font-size: 15px; color: #d2b4fe; line-height: 1.7; }
+    .quote-block cite { display: block; font-style: normal; font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+    .step { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .step:last-child { border-bottom: none; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #000; font-weight: 900; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-body { font-size: 14px; line-height: 1.6; }
+    .step-body strong { color: var(--text); display: block; margin-bottom: 2px; }
+
+    .spotlight { background: linear-gradient(135deg, #0d2040 0%, #1a0d40 100%); border: 1px solid var(--purple); border-radius: 10px; padding: 18px 20px; margin: 14px 0; font-size: 14px; line-height: 1.6; }
+    .spotlight .sp-title { font-size: 13px; font-weight: 700; color: var(--purple); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media(max-width:600px) { .stat-row .stat-pill { flex: 1 1 45%; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-pod">🎙️ Podcast</span>
+      <span class="badge badge-biz">🚀 Business</span>
+    </div>
+    <h1>My First Million – 3 Live NYC Businesses Walk In Off the Street</h1>
+    <div class="meta">
+      <span>📅 Aug 14, 2026</span>
+      <span>🎙️ Sam Parr & Shawn (My First Million)</span>
+      <a href="https://youtu.be/OXgqzF382o8" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/OXgqzF382o8" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> Sam & Shawn record live in NYC with 3 founders from the Hampton community walking in unannounced.
+    Business #1: <strong>Haven Lifestyles</strong> — 40 real-estate magazines, $10M revenue. Business #2: An outdoor business (Josh).
+    Business #3: <strong>Autopilot</strong> — copy-trading fintech, $30M ARR, 250% growth, targeting $100M by March. Plus: the best hiring advice we've heard, and the Leopold Aschenbrenner story.
+  </div>
+
+  <!-- BUSINESS 1 -->
+  <div class="biz-section">
+    <div class="biz-card biz-card-1">
+      <div class="biz-header">
+        <div class="biz-num biz-num-1">1</div>
+        <div>
+          <div class="biz-title">Haven Lifestyles</div>
+          <div class="biz-subtitle">Real Estate Advertising Magazines — Alex (co-founder)</div>
+        </div>
+      </div>
+      <div class="biz-body">
+        <div class="stat-row">
+          <div class="stat-pill"><div class="s-label">Publications</div><div class="s-value s-accent">40</div></div>
+          <div class="stat-pill"><div class="s-label">Annual Revenue</div><div class="s-value s-green">$10M</div></div>
+          <div class="stat-pill"><div class="s-label">Net Profit</div><div class="s-value s-green">$2.5M</div></div>
+          <div class="stat-pill"><div class="s-label">Profit Margin</div><div class="s-value s-yellow">25%</div></div>
+          <div class="stat-pill"><div class="s-label">Employees</div><div class="s-value s-accent">20</div></div>
+          <div class="stat-pill"><div class="s-label">Years Running</div><div class="s-value s-accent">10</div></div>
+          <div class="stat-pill"><div class="s-label">Magazines Mailed / Yr</div><div class="s-value s-accent">500K</div></div>
+          <div class="stat-pill"><div class="s-label">YoY Growth</div><div class="s-value s-yellow">10%</div></div>
+        </div>
+
+        <div class="insight-box">
+          <div class="ib-label ib-blue">📖 What is it?</div>
+          Real estate agents pay to have their listings featured in a 100–200 page magazine-style lookbook, mailed to homes selected by property value and income. 40 geographic zones covering the US and Canada. Published every 6 weeks (30 different magazines printed per month). 90% of readers are driven online; physical mail is the lead-gen hook.
+        </div>
+
+        <div class="insight-box">
+          <div class="ib-label ib-blue">🛤️ Origin Story</div>
+          Alex was a bill collector (Victoria's Secret credit cards) for 5 years. After an HR dispute, texted his college roommate Ryan. Ryan had a small publication in Annapolis, MD — agents were asking him to expand. They launched in DC. First meeting: immediate "yes." First year revenue: $300K, Alex alone doing door-to-door sales. Kept his job for 8 months.
+        </div>
+
+        <div class="insight-box">
+          <div class="ib-label ib-green">🎯 Goal</div>
+          Double profit to <strong>$5M run-rate within 11 months</strong>. Growth mindset shift is recent. Margin improvement is outpacing revenue growth already.
+        </div>
+
+        <div class="insight-box">
+          <div class="ib-label ib-yellow">💡 Sam & Shawn's Advice to Scale to $100M</div>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:6px; margin-top:4px;">
+            <li>→ Study the space: spend 1 month mapping all competitors (Stroll, Revolution, others — some are $100M+)</li>
+            <li>→ Hire someone who built this problem at a bigger company at the exact stage you're at now</li>
+            <li>→ Expand to <strong>Home Services</strong> vertical — but make it editorial, not ad-only (listicle covers + provider ads inside)</li>
+            <li>→ Break 40 zones into 80 — more targeted, more resonant</li>
+            <li>→ Target: 35% net margins (vs current 25%) — just decide it and work backward</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUSINESS 3 (Autopilot — most discussed) -->
+  <div class="biz-section">
+    <div class="biz-card biz-card-3">
+      <div class="biz-header">
+        <div class="biz-num biz-num-3">3</div>
+        <div>
+          <div class="biz-title">Autopilot</div>
+          <div class="biz-subtitle">Copy-Trading Fintech Platform — Brian (founder/CEO)</div>
+        </div>
+      </div>
+      <div class="biz-body">
+        <div class="stat-row">
+          <div class="stat-pill"><div class="s-label">ARR</div><div class="s-value s-purple">$22M</div></div>
+          <div class="stat-pill"><div class="s-label">GMV Revenue</div><div class="s-value s-purple">$30M</div></div>
+          <div class="stat-pill"><div class="s-label">Run Rate</div><div class="s-value s-purple">$70M</div></div>
+          <div class="stat-pill"><div class="s-label">Growth Rate</div><div class="s-value s-green">250% YoY</div></div>
+          <div class="stat-pill"><div class="s-label">Target Revenue</div><div class="s-value s-yellow">$100M by Mar '27</div></div>
+          <div class="stat-pill"><div class="s-label">Employees</div><div class="s-value s-purple">30–35</div></div>
+          <div class="stat-pill"><div class="s-label">Revenue / Employee</div><div class="s-value s-green">~$1M</div></div>
+          <div class="stat-pill"><div class="s-label">Profitability</div><div class="s-value s-green">Cash flow +</div></div>
+          <div class="stat-pill"><div class="s-label">Years Running</div><div class="s-value s-purple">3 (product) / 6 (company)</div></div>
+          <div class="stat-pill"><div class="s-label">First Round Val.</div><div class="s-value s-accent">$7M (2021)</div></div>
+        </div>
+
+        <div class="insight-box">
+          <div class="ib-label ib-purple">📖 What is it?</div>
+          Connect your Robinhood (or any brokerage) to Autopilot → automatically copy-trade professional "pilots." When a pilot makes a trade, Autopilot sends a notification to your brokerage to buy/sell the same security. <strong>You keep custody of your money</strong> — this is what keeps the SEC happy. Pilots publish model portfolios on the platform. Average AUM fee: <strong>3–4%</strong> (high because pilots are seeking alpha, not just ETFs).
+        </div>
+
+        <div class="insight-box">
+          <div class="ib-label ib-purple">🌟 Star Portfolios on the Platform</div>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:6px; margin-top:4px;">
+            <li>🏛️ <strong>Nancy Pelosi tracker</strong> — based on politician 13F disclosures (45-day lag, requires $100M+ fund)</li>
+            <li>⭐ <strong>Leopold Aschenbrenner tracker</strong> — ex-OpenAI analyst (age 22), left and raised $500M → <strong>$5B AUM</strong>. Strategy: invest in AI bottlenecks others ignored (SSDs, Micron) not just GPUs. Currently up massive. Known for his "Situational Awareness" white paper.</li>
+            <li>📊 Best performers are up enormous amounts. Brian follows 20 different pilots with 90% of his own net worth on the platform.</li>
+          </ul>
+        </div>
+
+        <div class="insight-box">
+          <div class="ib-label ib-yellow">🎯 Grand Vision</div>
+          Become the <strong>world's largest asset manager</strong> — essentially <strong>BlackRock Aladdin for retail investors</strong>. BlackRock's Aladdin already does this for institutions and makes ~$6B/year. Autopilot's endgame: open two-sided marketplace where anyone can publish a portfolio and get paid, and investors can find niche hedges (e.g., a Facebook employee hedging tech exposure).
+        </div>
+
+        <div class="spotlight">
+          <div class="sp-title">🎭 The $450K UFC Stunt</div>
+          Sponsored the UFC with ring-side branding ("Invest Like a Politician"). Hired a Nancy Pelosi look-alike, bought a $60K row-1 ticket next to where Trump was supposed to sit. Total spend: <strong>$450K</strong>. Trump didn't show up (assassination attempt). Earned media was limited. Brian: "Would I do it again? Probably not." Sam: "We're still talking about it — that happens when you do unique, over-the-top things."
+        </div>
+
+        <div class="insight-box">
+          <div class="ib-label ib-green">📈 Growth Path</div>
+          <ul style="list-style:none; gap:5px; display:flex; flex-direction:column;">
+            <li>→ 0 → $1M revenue: hardest thing Brian ever did</li>
+            <li>→ $1M → $30M: "a piece of cake" (product-market fit hit)</li>
+            <li>→ $30M → $100M: on track, targeting March 2027</li>
+            <li>→ Hiring: 20% of CEO's time on recruiting. High bar, fires within 2–3 weeks if no traction. Paying $350K salaries in NYC.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIRING ADVICE -->
+  <div class="card">
+    <h2>🧠 Best Hiring Advice (Sam & Shawn)</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Get crystal clear on the role before hiring.</strong>
+        Most hiring mistakes start with a vague job spec (often outsourced to ChatGPT or a recruiter). Write down exactly what problem needs solving, what world-class looks like, and what they'll need to change. Generic spec = generic candidate.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Bring in an outside interviewer for key hires.</strong>
+        Find someone better at interviewing than you. Have them talk to your top 3–4 candidates. The goal isn't just picking the right person — it's watching <em>how</em> they dig in, follow up, and sniff out BS, so you get better yourself.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Hire from two pools only.</strong>
+        Pool A: someone who has <em>specifically</em> solved <em>this exact problem</em> at another company at a similar stage. Pool B: unproven talent you can "stock-pick" on — a diamond in the rough 10x-er. Build systems to source from both consistently.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Map the company that solved your problem, find the person.</strong>
+        Don't just hire from "a successful company." Find who was the real shot-caller solving your specific problem at the exact year that company was at your stage. That's the hire.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Spend 30% of founder time on recruiting.</strong>
+        Most founders with hiring problems spend hours — not days — on it. The best scaling founders spend almost a third of their week on recruiting. If you're not there, it's a root cause of your hiring quality problem.
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY QUOTES & TAKEAWAYS -->
+  <div class="card">
+    <h2>💬 Key Quotes & Takeaways</h2>
+
+    <div class="quote-block">
+      "I root for everybody. Because when you root for everybody, you can never lose."
+      <cite>— Jesse Itzler (quoted by Sam)</cite>
+    </div>
+    <div class="quote-block">
+      "Those are three ideas that didn't even exist in my cone of vision. I didn't even know that people do businesses like that."
+      <cite>— Shawn, on the mindset shift from scarcity to abundance thinking</cite>
+    </div>
+    <div class="quote-block">
+      "A good person with AI could be 10–20 times more effective than an average person with AI."
+      <cite>— Brian (Autopilot CEO)</cite>
+    </div>
+    <div class="quote-block">
+      "Every day is two days. Two days of stuff needs to happen every day."
+      <cite>— Sam Parr, on setting the bar for your team</cite>
+    </div>
+    <div class="quote-block">
+      "Getting from 0 to $1M was the hardest thing I've ever done. Getting from $1M to $30M was a piece of cake."
+      <cite>— Brian (Autopilot)</cite>
+    </div>
+
+    <div class="insight-box" style="margin-top:16px;">
+      <div class="ib-label ib-purple">💡 On Leopold Aschenbrenner</div>
+      22-year-old ex-OpenAI analyst. Published "Situational Awareness" — a detailed white paper predicting the next 10 years of AI (US/China tension, specific bottlenecks). Raised $500M, now at $5B AUM. Strategy: identified AI bottlenecks <em>no one else was watching</em> (SSDs, Micron) instead of obvious GPU plays. Sam's recommendation: feed the PDF to Victor AI, ask it to extract 10 key predictions, then ask what played out.
+    </div>
+
+    <div class="insight-box" style="margin-top:10px;">
+      <div class="ib-label ib-blue">🤖 Victor AI</div>
+      An AI tool Sam uses across all his businesses (Slack-integrated). He invested in it at what he called an "absurd valuation" but says it's worth it. Shawn was skeptical, tried it, and now uses it everywhere. Particularly useful for digesting long-form documents (PDFs, whitepapers) and answering follow-up questions in context.
+    </div>
+  </div>
+
+  <footer>
+    <span>Generated by <strong>Dot DiBot</strong> · 14 Aug 2026</span>
+    <a href="https://youtu.be/OXgqzF382o8" target="_blank">▶ Watch on YouTube</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+</body>
+</html>
