@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9 Machines Making People Rich in 2026</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-biz { background: #2d2000; color: var(--yellow); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+
+    /* Machine cards */
+    .machines-grid { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+    .machine { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.2s; }
+    .machine:hover { border-color: var(--accent); }
+    .machine.star { border-color: var(--yellow); }
+    .machine-header { display: flex; align-items: center; gap: 14px; padding: 18px 20px 0; }
+    .machine-emoji { font-size: 32px; flex-shrink: 0; }
+    .machine-title { font-size: 18px; font-weight: 700; }
+    .machine.star .machine-title { color: var(--yellow); }
+    .star-badge { display: inline-block; background: #2d2000; color: var(--yellow); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
+    .machine-body { padding: 12px 20px 18px; }
+    .machine-desc { color: var(--muted); font-size: 14px; margin-bottom: 12px; line-height: 1.6; }
+    .stats-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .stat-pill { background: var(--surface2); border-radius: 6px; padding: 6px 12px; font-size: 13px; display: flex; flex-direction: column; gap: 1px; }
+    .stat-pill .s-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-pill .s-value { font-weight: 700; color: var(--green); font-family: monospace; }
+    .stat-pill.accent .s-value { color: var(--accent); }
+    .stat-pill.yellow .s-value { color: var(--yellow); }
+    .stat-pill.orange .s-value { color: var(--orange); }
+    .case-study { background: #0d2010; border: 1px solid #1a4a20; border-radius: 8px; padding: 12px 14px; margin-top: 12px; font-size: 13px; line-height: 1.6; }
+    .case-study .cs-label { font-size: 11px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+
+    /* Common thread */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .thread-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .thread-item { background: var(--surface2); border-radius: 8px; padding: 14px; font-size: 14px; line-height: 1.6; }
+    .thread-item .t-icon { font-size: 22px; margin-bottom: 6px; }
+    .thread-item strong { color: var(--text); display: block; margin-bottom: 2px; }
+    .summary-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .summary-table th { background: var(--surface2); color: var(--muted); padding: 10px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left; border-bottom: 1px solid var(--border); }
+    .summary-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .summary-table tr:last-child td { border-bottom: none; }
+    .summary-table tr:hover td { background: var(--surface2); }
+    .em { font-size: 18px; }
+    .g { color: var(--green); font-weight: 700; font-family: monospace; }
+    .y { color: var(--yellow); font-weight: 700; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media(max-width:600px) { .thread-grid { grid-template-columns: 1fr; } .stats-row .stat-pill { flex: 1 1 40%; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-biz">💰 Business Ideas</span>
+    </div>
+    <h1>9 Machines Making People Rich in 2026</h1>
+    <div class="meta">
+      <span>⏱️ 17 min</span>
+      <span>📅 Dec 30, 2025 · Reviewed Aug 14, 2026</span>
+      <span>👁️ 1.7M views</span>
+      <a href="https://youtu.be/ZdgMNnDcmvQ" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/ZdgMNnDcmvQ" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> 9 physical machines you can buy (most under $15K) and turn into a business.
+    The formula: <strong>machine + high-traffic location + visual process = free marketing</strong>.
+    Low competition, high margins, beginner-friendly. The biggest story: Nerdy Nuts — $2,500 + 1 stone grinder → $500K in a single month after one viral TikTok.
+  </div>
+
+  <!-- MACHINES -->
+  <div class="machines-grid">
+
+    <!-- 1 -->
+    <div class="machine">
+      <div class="machine-header">
+        <div class="machine-emoji">🍭</div>
+        <div class="machine-title">#1 — Cotton Candy Vending Machine</div>
+      </div>
+      <div class="machine-body">
+        <div class="machine-desc">Fully robotic, autonomous cotton candy machine placed at amusement parks, malls, and events. Zero staff needed.</div>
+        <div class="stats-row">
+          <div class="stat-pill"><div class="s-label">Payback Period</div><div class="s-value">3–6 months</div></div>
+          <div class="stat-pill yellow"><div class="s-label">Projected Revenue (10 machines)</div><div class="s-value">$500K / year</div></div>
+        </div>
+        <div class="case-study">
+          <div class="cs-label">📖 Case Study</div>
+          Zach Downey, age 22 — 10 machines at amusement parks, projecting $500K this year. His first machine paid itself off in <strong>weeks</strong>, not months.
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="machine">
+      <div class="machine-header">
+        <div class="machine-emoji">🔫</div>
+        <div class="machine-title">#2 — Laser Cleaning Machine</div>
+      </div>
+      <div class="machine-body">
+        <div class="machine-desc">High-powered laser vaporizes rust, paint, grease, and grime — no chemicals, no abrasives. Run as a mobile service business going to clients.</div>
+        <div class="stats-row">
+          <div class="stat-pill"><div class="s-label">Entry-Level Machine</div><div class="s-value">$3,800</div></div>
+          <div class="stat-pill yellow"><div class="s-label">Avg First-Year Revenue</div><div class="s-value">$127K</div></div>
+          <div class="stat-pill accent"><div class="s-label">Profitable within 18 months</div><div class="s-value">85%</div></div>
+        </div>
+        <div class="case-study">
+          <div class="cs-label">💡 Why now</div>
+          Still <strong>low competition in most towns</strong>. Mobile = low overhead. Clients: car restoration, industrial equipment, historic preservation.
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="machine">
+      <div class="machine-header">
+        <div class="machine-emoji">❄️</div>
+        <div class="machine-title">#3 — Freeze Dryer</div>
+      </div>
+      <div class="machine-body">
+        <div class="machine-desc">Freeze-dry candy, fruit, or meals. The texture transformation is visually striking and snackable — creates viral content naturally.</div>
+        <div class="stats-row">
+          <div class="stat-pill"><div class="s-label">Machine Cost</div><div class="s-value">~$2,000</div></div>
+          <div class="stat-pill"><div class="s-label">Buy Skittles</div><div class="s-value">$2 / lb</div></div>
+          <div class="stat-pill yellow"><div class="s-label">Sell for</div><div class="s-value">$16–$25 / lb</div></div>
+          <div class="stat-pill orange"><div class="s-label">Markup</div><div class="s-value">10x</div></div>
+        </div>
+        <div class="case-study">
+          <div class="cs-label">📖 Case Study</div>
+          A <strong>14-year-old</strong> scaled to <strong>8 machines, 25 employees</strong>, and secured a retail spot at the <strong>Cincinnati Zoo</strong>.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="machine">
+      <div class="machine-header">
+        <div class="machine-emoji">💐</div>
+        <div class="machine-title">#4 — Flower Vending Machine</div>
+      </div>
+      <div class="machine-body">
+        <div class="machine-desc">Refrigerated automated machines placed in hospitals, airports, auditoriums, and hotel lobbies. High emotional purchase moments = impulse buys.</div>
+        <div class="stats-row">
+          <div class="stat-pill"><div class="s-label">Machine Cost</div><div class="s-value">$8K–$15K</div></div>
+          <div class="stat-pill yellow"><div class="s-label">Monthly Revenue / Machine</div><div class="s-value">$3K–$6K</div></div>
+        </div>
+        <div class="case-study">
+          <div class="cs-label">🌏 Market signal</div>
+          Japan already has <strong>2,300+ flower vending machines</strong>. Western markets are years behind — the arbitrage window is open.
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="machine">
+      <div class="machine-header">
+        <div class="machine-emoji">🎨</div>
+        <div class="machine-title">#5 — Hydro Dipping Machine</div>
+      </div>
+      <div class="machine-body">
+        <div class="machine-desc">Wraps any 3D object (controllers, helmets, car parts, shoes) in a custom printed film using water transfer printing. Infinitely customizable.</div>
+        <div class="stats-row">
+          <div class="stat-pill"><div class="s-label">Basic service (controller)</div><div class="s-value">$40</div></div>
+          <div class="stat-pill yellow"><div class="s-label">Custom / premium</div><div class="s-value">up to $500</div></div>
+        </div>
+        <div class="case-study">
+          <div class="cs-label">📖 Case Study</div>
+          A <strong>retired police officer</strong> scaled his hydro dipping operation to a <strong>9,000 sq ft facility</strong>.
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="machine">
+      <div class="machine-header">
+        <div class="machine-emoji">🧶</div>
+        <div class="machine-title">#6 — Rug Tufting Gun</div>
+      </div>
+      <div class="machine-body">
+        <div class="machine-desc">A $250 handheld tool that punches yarn through a backing to create custom rugs. The real business model is workshops — TikTok drives local demand organically.</div>
+        <div class="stats-row">
+          <div class="stat-pill"><div class="s-label">Tool Cost</div><div class="s-value">$250</div></div>
+          <div class="stat-pill"><div class="s-label">Workshop Price</div><div class="s-value">$80–$150 / person</div></div>
+          <div class="stat-pill yellow"><div class="s-label">Profit per 2hr session (8–10 ppl)</div><div class="s-value">up to $1,200</div></div>
+        </div>
+        <div class="case-study">
+          <div class="cs-label">💡 The model</div>
+          Sell the experience, not just the product. TikTok videos of the tufting process go viral, driving local customers to book workshops — <strong>free marketing built into the activity itself</strong>.
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="machine">
+      <div class="machine-header">
+        <div class="machine-emoji">🦷</div>
+        <div class="machine-title">#7 — Gum Removal Machine</div>
+      </div>
+      <div class="machine-body">
+        <div class="machine-desc">High-pressure steam system removes chewing gum from sidewalks, stadiums, transit hubs — without chemicals or scraping. Recurring B2B contracts.</div>
+        <div class="stats-row">
+          <div class="stat-pill yellow"><div class="s-label">Monthly Revenue / Machine</div><div class="s-value">$4,500–$10K</div></div>
+          <div class="stat-pill orange"><div class="s-label">Stadium Annual Contract</div><div class="s-value">up to $50K</div></div>
+        </div>
+        <div class="case-study">
+          <div class="cs-label">📖 Case Study — Gumbusters (Washington D.C.)</div>
+          Dwayne Cummins built a gum removal business with clients including the <strong>US Capitol</strong> and the <strong>National Mall</strong>.
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="machine">
+      <div class="machine-header">
+        <div class="machine-emoji">🍦</div>
+        <div class="machine-title">#8 — Ice Cream Rolling Machine</div>
+      </div>
+      <div class="machine-body">
+        <div class="machine-desc">A −30°C flat plate rolls ice cream into visual spirals and shapes. The preparation process is so visual, customers always film it — free social media marketing built into every sale.</div>
+        <div class="stats-row">
+          <div class="stat-pill"><div class="s-label">Machine Cost</div><div class="s-value">$400–$1,200</div></div>
+          <div class="stat-pill"><div class="s-label">Ingredients per Cup</div><div class="s-value">$0.50–$1.00</div></div>
+          <div class="stat-pill yellow"><div class="s-label">Sell for</div><div class="s-value">$7–$12</div></div>
+          <div class="stat-pill orange"><div class="s-label">Gross Margin</div><div class="s-value">91%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 — STAR -->
+    <div class="machine star">
+      <div class="machine-header">
+        <div class="machine-emoji">🥜</div>
+        <div class="machine-title">#9 — Nut Butter Stone Grinder <span class="star-badge">⭐ Biggest Upside</span></div>
+      </div>
+      <div class="machine-body">
+        <div class="machine-desc">A stone grinder turns raw nuts into fresh nut butter in minutes, right in front of the customer. The live grinding process is hypnotic and shareable.</div>
+        <div class="stats-row">
+          <div class="stat-pill"><div class="s-label">Raw Nuts</div><div class="s-value">$1.50–$2 / lb</div></div>
+          <div class="stat-pill yellow"><div class="s-label">Sell Nut Butter for</div><div class="s-value">$8–$10 / lb</div></div>
+          <div class="stat-pill orange"><div class="s-label">Markup</div><div class="s-value">5–6x</div></div>
+        </div>
+        <div class="case-study" style="background:#1a2000; border-color:#3a5000;">
+          <div class="cs-label" style="color:var(--yellow);">📖 Case Study — Nerdy Nuts</div>
+          Started with <strong>$2,500 + 1 grinder at a farmers market</strong>.
+          One viral TikTok → <strong>$500K in a single month</strong>.
+          Scaled to <strong>17 grinders, 20+ employees, 4,000 jars/day</strong>.
+          <br><br>
+          <strong>Justin's Peanut Butter</strong> (now sold at Target nationwide) started the exact same way.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- QUICK COMPARISON TABLE -->
+  <div class="card">
+    <h2>📊 At a Glance — All 9 Machines</h2>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Machine</th>
+          <th>Entry Cost</th>
+          <th>Revenue Potential</th>
+          <th>Key Edge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">🍭</td><td>Cotton Candy Vending</td><td class="y">Medium</td><td class="g">$500K / yr (×10)</td><td>Fully autonomous</td></tr>
+        <tr><td class="em">🔫</td><td>Laser Cleaning</td><td class="g">$3,800</td><td class="g">$127K first year</td><td>Low competition</td></tr>
+        <tr><td class="em">❄️</td><td>Freeze Dryer</td><td class="g">~$2,000</td><td class="g">10× markup</td><td>Wildly scalable</td></tr>
+        <tr><td class="em">💐</td><td>Flower Vending</td><td class="y">$8K–$15K</td><td class="g">$3K–$6K / mo</td><td>Japan blueprint</td></tr>
+        <tr><td class="em">🎨</td><td>Hydro Dipping</td><td class="g">Low</td><td class="g">Up to $500 / item</td><td>Infinite customization</td></tr>
+        <tr><td class="em">🧶</td><td>Rug Tufting Gun</td><td class="g">$250</td><td class="g">$1,200 / session</td><td>TikTok-native</td></tr>
+        <tr><td class="em">🦷</td><td>Gum Removal</td><td class="y">Medium</td><td class="g">$50K / stadium</td><td>Recurring B2B</td></tr>
+        <tr><td class="em">🍦</td><td>Ice Cream Rolling</td><td class="g">$400–$1,200</td><td class="g">91% gross margin</td><td>Self-marketing</td></tr>
+        <tr><td class="em">🥜</td><td>Nut Butter Grinder ⭐</td><td class="g">~$2,500</td><td class="g">$500K in 1 month</td><td>Viral ceiling</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- COMMON THREAD -->
+  <div class="card">
+    <h2>💡 The Common Thread</h2>
+    <div class="thread-grid">
+      <div class="thread-item">
+        <div class="t-icon">🏪</div>
+        <strong>Physical machine + high-traffic location</strong>
+        Farmers markets, amusement parks, airports, hospitals, stadiums — places people already go.
+      </div>
+      <div class="thread-item">
+        <div class="t-icon">📸</div>
+        <strong>Visual process = free marketing</strong>
+        Customers film the cotton candy spinning, the ice cream rolling, the nut butter grinding. Every sale generates social content you didn't pay for.
+      </div>
+      <div class="thread-item">
+        <div class="t-icon">🟢</div>
+        <strong>Low competition, high margins</strong>
+        Most of these are under-saturated in the vast majority of cities. First-mover advantage is still very real.
+      </div>
+      <div class="thread-item">
+        <div class="t-icon">📈</div>
+        <strong>Beginner-friendly & scalable</strong>
+        Start with 1 machine to validate. Reinvest profits to add more. The freeze-dry 14-year-old and Nerdy Nuts both prove the model scales fast.
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Generated by <strong>Dot DiBot</strong> · 14 Aug 2026</span>
+    <a href="https://youtu.be/ZdgMNnDcmvQ" target="_blank">▶ Watch on YouTube</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+</body>
+</html>
