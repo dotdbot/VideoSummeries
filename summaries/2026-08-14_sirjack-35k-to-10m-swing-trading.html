@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sir Jack – $35K to $10M: Swing Trading, Sentiment & X Subscriptions</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --purple: #bc8cff; --orange: #f0883e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en  { background: #0d3320; color: var(--green); }
+    .badge-trading { background: #1a2744; color: var(--accent); }
+    .badge-pod { background: #2d1a5c; color: var(--purple); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 26px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+
+    /* Stat highlights */
+    .stat-banner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+    .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center; }
+    .stat-card .val { font-size: 26px; font-weight: 900; font-family: monospace; }
+    .stat-card .lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+    .s-green { color: var(--green); }
+    .s-accent { color: var(--accent); }
+    .s-yellow { color: var(--yellow); }
+    .s-purple { color: var(--purple); }
+    .s-orange { color: var(--orange); }
+    .s-red { color: var(--red); }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+
+    .rule { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .rule:last-child { border-bottom: none; }
+    .rule-icon { font-size: 20px; flex-shrink: 0; width: 32px; text-align: center; margin-top: 2px; }
+    .rule-body { font-size: 14px; line-height: 1.6; }
+    .rule-body strong { color: var(--text); display: block; margin-bottom: 2px; font-size: 15px; }
+
+    .trade-card { background: var(--surface2); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
+    .trade-card .tc-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .tc-ticker { font-family: monospace; font-weight: 900; font-size: 18px; }
+    .tc-result { font-family: monospace; font-weight: 700; font-size: 14px; padding: 2px 8px; border-radius: 4px; }
+    .tc-win  { background: #0d3320; color: var(--green); }
+    .tc-loss { background: #2d0a0a; color: var(--red); }
+    .tc-mixed { background: #2d2000; color: var(--yellow); }
+    .trade-card .tc-body { font-size: 14px; line-height: 1.6; color: var(--muted); }
+    .trade-card .tc-body strong { color: var(--text); }
+
+    .quote-block { border-left: 4px solid var(--accent); background: #0d1a30; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 12px 0; font-style: italic; font-size: 15px; color: #9ecfff; line-height: 1.7; }
+    .quote-block cite { display: block; font-style: normal; font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+    .warning-box { background: #2d1500; border: 1px solid var(--orange); border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 14px; color: var(--orange); line-height: 1.6; }
+    .warning-box strong { display: block; margin-bottom: 4px; font-size: 15px; }
+
+    .highlight-box { background: #0d2010; border: 1px solid var(--green); border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
+    .highlight-box .hb-title { font-size: 12px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+    .highlight-box .hb-body { font-size: 14px; line-height: 1.7; }
+
+    .vs-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 8px; }
+    .vs-card { background: var(--surface2); border-radius: 8px; padding: 14px; font-size: 13px; line-height: 1.6; }
+    .vs-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    .vs-card.gambling h3 { color: var(--red); }
+    .vs-card.trading h3  { color: var(--yellow); }
+    .vs-card.investing h3 { color: var(--green); }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media(max-width: 600px) { .stat-banner { grid-template-columns: 1fr 1fr; } .vs-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-trading">📈 Trading</span>
+      <span class="badge badge-pod">🎙️ Podcast</span>
+    </div>
+    <h1>Sir Jack – $35K → $10M: Swing Trading, Sentiment & the $1M/yr X Subscription Side Hustle</h1>
+    <div class="meta">
+      <span>📅 Aug 14, 2026</span>
+      <span>🎙️ Iced Coffee Hour</span>
+      <a href="https://youtu.be/PEi_UT4tHIA" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/PEi_UT4tHIA" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> Kevin ("Sir Jack") turned <strong>$35K → $10M in 21 months</strong> on Wall Street Bets during 2020–21 by going all-in on one stock at a time, trading sentiment over fundamentals. Now restarting with a new $35K challenge account (currently at $53K). Bonus: earns <strong>~$1M/year</strong> from X subscriptions at $200/month with ~600 subscribers — started accidentally by setting the price high so nobody would sign up.
+  </div>
+
+  <!-- STAT BANNER -->
+  <div class="stat-banner">
+    <div class="stat-card"><div class="val s-green">285×</div><div class="lbl">Return in 21 months</div></div>
+    <div class="stat-card"><div class="val s-accent">$10M</div><div class="lbl">Peak portfolio</div></div>
+    <div class="stat-card"><div class="val s-purple">~600</div><div class="lbl">X subscribers @ $200/mo</div></div>
+    <div class="stat-card"><div class="val s-yellow">~$1M</div><div class="lbl">Annual X revenue</div></div>
+  </div>
+
+  <!-- THE STRATEGY -->
+  <div class="card">
+    <h2>⚙️ Kevin's Swing Trading Rules</h2>
+
+    <div class="rule">
+      <div class="rule-icon">❌</div>
+      <div class="rule-body"><strong>No margin, no options, no crypto, no leverage</strong> Products that can go to zero overnight are off the table. Worst case in a legit stock = 20% drop on earnings. That's survivable. Zero overnight is not.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">🎯</div>
+      <div class="rule-body"><strong>Go all-in on ONE stock at a time</strong> "Concentration makes wealth. Diversification keeps it." (Warren Buffett). Full port = fully invested, fully tracking every move. Even $20 in a stock makes you obsessed with it.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">🚫</div>
+      <div class="rule-body"><strong>Never chase the hot stock</strong> By the time you hear about it, it's already run up. Support is gone. You're buying the top. Kevin never bought Tesla or Nvidia — great companies, but he doesn't chase.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">📊</div>
+      <div class="rule-body"><strong>Buy near support, look for catalysts</strong> Worst case: it bobs sideways. Best case: catalyst hits, it runs 20%+, you sell and repeat. "Buy the rumor, sell the news" — buy ahead of earnings/announcements, ride the runup.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">📣</div>
+      <div class="rule-body"><strong>Trade sentiment, not fundamentals</strong> Never run a DCF in his life. Reads X and Reddit all day to understand where sentiment is heading. "I'm a vibe trader." The market is sentiment — predict where sentiment goes, not earnings.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">📖</div>
+      <div class="rule-body"><strong>Look for a story + catalyst combo</strong> Needs both: (1) Good long-term company narrative — not a meme that pops tomorrow. (2) Short-term catalyst that could fire any day — deal announcement, partnership, earnings beat, sector tailwind.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">📈</div>
+      <div class="rule-body"><strong>Watch volume closely</strong> Increasing volume = more market participants entering = more room for growth. One of his key signals. A spike + volume = real move. A spike without volume = suspect.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">🛑</div>
+      <div class="rule-body"><strong>Mental stop-losses, not systematic</strong> If down 20–30% and the chart looks ugly, he exits. No hard stop-losses set in the system — pure discipline. Never sold a stock within 3 days of buying. Lets the thesis play out.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">📱</div>
+      <div class="rule-body"><strong>X (Twitter) is the new CNBC</strong> All-day presence on X. Real traders post trade receipts and logic with their name attached — more valuable than anonymous Reddit. His primary edge is reading real-time sentiment faster than others.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">😴</div>
+      <div class="rule-body"><strong>Don't force a trade</strong> If the thesis isn't strong enough, sit in cash. The RCAT mistake happened partly because he felt pressure to perform. "If you're trying to force it, just cool down."</div>
+    </div>
+  </div>
+
+  <!-- TRADES -->
+  <div class="card">
+    <h2>📋 Key Trades</h2>
+
+    <div class="trade-card">
+      <div class="tc-header">
+        <div class="tc-ticker">APT / RKT</div>
+        <span class="tc-result tc-mixed">+2× / then −$1M in 2 days</span>
+      </div>
+      <div class="tc-body">First trade was <strong>APT</strong> — 2× in one month. The wild one was <strong>Rocket Mortgage (RKT)</strong> — made $1M on a short-squeeze wave, then lost $1M back-to-back the next day. 100% of his net worth at the time. "Like, how does that happen?"</div>
+    </div>
+
+    <div class="trade-card">
+      <div class="tc-header">
+        <div class="tc-ticker">GME – GameStop</div>
+        <span class="tc-result tc-win">One of earliest whales</span>
+      </div>
+      <div class="tc-body">Put in <strong>$1.3 million</strong> as one of the earliest large players. Rode the meme stock wave during the January 2021 squeeze.</div>
+    </div>
+
+    <div class="trade-card">
+      <div class="tc-header">
+        <div class="tc-ticker">BGFV – Big Five Sporting Goods</div>
+        <span class="tc-result tc-win">~+$1.7M</span>
+      </div>
+      <div class="tc-body">His biggest single-trade win. <strong>Tip from a respected Wall Street Bets commenter</strong> — special dividend + good earnings. Put in ~$6M, owned ~1.5% of the float. Volume spiked 20% before he entered. Bought the first bounce. Rode the next wave. Made $1.7M.</div>
+    </div>
+
+    <div class="trade-card">
+      <div class="tc-header">
+        <div class="tc-ticker">RCAT + ARAX (2× leveraged RCAT)</div>
+        <span class="tc-result tc-loss">Round-tripped back to $35K</span>
+      </div>
+      <div class="tc-body">Believed in drone investment thesis (Pentagon $1B approval, Ukraine war). Stock never responded. Doubled down with the 2× leveraged ETF ARAX — broke his own no-leverage rule. Bounce never came. Round-tripped the whole challenge account from $100K back to $35K. Lesson: don't force a trade, don't break rules under pressure.</div>
+    </div>
+
+    <div class="trade-card">
+      <div class="tc-header">
+        <div class="tc-ticker">SHAZ – Shaz AI (current all-in)</div>
+        <span class="tc-result tc-mixed">53K · +23% last week · −8% last month</span>
+      </div>
+      <div class="tc-body">Australian neocloud / AI infrastructure company. Thesis: data centers are critical, potential Anthropic or Nvidia deal could hit any day. At time of recording: all-in, $53K, up 23% in the past week.</div>
+    </div>
+  </div>
+
+  <!-- THREE TYPES OF MONEY USE -->
+  <div class="card">
+    <h2>💡 Gambling vs Trading vs Investing</h2>
+    <div class="vs-grid">
+      <div class="vs-card gambling">
+        <h3>🎲 Gambling — Never Touch</h3>
+        Zero-DTE options, meme coins, leverage products, prediction markets, sports betting. Can go to zero overnight. Kevin has never made a sports bet. Even if it's fine at $20, it's disqualifying at serious money.
+      </div>
+      <div class="vs-card trading">
+        <h3>📈 Trading — His Method</h3>
+        All-in one stock, no margin/options/crypto. Near support, with a catalyst. Exit at 20%+. Repeat. Requires full attention, all-day X monitoring, strong thesis. Not for everyone.
+      </div>
+      <div class="vs-card investing">
+        <h3>🏦 Investing — His 401k</h3>
+        $5M in SPY + $5M in QQQ + ~$1M in DRAM (membership companies ETF). Index funds. "Concentration makes wealth. Diversification keeps it." — once you've made it, you diversify.
+      </div>
+    </div>
+
+    <div class="quote-block" style="margin-top:16px;">
+      "If you are at that stage in your life where you're looking to maximize gains and you're willing to put in the energy and effort — concentration and swing trading is worth it. But you have to have a stable job first."
+      <cite>— Kevin (Sir Jack)</cite>
+    </div>
+  </div>
+
+  <!-- X MONEY -->
+  <div class="card">
+    <h2>💜 The Accidental X Subscription Empire</h2>
+
+    <div class="highlight-box">
+      <div class="hb-title">💰 How He Makes ~$1M/Year on X</div>
+      <div class="hb-body">
+        Set subscriptions to <strong>$200/month</strong> intentionally to scare people off — he didn't want to create subscriber-only content. One person subscribed. Then two. Then 20. Then 100. Then ~<strong>600 active subscribers</strong>. He never added any exclusive content — people just wanted to support and get his raw long-form thinking.
+        <br><br>
+        <strong>Revenue:</strong> 600 × $200 = $120K/month gross → ~$80K/month after Apple/Stripe fees → ~<strong>$1M/year</strong>.
+        <br><br>
+        Also earns ~<strong>$1,000/week</strong> from X Revshare (ad revenue on his posts).
+        <br><br>
+        Started only <strong>2 months ago.</strong>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <strong>⚠️ The Transparency Controversy (raised by the host)</strong>
+      Kevin ran challenge from $35K → $100K → back to $35K (due to RCAT/ARAX loss) → back to $50K. When he tweeted "35K → 52K in 2 weeks," it was technically true — but failed to mention he'd already been at $100K and round-tripped back. He acknowledged this, called it "marketing" (like Apple saying each iPhone is "the best ever"). He now adds asterisks clarifying it's the challenge account.
+    </div>
+
+    <div class="quote-block">
+      "Transparency is everything. I post my buys and sells. People know exactly what I'm talking about. I only post trades after market close. I never sell within 3 days. I give heads-up before I might exit."
+      <cite>— Kevin, on his content guardrails</cite>
+    </div>
+  </div>
+
+  <!-- WHO THIS IS FOR -->
+  <div class="card">
+    <h2>🎯 Who This Strategy Is (and Isn't) For</h2>
+
+    <div class="rule">
+      <div class="rule-icon">✅</div>
+      <div class="rule-body"><strong>For: Young person with a stable job</strong> Having a job is critical — it removes existential pressure from your trades. Kevin was making $300K/year at Google. He could afford to YOLO his 401K money he couldn't touch anyway.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">✅</div>
+      <div class="rule-body"><strong>For: Someone with the time to be all-day on X</strong> This requires obsessive monitoring. If you can't read sentiment all day, this doesn't work.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">❌</div>
+      <div class="rule-body"><strong>Not for: People who can't handle any loss</strong> "I know people with millions in cash for 5 years. At least put it in SPY." You need psychological tolerance for volatility.</div>
+    </div>
+    <div class="rule">
+      <div class="rule-icon">❌</div>
+      <div class="rule-body"><strong>Not for: Most people listening to this</strong> Host's honest take: "I don't think the average person listening right now is going to be able to do the right amount of due diligence." Chris Camilo's critique: "Better than an average investor, but largely fueled by a bull market, not a meaningfully differentiated strategy."</div>
+    </div>
+
+    <div class="quote-block" style="margin-top: 16px;">
+      "Concentration makes wealth. Diversification keeps it."
+      <cite>— Warren Buffett (quoted by Kevin as his core framework)</cite>
+    </div>
+    <div class="quote-block">
+      "Best investor alive right now? Clear answer — Leopold Aschenbrenner. Ex-OpenAI, wrote his AI infrastructure thesis, invested in picks and shovels. Up to $20B AUM in 2 years. Equal to what Bill Ackman built in 20 years."
+      <cite>— Kevin</cite>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div style="background:var(--surface2); border-radius:8px; padding:14px 18px; font-size:13px; color:var(--muted); margin-bottom:20px;">
+    ⚠️ <strong style="color:var(--text);">Not financial advice.</strong> Kevin is an individual trader sharing his personal journey and current positions. His 2020–21 results were partly luck + bull market timing. Past performance does not predict future results. Do your own research.
+  </div>
+
+  <footer>
+    <span>Generated by <strong>Dot DiBot</strong> · 14 Aug 2026</span>
+    <a href="https://youtu.be/PEi_UT4tHIA" target="_blank">▶ Watch on YouTube</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
