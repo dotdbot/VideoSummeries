@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Be a 1-Person AI Agency in 2026 ($100K/mo+)</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #1a3a1a; color: var(--green); }
+    .badge-ai { background: #2d1a5c; color: #c0a0ff; }
+    .badge-biz { background: #1a2744; color: var(--accent); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 16px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .gen-row { display: flex; gap: 14px; margin-bottom: 14px; }
+    .gen-box { flex: 1; background: var(--surface2); border-radius: 10px; padding: 16px; }
+    .gen-box.bad { border-left: 4px solid var(--red); }
+    .gen-box.mid { border-left: 4px solid var(--yellow); }
+    .gen-box.good { border-left: 4px solid var(--green); }
+    .gen-title { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+    .gen-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .offer-item { background: var(--surface2); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; border-left: 4px solid var(--accent); }
+    .offer-item.secondary { border-left-color: var(--green); }
+    .offer-item.tertiary { border-left-color: var(--muted); }
+    .offer-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 4px; }
+    .offer-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+    .offer-price { font-family: monospace; color: var(--green); font-size: 15px; }
+    .offer-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .math-box { background: #0d3320; border: 1px solid var(--green); border-radius: 10px; padding: 20px 24px; margin-top: 12px; }
+    .math-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .math-row:last-child { border-bottom: none; font-weight: 700; color: var(--green); font-size: 16px; }
+    .math-row.expense { color: var(--red); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th { background: var(--surface2); color: var(--muted); text-align: left; padding: 10px 14px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--surface2); }
+    ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+    ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+    .quote-block { background: var(--surface2); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .tag-green { background: #0d3320; color: var(--green); }
+    .tag-yellow { background: #2d2000; color: var(--yellow); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) { .gen-row { flex-direction: column; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-ai">🤖 AI Agency</span>
+      <span class="badge badge-biz">💼 Business</span>
+    </div>
+    <h1>How to Be a 1-Person AI Agency in 2026 ($100K/mo+)</h1>
+    <div class="meta">
+      <span>📅 August 15, 2026</span>
+      <span>⏱️ ~25 min</span>
+      <span>🎙️ Brian Moncada — adspend.com</span>
+      <a href="https://youtu.be/qlDy4pyEai8" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+      <a href="transcripts/1-person-ai-agency-100k-month.txt" target="_blank" style="color:var(--muted)">📄 Full Transcript</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/qlDy4pyEai8" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> Brian Moncada (adspend.com, $8M+ revenue, ex-16 employees, $113K/mo payroll) breaks down the complete blueprint for a <strong>1-person AI agency doing $100K/month</strong> — with just you + one AI agent employee + one video editor. The model: a 3-tier offer suite, 2 marketing channels (posting + pitching), AI-powered qualification + fulfillment, and <strong>72% profit margins</strong>.
+  </div>
+
+  <!-- 3 GENERATIONS -->
+  <div class="card">
+    <h2>🏭 The 3 Generations of Agency Models</h2>
+    <div class="gen-row">
+      <div class="gen-box bad">
+        <div class="gen-title">Gen 1 — Traditional Agency ❌</div>
+        <div class="gen-desc">Grow by hiring. More clients = more people = more overhead. $150–200K revenue but only 20–30% take-home after payroll. You're the manager of people, not a business owner.</div>
+      </div>
+      <div class="gen-box mid">
+        <div class="gen-title">Gen 2 — AI-Assisted Agency ⚠️</div>
+        <div class="gen-desc">Using ChatGPT/Claude for copy. Cut 1–2 VAs. Margins slightly better. But still 6–8 people, same management headaches, AI bolted onto old model.</div>
+      </div>
+      <div class="gen-box good">
+        <div class="gen-title">Gen 3 — AI-Powered Agency ✅</div>
+        <div class="gen-desc">AI is the operating system. 1–2 people + AI agent employee. Revenue may be lower than Gen 1 peak, but <strong>60–80% profit margins</strong>. Take-home 2–3x higher than before.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER SUITE -->
+  <div class="card">
+    <h2>🎯 The 3-Tier Offer Suite</h2>
+
+    <div class="offer-item">
+      <div class="offer-label">Offer #1 — Back-End Premium</div>
+      <div class="offer-title">Done-For-You Retainer <span class="offer-price">$5K–$15K/month + % of profit</span></div>
+      <div class="offer-desc">Your flagship ongoing service. Minimum floor: $5K/month immediately. Goal: $7.5K–$15K as you build proof. For whale clients you can scale to $1M/month in ad spend, negotiate 20% of profit on top — Brian got $40K and $33K in single wire transfers this way. Only 3–5 clients needed at $10K/month.</div>
+    </div>
+
+    <div class="offer-item secondary">
+      <div class="offer-label">Offer #2 — The Acquisition Engine</div>
+      <div class="offer-title">Hybrid (Done-For-You Install + Done-With-You Coaching) <span class="offer-price">$10K–$20K one-time</span></div>
+      <div class="offer-desc">
+        Month 1: fully done-for-you (scripts, funnel, campaigns, tracking). Months 2–4: shift to done-with-you coaching — teach them to run it themselves. Split across 3–4 months of payments.<br><br>
+        <strong>Why it works:</strong> Captures the 80% of leads who can't afford your retainer yet. ~30% of hybrid clients naturally ascend to full retainer once they see results. Brian sold <strong>275+ clients at $15K each</strong> using a single one-page Google Doc.
+      </div>
+    </div>
+
+    <div class="offer-item tertiary">
+      <div class="offer-label">Offer #3 — After $100K/month only</div>
+      <div class="offer-title">Course / Community <span class="offer-price">~$2K one-time</span></div>
+      <div class="offer-desc">For clients who aren't ready for hybrid or retainer (offer not proven, wrong mindset). Gets them to $30K/month without requiring your direct time. Don't build this until you're already at $100K/month.</div>
+    </div>
+
+    <!-- MATH -->
+    <div class="math-box">
+      <div style="font-weight:700; margin-bottom:12px; font-size:15px;">📊 The $100K/Month Math</div>
+      <div class="math-row"><span>3 retainer clients × $10K/mo</span><span style="color:var(--green)">$30,000</span></div>
+      <div class="math-row"><span>5 hybrid clients × $15K (one-time)</span><span style="color:var(--green)">$75,000</span></div>
+      <div class="math-row"><span>Affiliate commissions (GoHighLevel, Victor, etc.)</span><span style="color:var(--green)">$5,000</span></div>
+      <div class="math-row" style="border-top: 1px solid var(--border); margin-top:4px; padding-top:8px;"><span>Total Revenue</span><span>$110,000</span></div>
+      <div class="math-row expense"><span>Tools (GoHighLevel, Victor, Loom, Slack)</span><span>-$2,000</span></div>
+      <div class="math-row expense"><span>Payroll (your salary $10K + video editor $2K + buffer $3K)</span><span>-$15,000</span></div>
+      <div class="math-row expense"><span>Ads</span><span>-$5,000</span></div>
+      <div class="math-row expense"><span>Masterminds / Travel / Events</span><span>-$5,000</span></div>
+      <div class="math-row"><span>🏦 Net Profit (72% margin)</span><span>$80,000/mo</span></div>
+    </div>
+  </div>
+
+  <!-- MARKETING: 4 P's -->
+  <div class="card">
+    <h2>📣 Marketing — The 4 P's (Use Only 2)</h2>
+    <table>
+      <thead><tr><th>P</th><th>What</th><th>Use Now?</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Posting</strong></td><td>YouTube, Instagram — consistent content showing what you do and how. Builds trust before anyone calls. By call time, they've watched multiple videos and already believe in you.</td><td><span class="tag tag-green">✅ Yes</span></td></tr>
+        <tr><td><strong>Pitching</strong></td><td>AI agent runs outbound: research + build prospect list + multi-channel blitz (IG DM + LinkedIn + email) + follow-up sequences. All automated except recording Loom + closing call.</td><td><span class="tag tag-green">✅ Yes</span></td></tr>
+        <tr><td><strong>Partnering</strong></td><td>JVs, referrals, affiliates from complementary agencies.</td><td><span class="tag tag-yellow">Later</span></td></tr>
+        <tr><td><strong>Paying (Ads)</strong></td><td>Only amplifies what's already working. Running ads before offer/messaging converts = lose money faster.</td><td><span class="tag tag-yellow">Later</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote-block">"Ads only amplify what's already working. If your offer isn't converting through content or outreach, throwing money at ads means you lose money faster."</div>
+  </div>
+
+  <!-- AI AGENT (VICTOR) -->
+  <div class="card">
+    <h2>🤖 What the AI Agent Employee Does (Victor)</h2>
+    <ul class="bullets">
+      <li><strong>Outreach:</strong> builds prospect list (100 leads), researches each company, runs multi-channel blitz — IG DM + LinkedIn + email — same day, then auto-follows up at day 4, 8, and 14.</li>
+      <li><strong>Qualification:</strong> DM bot on Instagram — sends VSL, qualifies with 3 questions (business type, revenue, mindset). Non-qualifiers never see the calendar.</li>
+      <li><strong>Pre-call research:</strong> pulls full brief on every prospect before the sales call — company, setup, why they're a fit.</li>
+      <li><strong>Financial reporting:</strong> every morning pulls Stripe payments, calendar events, new applications → updates spreadsheet → sends Slack summary with cash position.</li>
+      <li><strong>Failed payment recovery:</strong> detects failed Stripe charges → sends personalized email + Slack to client with fix link. Resolves within hours vs. weeks previously.</li>
+      <li><strong>Onboarding:</strong> pulls application data → posts Slack thread → one-tap approve/reject → fires full onboarding sequence (agreements, GoHighLevel tags, workflows).</li>
+      <li><strong>Knowledge base:</strong> built 74-article KB from 6+ years of training content so mastermind clients get instant answers without messaging Brian.</li>
+      <li><strong>Audit generation:</strong> pulls prospect's YouTube keyword data → creates audit PDFs for sales calls.</li>
+    </ul>
+    <div class="quote-block">"That used to require a bookkeeper, an ops manager, and a client success rep. Now it's one AI agent integrated into tools I already use. No coding required."</div>
+  </div>
+
+  <!-- SALES & QUALIFICATION -->
+  <div class="card">
+    <h2>📞 Sales — Qualify Hard, Close Easy</h2>
+    <ul class="bullets">
+      <li><strong>Application funnel with VSL</strong> — prospects see offer → apply → answer qualifying questions → only qualified leads see the calendar.</li>
+      <li><strong>3 qualifying questions via Instagram DM:</strong> (1) What business do you run? (2) Current monthly revenue? (3) How do you take responsibility for results? — anyone under $20K/mo or needing a guarantee gets filtered out.</li>
+      <li><strong>Lead with DFY retainer</strong> — 80% won't qualify → down-sell to hybrid. Same pitch, just "we install and teach you to run it."</li>
+      <li><strong>Ascend hybrids to retainer</strong> — ~30% of hybrid clients naturally want to hand the keys back once results are in.</li>
+      <li><strong>Never say "coaching" or "consulting"</strong> — say "we help you learn to run it yourself so you're not dependent on us forever."</li>
+    </ul>
+  </div>
+
+  <!-- FULFILLMENT -->
+  <div class="card">
+    <h2>⚙️ Fulfillment — The Conveyor Belt System</h2>
+    <ul class="bullets">
+      <li><strong>3S Formula:</strong> Specific person + Specific problem + Specific solution. Never custom. Always the same conveyor belt.</li>
+      <li><strong>16-week client journey map</strong> — week-by-week, clearly labeled what's DFY and what's DWY. Used to close 275+ clients at $15K each with a single Google Doc.</li>
+      <li><strong>No reinventing the wheel</strong> — same process, same deliverables, same timeline for every client. AI agent handles 80% of operations underneath.</li>
+    </ul>
+    <div class="quote-block">"Solo agency owners burn out not because the work is hard, but because every client feels custom. There's no system catching the repetitive parts."</div>
+  </div>
+
+  <!-- KEY TAKEAWAYS -->
+  <div class="card">
+    <h2>💡 Key Takeaways</h2>
+    <ul class="bullets">
+      <li>You need a 3-tier offer suite — retainer ($5K–$15K/mo), hybrid ($10–20K one-time), and course (later).</li>
+      <li>Your hybrid offer is the acquisition engine that feeds your retainer — it's the volume play.</li>
+      <li>Minimum floor for retainers: $5K/month immediately. Most people undercharge by 2–5x.</li>
+      <li>Marketing = posting (YouTube) + pitching (AI agent outreach). That's it. Ads come after.</li>
+      <li>AI agent replaces: SDR, setter, bookkeeper, ops manager, CSM, onboarding team.</li>
+      <li>Qualify before every call — non-qualified leads are the most expensive thing in your business (your time).</li>
+      <li>72% profit margins are achievable with Gen 3 model. Brian went from 20–30% to 70%+.</li>
+      <li>You still film the content, take the strategy calls, and close the deals — AI handles everything mechanical.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Generated by Dot DiBot · August 15, 2026</span>
+    <span style="display:flex; gap:16px;">
+      <a href="https://youtu.be/qlDy4pyEai8" target="_blank">▶ YouTube</a>
+      <a href="transcripts/1-person-ai-agency-100k-month.txt" target="_blank">📄 Full Transcript</a>
+    </span>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
