@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Built a $10M Run Rate AI Startup in 150 Days — Pulsia</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #1a3a1a; color: var(--green); }
+    .badge-ai { background: #2d1a5c; color: #c0a0ff; }
+    .badge-biz { background: #1a2744; color: var(--accent); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 16px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .stat-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 20px; }
+    .stat-box { background: var(--surface2); border-radius: 10px; padding: 16px 20px; flex: 1; min-width: 140px; text-align: center; }
+    .stat-box .val { font-size: 26px; font-weight: 900; color: var(--green); font-family: monospace; }
+    .stat-box .lbl { font-size: 12px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .timeline-item { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-dot { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; margin-top: 2px; color: #0d1117; }
+    .timeline-content { flex: 1; }
+    .timeline-title { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+    .timeline-desc { font-size: 14px; color: var(--muted); }
+    ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+    ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+    .quote-block { background: var(--surface2); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 15px; }
+    .quote-block cite { display: block; margin-top: 6px; font-style: normal; font-size: 12px; color: var(--muted); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-ai">🤖 AI Agents</span>
+      <span class="badge badge-biz">🚀 Startup</span>
+    </div>
+    <h1>I Built a $10M Run Rate AI Startup in 150 Days</h1>
+    <div class="meta">
+      <span>📅 August 15, 2026</span>
+      <span>⏱️ 18 min</span>
+      <span>🎙️ Pulsia Founder (French, solo)</span>
+      <a href="https://youtu.be/VMyHC7qUrhI" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+      <a href="transcripts/pulsia-10m-run-rate-150-days.txt" target="_blank" style="color:var(--muted)">📄 Full Transcript</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/VMyHC7qUrhI" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> A French solo founder built <strong>Pulsia</strong> — an AI agent that autonomously builds SaaS companies — alone in his Paris apartment. In <strong>150 days</strong> he reached <strong>$10M ARR</strong>, raised <strong>$30M</strong> at a <strong>$250M valuation</strong>, moved to San Francisco, and is now targeting <strong>$50M ARR</strong> by making Pulsia free. The pitch: <em>"Click a button, get a company."</em>
+  </div>
+
+  <!-- STATS -->
+  <div class="stat-row">
+    <div class="stat-box"><div class="val">150</div><div class="lbl">Days to $10M ARR</div></div>
+    <div class="stat-box"><div class="val">$10M</div><div class="lbl">Current ARR</div></div>
+    <div class="stat-box"><div class="val">$30M</div><div class="lbl">Raised</div></div>
+    <div class="stat-box"><div class="val">$250M</div><div class="lbl">Valuation</div></div>
+    <div class="stat-box"><div class="val">5,000+</div><div class="lbl">Paying Customers</div></div>
+    <div class="stat-box"><div class="val">$50M</div><div class="lbl">Next Milestone</div></div>
+  </div>
+
+  <!-- WHAT IS PULSIA -->
+  <div class="card">
+    <h2>🤖 What is Pulsia?</h2>
+    <ul class="bullets">
+      <li><strong>An AI agent that builds companies autonomously</strong> — you describe a SaaS idea, it researches, builds, and launches it for you.</li>
+      <li><strong>"Click a button, get a company"</strong> — the founder's core thesis: AGI is here, so why not delegate company creation to it?</li>
+      <li>Best suited for <strong>SaaS companies</strong>, though the founder intentionally doesn't restrict what users can imagine.</li>
+      <li>Built on top of <strong>Saipyam's agent infrastructure</strong> — a platform for running autonomous AI agents at scale.</li>
+      <li>Competitors mentioned: Revel, Lava Vault — but founder sees the market as a movement, not a winner-takes-all race.</li>
+    </ul>
+    <div class="quote-block">"I truly believe that AGI is here. Click a button, get a company. That's it."</div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="card">
+    <h2>📅 The 150-Day Journey</h2>
+
+    <div class="timeline-item">
+      <div class="timeline-dot">1</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Gift Shop — the painful co-founder experience</div>
+        <div class="timeline-desc">Built with Mathieu (ex-co-founder), connected through Travis Kalanick's network. Clashing visions, no central decision-making, everything compromised. Left miserable — but the relationship planted the seed for Pulsia.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot">2</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Paris — building alone, reaching $100K ARR</div>
+        <div class="timeline-desc">Built the first version solo in his Paris apartment. Set a rule: no haircut until $100K revenue. Launched mid-December, saw immediate love. Realized Paris's beauty was also its trap — slowing him down.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot">3</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Move to San Francisco</div>
+        <div class="timeline-desc">Moved at ~$100K ARR. Met Ilan from Saipyam at a dinner — mutual interest in agent infrastructure. Started co-working at Saipyam's office. The SF innovation machine kicked in: warm intros, the right energy, the right investors.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot">4</div>
+      <div class="timeline-content">
+        <div class="timeline-title">$5M–$10M — marketing & the launch video</div>
+        <div class="timeline-desc">Hired Jedi (growth/marketing contractor). Partnered with Better Half agency for the viral launch video. Brought back ex-colleague Ben (from Gift Shop) for brand/creative. The launch video broke through — drove to $10M run rate.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot">5</div>
+      <div class="timeline-content">
+        <div class="timeline-title">$30M raised, $250M valuation, Sausalito</div>
+        <div class="timeline-desc">Raised $30M as a one-person show. Moved to Sausalito for peace of mind (reminds him of Normandy). Still essentially solo on product, with contractors and agency support. 5,000+ paying customers.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot">6</div>
+      <div class="timeline-content">
+        <div class="timeline-title">Next: $50M ARR by making Pulsia free</div>
+        <div class="timeline-desc">Plans to launch a free tier to massively expand the user base, then monetize at scale. Also planning a marketing stunt: have Pulsia autonomously run his inbox and his fundraising process — announce via a viral tweet.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROWTH STRATEGY -->
+  <div class="card">
+    <h2>📈 Growth Strategy</h2>
+    <ul class="bullets">
+      <li><strong>Founder-led marketing</strong> — podcasts, Twitter posts, organic word of mouth. Goal: 5 podcasts/month.</li>
+      <li><strong>Marketing stunt</strong> — let Pulsia run its own fundraising inbox autonomously, then tweet about it.</li>
+      <li><strong>In-person customer interviews</strong> — meeting paying SF customers face-to-face to 10x product learnings.</li>
+      <li><strong>Free tier incoming</strong> — the path to $50M ARR: remove the paywall, grow the base, monetize later.</li>
+      <li><strong>13 marketing channels</strong> — tracking daily visitors per channel, pruning what doesn't work.</li>
+    </ul>
+  </div>
+
+  <!-- PHILOSOPHY -->
+  <div class="card">
+    <h2>🧠 Founder Philosophy</h2>
+    <ul class="bullets">
+      <li><strong>Solo over co-founder</strong> — tried it once, won't repeat. Two visions = no decisions. One central authority = speed.</li>
+      <li><strong>AI as the team</strong> — raised $30M as a one-person show. "Me alone with AI 24/7" was the entire early team.</li>
+      <li><strong>Environment matters</strong> — Paris for the soul, SF for the build. Now Sausalito for mental peace amid the intensity.</li>
+      <li><strong>Speed vs. craft</strong> — learned from Gift Shop that both matter. Pulsia tries to honor both: fast iteration + strong brand.</li>
+      <li><strong>Reconnect with old collaborators</strong> — brought Mathieu's creative energy back (as a contractor/partner, not co-founder).</li>
+    </ul>
+    <div class="quote-block">"I wanted to build something that came from my heart and from a very genuine place — which became Pulsia."<cite>— The founder on leaving Gift Shop</cite></div>
+  </div>
+
+  <!-- KEY TAKEAWAYS -->
+  <div class="card">
+    <h2>💡 Key Takeaways</h2>
+    <ul class="bullets">
+      <li>$10M ARR in 150 days is possible as a solo founder with AI as your entire team.</li>
+      <li>The launch video was the biggest growth lever — invest in one great piece of content.</li>
+      <li>Meet customers in person as early as possible — 10x the learning speed.</li>
+      <li>The co-founder tension is real: two visions with no tiebreaker = paralysis.</li>
+      <li>Free tier is the unlock for mass scale — charge later once the habit is formed.</li>
+      <li>SF's "innovation machine" is real — the network effects of warm intros compound fast.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Generated by Dot DiBot · August 15, 2026</span>
+    <span style="display:flex; gap:16px;">
+      <a href="https://youtu.be/VMyHC7qUrhI" target="_blank">▶ YouTube</a>
+      <a href="transcripts/pulsia-10m-run-rate-150-days.txt" target="_blank">📄 Full Transcript</a>
+    </span>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
