@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Used Higgsfield AI + Claude Fable 5 to Build a $39,500/Month Faceless Channel</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #1a3a1a; color: var(--green); }
+    .badge-ai { background: #2d1a5c; color: #c0a0ff; }
+    .badge-yt { background: #3d0d0d; color: var(--red); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 16px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .step-item { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-left: 4px solid var(--accent); }
+    .step-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 4px; }
+    .step-title { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+    .step-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+    .step-desc strong { color: var(--text); }
+    .tool-row { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .tool-row:last-child { border-bottom: none; }
+    .tool-name { font-weight: 700; font-size: 14px; min-width: 150px; color: var(--accent); }
+    .tool-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .prompt-box { background: #0d1a0d; border: 1px solid var(--green); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-family: monospace; font-size: 13px; color: var(--green); }
+    .quote-block { background: var(--surface2); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+    ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+    ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+    .rpm-row { display: flex; gap: 16px; margin-bottom: 12px; }
+    .rpm-box { flex: 1; background: var(--surface2); border-radius: 8px; padding: 14px 16px; text-align: center; }
+    .rpm-box .niche { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+    .rpm-box .rpm-val { font-size: 12px; color: var(--muted); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 600px) { .rpm-row { flex-direction: column; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-ai">🤖 AI Content</span>
+      <span class="badge badge-yt">▶ YouTube</span>
+    </div>
+    <h1>Higgsfield AI + Claude Fable 5 → $39,500/Month Faceless YouTube Channel</h1>
+    <div class="meta">
+      <span>📅 August 15, 2026</span>
+      <span>⏱️ ~12 min</span>
+      <span>🎙️ Adio — AI Content Creator</span>
+      <a href="https://youtu.be/wU_bmWb6bhg" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+      <a href="transcripts/higgsfield-claude-faceless-youtube-39k.txt" target="_blank" style="color:var(--muted)">📄 Full Transcript</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/wU_bmWb6bhg" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> Adio recreates a faceless YouTube channel making <strong>$39,500/month</strong> (Bright Side channel) using just two tools: <strong>Claude Fable 5 (Claude 3 Opus 5)</strong> + <strong>Higgsfield MCP</strong>. Two prompts. Two sentences. 10 minutes. Full 5-minute documentary video including script, voiceover, cinematic visuals, music, editing, thumbnail options, title, tags, and description — all AI-generated. No face. No team. No manual work.
+  </div>
+
+  <!-- THE REFERENCE CHANNEL -->
+  <div class="card">
+    <h2>📺 The Reference Channel — Bright Side</h2>
+    <ul class="bullets">
+      <li><strong>Monthly revenue:</strong> $39,500/month (verified by VidIQ data)</li>
+      <li><strong>Format:</strong> Educational explainer documentaries — cinematic visuals, strong storytelling, easy-to-follow structure</li>
+      <li><strong>Why it works:</strong> Educational content is completely evergreen. It appeals to everyone and has high audience retention, which drives monetization. The algorithm pushes good content to non-subscribers regardless of channel size.</li>
+      <li><strong>The strategy:</strong> Borrow the format, not the videos. That's the difference between "inspired by" and a copyright strike. You study the hooks, video structure, and pacing — then create original content in the same style.</li>
+      <li><strong>Key insight from the creator:</strong> Views no longer depend on subscriber count. If your content is good enough, the algorithm pushes it to non-subscribers. A new channel can reach millions of views in weeks with the right content.</li>
+    </ul>
+  </div>
+
+  <!-- NICHE SELECTION -->
+  <div class="card">
+    <h2>💰 Niche Selection — Choose High RPM</h2>
+    <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">RPM = Revenue Per Mille (how much YouTube pays per 1,000 views). Pick a niche where advertisers pay more. The three highest-RPM categories are:</p>
+    <div class="rpm-row">
+      <div class="rpm-box"><div class="niche">💼 Finance</div><div class="rpm-val">Highest RPM — $8–20+/1K views</div></div>
+      <div class="rpm-box"><div class="niche">💻 Tech</div><div class="rpm-val">Very high RPM — $6–15/1K views</div></div>
+      <div class="rpm-box"><div class="niche">🎓 Education</div><div class="rpm-val">High RPM + widest audience — chosen for this experiment</div></div>
+    </div>
+    <p style="font-size:14px; color:var(--muted); margin-top:12px;">Adio chose <strong>Education</strong> because it has massive audience retention (people watch to the end), appeals to all demographics, and is directly in Bright Side's lane. Retention is the single biggest driver toward YouTube monetization.</p>
+  </div>
+
+  <!-- SETUP -->
+  <div class="card">
+    <h2>⚙️ Step 1 — Setup: Connect Claude + Higgsfield MCP</h2>
+    <div class="step-desc" style="font-size:15px; margin-bottom:16px;">
+      The power system is: <strong>Claude Fable 5 (Claude 3 Opus 5)</strong> for thinking, research, and writing, connected to <strong>Higgsfield MCP</strong> for all media generation — video, images, voiceover, music. Together they run as one unified pipeline.
+    </div>
+    <div class="step-item">
+      <div class="step-num">Installation</div>
+      <div class="step-title">Connect Higgsfield MCP to Claude Code</div>
+      <div class="step-desc">
+        1. Go to browser → search "Higgsfield AI" → create account → go to <strong>MCP and CLI section</strong><br>
+        2. Copy the installation command shown there<br>
+        3. Open Claude → Settings → <strong>Connectors</strong><br>
+        4. Click "Add Custom Connector" → Name it "Higgsfield" → Paste the URL → Click Connect<br>
+        5. Switch to <strong>Claude Code</strong> — this is where all the work happens from now on<br><br>
+        Once connected, Claude Code can directly call Higgsfield's generation APIs for video, images, audio, and voice — all from a single chat interface.
+      </div>
+    </div>
+  </div>
+
+  <!-- WORKFLOW -->
+  <div class="card">
+    <h2>🎬 Step 2 — The 2-Prompt Workflow (10 Minutes, Full Video)</h2>
+
+    <div class="step-item">
+      <div class="step-num">Prompt 1 — Research + Script (30 seconds)</div>
+      <div class="step-title">Analyze a channel and write a ready script</div>
+      <div class="step-desc">
+        Type into Claude Code:
+      </div>
+      <div class="prompt-box">Analyze this channel, scenarios, hooks, and write me a script for a similar video. [paste channel URL]</div>
+      <div class="step-desc">
+        What Claude Fable 5 does automatically with this single prompt:<br>
+        - Scans the channel's most viral videos<br>
+        - Identifies the hooks (how each video opens to grab attention in the first 3 seconds)<br>
+        - Analyzes the video structure (pacing, information density, storytelling arc)<br>
+        - Finds common patterns across all top-performing videos<br>
+        - Chooses a topic itself based on what performs best<br>
+        - Writes a complete, structured script for a new original video in the same style<br><br>
+        The resulting script is optimized to grab viewer attention from the very first second — following the same engagement patterns that made Bright Side's most viral videos work.
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">Prompt 2 — Full Video Generation (10 minutes)</div>
+      <div class="step-title">Generate the complete video: visuals + voiceover + music + editing</div>
+      <div class="step-desc">
+        Type into Claude Code:
+      </div>
+      <div class="prompt-box">Make a 5-minute video like on the reference account using Cines 2.0, 1080p for the quality. It's going on a faceless YouTube channel.</div>
+      <div class="step-desc">
+        What happens automatically after this prompt:<br><br>
+        <strong>Claude Fable 5 handles:</strong> Breaking the script into individual clips, defining the exact duration of each clip, fact-checking all information, conducting additional research to fill any gaps, writing detailed visual prompts for each scene<br><br>
+        <strong>Higgsfield MCP handles:</strong> Generating all video clips using Cines 2.0 model at 1080p, creating the voiceover from the script, adding background music, matching all visuals to maintain a consistent cinematic style throughout the entire video, editing everything into a final cut<br><br>
+        <strong>Why this is revolutionary:</strong> For a 5-minute video, you need approximately 30+ different clips (visuals change every 5–10 seconds to maintain engagement). Manually, you would write 30 prompts, generate 30 clips, fix errors, redo failures, add voiceover, add music, sync everything — half a day of work. With this system: two sentences, 10 minutes.<br><br>
+        <strong>Output:</strong> A complete folder on your computer with: the finished video file, all raw clip assets, the voiceover audio file, the background music file.
+      </div>
+    </div>
+
+    <div class="step-item" style="border-left-color: var(--green);">
+      <div class="step-num">Demo Result — Pompeii Documentary</div>
+      <div class="step-title">What the AI actually produced</div>
+      <div class="step-desc">
+        The first generated video was a cinematic documentary about Pompeii, starting with:<br><br>
+        <em>"See that mountain? In a few hours, it will erase this entire city, and 2,000 years later, we'll still be digging up the people who didn't run. This is Pompeii, and today is your last day here. You're a baker's apprentice. It's dawn, August 24th, 79 AD..."</em><br><br>
+        The second generated video was about Venice — covering the 14,000 wooden poles under the Rialto Bridge and the city sinking 23cm over the 20th century.<br><br>
+        Both videos featured cinematic visuals, professional narration, consistent visual style, and accurate historical detail — all generated without a single manual correction.
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKAGING & UPLOAD -->
+  <div class="card">
+    <h2>📦 Step 3 — Package + Upload Everything</h2>
+
+    <div class="step-item">
+      <div class="step-num">YouTube Package Generation</div>
+      <div class="step-title">One more prompt for complete upload package</div>
+      <div class="step-desc">
+        After the video is generated, type:
+      </div>
+      <div class="prompt-box">Put together complete YouTube video package for me. Prepare the thumbnails, title, and everything else needed to upload it.</div>
+      <div class="step-desc">
+        Higgsfield MCP automatically generates:<br>
+        - <strong>3 different thumbnail options</strong> for A/B testing (YouTube picks the best-performing one automatically)<br>
+        - <strong>Multiple title variations</strong> optimized for click-through rate<br>
+        - <strong>Full video description</strong> with relevant keywords<br>
+        - <strong>Tags</strong> for discoverability<br>
+        All assets are saved to the project folder without even being asked — the system anticipates what's needed.
+      </div>
+    </div>
+
+    <div class="step-item" style="border-left-color: var(--yellow);">
+      <div class="step-num">Scale — Content Machine</div>
+      <div class="step-title">Generate multiple videos with one prompt</div>
+      <div class="step-desc">
+        Once the workflow is working, scale up:
+      </div>
+      <div class="prompt-box">Make me two more videos. Pick topics that would perform well on YouTube for the same channel.</div>
+      <div class="step-desc">
+        Because Claude Fable 5 does deep research for each topic individually, every video gets a completely unique script and visual style — not copy-paste templates. Three full documentary videos in the time it used to take to manually edit one. While the second batch generates, upload the first to YouTube.<br><br>
+        <strong>For Shorts growth:</strong> Ask MCP to analyze the most viral shorts in your niche, identify which mechanics perform best, then create original shorts based on those insights. Shorts dramatically accelerate the path to 1,000 subscribers.
+      </div>
+    </div>
+  </div>
+
+  <!-- MONETIZATION RULES -->
+  <div class="card">
+    <h2>✅ Monetization Rules — What YouTube Actually Cares About</h2>
+    <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">Contrary to popular belief, YouTube doesn't ban AI content — it bans <strong>lazy, low-quality, spammy</strong> AI content. Follow these rules and you're safe:</p>
+    <ul class="bullets">
+      <li><strong>Monetization threshold:</strong> 1,000 subscribers + 4,000 hours of watch time. With good content and Shorts, this is achievable fast.</li>
+      <li><strong>AI voice must fit context.</strong> The narration should sound appropriate for the topic — authoritative for history, engaging for science, etc. Don't use a random TTS voice that sounds robotic.</li>
+      <li><strong>Scripts must be original with real insights.</strong> Repackaging Wikipedia paragraphs won't work. Claude Fable 5's research-based scripts naturally produce original content with specific facts and storytelling angles.</li>
+      <li><strong>Visuals must be properly edited.</strong> Not just random stock clips slapped together — the visuals must match the narration, flow correctly, and maintain consistent style. Higgsfield's MCP handles this automatically.</li>
+      <li><strong>Provide real value.</strong> YouTube's core algorithm question: "Does a viewer who watches this feel like they learned something, were entertained, or had their time well spent?" Educational content naturally scores high on this.</li>
+      <li><strong>Revenue ceiling is AdSense alone.</strong> Beyond AdSense, a monetized channel also unlocks paid brand collaborations and sponsored videos — which can 3–5x the revenue from a well-performing channel.</li>
+    </ul>
+  </div>
+
+  <!-- TOOL STACK -->
+  <div class="card">
+    <h2>🛠️ Complete Tool Stack</h2>
+    <div class="tool-row">
+      <div class="tool-name">Claude Fable 5 (Claude 3 Opus 5)</div>
+      <div class="tool-desc">Anthropic's newest and most powerful model. Handles: channel analysis, topic selection, script writing, fact-checking, research, clip breakdown, and visual prompt generation. The "brain" of the system.</div>
+    </div>
+    <div class="tool-row">
+      <div class="tool-name">Higgsfield MCP</div>
+      <div class="tool-desc">The media generation engine connected to Claude via MCP (Model Context Protocol). Handles: video generation (Cines 2.0 model, 1080p), voiceover creation, music selection, visual editing, thumbnail generation, YouTube package creation. The "hands" of the system.</div>
+    </div>
+    <div class="tool-row">
+      <div class="tool-name">VidIQ</div>
+      <div class="tool-desc">Used for channel research and revenue estimation. Shows monthly earnings, views, and growth data for any YouTube channel.</div>
+    </div>
+    <div class="tool-row">
+      <div class="tool-name">YouTube Studio</div>
+      <div class="tool-desc">Upload, schedule, A/B test thumbnails. YouTube natively tests your 3 uploaded thumbnails and serves the one with the highest click-through rate.</div>
+    </div>
+  </div>
+
+  <!-- KEY TAKEAWAYS -->
+  <div class="card">
+    <h2>💡 Key Takeaways</h2>
+    <ul class="bullets">
+      <li><strong>Two prompts replace an entire production team.</strong> Channel analysis → script → visuals → voiceover → music → editing → thumbnail → title → description. All automated.</li>
+      <li><strong>The 5→10→30 clip problem is solved.</strong> A 5-minute video needs 30+ visual changes. Manually that's hours. With this system, it's included in the 10-minute generation.</li>
+      <li><strong>Evergreen educational content is the right format.</strong> Pompeii, Venice, history, science — these topics never go stale. They get consistent search traffic and recommendation algorithm pushes for years.</li>
+      <li><strong>High RPM + high retention = monetization fast.</strong> Educational content in finance, tech, or general education gets more advertiser money per view AND more of those views because people watch to the end.</li>
+      <li><strong>YouTube doesn't care about AI — it cares about quality.</strong> Channels using AI for lazy spam get demonetized. Channels using AI to produce genuinely valuable, well-researched, properly edited content get monetized just fine.</li>
+      <li><strong>Three thumbnails + A/B testing is built-in.</strong> Don't guess which thumbnail performs — let YouTube's algorithm test all three and serve the winner. Higgsfield generates all three automatically.</li>
+      <li><strong>Shorts accelerate the path to 1,000 subscribers.</strong> Ask MCP to analyze viral shorts mechanics → create original shorts → upload alongside long-form content. Dual format = faster growth.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Generated by Dot DiBot · August 15, 2026</span>
+    <span style="display:flex; gap:16px;">
+      <a href="https://youtu.be/wU_bmWb6bhg" target="_blank">▶ YouTube</a>
+      <a href="transcripts/higgsfield-claude-faceless-youtube-39k.txt" target="_blank">📄 Full Transcript</a>
+    </span>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
