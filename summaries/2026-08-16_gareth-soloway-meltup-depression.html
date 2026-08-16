@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>'Ends In A Great Depression': Where Stocks, Gold Go In Final Melt-Up | Gareth Soloway</title>
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+    --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+    --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+  .container { max-width: 860px; margin: 0 auto; padding: 24px 16px 60px; }
+  .back-link { display: inline-block; color: var(--muted); font-size: 13px; text-decoration: none; margin-bottom: 20px; }
+  .back-link:hover { color: var(--accent); }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge-en { background: #1a3a1a; color: var(--green); }
+  .badge-stocks { background: #1a3a1a; color: var(--green); }
+  .badge-macro { background: #2d0a0a; color: #ff8080; }
+  .badge-interview { background: #1a2744; color: #79c0ff; }
+  h1 { font-size: 24px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .meta a { color: var(--muted); text-decoration: none; }
+  .meta a:hover { color: var(--accent); }
+  .yt-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 24px; }
+  .yt-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  /* TL;DR — red theme for bearish macro */
+  .tl-dr { background: #1a0a0a; border: 1px solid var(--red); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 16px; line-height: 1.8; }
+  .tl-dr strong { color: var(--red); }
+  .tl-dr .green { color: var(--green); }
+  .section { margin-bottom: 28px; }
+  .section-title { font-size: 18px; font-weight: 800; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px; }
+  /* Timeline: short vs long term */
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 18px; }
+  .timeline-dot { width: 14px; height: 14px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+  .dot-green { background: var(--green); }
+  .dot-yellow { background: var(--yellow); }
+  .dot-red { background: var(--red); }
+  .timeline-content h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .timeline-content p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .timeline-content p strong { color: var(--text); }
+  /* Asset cards */
+  .asset-card { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-left: 4px solid var(--green); }
+  .asset-card.bearish { border-left-color: var(--red); }
+  .asset-card.neutral { border-left-color: var(--yellow); }
+  .asset-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+  .asset-name { font-size: 17px; font-weight: 900; color: var(--accent); }
+  .asset-sub { font-size: 13px; color: var(--muted); }
+  .tag { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-left: auto; }
+  .tag-bullish { background: #0d3320; color: var(--green); }
+  .tag-lt-bullish { background: #1a3a5c; color: var(--accent); }
+  .tag-cautious { background: #2d2000; color: var(--yellow); }
+  .tag-pass { background: #2d0a0a; color: var(--red); }
+  .asset-body { font-size: 14px; color: var(--muted); line-height: 1.75; }
+  .asset-body strong { color: var(--text); }
+  .asset-target { font-family: monospace; font-size: 18px; font-weight: 900; color: var(--green); display: block; margin: 8px 0; }
+  .asset-target.red { color: var(--red); }
+  /* Stat boxes */
+  .stat-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 20px; }
+  .stat-box { background: var(--surface2); border-radius: 10px; padding: 14px 18px; flex: 1; min-width: 130px; text-align: center; }
+  .stat-box .val { font-size: 22px; font-weight: 900; font-family: monospace; }
+  .stat-box .val.green { color: var(--green); }
+  .stat-box .val.red { color: var(--red); }
+  .stat-box .val.yellow { color: var(--yellow); }
+  .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  /* Alert */
+  .alert-box { background: #1a1500; border: 1px solid var(--yellow); border-radius: 10px; padding: 16px 20px; margin-bottom: 20px; font-size: 14px; line-height: 1.75; }
+  .alert-box strong { color: var(--yellow); }
+  .alert-box.red { background: #1a0505; border-color: var(--red); }
+  .alert-box.red strong { color: var(--red); }
+  /* Portfolio table */
+  .ptable { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .ptable th { text-align: left; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  .ptable td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .ptable tr:last-child td { border-bottom: none; }
+  .mono { font-family: monospace; font-weight: 700; color: var(--accent); }
+  /* Bullets */
+  ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+  ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+  ul.bullets li { line-height: 1.6; }
+  ul.bullets strong { color: var(--text); }
+  /* Quote */
+  .quote-block { background: var(--surface2); border-left: 3px solid var(--muted); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); line-height: 1.7; }
+  /* Footer */
+  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  @media (max-width: 600px) { h1 { font-size: 19px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back-link" href="../index.html">← Back to all summaries</a>
+
+  <div class="badges">
+    <span class="badge badge-en">🇺🇸 English</span>
+    <span class="badge badge-stocks">📈 Macro</span>
+    <span class="badge badge-macro">⚠️ Bearish LT</span>
+    <span class="badge badge-interview">🎙️ Interview</span>
+  </div>
+
+  <h1>'Ends In A Great Depression': Where Stocks, Gold Go In Final Melt-Up | Gareth Soloway</h1>
+
+  <div class="meta">
+    <span>📅 Aug 16, 2026</span>
+    <span>⏱️ ~30 min</span>
+    <span>🎙️ Gareth Soloway (Verified Investing) × David Lin</span>
+    <a href="https://youtu.be/ZSIgWXXx7UE" target="_blank">▶ Watch on YouTube</a>
+    <a href="transcripts/gareth-soloway-meltup-depression.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+
+  <div class="yt-embed">
+    <iframe src="https://www.youtube.com/embed/ZSIgWXXx7UE" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> Gareth Soloway (Verified Investing) is <span class="green"><strong>short-term bullish</strong></span> — S&P target <strong style="color:var(--green)">8,100–8,200</strong> by year-end, gold to <strong style="color:var(--green)">$13,000 by 2029–2031</strong>, Bitcoin to <strong style="color:var(--green)">$70–75K near-term</strong>. But he's <strong>long-term deeply bearish</strong>: mega-cap AI capex is already eating free cash flow, $40 trillion national debt is mounting, and the whole thing <em>"ends in a great depression."</em> The final melt-up to 8,200 is likely the last big party before early 2027 trouble begins.
+  </div>
+
+  <!-- Key targets -->
+  <div class="section">
+    <div class="section-title">🎯 Key Price Targets</div>
+    <div class="stat-row">
+      <div class="stat-box"><div class="val green">8,100–8,200</div><div class="lbl">S&P 500 year-end target</div></div>
+      <div class="stat-box"><div class="val yellow">$13,000</div><div class="lbl">Gold by 2029–2031</div></div>
+      <div class="stat-box"><div class="val green">$70–75K</div><div class="lbl">Bitcoin near-term target</div></div>
+      <div class="stat-box"><div class="val red">Early 2027</div><div class="lbl">When trouble begins</div></div>
+    </div>
+  </div>
+
+  <!-- Macro Timeline -->
+  <div class="section">
+    <div class="section-title">📅 Gareth's Macro Timeline</div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot dot-green"></div>
+      <div class="timeline-content">
+        <h4 style="color:var(--green)">Now → November 2026 (Midterms): Rally Mode</h4>
+        <p>Charts are pointing higher. Fed won't raise rates under Kevin Warsh. Economic data weakening (retail sales -0.6% vs +0.1% expected; jobs data softening) actually <strong>removes rate hike risk</strong> — Fed Watch now showing 70% probability of no hike in September. Trump will do whatever it takes to keep markets at/near all-time highs through midterms. No more Iran strikes until after November. Upside target: <strong>S&P 8,100–8,200</strong>. Normal drawdowns of 2–3% expected but market pushes to ATH.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot dot-yellow"></div>
+      <div class="timeline-content">
+        <h4 style="color:var(--yellow)">2027: The Reckoning Begins</h4>
+        <p>Mega-cap CapEx spending "tops out." Markets always forecast this <strong>6–12 months in advance</strong>. Companies that are currently cash-flow negative will have to pull back. AI models start relying on consumers to spend tokens — but if consumers are tapped out, that spending doesn't materialize. Labor market continues to weaken. Stagflation: inflation sticks at 3–4%, growth slows. <strong>Significant drawdown expected off the 8,200 level.</strong> May be 10% or much worse.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot dot-red"></div>
+      <div class="timeline-content">
+        <h4 style="color:var(--red)">2029–2031: "Ends in a Great Depression"</h4>
+        <p>$40 trillion national debt is <strong>unsustainable.</strong> US just sold $25B in 30-year bonds at the highest interest rate in 25 years. Interest payments already north of $1 trillion/year and climbing. When the debt cycle breaks, it could trigger the next financial crisis. Gareth's long-term scenario: the whole leveraged AI build-out and debt-financed growth eventually unwinds catastrophically. Gold at <strong>$13,000</strong> is his projection for that environment.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- S&P Technical Analysis -->
+  <div class="section">
+    <div class="section-title">📊 S&P 500 — Technical Case for 8,100–8,200</div>
+    <div class="asset-card">
+      <div class="asset-header">
+        <span class="asset-name">S&P 500 (SPX)</span>
+        <span class="asset-sub">Year-end target</span>
+        <span class="tag tag-bullish">Bullish near-term</span>
+      </div>
+      <div class="asset-body">
+        <span class="asset-target">Target: 8,100–8,200</span>
+        <strong>Two technical signals converging at the same level:</strong><br><br>
+        <strong>1. Parallel channel breakout:</strong> The S&P was in a clear parallel channel from the COVID low through the 2021 bull market high and the 2022–23 bear market lows. The tariff sell-off retested the lower channel boundary — held. The market then broke out above the upper boundary. A prior resistance level (tested in 2023 and 2024) became support and held during the recent dip. Drawing a parallel trend line from the channel highs projects the next resistance right at 8,100–8,200.<br><br>
+        <strong>2. S&P divided by M2 money supply:</strong> The S&P/M2 ratio — which adjusts for how much money is in the system — at 8,200 on the S&P would reach the same level of "expensiveness" as the dot-com bubble peak. Connecting the 1982 low and the dot-com high creates a long-term parallel channel; 8,200 would touch the top of that channel. <em>"More expensive than dot-com on a money-supply-adjusted basis — but that's the resistance."</em><br><br>
+        <strong>Gareth's rule:</strong> As long as the S&P holds above the former resistance-turned-support level, the bull case remains intact.
+      </div>
+    </div>
+  </div>
+
+  <!-- Fed & Rates -->
+  <div class="section">
+    <div class="section-title">🏦 Federal Reserve — No More Rate Hikes</div>
+    <div class="alert-box">
+      <strong>Gareth's call (stated since Warsh appointment): NO rate hikes the rest of the year. Cuts in 2027.</strong><br><br>
+      Reasons: (1) Trump said he'd never appoint someone who'd raise rates — and the appointments back it up. (2) Kevin Warsh talks hawkish in press conferences but there's no concrete detail or follow-through. (3) All the data is falling into place as cover: labor weakening, retail sales down, CPI/PPI came in muted this week. (4) Fed Watch Tool moved from 70% chance of September hike (July 29) to 70% chance of NO hike.<br><br>
+      On dissents: Gareth expects a few governors to vote for hikes to <strong>maintain the "independent" appearance</strong> of the Fed — but the ultimate outcome will be no hike. Human nature: why vote for a hike, risk being wrong if the economy collapses, and get blamed for it?
+    </div>
+    <div class="alert-box red">
+      <strong>⚠️ Bond Vigilante Risk:</strong> Kevin Warsh himself said at the last FOMC: <em>"Actually, if you look at interest rates, they've been going up for the last 40 days"</em> — meaning the <em>bond market</em> is doing the tightening, not the Fed. If the Fed adopts the attitude that the market does their job for them, bond yields could keep rising independently. Gareth's warning level: <strong>10-year yield above 5%</strong> = scary territory. Florida real estate already reportedly as bad as 2008 — crickets.
+    </div>
+  </div>
+
+  <!-- Asset deep dives -->
+  <div class="section">
+    <div class="section-title">🥇 Asset Deep Dives</div>
+
+    <!-- Gold -->
+    <div class="asset-card">
+      <div class="asset-header">
+        <span class="asset-name">Gold (XAU/USD)</span>
+        <span class="tag tag-bullish">Very Bullish LT</span>
+      </div>
+      <div class="asset-body">
+        <span class="asset-target">$13,000 by 2029–2031</span>
+        <strong>Short-term:</strong> Expects a <strong>pullback to $3,900–4,000</strong> from current levels. This is the "buy the dip" zone — the downtrend has been decisively broken, confirmed by a strong wedge breakout. Beginning to form higher lows and higher highs.<br><br>
+        <strong>Long-term conviction:</strong> Every macro negative discussed (debt, stagflation, mega-cap CapEx unsustainability, potential financial crisis) is a gold positive. His calculation of $13,000 by 2029–2031 reflects that environment.<br><br>
+        <strong>Worst case:</strong> A small part of him thought gold could still drop to $3,500 — that was his "buy with both hands" level. It only got to $3,900 before reversing, suggesting the floor is higher than feared.
+      </div>
+    </div>
+
+    <!-- Bitcoin -->
+    <div class="asset-card neutral">
+      <div class="asset-header">
+        <span class="asset-name">Bitcoin (BTC)</span>
+        <span class="tag tag-lt-bullish">Short-Term Bullish · LT Uncertain</span>
+      </div>
+      <div class="asset-body">
+        <span class="asset-target">$70,000–$75,000 near-term (possibly $80K)</span>
+        Bitcoin did NOT rally with the S&P and gold at end of July — one of the weakest breakouts Gareth has ever seen. When gold broke its trend line, it ripped. Bitcoin just "petered out."<br><br>
+        <strong>Why Bitcoin is lagging:</strong>
+        <ul class="bullets" style="margin: 10px 0;">
+          <li>Prediction markets have pulled gambling capital away from altcoins/crypto</li>
+          <li>Zero-day options are absorbing the "thrill-seeking" money that used to go into altcoins</li>
+          <li>AI tech stocks (Applied Materials up 200%+, SanDisk, Micron) absorbed risk-on capital</li>
+          <li>The <strong>Clarity Act</strong> was punted to the next session — Congress doesn't return until September. Crypto legislation stalled despite Trump's pro-crypto campaign promises</li>
+          <li>Michael Saylor reportedly had to sell ~$100M to cover dividends/other expenses</li>
+        </ul>
+        <strong>Bull catalyst near-term:</strong> Trump will want crypto voters back for the midterms. Gareth expects a <strong>Clarity Act push before November</strong> → 10–15% Bitcoin rally, potentially to $70–75K or touching $80K.<br><br>
+        <strong>Long-term:</strong> Not convinced the ultimate cycle low is in. Bitcoin has had a bear market every ~4 years; previous lows were each a higher low. This pattern may continue but isn't guaranteed.
+      </div>
+    </div>
+
+    <!-- Semiconductors -->
+    <div class="asset-card bearish">
+      <div class="asset-header">
+        <span class="asset-name">Semiconductors (MU, SNDK, SK Hynix)</span>
+        <span class="tag tag-cautious">Short bounce → Then short</span>
+      </div>
+      <div class="asset-body">
+        Semis are rallying again and Gareth expects more upside near-term. But his plan: <strong>wait for a 61.8% Fibonacci retracement</strong> of their recent 40%+ falls, then <strong>start loading short positions.</strong><br><br>
+        Watching: <strong>Micron (MU)</strong>, <strong>SanDisk (SNDK)</strong>, <strong>SK Hynix</strong>. Same setup — big fall, big bounce, fade the bounce at the Fibonacci level.<br><br>
+        <strong>MongoDB (MDB)</strong> flagged as overbought — surged from under $300 on July 24th to approaching $500. Major trend line right above. A near-term resistance trade.
+      </div>
+    </div>
+  </div>
+
+  <!-- Gareth's current portfolio -->
+  <div class="section">
+    <div class="section-title">💼 Gareth's Current Portfolio</div>
+    <table class="ptable">
+      <thead>
+        <tr><th>Position</th><th>Instrument</th><th>Thesis</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="mono">LONG</span></td>
+          <td><strong>IBIT</strong> (Bitcoin ETF)</td>
+          <td>Chart-based entry from recent levels. Near-term bullish on BTC rally catalyst (Clarity Act + midterms)</td>
+        </tr>
+        <tr>
+          <td><span class="mono">LONG</span></td>
+          <td><strong>XRP</strong> (via ETF)</td>
+          <td>Major wedge pattern breakout on the chart. Dollar-priced. "I couldn't care less about XRP fundamentally — I trade the chart."</td>
+        </tr>
+        <tr>
+          <td><span class="mono">WATCHING</span></td>
+          <td><strong>MU / SNDK / SK Hynix shorts</strong></td>
+          <td>Waiting for 61.8% Fibonacci retracement of their recent 40% falls before initiating short positions</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bull-bear debate -->
+  <div class="section">
+    <div class="section-title">⚔️ Bull vs Bear — The Key Debate</div>
+    <div class="alert-box">
+      <strong>David Lin's bull case:</strong> Corporate earnings have been exceptional. Goldman Sachs best quarter ever. Google did the largest equity raise in corporate history. Most of S&P GDP growth is B2B mega-caps selling AI compute to each other. As long as that continues, the retail consumer struggling doesn't matter — Google still prints money. Earnings drive stocks.<br><br>
+      <strong>Gareth's response:</strong> "You're honestly 100% right — <em>right now</em> it does not matter." But: (1) CapEx spending will top out and markets price it 6–12 months ahead. (2) These companies are already cash-flow negative — they have to eventually return to FCF positive. (3) AI models ultimately need consumers to spend tokens — if consumers can't, that revenue doesn't materialize. (4) The debt being issued to finance all of this — if it breaks, it's "the next financial crisis." The US just sold 30-year bonds at the highest yield in 25 years.
+    </div>
+    <div class="quote-block">
+      "While you may be right and maybe it prolongs into later in 2027, I would just caution that for me, I have to follow the charts and expect some significant pullback off that level. At some point, when you have 40 trillion in debt, it all comes back to roost — and it will end in a great depression."
+    </div>
+  </div>
+
+  <!-- US Dollar / Macro Signals -->
+  <div class="section">
+    <div class="section-title">🔍 Other Macro Signals Gareth Is Watching</div>
+    <ul class="bullets">
+      <li><strong>US Dollar breaking down</strong> — weak dollar is positive for multinationals and helps the stock market as foreign earnings convert at better rates</li>
+      <li><strong>10-year &amp; 30-year yields flat since May</strong> — stalling around high levels but not pushing higher; giving investors a "relief" signal even though absolute levels remain high</li>
+      <li><strong>Oil:</strong> Stayed elevated during Iran/missile tensions but now pulling back after Trump opted for economic sanctions (not military strikes). Midterm calculation: can't have ongoing casualties going into November elections</li>
+      <li><strong>Kospi (South Korea) bottomed July 29:</strong> Had a 44% drawdown. Bottom coincided exactly with the S&P bottom and semis (SanDisk, Micron) — all turned at the same moment, confirming this was a macro trigger, not individual stock stories</li>
+      <li><strong>$40 trillion US national debt:</strong> Interest payments already north of $1 trillion/year. The 30-year bond just sold at the highest rate in 25 years — "there is a concern out there about the amount of debt"</li>
+      <li><strong>Kevin Warsh comment:</strong> "Interest rates have been going up for the last 40 days" — meaning the bond market is tightening even without a Fed rate hike. If the Fed leans into this attitude, yields could keep rising on their own</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>Generated by Dot DiBot · Aug 16, 2026</span>
+    <a href="https://youtu.be/ZSIgWXXx7UE" target="_blank">▶ Watch on YouTube</a>
+    <a href="transcripts/gareth-soloway-meltup-depression.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
