@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAX LOSS RED DAY (mistakes were made)</title>
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+    --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+    --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+  .container { max-width: 860px; margin: 0 auto; padding: 24px 16px 60px; }
+  .back-link { display: inline-block; color: var(--muted); font-size: 13px; text-decoration: none; margin-bottom: 20px; }
+  .back-link:hover { color: var(--accent); }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge-en { background: #1a3a1a; color: var(--green); }
+  .badge-trading { background: #2d0a0a; color: #ff8080; }
+  .badge-biz { background: #1a2744; color: #79c0ff; }
+  h1 { font-size: 26px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .meta a { color: var(--muted); text-decoration: none; }
+  .meta a:hover { color: var(--accent); }
+  .yt-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 24px; }
+  .yt-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .tl-dr { background: #2d0a0a; border: 1px solid var(--red); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 16px; line-height: 1.8; }
+  .tl-dr strong { color: var(--red); }
+  .section { margin-bottom: 28px; }
+  .section-title { font-size: 18px; font-weight: 800; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px; }
+  /* P&L timeline */
+  .pnl-row { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: var(--surface2); border-radius: 8px; margin-bottom: 8px; border-left: 4px solid transparent; }
+  .pnl-row.win { border-left-color: var(--green); }
+  .pnl-row.loss { border-left-color: var(--red); }
+  .pnl-row.net-pos { border-left-color: var(--yellow); }
+  .pnl-ticker { font-family: monospace; font-weight: 900; font-size: 15px; min-width: 70px; }
+  .pnl-amount { font-family: monospace; font-weight: 900; font-size: 17px; margin-left: auto; }
+  .pnl-amount.pos { color: var(--green); }
+  .pnl-amount.neg { color: var(--red); }
+  .pnl-desc { font-size: 13px; color: var(--muted); flex: 1; }
+  /* Stats row */
+  .stat-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+  .stat-box { background: var(--surface2); border-radius: 10px; padding: 14px 18px; flex: 1; min-width: 120px; text-align: center; }
+  .stat-box .val { font-size: 22px; font-weight: 900; font-family: monospace; }
+  .stat-box .val.red { color: var(--red); }
+  .stat-box .val.green { color: var(--green); }
+  .stat-box .val.yellow { color: var(--yellow); }
+  .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  /* Lesson cards */
+  .lesson-item { background: var(--surface2); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; border-left: 4px solid var(--yellow); }
+  .lesson-item h4 { font-size: 14px; color: var(--yellow); font-weight: 700; margin-bottom: 6px; }
+  .lesson-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .lesson-item p strong { color: var(--text); }
+  /* Alert box */
+  .alert-box { background: #1a1500; border: 1px solid var(--yellow); border-radius: 10px; padding: 16px 20px; margin-bottom: 20px; font-size: 14px; line-height: 1.75; color: var(--text); }
+  .alert-box strong { color: var(--yellow); }
+  /* Quote */
+  .quote-block { background: var(--surface2); border-left: 3px solid var(--muted); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 15px; color: var(--muted); }
+  /* Bullets */
+  ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+  ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+  ul.bullets li { line-height: 1.6; }
+  ul.bullets strong { color: var(--text); }
+  /* Footer */
+  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  @media (max-width: 600px) { h1 { font-size: 20px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back-link" href="../index.html">← Back to all summaries</a>
+
+  <div class="badges">
+    <span class="badge badge-en">🇺🇸 English</span>
+    <span class="badge badge-trading">📉 Trading</span>
+    <span class="badge badge-biz">💼 Psychology</span>
+  </div>
+
+  <h1>MAX LOSS RED DAY (mistakes were made)</h1>
+
+  <div class="meta">
+    <span>📅 Aug 16, 2026</span>
+    <span>⏱️ ~15 min</span>
+    <span>🎙️ Ross Cameron (Warrior Trading)</span>
+    <a href="https://www.youtube.com/watch?v=kIZS4bU2Jpo" target="_blank">▶ Watch on YouTube</a>
+    <a href="transcripts/max-loss-red-day.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+
+  <div class="yt-embed">
+    <iframe src="https://www.youtube.com/embed/kIZS4bU2Jpo" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> Ross Cameron lost <strong>$64,000 in a single day</strong> — the second max-loss day of the month — after going from up $32K to down $64K. The culprit: emotional hijacking after a crushing STKH flush, compounded by divided attention between his big account and small account challenge. He was still up <strong>~$60K on the week</strong>. Honest, raw post-mortem on trading psychology and the real cost of not walking away.
+  </div>
+
+  <!-- Key numbers -->
+  <div class="section">
+    <div class="section-title">📊 Day's Numbers at a Glance</div>
+    <div class="stat-row">
+      <div class="stat-box"><div class="val green">+$26K</div><div class="lbl">Peak (after trade 1)</div></div>
+      <div class="stat-box"><div class="val green">+$32K</div><div class="lbl">Peak (after trade 2)</div></div>
+      <div class="stat-box"><div class="val red">-$64K</div><div class="lbl">Final P&amp;L</div></div>
+      <div class="stat-box"><div class="val yellow">~+$60K</div><div class="lbl">Still up on the week</div></div>
+    </div>
+  </div>
+
+  <!-- Trade-by-trade P&L -->
+  <div class="section">
+    <div class="section-title">📋 Trade-by-Trade Breakdown</div>
+
+    <div class="pnl-row win">
+      <div class="pnl-ticker">WETO #1</div>
+      <div class="pnl-desc">Breakout through double top — entry ~$10.35, target squeeze through the high. Clean move to just under $12. Should have called it a day right here.</div>
+      <div class="pnl-amount pos">+$26,000</div>
+    </div>
+
+    <div class="pnl-row win">
+      <div class="pnl-ticker">STKH #1</div>
+      <div class="pnl-desc">Israeli company ($3→$7 prior days). Entry just under $7 on initial rally. Squeezed to $7.50→$8. Took partial profits. Running P&amp;L: <strong>+$32,000</strong>.</div>
+      <div class="pnl-amount pos">+$8,000</div>
+    </div>
+
+    <div class="pnl-row loss">
+      <div class="pnl-ticker">STKH #2</div>
+      <div class="pnl-desc">Sized up to <strong>45,000 shares</strong> on ABCD pattern curl, targeting squeeze to $9.50. MACD still positive but curling. Relative volume only 4.46× — below ideal. Massive flush. Wiped $50K swing from +$32K to -$18K in one trade.</div>
+      <div class="pnl-amount neg">-$50,000</div>
+    </div>
+
+    <div class="pnl-row loss">
+      <div class="pnl-ticker">WETO #2</div>
+      <div class="pnl-desc">Re-entered after flush, expected halt-up (like every other day this week). Instead it halted <em>down</em>. Emotional revenge trade — knew he should have stopped at -$18K.</div>
+      <div class="pnl-amount neg">-$20,000</div>
+    </div>
+
+    <div class="pnl-row win">
+      <div class="pnl-ticker">WETO #3</div>
+      <div class="pnl-desc">Re-entered again after WETO curled back up — it halted up and went higher. But position size was small, fumbled the execution. Tiny recovery.</div>
+      <div class="pnl-amount pos">+$4,000</div>
+    </div>
+
+    <div class="pnl-row loss">
+      <div class="pnl-ticker">ONFO</div>
+      <div class="pnl-desc">Passed on the clean breakout at $4 (indecisive). Chased after it ripped to $4.50. Dropped immediately after entry. Cut the loss. Classic "chased and got chopped" pattern.</div>
+      <div class="pnl-amount neg">-$4,000</div>
+    </div>
+
+    <div class="pnl-row net-pos" style="border-left-color: var(--red); margin-top: 4px;">
+      <div class="pnl-ticker" style="color:var(--red);">FINAL</div>
+      <div class="pnl-desc" style="color:var(--text); font-weight:600;">Net day P&amp;L — 2nd max-loss day of the month</div>
+      <div class="pnl-amount neg" style="font-size:22px;">-$64,000</div>
+    </div>
+  </div>
+
+  <!-- Month context -->
+  <div class="section">
+    <div class="section-title">📅 Month Context (before today)</div>
+    <div class="alert-box">
+      <strong>The month pattern:</strong> Big green days + big red days = roller coaster. The gains are real but so are the spirals.
+      <ul class="bullets" style="margin-top: 12px;">
+        <li>Last Friday: <strong>-$73,000</strong> — biggest red day of the year before today</li>
+        <li>Monday: <strong>+$84,000</strong> — best day of the recent stretch</li>
+        <li>Tue–Wed: solid green days</li>
+        <li>Thursday: up $37K, <strong>gave back $25K</strong> on last couple trades</li>
+        <li>Today (Friday): <strong>-$64,000</strong></li>
+        <li>Weekly net (before today): ~$124K green</li>
+        <li><strong>Weekly net (after today): still ~+$60,000</strong></li>
+        <li>This month: 2 emotional hijacks in 2 weeks (last Friday + today)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Small account divide -->
+  <div class="section">
+    <div class="section-title">🧩 The Root Cause: Divided Attention</div>
+    <div class="lesson-item" style="border-left-color: var(--accent);">
+      <h4 style="color:var(--accent);">The Small Account Challenge Problem</h4>
+      <p>Ross runs a <strong>small account challenge</strong> simultaneously with his main trading account — growing a small account to donate profits to 50 children's hospitals. He's currently at <strong>45/50 hospitals</strong>, needing ~$25K more to finish.<br><br>
+      The divided attention problem is real and costly:<br><br>
+      → In the big account, he's less disciplined because "I can afford to be a little sloppy."<br>
+      → When STKH was flushing, he was mentally juggling stops in <em>both</em> accounts simultaneously.<br>
+      → He delayed cutting the loss to "give the small account more room" — which made the loss bigger in both.<br>
+      → Result: stepped over dollars to pick up pennies. Lost $45K in the big account to protect a ~$3.9K small account position.<br><br>
+      <strong>The math is brutal:</strong> Big account +$26K trade, small account +$2.1K. Big account -$45K loss, small account -$3.9K. The ratio holds, but the absolute numbers expose the absurdity.
+      </p>
+    </div>
+    <div class="lesson-item" style="border-left-color: var(--green);">
+      <h4 style="color:var(--green);">The Plan Going Forward</h4>
+      <p>Finish the last 5 children's hospitals (~3 more trading days), then <strong>put the small account challenge on the shelf</strong> and return to full focus on the big account. The goal was never a specific dollar amount — just to hit 50 hospitals. He's almost there. Ending cleanly at that milestone is better than running it indefinitely with divided attention costing him $50–70K per bad day.</p>
+    </div>
+  </div>
+
+  <!-- Lessons -->
+  <div class="section">
+    <div class="section-title">🧠 Key Lessons & Psychology</div>
+
+    <div class="lesson-item">
+      <h4>⚠️ Walk away after the first great trade</h4>
+      <p>After WETO #1 at <strong>+$26,000</strong>, Ross says himself: <em>"Looking back, I wish I had just taken it off the table and said that's it, I'm done for the day."</em> One clean trade, up $26K, done — that would have been a great Friday. Instead he kept going and ended -$64K. The entire $90K swing was avoidable.</p>
+    </div>
+
+    <div class="lesson-item">
+      <h4>🔥 Emotional hijacking: the pattern</h4>
+      <p>Going from <strong>+$32K to -$18K in one trade</strong> is an extreme emotional shock. At that point the brain is compromised — frustration, stubbornness, desire to "get it back." Ross knew he should stop. The "little voice" told him to walk away. He didn't listen. The next $46K of losses were all emotional, not strategic.</p>
+    </div>
+
+    <div class="lesson-item">
+      <h4>📏 Position sizing was the real mistake on STKH</h4>
+      <p>The trade setup (ABCD pattern, MACD positive, good volume profile) wasn't terrible. But <strong>45,000 shares</strong> on a stock with only 4.46× relative volume, that had already shown a big flush earlier that day, was aggressive. He had a bias on it ("Israeli company, not good") but ignored it because the stock was moving. Red flag: when you fight your own bias to take a trade, size down — don't size up.</p>
+    </div>
+
+    <div class="lesson-item">
+      <h4>🎿 The Olympic downhill skier analogy</h4>
+      <p>Ross uses this himself: <em>"Think of a downhill skier in the Olympics, and then you say 'can you also juggle while you do that?' I can, but something's going to give."</em> World-class focus on one thing → elite performance. Split focus → degraded performance. This applies directly to trading two accounts simultaneously.</p>
+    </div>
+
+    <div class="lesson-item">
+      <h4>📈 Easy come easy go — and that's the game</h4>
+      <p>Despite losing $64K today, Ross is up <strong>~$60K on the week</strong> and had a strong month. He catches himself starting to vent, then recalibrates: <em>"$60,000 in one week. Shut up. You've got nothing to complain about. Knock it off."</em> Perspective matters. The roller coaster is still going up — the danger is one of these spirals going deep enough to reverse the upward trend.</p>
+    </div>
+
+    <div class="lesson-item">
+      <h4>🌋 Recognize the tremors before the earthquake</h4>
+      <p>Ross's metaphor: <em>"I need to be recognizing these sort of tremors and get out of the way before the big one strikes."</em> The warning signs are there — giving back big profits on last trades of the day (Thursday: gave back $25K), taking below-average setups, fighting your own bias. These are tremors. The earthquake is the -$64K or -$73K day. Stop at the tremors.</p>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    "Trading is risky. Easy come, easy go. You see it right here — easy come, easy go. Please manage your risk and practice in a simulator before you ever put real money on the line."
+    <br><br>
+    "I lost perspective in the middle of trading today. I got frustrated. I got stubborn. And rather than just get up and walk away, I kept punching the buttons. This is classic rookie trading stuff. And yet, even the most successful traders, from time to time, will have a moment of getting completely hijacked."
+  </div>
+
+  <div class="footer">
+    <span>Generated by Dot DiBot · Aug 16, 2026</span>
+    <a href="https://www.youtube.com/watch?v=kIZS4bU2Jpo" target="_blank">▶ Watch on YouTube</a>
+    <a href="transcripts/max-loss-red-day.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
