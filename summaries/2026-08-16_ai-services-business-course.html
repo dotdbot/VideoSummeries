@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Start an AI Services Business (Full Course)</title>
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+    --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+    --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+  .container { max-width: 860px; margin: 0 auto; padding: 24px 16px 60px; }
+  .back-link { display: inline-block; color: var(--muted); font-size: 13px; text-decoration: none; margin-bottom: 20px; }
+  .back-link:hover { color: var(--accent); }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge-en  { background: #1a3a1a; color: var(--green); }
+  .badge-ai  { background: #2d1a5c; color: #c0a0ff; }
+  .badge-biz { background: #1a2744; color: #79c0ff; }
+  h1 { font-size: 26px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .meta a { color: var(--muted); text-decoration: none; }
+  .meta a:hover { color: var(--accent); }
+  .yt-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 24px; }
+  .yt-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 16px; line-height: 1.8; }
+  .tl-dr strong { color: var(--accent); }
+  .section { margin-bottom: 28px; }
+  .section-title { font-size: 18px; font-weight: 800; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px; }
+  /* Service cards */
+  .service-item { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-left: 4px solid var(--green); }
+  .service-item.mid { border-left-color: var(--accent); }
+  .service-item.bonus { border-left-color: var(--yellow); }
+  .service-title { font-size: 17px; font-weight: 800; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .service-price { font-family: monospace; font-size: 14px; font-weight: 900; color: var(--green); }
+  .service-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+  .service-desc strong { color: var(--text); }
+  /* Step cards */
+  .step-item { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-left: 4px solid var(--accent); }
+  .step-num { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 4px; }
+  .step-title { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .step-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+  .step-desc strong { color: var(--text); }
+  /* Stats row */
+  .stat-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+  .stat-box { background: var(--surface2); border-radius: 10px; padding: 14px 18px; flex: 1; min-width: 120px; text-align: center; }
+  .stat-box .val { font-size: 24px; font-weight: 900; color: var(--green); font-family: monospace; }
+  .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  /* Tool badges */
+  .tool-badge { display: inline-block; background: #2d1a5c; color: #c0a0ff; font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin: 2px 2px; font-family: monospace; }
+  /* Bullets */
+  ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-left: 0; }
+  ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+  ul.bullets li { line-height: 1.6; }
+  ul.bullets strong { color: var(--text); }
+  /* Quote */
+  .quote-block { background: var(--surface2); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 15px; }
+  /* Mindset card */
+  .mindset-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; }
+  .mindset-item h4 { font-size: 14px; color: var(--yellow); font-weight: 700; margin-bottom: 6px; }
+  .mindset-item p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  /* Case study */
+  .case-study { background: #0d2a1a; border: 1px solid var(--green); border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; }
+  .case-study h4 { font-size: 14px; color: var(--green); font-weight: 700; margin-bottom: 6px; }
+  .case-study p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  /* Footer */
+  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  @media (max-width: 600px) { h1 { font-size: 20px; } .service-title { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back-link" href="../index.html">← Back to all summaries</a>
+
+  <div class="badges">
+    <span class="badge badge-en">🇺🇸 English</span>
+    <span class="badge badge-ai">🤖 AI</span>
+    <span class="badge badge-biz">💼 Business</span>
+  </div>
+
+  <h1>How to Start an AI Services Business (Full Course)</h1>
+
+  <div class="meta">
+    <span>📅 Aug 16, 2026</span>
+    <span>⏱️ ~1.5 hours</span>
+    <span>🎙️ WOPP / AI Business Course</span>
+    <a href="https://youtu.be/McO_xcf4IYw" target="_blank">▶ Watch on YouTube</a>
+    <a href="transcripts/ai-services-business-course.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+
+  <div class="yt-embed">
+    <iframe src="https://www.youtube.com/embed/McO_xcf4IYw" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> A complete cradle-to-cash blueprint for building an online service business with AI. Covers the <strong>7 best services</strong> to sell right now (AI implementation, UGC, websites, apps, AI video, paid ads, clipping), the full go-to-market system (AI lead gen → sales calls → website → delivery → referrals), and the core mindset shift: <em>start selling before you feel ready</em> — the skill that makes money is <strong>selling</strong>, not the service itself.
+  </div>
+
+  <!-- Key numbers -->
+  <div class="section">
+    <div class="section-title">📊 Real Numbers from the Video</div>
+    <div class="stat-row">
+      <div class="stat-box"><div class="val">$17K</div><div class="lbl">Evan (clipping) · 3 months · in college</div></div>
+      <div class="stat-box"><div class="val">$35K/mo</div><div class="lbl">Evan's clipping agency · 11 months</div></div>
+      <div class="stat-box"><div class="val">$25K</div><div class="lbl">Harry · per AI commercial</div></div>
+      <div class="stat-box"><div class="val">$1M+/yr</div><div class="lbl">WGMY Labs · SaaS dev agency</div></div>
+    </div>
+  </div>
+
+  <!-- 7 Services -->
+  <div class="section">
+    <div class="section-title">🏆 The 7 Best Services Right Now</div>
+
+    <div class="service-item">
+      <div class="service-title">
+        1. AI Implementation
+        <span class="service-price">$3K–$10K setup · $1K–$3K/mo retainer</span>
+      </div>
+      <div class="service-desc">
+        Help businesses install and operationalize AI tools inside their company. Most businesses know AI matters but don't know <em>which tools to use, how to set them up, or how to integrate them into workflows</em> — and they don't have time to figure it out.<br><br>
+        Entry level: install <span class="tool-badge">Claude Co-work</span> + train their team. Advanced level: redesign entire workflows, build AI agents for sales calls, or create internal data-reporting tools.<br><br>
+        <strong>Best clients:</strong> Law firms, med spas, chiropractors, marketing agencies, financial advisors, real estate teams — independently owned, high-revenue, easy to work with.<br>
+        <strong>Best for:</strong> Problem-solvers who like technical, high-value work. Long-term upside: deep understanding of how businesses operate.
+      </div>
+    </div>
+
+    <div class="service-item mid">
+      <div class="service-title">
+        2. UGC (User-Generated Content)
+        <span class="service-price">$1/1K views → up to $5K/mo retainer</span>
+      </div>
+      <div class="service-desc">
+        Create short-form phone videos promoting brands — no audience required. Brands shifted budgets away from expensive influencers toward everyday creators because authentic content <em>performs better and costs less</em>.<br><br>
+        Platform: <span class="tool-badge">SideShift</span> — browse brand campaigns, apply, get approved, film 20-second videos, post, get paid per view. Brands post campaigns with budgets already set.<br><br>
+        <strong>Example niches:</strong> Makeup (try a lipstick), supplements (review protein shakes), software (demo an app).<br>
+        <strong>Creator pitch:</strong> WOPP pays $1K/month + $1/1K views — apply via the video link.<br>
+        <strong>Best for:</strong> People comfortable on camera, already on TikTok, or marketing students wanting real experience. You're learning the foundational skill: <em>content that drives customers</em>.
+      </div>
+    </div>
+
+    <div class="service-item">
+      <div class="service-title">
+        3. Website Building
+        <span class="service-price">$1K–$5K per site + monthly maintenance</span>
+      </div>
+      <div class="service-desc">
+        Every business needs a website but many have outdated or non-existent ones. The pitch flip: <em>build the website first, then show it to them</em>.<br><br>
+        Workflow: search "dentist near me" → find the worst website → paste URL into <span class="tool-badge">Claude Code</span> → rebuild it → send cold: <em>"Hey, I redesigned your website. If you want to use it, I can set it up for $2,000."</em><br><br>
+        <strong>Best clients:</strong> Garage installation, roofing, HVAC, cleaning companies — local services that need online presence.<br>
+        <strong>Long-term value:</strong> You learn to build websites that <em>convert</em> — essential for any business you ever build.
+      </div>
+    </div>
+
+    <div class="service-item mid">
+      <div class="service-title">
+        4. App &amp; Software Development
+        <span class="service-price">$6K/mo unlimited dev · equity in apps</span>
+      </div>
+      <div class="service-desc">
+        Build SaaS apps, internal tools, and workflow automations for businesses and creators. <strong>No coding required</strong> — describe anything in English to <span class="tool-badge">Claude Code</span> and it builds a fully functional app.<br><br>
+        The real skill to learn: <strong>app design and UX</strong>. Resource: <span class="tool-badge">mobbin.com</span> — shows the highest-performing apps' onboarding, layout, and UX flows. Model proven designs instead of guessing.<br><br>
+        <strong>Case study — WGMY Labs:</strong> Software dev agency run for 3+ years. Charged $6K/month for unlimited development for content creators. Often took equity in the apps. Result: <strong>$1M+ per year</strong>. Software is never "done" — clients always need updates, making it naturally recurring revenue.<br>
+        <strong>Best for:</strong> Logical thinkers who like building things. While paid to build clients' apps, you're learning to build <em>your own SaaS</em> — the real upside.
+      </div>
+    </div>
+
+    <div class="service-item">
+      <div class="service-title">
+        5. AI Video Creation
+        <span class="service-price">$500–$3K entry · up to $25K per video</span>
+      </div>
+      <div class="service-desc">
+        Use AI tools to produce entire commercials, UGC ads, and product demos from scratch — no camera crew needed. Tools: <span class="tool-badge">VEO3</span>, <span class="tool-badge">Kling</span> for visuals + scenes + edits.<br><br>
+        <strong>Case study — Harry (22yo):</strong> Makes AI commercials for tech startups at $25K each. Uses AI for scripts, voiceovers, and scene generation, adds music + sound design + overlays. Posts work on X as portfolio → inbound inquiries. Brands that used to pay $100K+ for production now choose Harry at 25% of the cost with similar quality.<br><br>
+        <strong>Best clients:</strong> Esports brands, tech startups, corporate brands, professional sports teams — constant need for brand awareness content.<br>
+        <strong>Key skill:</strong> Storytelling and emotional impact — not just knowing the tools. Can you make someone <em>feel</em> something?
+      </div>
+    </div>
+
+    <div class="service-item mid">
+      <div class="service-title">
+        6. Paid Ads
+        <span class="service-price">$1K–$5K/month per client</span>
+      </div>
+      <div class="service-desc">
+        Create and run high-converting ads on Meta, Instagram, TikTok, and Google. Directly tied to client revenue — <em>if you make them more money, you make more money</em>.<br><br>
+        <strong>AI workflow:</strong><br>
+        1. Ask Claude to analyze 50 competitor Meta Ad Libraries → identify winning hooks, offers, creative strategies<br>
+        2. Paste client website into <span class="tool-badge">Claude Co-work</span> → generate ad creatives using proven tactics<br>
+        3. Claude's Chrome extension takes control of browser → uploads ads to Meta Ads Manager, writes copy, links website — ready to launch<br><br>
+        What used to require a photographer, copywriter, designer, and media buyer is now <strong>one person with AI</strong>.<br>
+        <strong>Best clients:</strong> E-commerce brands, info products, local services, SaaS companies.<br>
+        <strong>Long-term value:</strong> Customer acquisition — <em>the most valuable skill in any business</em>.
+      </div>
+    </div>
+
+    <div class="service-item bonus">
+      <div class="service-title">
+        7. Clipping
+        <span class="service-price">$1/1K views · scale to $35K/mo</span>
+      </div>
+      <div class="service-desc">
+        Cut long-form content (podcasts, YouTube, Twitch streams) into short-form viral clips for TikTok, Reels, and Shorts. The work: watch, find best moments, edit, add captions/hooks, format for each platform, post.<br><br>
+        <strong>Two income paths:</strong><br>
+        1. <strong>Content rewards on WOPP</strong> — creators post campaigns with pre-set budgets, you create clips, earn $1/1K views. No clients needed, just editing.<br>
+        2. <strong>Clipping agency</strong> — sign recurring clients who want ongoing short-form content.<br><br>
+        <strong>Case study — Evan (20, college student):</strong> Started clipping agency while in school. Made $17K in first 3 months. Agency now earns $35K/month after 11 months. Gets all clients via Instagram outreach. His portfolio: <em>clippingculture.com</em> — 10B+ views generated, worked with Selena Gomez, Jake Paul, BBno$.<br><br>
+        <strong>Getting started:</strong> Pick one creator, download their long-form content, make 5–10 clips with different hooks and styles, post on a new account, find what works, repeat.<br>
+        <strong>Real skill:</strong> Identifying viral potential + retention editing for the algorithm.
+      </div>
+    </div>
+  </div>
+
+  <!-- Business System -->
+  <div class="section">
+    <div class="section-title">⚙️ The Complete Business System</div>
+
+    <div class="step-item">
+      <div class="step-num">Step 1</div>
+      <div class="step-title">Lead Generation with AI</div>
+      <div class="step-desc">
+        Tools: <span class="tool-badge">Apollo</span> (verified business emails) · <span class="tool-badge">PhantomBuster</span> (scrape IG/LinkedIn) · <span class="tool-badge">Clay</span> (enrich + personalize at scale)<br><br>
+        Use Claude to write personalized cold DMs mentioning something specific about the prospect's business. AI can find leads, write outreach, and even help deliver the service itself.<br><br>
+        <strong>Volume target:</strong> 50–100 DMs/day. Expect ~5–10% reply rate. The skill isn't the service — it's <em>finding people and starting conversations</em>.
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">Step 2</div>
+      <div class="step-title">Book &amp; Run Sales Calls via Calendly</div>
+      <div class="step-desc">
+        Set up a <span class="tool-badge">Calendly</span> event with custom screening questions (revenue, tools they use, what they're struggling with). Block unavailable times. Connect Google Calendar + Google Meet for auto-booking. Send Calendly link directly in DMs to interested leads.<br><br>
+        <strong>Sales call structure:</strong><br>
+        1. <strong>Build rapport</strong> — talk like a normal person, ask about their business<br>
+        2. <strong>Ask questions</strong> — what's the problem? Why no website yet? What's failed before? Let them talk<br>
+        3. <strong>Present your service</strong> — focus on the outcome, not the tools. Don't say "I edit videos." Say "I help you get more views without making more content."<br>
+        4. <strong>State the price confidently</strong> — "For this, I charge $2,000." Then stop talking. Silence = confidence<br>
+        5. <strong>Handle objections</strong> — "What's holding you back?" Bring it back to the result. Most objections = uncertainty, so your job is to minimize uncertainty<br><br>
+        <strong>Nervous?</strong> Do your first 1–2 clients free or discounted. Get a case study. Then sell with proof — confidence comes from clarity.
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">Step 3</div>
+      <div class="step-title">Build a Professional Website with Claude Code</div>
+      <div class="step-desc">
+        Use <span class="tool-badge">Claude Code</span> (code tab) with a provided prompt template. Copy a brand kit from <span class="tool-badge">Canva</span> → upload PDF → tell Claude to redesign the site following brand guidelines → instant premium look with consistent fonts, colors, spacing.<br><br>
+        Host free on <span class="tool-badge">Vercel</span> in under 30 seconds. Buy a custom domain and connect it for professionalism. Embed your Calendly calendar at the bottom so visitors can book directly from the site.<br><br>
+        <strong>Website structure (Evan + WGMY examples):</strong><br>
+        → Headline + transformation statement (who you help + what result you deliver)<br>
+        → Sub-headline explaining what you do<br>
+        → Book a call CTA (primary goal of the entire site)<br>
+        → Video explaining your service<br>
+        → Client logos / who you've worked with<br>
+        → How it works (3 simple steps)<br>
+        → Case studies (clickable stories: problem → solution → result)<br>
+        → Embedded Calendly calendar<br><br>
+        <strong>Warning:</strong> Don't spend weeks perfecting the site. People trick themselves into "being productive" on design when they're really avoiding the discomfort of outreach. <em>Start sending messages before the site is perfect.</em>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">Step 4</div>
+      <div class="step-title">Build a Professional Social Profile</div>
+      <div class="step-desc">
+        When leads receive a DM from you, they check your profile. It must signal: A) real person, B) you do what you claim, C) you're professional.<br><br>
+        <strong>4 profile elements:</strong><br>
+        → Professional headshot or logo<br>
+        → One-line bio stating exactly what you do and for whom<br>
+        → Link to your website in bio<br>
+        → 3 pinned posts: your work, case studies, results<br><br>
+        <strong>Use your personal account</strong> — people buy from people. Being a young college student is an advantage, not a liability.
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">Step 5</div>
+      <div class="step-title">Deliver the Service</div>
+      <div class="step-desc">
+        <strong>Onboarding:</strong> Collect everything upfront — logos, logins, brand assets, photos, menu/content. The smoother your onboarding, the better your first impression. It should feel like you've done this before.<br><br>
+        <strong>Set clear expectations:</strong> Week 1 = setup, Week 2 = first deliverable, Week 3 = optimization. No confusion = no stress.<br><br>
+        <strong>Don't know how to do the work?</strong> Good. Look it up. Watch YouTube tutorials. Ask Claude. Your client is not expecting delivery in 24 hours — you have at least a week to learn and get a first version done. <em>Clients only care about the result, not how you got there.</em><br><br>
+        <strong>Key reframe:</strong> School teaches you to study 4 years before you're ready. That's backwards. You learn by solving real problems for real people.
+      </div>
+    </div>
+
+    <div class="step-item">
+      <div class="step-num">Step 6</div>
+      <div class="step-title">Referrals, Case Studies &amp; Inbound Content</div>
+      <div class="step-desc">
+        After delivering results: <em>"Do you know anyone else who would benefit from something like this?"</em> — referrals close easiest because they already trust you via the person who referred them.<br><br>
+        <strong>Build the case study:</strong> What was their problem? How did you solve it? What was the result? Example: "Grew creator from 10K to 100K views using short-form content." Add to website, social profile, and outreach messages.<br><br>
+        <strong>Create content around the case study</strong> — post on Twitter, TikTok, Instagram, LinkedIn. Title: "Here's how I got this client 1 million views in 30 days." Walk through the process with a simple Loom video. No fancy camera needed.<br><br>
+        This does two things: <strong>builds authority</strong> (people see you as an expert) + <strong>generates inbound leads</strong> (people find you instead of you finding them). Once you have referrals + case studies + content, clients come to you — everything compounds.
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Tools -->
+  <div class="section">
+    <div class="section-title">🛠️ Key AI Tools Mentioned</div>
+    <ul class="bullets">
+      <li><strong>Claude Code</strong> — build websites and apps from English descriptions in minutes; redesign existing sites by pasting their URL</li>
+      <li><strong>Claude Co-work</strong> — Chrome extension that controls your browser; auto-uploads ads to Meta Ads Manager, analyzes competitor ad libraries</li>
+      <li><strong>VEO3 / Kling</strong> — AI video generation for commercials, UGC ads, product demos, motion graphics</li>
+      <li><strong>Clay</strong> — enrich lead data and generate personalized outreach at scale</li>
+      <li><strong>PhantomBuster</strong> — scrape Instagram and LinkedIn for lead lists</li>
+      <li><strong>Apollo</strong> — find verified business emails for cold outreach</li>
+      <li><strong>Calendly</strong> — book sales calls with custom screening questions; embed in website and send in DMs</li>
+      <li><strong>Vercel</strong> — free hosting for websites built with Claude Code; custom domain connection in minutes</li>
+      <li><strong>Canva</strong> — download brand kit templates (brand guidelines PDF) to feed into Claude for consistent design</li>
+      <li><strong>Mobbin.com</strong> — study top-performing apps' UX, onboarding, and layouts to model proven designs</li>
+      <li><strong>SideShift</strong> — platform where brands post UGC campaigns with pre-set budgets; apply and earn per view</li>
+      <li><strong>WOPP</strong> — content platform: UGC ($1K/mo + $1/1K views) and clipping ($1/1K views) programs</li>
+    </ul>
+  </div>
+
+  <!-- Real Case Studies -->
+  <div class="section">
+    <div class="section-title">📈 Real Case Studies</div>
+
+    <div class="case-study">
+      <h4>👨‍💻 Evan Stanfield — Clipping Agency</h4>
+      <p>20 years old, started a clipping agency while in college. First 3 months: <strong>$17,000</strong>. Month 11: <strong>$35,000/month</strong>. Zero industry connections when he started. Gets all clients via Instagram DMs. Clients include: Selena Gomez, Jake Paul, BBno$ (2 billion views generated). Website: <em>clippingculture.com</em> — 10B+ total views.</p>
+    </div>
+
+    <div class="case-study">
+      <h4>🎬 Harry — AI Commercial Producer</h4>
+      <p>22 years old. Creates AI commercials for tech startups. Charges <strong>$25,000 per video</strong>. Uses AI for script, voiceover, and scene generation; adds music, sound design, overlays. Posts work on X as portfolio → inbound brand inquiries. Brands choose him over traditional production houses because similar quality at 25% of the cost.</p>
+    </div>
+
+    <div class="case-study">
+      <h4>🏗️ WGMY Labs — SaaS Dev Agency</h4>
+      <p>Run by the presenter for 3+ years. Charged <strong>$6,000/month</strong> for unlimited software development for non-technical content creators. Served as technical co-founder for SaaS apps. Often took <strong>equity</strong> in the apps built. Revenue: <strong>$1M+ per year</strong>. Now teaches others to replicate the model.</p>
+    </div>
+  </div>
+
+  <!-- Mindset -->
+  <div class="section">
+    <div class="section-title">🧠 Core Mindset Shifts</div>
+
+    <div class="mindset-item">
+      <h4>⚡ Start selling before you feel ready</h4>
+      <p>Most people think: "I need to learn everything first." That's backwards. You learn by getting clients and doing the work as you go. The clients don't care how you did it — only the result matters.</p>
+    </div>
+
+    <div class="mindset-item">
+      <h4>💰 The skill that makes money is selling, not the service</h4>
+      <p>Design, coding, editing — these are all valuable. But the skill that converts to income is your ability to find people, start conversations, and close deals. Selling is the universal multiplier.</p>
+    </div>
+
+    <div class="mindset-item">
+      <h4>🚫 Perfecting the website is avoidance</h4>
+      <p>People spend weeks "building the website" when they're really avoiding the discomfort of reaching out to strangers. Recognize this pattern. Send outreach messages even before the site is live.</p>
+    </div>
+
+    <div class="mindset-item">
+      <h4>🎯 Your first client doesn't need to be paid</h4>
+      <p>Do 1–2 clients free or at a discount. Get a case study with a real result. Once you have proof, selling becomes dramatically easier because you're no longer asking them to trust a stranger — you're showing evidence.</p>
+    </div>
+
+    <div class="mindset-item">
+      <h4>📈 One client should become many</h4>
+      <p>Deliver results → ask for referral → build case study → create content about it. This compound loop turns one happy client into a referral engine + authority signal + inbound lead generator. The business shifts from "always hunting" to "clients finding you."</p>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    "School has taught you that you need to learn for 4 years before you're ready for the job. But that is not how this world works. You're ready today. Go out there, start sending messages, start getting on sales calls, start pitching your clients. Because the more clients you get, the faster you will learn, and the better you get, the more money you will earn."
+  </div>
+
+  <div class="footer">
+    <span>Generated by Dot DiBot · Aug 16, 2026</span>
+    <a href="https://youtu.be/McO_xcf4IYw" target="_blank">▶ Watch on YouTube</a>
+    <a href="transcripts/ai-services-business-course.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
