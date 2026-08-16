@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>These Stocks Are About to BREAK OUT — Huge UPSIDE</title>
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+    --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+    --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+  .container { max-width: 860px; margin: 0 auto; padding: 24px 16px 60px; }
+  .back-link { display: inline-block; color: var(--muted); font-size: 13px; text-decoration: none; margin-bottom: 20px; }
+  .back-link:hover { color: var(--accent); }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge-en { background: #1a3a1a; color: var(--green); }
+  .badge-stocks { background: #1a3a1a; color: var(--green); }
+  .badge-biz { background: #1a2744; color: #79c0ff; }
+  h1 { font-size: 26px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .meta a { color: var(--muted); text-decoration: none; }
+  .meta a:hover { color: var(--accent); }
+  .yt-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 24px; }
+  .yt-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 16px; line-height: 1.8; }
+  .tl-dr strong { color: var(--accent); }
+  .section { margin-bottom: 28px; }
+  .section-title { font-size: 18px; font-weight: 800; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px; }
+  /* Stock cards */
+  .stock-card { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-left: 4px solid var(--green); }
+  .stock-card.cautious { border-left-color: var(--yellow); }
+  .stock-card.pass { border-left-color: var(--red); }
+  .stock-card.watch { border-left-color: var(--muted); }
+  .stock-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+  .ticker { font-family: monospace; font-size: 18px; font-weight: 900; color: var(--accent); }
+  .stock-name { font-size: 14px; color: var(--muted); }
+  .stock-header .tag { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-left: auto; }
+  .tag-bullish { background: #0d3320; color: var(--green); }
+  .tag-lt-bullish { background: #1a3a5c; color: var(--accent); }
+  .tag-cautious { background: #2d2000; color: var(--yellow); }
+  .tag-pass { background: #2d0a0a; color: var(--red); }
+  .tag-hold { background: #1a2744; color: #79c0ff; }
+  .stock-body { font-size: 14px; color: var(--muted); line-height: 1.75; }
+  .stock-body strong { color: var(--text); }
+  /* Alert box */
+  .alert-box { background: #1a1500; border: 1px solid var(--yellow); border-radius: 10px; padding: 16px 20px; margin-bottom: 20px; font-size: 14px; line-height: 1.75; color: var(--text); }
+  .alert-box strong { color: var(--yellow); }
+  /* Quote */
+  .quote-block { background: var(--surface2); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 15px; }
+  /* Bullets */
+  ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+  ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+  ul.bullets li { line-height: 1.6; }
+  ul.bullets strong { color: var(--text); }
+  /* Stock table */
+  .stock-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 8px; }
+  .stock-table th { text-align: left; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  .stock-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .stock-table tr:last-child td { border-bottom: none; }
+  .stock-table tr:hover td { background: var(--surface); }
+  .mono { font-family: monospace; font-weight: 700; color: var(--accent); }
+  /* Personal finance section */
+  .finance-box { background: #0d2a1a; border: 1px solid var(--green); border-radius: 10px; padding: 18px 22px; }
+  .finance-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .finance-row:last-child { border-bottom: none; font-weight: 700; color: var(--green); }
+  .finance-row .label { color: var(--muted); }
+  .finance-row .amount { font-family: monospace; font-weight: 700; }
+  .finance-row .amount.neg { color: var(--red); }
+  .finance-row .amount.pos { color: var(--green); }
+  /* Footer */
+  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  @media (max-width: 600px) { h1 { font-size: 20px; } .stock-header { gap: 8px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back-link" href="../index.html">← Back to all summaries</a>
+
+  <div class="badges">
+    <span class="badge badge-en">🇺🇸 English</span>
+    <span class="badge badge-stocks">📈 Stocks</span>
+    <span class="badge badge-biz">💼 Investing</span>
+  </div>
+
+  <h1>These Stocks Are About to BREAK OUT‼️ Huge UPSIDE 💰</h1>
+
+  <div class="meta">
+    <span>📅 Aug 16, 2026</span>
+    <span>⏱️ ~20 min</span>
+    <span>🎙️ Jeremy (Financial Education / 1000xStocks)</span>
+    <a href="https://youtu.be/0_2dB7OS-P0" target="_blank">▶ Watch on YouTube</a>
+    <a href="transcripts/stocks-about-to-break-out.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+
+  <div class="yt-embed">
+    <iframe src="https://www.youtube.com/embed/0_2dB7OS-P0" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> Jeremy's best stock ideas for a lower-rate, real estate recovery environment over the next 2–3 years. <strong>Netflix</strong> is the cleanest story in big tech. <strong>Cheesecake Factory (CAKE)</strong> has a 10+ year multi-concept runway — don't sell. <strong>Big Tech CapEx spending</strong> is crushing free cash flow and it's going to get worse before it gets better. <strong>Real estate plays</strong> (RH, Pool Corp, Whirlpool) are primed if rates stay low.
+  </div>
+
+  <!-- Quick reference table -->
+  <div class="section">
+    <div class="section-title">📋 Quick Reference: All Stocks Mentioned</div>
+    <table class="stock-table">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Company</th>
+          <th>Verdict</th>
+          <th>Key Thesis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">NFLX</td>
+          <td>Netflix</td>
+          <td><span class="tag tag-bullish">Very Bullish</span></td>
+          <td>Cleanest story in big tech. Bullish in the $700s</td>
+        </tr>
+        <tr>
+          <td class="mono">CAKE</td>
+          <td>Cheesecake Factory</td>
+          <td><span class="tag tag-bullish">Hold / Bullish LT</span></td>
+          <td>+172% but NOT selling. Flower Child = 10+ yr runway</td>
+        </tr>
+        <tr>
+          <td class="mono">EL</td>
+          <td>Estée Lauder</td>
+          <td><span class="tag tag-bullish">Bullish &lt;$100</span></td>
+          <td>$32K in public account. Earnings next week</td>
+        </tr>
+        <tr>
+          <td class="mono">RH</td>
+          <td>RH (Restoration Hardware)</td>
+          <td><span class="tag tag-lt-bullish">Bullish LT</span></td>
+          <td>Real estate recovery play — high-end furniture</td>
+        </tr>
+        <tr>
+          <td class="mono">POOL</td>
+          <td>Pool Corporation</td>
+          <td><span class="tag tag-lt-bullish">Bullish LT</span></td>
+          <td>New home construction + pool building cycle</td>
+        </tr>
+        <tr>
+          <td class="mono">WHR</td>
+          <td>Whirlpool</td>
+          <td><span class="tag tag-lt-bullish">Bullish LT</span></td>
+          <td>Dead with real estate — rebound candidate</td>
+        </tr>
+        <tr>
+          <td class="mono">NKE</td>
+          <td>Nike</td>
+          <td><span class="tag tag-hold">Hold — Not Selling</span></td>
+          <td>Stuck at $40 but 5–10 yr brand conviction. Not selling</td>
+        </tr>
+        <tr>
+          <td class="mono">BBWI</td>
+          <td>Bath &amp; Body Works</td>
+          <td><span class="tag tag-lt-bullish">Watch / Buy</span></td>
+          <td>"Always solid" — would consider adding</td>
+        </tr>
+        <tr>
+          <td class="mono">LULU</td>
+          <td>Lululemon</td>
+          <td><span class="tag tag-cautious">Cautious</span></td>
+          <td>Intriguing valuation but brand identity unclear long-term</td>
+        </tr>
+        <tr>
+          <td class="mono">META</td>
+          <td>Meta</td>
+          <td><span class="tag tag-pass">Avoid</span></td>
+          <td>FCF near zero, CapEx killing profitability, 2027 problem</td>
+        </tr>
+        <tr>
+          <td class="mono">GOOGL</td>
+          <td>Alphabet</td>
+          <td><span class="tag tag-cautious">Cautious</span></td>
+          <td>CapEx spending + Anthropic write-up tailwinds fading</td>
+        </tr>
+        <tr>
+          <td class="mono">MSFT</td>
+          <td>Microsoft</td>
+          <td><span class="tag tag-cautious">Cautious</span></td>
+          <td>Same CapEx / depreciation headwind, messy story</td>
+        </tr>
+        <tr>
+          <td class="mono">AMZN</td>
+          <td>Amazon</td>
+          <td><span class="tag tag-cautious">Cautious</span></td>
+          <td>SpaceX write-ups won't repeat; massive capex drag</td>
+        </tr>
+        <tr>
+          <td class="mono">AAPL</td>
+          <td>Apple</td>
+          <td><span class="tag tag-cautious">Cautious</span></td>
+          <td>Not spending on AI but hardware disruption risk unclear</td>
+        </tr>
+        <tr>
+          <td class="mono">CELH</td>
+          <td>Celsius</td>
+          <td><span class="tag tag-bullish">Bullish</span></td>
+          <td>Mentioned briefly — "huge opportunity"</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Deep dives -->
+  <div class="section">
+    <div class="section-title">🔍 Deep Dives by Stock</div>
+
+    <!-- Netflix -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <span class="ticker">NFLX</span>
+        <span class="stock-name">Netflix</span>
+        <span class="tag tag-bullish">Very Bullish — Cleanest Story in Big Tech</span>
+      </div>
+      <div class="stock-body">
+        Netflix has <strong>the cleanest story of any large-cap tech company</strong> right now. The thesis is simple: grow subscribers, grow the ads business, grow internationally, raise prices occasionally. That's it. No messy CapEx overhang, no massive chip depreciation coming, no question marks about whether the business model works.<br><br>
+        Contrast with the Magnificent 7:<br>
+        → <strong>Meta / Google / Amazon / Microsoft:</strong> spending every dollar of operating cash flow on AI infrastructure. Free cash flow is near zero. Those chips will depreciate over the next several years → earnings per share hit is coming. Some companies' FCF is already going negative.<br>
+        → <strong>Apple:</strong> Not spending on AI, but then people ask "what does that mean for their long-term business model?" Hardware gets disrupted eventually.<br>
+        → <strong>Semiconductor companies:</strong> Trading at lower PE ratios because "eventually the music stops" — orders slow, margins compress.<br><br>
+        Additionally, big tech companies (Google, Amazon) benefited from large write-ups of Anthropic / SpaceX / OpenAI investments in 2024–2025. <strong>If those private company valuations cap here for the next 6–12 months, those EPS boosts don't repeat.</strong><br><br>
+        Netflix has none of these headwinds. Content spend is already baked in — it's not a new trend. Margins are great, revenue growth is great, business model is recurring and predictable. <strong>Bullish in the $700s.</strong>
+      </div>
+    </div>
+
+    <!-- Cheesecake Factory -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <span class="ticker">CAKE</span>
+        <span class="stock-name">Cheesecake Factory</span>
+        <span class="tag tag-bullish">+172% — Still NOT Selling</span>
+      </div>
+      <div class="stock-body">
+        Up 172% (not counting dividends received). Many viewers started talking about selling after it crossed $100. Jeremy's response: <strong>don't.</strong><br><br>
+        <strong>The valuation re-rating thesis:</strong> Cheesecake Factory isn't just a restaurant chain anymore — it's a multi-concept growth company. The market is beginning to price it like Chipotle, Cava, or Dutch Bros — companies that command premium forward PEs because of visible long-term growth runways.<br><br>
+        <strong>Three growth concepts:</strong><br>
+        → <strong>Flower Child</strong> — the big one. 10+ year runway to expand across the entire United States. Comps are some of the best seen in the restaurant industry in recent history. This alone justifies holding<br>
+        → <strong>North Italia</strong> — strong concept, smaller footprint than Flower Child long-term<br>
+        → <strong>Cheesecake Factory core</strong> — plus international expansion and future concepts still in development<br><br>
+        Forward PE is still in the low 20s. For a company with this kind of multi-decade growth visibility, Jeremy is not interested in selling. His comparison: <em>"Can I tell you Micron's net income in 2031 will be the same as today? No. Can I tell you Flower Child will be expanding across America for the next 10+ years? Yes."</em><br><br>
+        <strong>Public account position: significant, unrevealed — not being reduced.</strong>
+      </div>
+    </div>
+
+    <!-- Estee Lauder -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <span class="ticker">EL</span>
+        <span class="stock-name">Estée Lauder</span>
+        <span class="tag tag-bullish">Buy under $100 — Earnings Next Week</span>
+      </div>
+      <div class="stock-body">
+        Showing the right numbers to justify a long-term investment case. <strong>The lower it is under $100, the stronger the buy signal.</strong><br><br>
+        <strong>Current public account position: $32,000.</strong> Plans to continue buying more shares.<br>
+        Catalyst ahead: earnings report next week. He's watching closely.
+      </div>
+    </div>
+
+    <!-- Real estate plays -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <span class="ticker">RH · POOL · WHR</span>
+        <span class="stock-name">Real Estate Recovery Basket</span>
+        <span class="tag tag-lt-bullish">Bullish LT — Rate Dependent</span>
+      </div>
+      <div class="stock-body">
+        If rates stay lower for the next several years and real estate picks up, these three companies are <strong>dramatically higher 2–3 years from now</strong> than they are today.<br><br>
+        → <strong>RH (Restoration Hardware)</strong> — high-end furniture. Real estate recovery → people furnishing new homes<br>
+        → <strong>Pool Corporation (POOL)</strong> — everything pool-related. New home construction → new pools. When home construction is slow, people don't build or remodel pools. When it picks up, Pool Corp goes with it<br>
+        → <strong>Whirlpool (WHR)</strong> — has been "dead for years" as the real estate market was dead. A housing recovery gives it the momentum it hasn't had in a long time<br><br>
+        These are macro-dependent. The thesis only works in a lower-rate, higher-construction environment.
+      </div>
+    </div>
+
+    <!-- Nike -->
+    <div class="stock-card watch">
+      <div class="stock-header">
+        <span class="ticker">NKE</span>
+        <span class="stock-name">Nike</span>
+        <span class="tag tag-hold">Hold — Long-Term Brand Conviction</span>
+      </div>
+      <div class="stock-body">
+        Stock stuck around $40, bouncing between $40 and $44. <strong>"Stuck in the mud"</strong> — but he's not selling.<br><br>
+        His view: Nike's brand will be <strong>more relevant in 10 years than it is today</strong>. The space has always been competitive and Nike survives decade after decade. He expects Nike to exit this decade a stronger company than it exited the last one.<br><br>
+        Comparison with Lululemon: Nike knows what it stands for — <em>"the best athletes in the world wearing their products."</em> Lululemon? He's not sure what the brand stands for beyond yoga pants, which isn't enough to build a lasting global brand. That's why he watches Lulu but can't pull the trigger to actually buy it.
+      </div>
+    </div>
+
+    <!-- Big Tech Warning -->
+    <div class="stock-card pass">
+      <div class="stock-header">
+        <span class="ticker">META · GOOGL · MSFT · AMZN</span>
+        <span class="stock-name">Big Tech AI Spenders</span>
+        <span class="tag tag-pass">Avoid / Cautious</span>
+      </div>
+      <div class="stock-body">
+        <strong>The core problem:</strong> These companies are spending essentially every dollar of operating cash flow on AI infrastructure. Free cash flow is already near zero. For some it's going negative. That is going to hurt earnings per share <em>substantially</em> as those chips depreciate over the next several years.<br><br>
+        <strong>Meta already showed the first signs</strong> of this in their most recent results. It's going to get worse before it gets better.<br><br>
+        Additional headwind for 2027: companies like Google and Amazon benefited from massive write-ups of their Anthropic/SpaceX/OpenAI investments in recent quarters. If those private valuations cap here for the next 6–12 months, <strong>those artificial EPS boosts don't repeat</strong> — and the comparisons get tough.<br><br>
+        Even if these companies cut CapEx, they lose: markets will ask "why are they cutting — does their AI business not have the opportunity they thought?" It's a no-win narrative framing. That's why these stocks can't sustainably break to new all-time highs.
+      </div>
+    </div>
+  </div>
+
+  <!-- Market thesis -->
+  <div class="section">
+    <div class="section-title">🌍 Broader Market Thesis (Ed Yardeni Reaction)</div>
+    <div class="alert-box">
+      <strong>Ed Yardeni's view (CNBC clip):</strong> Coined "FEMO" — Fabulous Earnings Momentum. S&amp;P 500 earnings up ~25% in Q2, with similar expected for Q3/Q4. Market going higher on earnings. "Impressive 493" (non-Mag7) outperforming this year as investors have "AI fatigue" on the big names.
+    </div>
+    <div class="quote-block">
+      "Whoa, whoa — hold your horses one flippy flapjack moment. The reason those stocks are struggling is because they're basically spending every dollar of operating cash flow right out. Their free cash flow is dead. For some it's already going negative. And you're already getting the early signs of profitability falling for these companies — and it's going to get worse before it gets better. It's not just because people are tired of guessing who's winners and losers. It's because these companies are running into cash flow problems."
+    </div>
+    <ul class="bullets" style="margin-top:14px;">
+      <li><strong>Equal-weight vs market-cap weight:</strong> Yardeni notes the broader market has outperformed the cap-weighted S&amp;P this year — the "Impressive 493" finally pulling weight</li>
+      <li><strong>Credit/leverage:</strong> No major alarm — markets always watch debt and margins. The 2007–08 lesson is still baked in. 2021 was the closest we got to credit blindness; that ended with inflation</li>
+      <li><strong>Nvidia's $500B financing roadshow:</strong> Bringing top finance people to pitch massive AI infrastructure financing — a signal of how large the capital needs have become</li>
+    </ul>
+  </div>
+
+  <!-- Personal finance -->
+  <div class="section">
+    <div class="section-title">💰 Personal: The $1.1M Wire</div>
+    <div class="finance-box">
+      <div class="finance-row"><span class="label">Real estate sale proceeds</span><span class="amount pos">+$1,100,000</span></div>
+      <div class="finance-row"><span class="label">Capital gains tax (~18%)</span><span class="amount neg">~-$200,000</span></div>
+      <div class="finance-row"><span class="label">Net after tax</span><span class="amount pos">~$900,000</span></div>
+      <div class="finance-row"><span class="label">Ferrari SF90 (trading in Roma ~$200K)</span><span class="amount neg">~-$250,000</span></div>
+      <div class="finance-row"><span class="label">Possible 2nd real estate transaction</span><span class="amount neg">Large portion TBD</span></div>
+      <div class="finance-row"><span class="label">Cash reserve — ready to deploy if Nasdaq -15%</span><span class="amount pos">$300K+ on standby</span></div>
+      <div class="finance-row"><span class="label">Remainder</span><span class="amount pos">Savings / weekly buys continue</span></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Generated by Dot DiBot · Aug 16, 2026</span>
+    <a href="https://youtu.be/0_2dB7OS-P0" target="_blank">▶ Watch on YouTube</a>
+    <a href="transcripts/stocks-about-to-break-out.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
