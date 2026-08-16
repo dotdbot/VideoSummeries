@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en"><!-- set lang="he" dir="rtl" for Hebrew videos -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIDEO TITLE</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    /* Badge variants: badge-he, badge-en, badge-stocks, badge-biz, badge-ai */
+    .badge-he { background: #1a3a5c; color: var(--accent); }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-stocks { background: #2d2000; color: var(--yellow); }
+    .badge-biz { background: #2d1a5c; color: var(--purple); }
+    .badge-ai { background: #1a2744; color: var(--accent); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+
+    /* Stock sentiment tags */
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .tag-bullish    { background: #0d3320; color: var(--green); }
+    .tag-lt-bullish { background: #1a3a5c; color: var(--accent); }
+    .tag-cautious   { background: #2d2000; color: var(--yellow); }
+    .tag-pass       { background: #2d0a0a; color: var(--red); }
+    .tag-wait       { background: #2d2000; color: var(--yellow); }
+    .tag-watch      { background: #002020; color: #39d353; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th { background: var(--surface2); color: var(--muted); text-align: left; padding: 10px 14px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--surface2); }
+    .ticker { font-family: monospace; font-weight: 700; color: var(--accent); font-size: 14px; }
+    .gain { color: var(--green); font-weight: 700; font-family: monospace; }
+
+    /* Steps */
+    .step { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+    .step:last-child { border-bottom: none; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #000; font-weight: 900; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-body { font-size: 14px; line-height: 1.6; }
+    .step-body strong { color: var(--text); display: block; margin-bottom: 2px; }
+
+    /* Quotes */
+    .quote-block { border-left: 4px solid var(--purple); background: #1a1430; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 14px 0; font-style: italic; font-size: 15px; line-height: 1.7; color: #d2b4fe; }
+    .quote-block cite { display: block; font-style: normal; font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+    /* Alert/warning box */
+    .alert-box { background: #2d2000; border: 1px solid var(--yellow); border-radius: 8px; padding: 16px 20px; margin-top: 20px; font-size: 14px; color: var(--yellow); }
+
+    /* Grids */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .grid-item { background: var(--surface2); border-radius: 8px; padding: 14px; font-size: 14px; line-height: 1.6; }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media(max-width:600px) { .two-col { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <!-- Pick badges: badge-he/badge-en + badge-stocks/badge-biz/badge-ai etc -->
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-biz">🚀 Business</span>
+    </div>
+    <h1>VIDEO TITLE</h1>
+    <div class="meta">
+      <span>📅 DATE</span>
+      <span>⏱️ DURATION</span>
+      <span>🎙️ CHANNEL / SPEAKER</span>
+      <a href="https://youtu.be/VIDEO_ID" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> ONE TO THREE SENTENCE SUMMARY.
+  </div>
+
+  <!-- =================== CONTENT CARDS =================== -->
+  <!-- Adapt to video type. Examples below: -->
+
+  <!-- FACTS card (use for any factual/data-heavy video) -->
+  <div class="card">
+    <h2>📊 Facts</h2>
+    <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:15px;">
+      <li>✅ FACT ONE</li>
+      <li>✅ FACT TWO</li>
+    </ul>
+  </div>
+
+  <!-- STOCKS table (use for finance videos) -->
+  <!--
+  <div class="card">
+    <h2>📈 Stocks Discussed</h2>
+    <table>
+      <thead><tr><th>Ticker</th><th>Name</th><th>Opinion</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="ticker">NFLX</td><td>Netflix</td>
+          <td><span class="tag tag-bullish">Very Bullish</span></td>
+          <td>Forward P/E 21, best 3-year risk/reward.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  -->
+
+  <!-- CONCLUSIONS / RECOMMENDATIONS (use for interview/talk videos) -->
+  <div class="card">
+    <h2>💡 Conclusions</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>CONCLUSION TITLE</strong> Body text here.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>✅ Recommendations</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body"><strong>ACTION TITLE</strong> Details here.</div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Generated by <strong>Dot DiBot</strong> · DATE</span>
+    <a href="https://youtu.be/VIDEO_ID" target="_blank">▶ Watch on YouTube</a>
+  </footer>
+</div>
+<!-- ALWAYS include this line: -->
+<script src="../protect.js"></script>
+</body>
+</html>
