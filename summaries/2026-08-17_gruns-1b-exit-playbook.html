@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Grüns Sold for $1.2B in 32 Months — Case Study | Ryan Daniel Moran</title>
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+    --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+    --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+  .container { max-width: 860px; margin: 0 auto; padding: 24px 16px 60px; }
+  .back-link { display: inline-block; color: var(--muted); font-size: 13px; text-decoration: none; margin-bottom: 20px; }
+  .back-link:hover { color: var(--accent); }
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .badge { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge-en { background: #1a3a1a; color: var(--green); }
+  .badge-biz { background: #1a2744; color: #79c0ff; }
+  h1 { font-size: 24px; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .meta a { color: var(--muted); text-decoration: none; }
+  .meta a:hover { color: var(--accent); }
+  .yt-embed { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 24px; }
+  .yt-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  /* TL;DR */
+  .tl-dr { background: #0a1a10; border: 1px solid var(--green); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.85; }
+  .tl-dr strong { color: var(--green); }
+  .section { margin-bottom: 32px; }
+  .section-title { font-size: 18px; font-weight: 800; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 18px; }
+  /* Stat row */
+  .stat-row { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+  .stat-box { background: var(--surface2); border-radius: 10px; padding: 14px 18px; flex: 1; min-width: 120px; text-align: center; }
+  .stat-box .val { font-size: 22px; font-weight: 900; font-family: monospace; color: var(--green); }
+  .stat-box .val.yellow { color: var(--yellow); }
+  .stat-box .val.accent { color: var(--accent); }
+  .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  /* Pattern cards */
+  .pattern-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; margin-bottom: 20px; }
+  .pattern-card.p1 { border-left: 4px solid var(--green); }
+  .pattern-card.p2 { border-left: 4px solid var(--yellow); }
+  .pattern-card.p3 { border-left: 4px solid var(--accent); }
+  .pattern-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
+  .pattern-num { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; flex-shrink: 0; }
+  .num-green { background: #0d3320; color: var(--green); }
+  .num-yellow { background: #2d2000; color: var(--yellow); }
+  .num-accent { background: #1a2744; color: var(--accent); }
+  .pattern-title { font-size: 18px; font-weight: 800; }
+  .pattern-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+  .pattern-body { font-size: 14px; color: var(--muted); line-height: 1.85; }
+  .pattern-body strong { color: var(--text); }
+  .pattern-body .green { color: var(--green); }
+  .pattern-body .yellow { color: var(--yellow); }
+  .pattern-body .accent { color: var(--accent); }
+  .pattern-body ul { padding-left: 18px; margin: 10px 0; }
+  .pattern-body ul li { margin-bottom: 8px; }
+  /* Pricing breakdown */
+  .price-flow { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
+  .price-step { background: var(--surface2); border-radius: 8px; padding: 12px 16px; flex: 1; min-width: 130px; }
+  .price-step .pval { font-size: 20px; font-weight: 900; font-family: monospace; color: var(--accent); }
+  .price-step .plbl { font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .arrow { display: flex; align-items: center; color: var(--muted); font-size: 20px; }
+  /* Quote */
+  .quote-block { background: var(--surface2); border-left: 3px solid var(--muted); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 14px 0; font-style: italic; font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .quote-block strong { color: var(--text); font-style: normal; }
+  /* Alert / highlight box */
+  .highlight { background: #0a1500; border: 1px solid var(--green); border-radius: 8px; padding: 14px 18px; font-size: 14px; line-height: 1.75; margin: 14px 0; }
+  .highlight strong { color: var(--green); }
+  .highlight-yellow { background: #1a1500; border-color: var(--yellow); }
+  .highlight-yellow strong { color: var(--yellow); }
+  /* Takeaway list */
+  ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: var(--muted); }
+  ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+  ul.bullets li { line-height: 1.7; }
+  ul.bullets strong { color: var(--text); }
+  /* Formula */
+  .formula { background: var(--surface2); border-radius: 10px; padding: 16px 20px; font-family: monospace; font-size: 15px; color: var(--green); margin: 12px 0; }
+  /* Footer */
+  .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--accent); }
+  @media (max-width: 600px) { h1 { font-size: 19px; } .arrow { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back-link" href="../index.html">← Back to all summaries</a>
+
+  <div class="badges">
+    <span class="badge badge-en">🇺🇸 English</span>
+    <span class="badge badge-biz">💼 Business</span>
+  </div>
+
+  <h1>How Grüns Sold for $1.2B in 32 Months — Case Study</h1>
+
+  <div class="meta">
+    <span>📅 August 17, 2026</span>
+    <span>⏱️ 24:00 min</span>
+    <span>🎙️ Ryan Daniel Moran</span>
+    <a href="https://youtu.be/UUOlMu8PJ68" target="_blank">▶ YouTube</a>
+    <a href="transcripts/gruns-1b-exit-playbook.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+
+  <div class="yt-embed">
+    <iframe src="https://www.youtube.com/embed/UUOlMu8PJ68" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tl-dr">
+    <strong>⚡ TL;DR —</strong> Grüns, a greens gummies supplement brand, went from <strong>$1.8M seed round</strong> to a <strong>$1.2B exit in just 32 months</strong>. This was not luck — it was a manufactured playbook built on three patterns: <strong>Product</strong> (sit between two billion-dollar trends), <strong>Pricing</strong> (premium price + subscription model that turns a $40 customer into an $800/year customer), and <strong>Proof</strong> (clinical data + social proof that obliterates competitors). You can apply all three to any product business right now.
+  </div>
+
+  <!-- Key Numbers -->
+  <div class="section">
+    <div class="section-title">📊 The Numbers</div>
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="val">$1.8M</div>
+        <div class="lbl">Seed Round (2023)</div>
+      </div>
+      <div class="stat-box">
+        <div class="val accent">$10–15M</div>
+        <div class="lbl">Seed Valuation</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">$1.2B</div>
+        <div class="lbl">Exit Price</div>
+      </div>
+      <div class="stat-box">
+        <div class="val yellow">100×</div>
+        <div class="lbl">Investor Return</div>
+      </div>
+      <div class="stat-box">
+        <div class="val accent">32 mo</div>
+        <div class="lbl">Seed → Exit</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--muted);">Acquired by <strong style="color:var(--text)">Unilever</strong> — the same company that previously acquired Olly (gummies) in 2019. The early investors earned <strong style="color:var(--green)">10× the return they'd have gotten from Nvidia</strong> during the same period.</p>
+    <br>
+    <p style="font-size:13px; color:var(--muted);">Founder: <strong style="color:var(--text)">Chad Janis</strong> — age 33 at exit. Previously sat on the boards of Chubbies and Dr. Squatch. Stanford MBA. This was <em>not</em> his first rodeo.</p>
+  </div>
+
+  <!-- The 3 Patterns -->
+  <div class="section">
+    <div class="section-title">🔑 The 3-Pattern Playbook</div>
+
+    <!-- P1: Product -->
+    <div class="pattern-card p1">
+      <div class="pattern-header">
+        <div class="pattern-num num-green">1</div>
+        <div>
+          <div class="pattern-title">📦 Product — Sit Between Two Billion-Dollar Trends</div>
+          <div class="pattern-sub">The most important pattern. Choose your product like an investor, not a creator.</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <p>Chad Janis identified two massive, validated trends in consumer health:</p>
+        <ul>
+          <li><strong>Supplement Gummies</strong> → Olly (acquired by Unilever in 2019 for ~$100M+, now a $1B brand). Gummies as a delivery mechanism were exploding.</li>
+          <li><strong>Greens Supplements</strong> → Athletic Greens (AG1), valued at $1B in 2022. Daily greens powder was a mainstream behavior shift.</li>
+        </ul>
+        <p>The insight: <strong>nobody had merged the two</strong>. No greens gummies. Chad combined them — and instantly had a product with tailwinds from both markets, zero head-on competition, and a built-in story that required minimal copy to explain.</p>
+        <br>
+        <p>He spent <strong>a full year perfecting the product</strong> before launch. He knew the bar — he'd seen what great products looked like from board-level experience.</p>
+        <br>
+        <div class="highlight">
+          <strong>Validation test:</strong> Are other businesses being acquired or valued at tens of millions of dollars in your category? If yes → buyers exist → your premium exit is fundable. Chad saw Olly acquired AND AG1 at $1B. Green light.
+        </div>
+        <br>
+        <div class="highlight highlight-yellow">
+          <strong>AG1 origin story (bonus):</strong> Founder Chris Ashhenden started Athletic Greens as a side project by partnering with Tim Ferriss's audience. One great product + one great audience = a few years later → $1B valuation. Ryan consulted them on Amazon early on.
+        </div>
+        <br>
+        <p><strong>The meta-principle:</strong> Find two trends converging. Build the bridge. That's a billion-dollar product formula.</p>
+      </div>
+    </div>
+
+    <!-- P2: Pricing -->
+    <div class="pattern-card p2">
+      <div class="pattern-header">
+        <div class="pattern-num num-yellow">2</div>
+        <div>
+          <div class="pattern-title">💰 Pricing — Premium + Subscription = LTV Machine</div>
+          <div class="pattern-sub">Don't compete on price. Compete on economics. Your competitors can't afford you.</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <p>Grüns reverse-engineered a billion-dollar exit <em>from the pricing structure first</em>. Every decision flows from this.</p>
+        <br>
+        <p><strong>Step 1: Premium Positioning</strong></p>
+        <ul>
+          <li>Olly greens gummies: <strong style="color:var(--muted)">$15–20</strong> per month</li>
+          <li>Grüns: <strong class="green">$60–80</strong> — 4× the market rate</li>
+          <li>This wasn't arrogance, it was math. Higher price = more margin = more fuel for ads + influencers</li>
+        </ul>
+        <br>
+        <p><strong>Step 2: The Subscription Ladder</strong></p>
+        <div class="price-flow">
+          <div class="price-step">
+            <div class="pval">$40</div>
+            <div class="plbl">First auto-ship order (incentive price to convert)</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="price-step">
+            <div class="pval">$59.99</div>
+            <div class="plbl">Recurring monthly auto-ship price</div>
+          </div>
+          <div class="arrow">→</div>
+          <div class="price-step">
+            <div class="pval">$750+</div>
+            <div class="plbl">Annual customer value (13 orders × $59.99)</div>
+          </div>
+        </div>
+        <p>The math: a $40 front-end customer becomes nearly <strong class="green">$800/year</strong> if they stay on auto-ship for 12 months. That's ~20× the front-end price in LTV — Ryan's benchmark for clients is only 10×. Grüns <strong>doubled it</strong>.</p>
+        <br>
+        <p><strong>Step 3: The 28-Day Supply Trick</strong></p>
+        <ul>
+          <li>28 days ≠ 1 month. 365 ÷ 28 = <strong>13 orders per year</strong> instead of 12</li>
+          <li>One extra shipment per year per subscriber = massive revenue at scale</li>
+        </ul>
+        <br>
+        <p><strong>Step 4: The "49% Off" Evergreen Offer</strong></p>
+        <ul>
+          <li>The max auto-ship bundle = 49% savings vs. single-unit purchase</li>
+          <li>This same "49% off" angle runs year-round as Black Friday, Memorial Day, Cyber Monday, etc.</li>
+          <li><em>It's not a discount. It's always the offer.</em> But it creates urgency every time.</li>
+        </ul>
+        <br>
+        <div class="highlight highlight-yellow">
+          <strong>The key insight:</strong> When you know your CAC vs. LTV ratio, you know exactly how much you can spend on Meta ads, podcast sponsorships, and influencers — budgets your lower-margin competitors simply cannot match. Grüns could outspend every rival because every competitor was playing a 1× game and Grüns was playing a 20× game.
+        </div>
+        <br>
+        <div class="formula">
+          LTV goal = 10× front-end price (Ryan's benchmark)<br>
+          Grüns achieved: ~20× front-end → $40 → ~$800/year
+        </div>
+      </div>
+    </div>
+
+    <!-- P3: Proof -->
+    <div class="pattern-card p3">
+      <div class="pattern-header">
+        <div class="pattern-num num-accent">3</div>
+        <div>
+          <div class="pattern-title">🧪 Proof — Let the Data Sell for You</div>
+          <div class="pattern-sub">Most founders write copy. Grüns wrote evidence.</div>
+        </div>
+      </div>
+      <div class="pattern-body">
+        <p>Grüns' sales pages, Amazon listings, and ads are <strong>proof-first, copy-last</strong>. No fancy taglines. No lifestyle aspirations. Just data.</p>
+        <br>
+        <p><strong>Type 1: Clinical Trial Data</strong></p>
+        <ul>
+          <li>Ran an actual clinical trial measuring nutrient levels (vitamin C, folate, etc.) before and after taking Grüns</li>
+          <li>Displayed results directly in marketing images — lab-grade credibility at consumer scale</li>
+        </ul>
+        <br>
+        <p><strong>Type 2: Observational Customer Study</strong></p>
+        <ul>
+          <li>Surveyed customers: "Has your energy improved? Do you feel better?" → reported the % who said yes</li>
+          <li><em>This is something any brand can do.</em> Survey your customers, display the results as a stat</li>
+          <li>Example: "87% of users reported improved energy in 30 days" — zero clinical investment required</li>
+        </ul>
+        <br>
+        <p><strong>Type 3: Problem-Proof (the genius move)</strong></p>
+        <div class="highlight">
+          <strong>Amazon listing stat:</strong> "90% of US adults don't meet their recommended daily nutrient intake" — <em>no mention of Grüns</em>.
+          <br><br>
+          Also: "61% of Americans experience weekly digestive issues like bloating, abdominal pain." Grüns has lots of fiber. The product is never named as the solution — the reader makes that connection automatically.
+        </div>
+        <p>This is proof-about-the-problem, not proof-about-the-product. The reader fills in the gap: <em>"I have this problem → this product solves it."</em> No hard sell needed.</p>
+        <br>
+        <p><strong>What their Amazon listing looks like:</strong></p>
+        <ul>
+          <li>Hundreds of reviews</li>
+          <li>Videos of happy customers</li>
+          <li>Clinical stats and observational data embedded in images</li>
+          <li>Competitor comparison charts</li>
+          <li>Problem-proof stats (nutrient gap, digestive issues)</li>
+        </ul>
+        <br>
+        <div class="highlight highlight-yellow">
+          <strong>The flywheel:</strong> Higher proof → higher conversion rate → more budget for ads → more customers → more reviews → even higher proof. Once you're spinning this wheel faster than competitors, nobody can catch you.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your Action Plan -->
+  <div class="section">
+    <div class="section-title">🎯 Your Actionable Playbook (Steal This)</div>
+    <ul class="bullets">
+      <li><strong>Product:</strong> Find two converging trends with proof of acquisition/valuation in each. Build the bridge product that sits between them. Spend time making it genuinely great.</li>
+      <li><strong>Pricing:</strong> Take the median price in your category and multiply by 2 — that's your starting point for premium positioning.</li>
+      <li><strong>Subscriptions:</strong> Add an incentivized first-order price to convert, then let the recurring model run. Build upsells or auto-ship for LTV.</li>
+      <li><strong>Target LTV:</strong> Know your CAC. Aim for 10× front-end price as annual LTV. Above 10× = you can outspend every competitor on ads.</li>
+      <li><strong>Proof — start today:</strong> Survey your customers. Report the stats. Find 2-3 facts about the problem your product solves and put them front and center in your listing/sales page.</li>
+      <li><strong>Problem-proof:</strong> Lead with a stat about the problem, not the product. Let the reader connect the dots. This converts better than any headline.</li>
+      <li><strong>Amazon specifically:</strong> Embed proof into every image slot. Reviews, stats, customer videos, problem data. Your competitors are using lifestyle photos — you bring evidence.</li>
+    </ul>
+  </div>
+
+  <!-- Key Quotes -->
+  <div class="section">
+    <div class="section-title">💬 Key Quotes</div>
+    <div class="quote-block">"If you want to increase your sales, increase your price. Higher price gives you more margin to run ads and do aggressive discounts to acquire customers — and then the back-end takes care of itself."</div>
+    <div class="quote-block">"A $40 customer is not a $40 customer. They're a $750 customer. That's who Grüns is banking on."</div>
+    <div class="quote-block">"Proof sells a product better than any fancy copy can. You don't need a big branding agency. You need evidence."</div>
+    <div class="quote-block">"If you get this one-tenth right, you're still in striking distance of a multi-million-dollar life-changing exit."</div>
+  </div>
+
+  <!-- Context on Ryan -->
+  <div class="section">
+    <div class="section-title">👤 About the Analyst</div>
+    <p style="font-size:14px; color:var(--muted); line-height:1.8;"><strong style="color:var(--text)">Ryan Daniel Moran</strong> — investor in e-commerce brands, multiple exits as both founder and investor, including one 9-figure exit as an investor. Has never had a billion-dollar exit (he's transparent about this), but has coached hundreds of entrepreneurs to 7–8 figure exits via <strong style="color:var(--accent)">capitalism.com</strong>. He consulted AG1 on their early Amazon presence and the AG1 investors are minority owners of the Cleveland Guardians — Ryan's dream acquisition target.</p>
+  </div>
+
+  <div class="footer">
+    <span>⚡ Generated by Dot DiBot · August 17, 2026</span>
+    <span>
+      <a href="https://youtu.be/UUOlMu8PJ68" target="_blank">▶ YouTube</a> ·
+      <a href="transcripts/gruns-1b-exit-playbook.txt" target="_blank">📄 Full Transcript</a>
+    </span>
+  </div>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
