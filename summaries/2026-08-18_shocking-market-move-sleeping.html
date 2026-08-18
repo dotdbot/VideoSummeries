@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Shocking Market Move is Coming & Everyone is Asleep</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .back-link { display: inline-block; padding: 12px 20px; color: var(--muted); font-size: 13px; }
+    .back-link:hover { color: var(--text); }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-right: 6px; }
+    .badge-en { background: #1a3a1a; color: var(--green); }
+    .badge-stocks { background: #1a3a1a; color: var(--green); }
+    .badge-macro { background: #2d0a0a; color: #ff8080; }
+    h1 { font-size: 26px; font-weight: 700; margin: 14px 0 10px; line-height: 1.3; }
+    .meta { color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 14px; }
+    .yt-btn { display: inline-flex; align-items: center; gap: 6px; background: #c00; color: #fff; padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; margin-right: 8px; }
+    .transcript-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--surface2); color: var(--muted); padding: 7px 14px; border-radius: 6px; font-size: 13px; }
+    .embed-wrap { position: relative; padding-top: 56.25%; margin: 20px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    .embed-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .tldr { background: #0d2a1a; border: 1px solid #1a5c2a; border-radius: 10px; padding: 18px 20px; margin: 20px 0; }
+    .tldr-label { color: var(--green); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .tldr p { font-size: 15px; line-height: 1.65; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px; margin: 20px 0; }
+    .card h2 { font-size: 17px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .card h3 { font-size: 14px; font-weight: 700; color: var(--accent); margin: 18px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 9px; line-height: 1.6; }
+    .sub { padding-left: 18px; margin-top: 6px; }
+    .sub li { margin-bottom: 5px; color: var(--muted); font-size: 14px; }
+    .highlight { color: var(--accent); font-weight: 600; }
+    .num { color: var(--green); font-weight: 700; }
+    .red { color: var(--red); font-weight: 600; }
+    .yellow { color: var(--yellow); font-weight: 600; }
+    .quote-box { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; color: var(--muted); font-size: 14px; }
+    .warning-box { background: #2d1a00; border: 1px solid #5c3800; border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+    .warning-label { color: var(--yellow); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    /* Stock table */
+    .stock-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+    .stock-table th { background: var(--surface2); color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+    .stock-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .stock-table tr:last-child td { border-bottom: none; }
+    .ticker { font-weight: 700; font-family: monospace; font-size: 15px; }
+    .tag { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 12px; font-weight: 600; }
+    .tag-bullish { background: #0d3320; color: #3fb950; }
+    .tag-lt-bullish { background: #1a3a5c; color: #58a6ff; }
+    .tag-cautious { background: #2d2000; color: #d29922; }
+    .tag-pass { background: #2d0a0a; color: #f85149; }
+    .tag-wait { background: #2d2000; color: #d29922; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+    footer { border-top: 1px solid var(--border); padding-top: 20px; margin-top: 40px; color: var(--muted); font-size: 12px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; }
+  </style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">← Back to all summaries</a>
+
+<div class="container">
+  <div>
+    <span class="badge badge-en">🇺🇸 English</span>
+    <span class="badge badge-stocks">📈 Stocks</span>
+    <span class="badge badge-macro">⚠️ Macro Warning</span>
+  </div>
+  <h1>A Shocking Market Move is Coming &amp; Everyone is Asleep‼️</h1>
+  <div class="meta">
+    <span>📅 Aug 18, 2026</span>
+    <span>⏱️ ~20 min</span>
+    <span>🎙️ Private investing group YouTuber (long-term retail investor)</span>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <a class="yt-btn" href="https://www.youtube.com/watch?v=sg7OczfYRZU" target="_blank">▶ Watch on YouTube</a>
+    <a class="transcript-btn" href="transcripts/shocking-market-move-sleeping.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+
+  <div class="embed-wrap">
+    <iframe src="https://www.youtube.com/embed/sg7OczfYRZU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-label">⚡ TL;DR</div>
+    <p>The host is <strong>bullish long-term on small/mid-cap stocks</strong> (Celsius, SoFi, Estee Lauder, Nike, Revolve, Honest) but <strong class="red">warns about a potential major top forming in Mag7/large-cap tech going into 2027</strong>. Wall Street's 9,000–10,000 S&P calls worry him — too many bulls, not enough skeptics left to sustain the rally. His "shocking move": the top of the market quietly rolls over while small caps party.</p>
+  </div>
+
+  <!-- SECTION 1: Market thesis -->
+  <div class="card">
+    <h2>📉 The "Shocking Move" — Big Cap Top, Small Cap Rotation</h2>
+
+    <h3>The core warning</h3>
+    <ul>
+      <li>Wall Street is now calling for <span class="highlight">S&P 9,000 in 12 months</span> (Evercore) and <span class="highlight">S&P 10,000 in 18 months</span> (various guests). That level of bullishness is a red flag.</li>
+      <li>"If everybody is bullish... are there many bulls left to pull over after this year?" When sentiment maxes out, pullbacks begin.</li>
+      <li>AI investor sentiment surveys have been bearish for years — if that flips to extreme bullish, <span class="red">that's your warning sign the top is near.</span></li>
+    </ul>
+
+    <h3>Why the top of the market (Mag7) may struggle in 2027</h3>
+    <ul>
+      <li><strong>Capex hitting the depreciation line:</strong> Meta is already feeling it in 2026. Amazon, Google, Microsoft, Oracle, Tesla — their massive AI/infrastructure spend will slam EPS in 2027–2028 through increased depreciation.</li>
+      <li><strong>One-time earnings boosts disappear:</strong> In 2026, many hyperscalers had huge valuation raises on investments in SpaceX, OpenAI, Anthropic — this pumped EPS. That doesn't repeat in 2027.</li>
+      <li><strong>Apple:</strong> Forward P/E in the 30s, no major new product cycle visible for 2027. Growth rate will likely be "quite a bit lower."</li>
+      <li><strong>Chip trade:</strong> Likely tops at end of 2026 or early 2027, then forms a multi-year top. Micron, SanDisk still have earnings growth in 2027 but "dramatically lower" than 2026.</li>
+      <li><strong>Nvidia:</strong> Still respectable earnings growth in 2027, but at "very low number compared to 2026."</li>
+    </ul>
+
+    <div class="quote-box">"It's a lot easier to see how those companies' earnings are going to be DOWN in 2027. It's actually mathematically hard to see them up."</div>
+
+    <h3>The "shocking move" scenario</h3>
+    <ul>
+      <li>If the market runs hot through fall 2026 → top 15 stocks struggle in 2027 → market looks "in depression" at the index level.</li>
+      <li>Meanwhile: small caps, value, dividend stocks, SaaS, consumer brands <strong class="num">have a party.</strong> Their earnings are actually flying.</li>
+      <li>What would make him more bullish on the market overall for 2027: <span class="highlight">a 15% correction in fall 2026</span>. That would reset conditions.</li>
+      <li>Kangaroo market (choppy sideways): sets up a decent 2027 but not a banger year.</li>
+    </ul>
+
+    <h3>The 30-year Treasury signal (5.29%) — his concern</h3>
+    <ul>
+      <li>The 30-year yield at <span class="red">5.29%</span> is getting ignored by equity markets — but it shouldn't be.</li>
+      <li>The 10-year has ranged 4%–5% for 3 years. If it breaks above 5%, that's a problem.</li>
+      <li>Huge issuance coming: hyperscaler debt raises, federal deficit concerns, budget uncertainty.</li>
+      <li>"Not an action you should take right now" — but the curve steepening deserves more attention as a future risk.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2: Wall Street Reactions -->
+  <div class="card">
+    <h2>🎙️ Reacting to the Wall Street Bulls</h2>
+
+    <h3>Tom Lee — S&P 7,900–8,000 by end of August, 8,400 by year-end</h3>
+    <ul>
+      <li>Rationale: 2027 earnings estimates started at $395, now ~$410, likely close to <span class="num">$425 by end of August</span>. At 20x multiple → close to 9,000.</li>
+      <li>Still calling for a <span class="yellow">10% pullback</span> despite being bullish — risks include: extreme margin debt, uncertainty around Fed Chair Kevin Worsh (speaking less to media), midterms coming, SpaceX share unlocks still in progress.</li>
+      <li>Host's take: "Possible. But I'm not super optimistic on the overall market after this year, particularly the top stocks."</li>
+    </ul>
+
+    <h3>Teranova — Broad-based rally is healthy</h3>
+    <ul>
+      <li>Market is "becoming more tactical" — memory stocks, opticals, energy refiners, financials all rebuilding positioning in rotation.</li>
+      <li>Financials strong: Bank of America at 52-week highs, State Street, Charles Schwab, PNC all up.</li>
+      <li>Slower volatility = market waiting to re-accelerate into fall, not a reason to sell.</li>
+    </ul>
+
+    <h3>Shannon — Curve steepening is underappreciated</h3>
+    <ul>
+      <li>Real rates rising currently interpreted as a sign of growth, not stress — but if the narrative shifts to inflation or valuation pressure, it gets "less tenable."</li>
+      <li>Curve steepening gives investors room to add incremental duration, lock in yields, benefit if Fed doesn't hike in 2026.</li>
+    </ul>
+
+    <h3>Jimmy — Equilibrium is sustainable through year-end</h3>
+    <ul>
+      <li>S&P at ~21x next year's earnings is "very reasonable" given mid-20s% earnings growth.</li>
+      <li>Problem: mid-20s% earnings growth won't last forever. <strong>2027 bar is much higher</strong> — even slight disappointment on ~14% earnings growth target could compress multiples.</li>
+      <li>"It's only happened once that you get 5 consecutive years of double-digit S&P gains — the late 1990s." Warning implicit.</li>
+    </ul>
+
+    <h3>Courtney Garcia — Not too bullish, market is broad-based</h3>
+    <ul>
+      <li>Last 3 months: Healthcare +4.7%, Financials +3.9%, Technology +3.25%, Industrials +2.5%, Materials +3%. This is not a 7-stock rally anymore.</li>
+      <li>Capex spending being justified by earnings — it's working.</li>
+      <li>As long as earnings and consumer hold up, markets continue higher.</li>
+    </ul>
+
+    <h3>Host's overall take on the bull sentiment</h3>
+    <ul>
+      <li>"I don't like all this 9,000–10,000 bullishness. Are there many bulls left to pull over?" Too many people agreeing = setup for disappointment.</li>
+      <li>But he won't sell his Amazon or Meta — he runs 4–5 year out valuations. Short-term moves don't change long-term decisions.</li>
+      <li>"Short-term is small money. Long term is big money."</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 3: Stock picks -->
+  <div class="card">
+    <h2>📊 Stock Opinions &amp; Picks</h2>
+
+    <h3>Current momentum stocks he likes</h3>
+    <table class="stock-table">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Company</th>
+          <th>Price (~)</th>
+          <th>Opinion</th>
+          <th>Sentiment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">CELH</td>
+          <td>Celsius Holdings</td>
+          <td>~$29</td>
+          <td>Bottomed at $20s, buying pressure returning. Long-term target $100+. Not selling any shares even at $40.</td>
+          <td><span class="tag tag-bullish">Very Bullish</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">ELF</td>
+          <td>e.l.f. Beauty</td>
+          <td>~$90s</td>
+          <td>Bottomed at $49 in June. "Up up and away." Expects $100+ soon.</td>
+          <td><span class="tag tag-bullish">Very Bullish</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">WYNN</td>
+          <td>Wynn Resorts</td>
+          <td>—</td>
+          <td>Middle East property opening next year is a huge EPS catalyst. Momentum building.</td>
+          <td><span class="tag tag-bullish">Very Bullish</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">AMZN</td>
+          <td>Amazon</td>
+          <td>—</td>
+          <td>Strongest of the Mag7 due to AWS growth. Still showing momentum.</td>
+          <td><span class="tag tag-lt-bullish">Bullish LT</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">EL</td>
+          <td>Estée Lauder</td>
+          <td>—</td>
+          <td>Reporting earnings this week. Bottomed in $40s last year. Long-term favorite — expects EPS to fly massively in 2027.</td>
+          <td><span class="tag tag-bullish">Very Bullish</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">MU</td>
+          <td>Micron</td>
+          <td>~$1,000+</td>
+          <td>Back over $1,000 (down ~20% from ATH of $1,200+). Memory trade showing momentum again.</td>
+          <td><span class="tag tag-lt-bullish">Bullish LT</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">WDC / SNDK</td>
+          <td>SanDisk</td>
+          <td>—</td>
+          <td>Still down significantly but momentum returning. Part of memory trade rotation from SaaS.</td>
+          <td><span class="tag tag-lt-bullish">Bullish LT</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">HOOD</td>
+          <td>Robinhood</td>
+          <td>~$96</td>
+          <td>"Not a buy now." Wait for a bare market — when the stock is down huge and sentiment is horrible. That's the buy.</td>
+          <td><span class="tag tag-wait">Wait/Correction</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Top 4 stocks under $30 — Long-term favorites</h3>
+    <table class="stock-table">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Company</th>
+          <th>Price</th>
+          <th>Why he loves it</th>
+          <th>Sentiment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ticker">CELH</td>
+          <td>Celsius Holdings</td>
+          <td>~$29</td>
+          <td>Strong income statement improving, great balance sheet, great brand. Will gobble shares every week. Target $100+.</td>
+          <td><span class="tag tag-bullish">Very Bullish</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">SOFI</td>
+          <td>SoFi Technologies</td>
+          <td>~$18</td>
+          <td>"Most exciting stock in the market by a mile" in fintech/banking. EPS should fly massively in 2027. More exciting than Robinhood.</td>
+          <td><span class="tag tag-bullish">Very Bullish</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">HNST</td>
+          <td>The Honest Company</td>
+          <td>~$5</td>
+          <td>"Banger numbers." Incredible balance sheet. Should be buying shares every single week.</td>
+          <td><span class="tag tag-bullish">Very Bullish</span></td>
+        </tr>
+        <tr>
+          <td class="ticker">RVLV</td>
+          <td>Revolve Group</td>
+          <td>~$23</td>
+          <td>"Most underlooked small cap in the entire stock market." Great income statement, healthy margins, great management. 3–5 year outlook is exceptional.</td>
+          <td><span class="tag tag-bullish">Very Bullish</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2027 EPS outlook by company</h3>
+    <ul>
+      <li class="red">🔴 <strong>Amazon, Google, Meta, Microsoft, Oracle, Tesla:</strong> EPS likely DOWN or flat. Capex + depreciation + no repeat of investment valuation bumps.</li>
+      <li class="red">🔴 <strong>Apple:</strong> EPS growth "quite a bit lower." No new banger product cycle visible.</li>
+      <li class="yellow">🟡 <strong>Nvidia:</strong> Still positive EPS growth in 2027, but "very low" compared to 2026.</li>
+      <li class="yellow">🟡 <strong>Micron / SanDisk:</strong> Positive EPS growth in 2027, but "dramatically lower" rate than 2026.</li>
+      <li class="num">🟢 <strong>Wynn Resorts:</strong> Middle East opening = huge EPS bump. "Party time."</li>
+      <li class="num">🟢 <strong>Estée Lauder:</strong> EPS up massively in 2027.</li>
+      <li class="num">🟢 <strong>Nike:</strong> EPS up massively in 2027.</li>
+      <li class="num">🟢 <strong>SoFi:</strong> EPS up massively in 2027.</li>
+      <li class="num">🟢 <strong>Netflix:</strong> "Banger year" for EPS growth in 2027.</li>
+      <li class="num">🟢 <strong>SaaS stocks broadly:</strong> Bad 2026, strong comeback expected in 2027.</li>
+      <li class="num">🟢 <strong>American Express, Cheesecake Factory (CAKE), Celsius, Revolve, Honest:</strong> All expected to deliver strong 2027 EPS growth.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 4: Macro -->
+  <div class="card">
+    <h2>🌐 Macro Observations</h2>
+
+    <h3>Memory vs. SaaS rotation</h3>
+    <ul>
+      <li>Money appears to be flowing out of SaaS (ServiceNow, Adobe, Microsoft, Salesforce, Intuit all down) and into memory stocks (Micron, SanDisk).</li>
+      <li>This rotation has been flipping back and forth — when memory is weak, SaaS rolls, and vice versa.</li>
+    </ul>
+
+    <h3>Earnings breadth — actually impressive</h3>
+    <ul>
+      <li>Every sector averaging ~14% earnings growth. Strip out one-timers: still +21%. That's the reason the market is resilient.</li>
+      <li>Valuations have compressed 2 turns while earnings growth more than doubled since end of March.</li>
+      <li>Healthy skepticism remains ("AI trade is extended," "late cycle") — and that's actually what keeps bull markets alive longer.</li>
+    </ul>
+
+    <div class="warning-box">
+      <div class="warning-label">⚠️ Key Risk to Watch</div>
+      <p>The 30-year Treasury at <strong>5.29%</strong> and curve steepening signal the bond market may be pricing in indefinite deficits and/or tighter conditions ahead. If the 10-year breaks above <strong>5%</strong>, it could hit equity valuations — especially overvalued hyperscalers with negative free cash flow. Not actionable today, but watch carefully into Q4.</p>
+    </div>
+
+    <h3>Fed / Kevin Worsh dynamic</h3>
+    <ul>
+      <li>Worsh Fed meeting revealed 3 dissents. Rhetoric was hawkish even though no action was taken.</li>
+      <li>Worsh is speaking less to the media — creating uncertainty about the Fed's framework.</li>
+      <li>Market doesn't seem to expect a hike in 2026, which would allow bond yields to come in by December.</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <footer>
+    <span>🤖 Generated by Dot DiBot · Aug 18, 2026</span>
+    <span><a href="https://www.youtube.com/watch?v=sg7OczfYRZU" target="_blank">▶ YouTube</a> · <a href="transcripts/shocking-market-move-sleeping.txt" target="_blank">📄 Transcript</a></span>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
