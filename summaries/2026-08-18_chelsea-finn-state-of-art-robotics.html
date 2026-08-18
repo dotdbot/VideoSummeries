@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chelsea Finn: State of the Art in Robotics</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .back-link { display: inline-block; padding: 12px 20px; color: var(--muted); font-size: 13px; }
+    .back-link:hover { color: var(--text); }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-right: 6px; }
+    .badge-en { background: #1a3a1a; color: var(--green); }
+    .badge-ai { background: #2d1a5c; color: #c0a0ff; }
+    .badge-interview { background: #1a2744; color: var(--accent); }
+    h1 { font-size: 26px; font-weight: 700; margin: 14px 0 10px; line-height: 1.3; }
+    .meta { color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 14px; }
+    .yt-btn { display: inline-flex; align-items: center; gap: 6px; background: #c00; color: #fff; padding: 7px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; margin-right: 8px; }
+    .transcript-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--surface2); color: var(--muted); padding: 7px 14px; border-radius: 6px; font-size: 13px; }
+    .embed-wrap { position: relative; padding-top: 56.25%; margin: 20px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    .embed-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .tldr { background: #0d2a1a; border: 1px solid #1a5c2a; border-radius: 10px; padding: 18px 20px; margin: 20px 0; }
+    .tldr-label { color: var(--green); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .tldr p { font-size: 15px; line-height: 1.65; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px; margin: 20px 0; }
+    .card h2 { font-size: 17px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .card h3 { font-size: 14px; font-weight: 700; color: var(--accent); margin: 18px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 9px; line-height: 1.6; }
+    .sub { padding-left: 18px; margin-top: 6px; }
+    .sub li { margin-bottom: 5px; color: var(--muted); font-size: 14px; }
+    .highlight { color: var(--accent); font-weight: 600; }
+    .num { color: var(--green); font-weight: 700; }
+    .quote-box { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; color: var(--muted); font-size: 14px; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+    footer { border-top: 1px solid var(--border); padding-top: 20px; margin-top: 40px; color: var(--muted); font-size: 12px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; }
+  </style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">← Back to all summaries</a>
+
+<div class="container">
+  <div>
+    <span class="badge badge-en">🇺🇸 English</span>
+    <span class="badge badge-ai">🤖 AI/Robotics</span>
+    <span class="badge badge-interview">🎙️ Talk</span>
+  </div>
+  <h1>Chelsea Finn: This is the State of the Art in Robotics</h1>
+  <div class="meta">
+    <span>📅 Aug 18, 2026</span>
+    <span>⏱️ ~40 min</span>
+    <span>🎙️ Chelsea Finn — Physical Intelligence (π) CEO &amp; Founder</span>
+  </div>
+  <div style="margin-bottom: 20px;">
+    <a class="yt-btn" href="https://www.youtube.com/watch?v=cRZNwgvcWUg" target="_blank">▶ Watch on YouTube</a>
+    <a class="transcript-btn" href="transcripts/chelsea-finn-state-of-art-robotics.txt" target="_blank">📄 Full Transcript</a>
+  </div>
+
+  <div class="embed-wrap">
+    <iframe src="https://www.youtube.com/embed/cRZNwgvcWUg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-label">⚡ TL;DR</div>
+    <p>Chelsea Finn, founder and CEO of <strong>Physical Intelligence (π)</strong>, explains how we've reached a "ChatGPT moment" for robotics. The key breakthroughs: a scalable reinforcement learning recipe for high-reliability physical tasks, memory-equipped robot policies, and a single generalist model (PIO7) that matches or beats fine-tuned specialists — all demonstrated in real-world deployments at factories, kitchens, and farms.</p>
+  </div>
+
+  <!-- PART 1: Context & History -->
+  <div class="card">
+    <h2>🕐 Part 1 — The Road to Real-World Physical AI</h2>
+
+    <h3>AI in the real world — a brief history</h3>
+    <ul>
+      <li>Early ML deployments: <span class="highlight">product recommendations &amp; ad ranking</span> — the model suggests, the human decides. Mistakes are tolerable because the human is the final check.</li>
+      <li>~2017: Deep learning matured, enabling the same "suggest &amp; let user decide" pattern across many domains.</li>
+      <li>2022: <span class="highlight">ChatGPT</span> — first truly generalist model used by millions. Reached 1M users in 5 days. Claude Code and other coding agents followed — useful to developers at scale.</li>
+      <li><strong>Key insight:</strong> All previous real-world ML successes share one trait — the human makes the final decision. Physical AI is fundamentally different: <em>the robot has to act directly on the world, autonomously, with no human safety net.</em> Errors are costly and sometimes irreversible.</li>
+    </ul>
+
+    <h3>Waymo as proof of concept</h3>
+    <ul>
+      <li>Waymo crossed <span class="num">250,000 weekly autonomous rides</span> — proving it IS possible to build trustworthy, autonomous physical AI systems.</li>
+      <li>This gives optimism that the same can be done for general-purpose robots.</li>
+    </ul>
+
+    <h3>Physical Intelligence was founded 2 years ago</h3>
+    <ul>
+      <li>Mission: allow <em>any robot to do any task in the real world.</em></li>
+      <li>One year ago: showed robots folding/unloading laundry and operating in rooms they'd never seen before.</li>
+      <li>Since then: washing greasy pans, peeling carrots, making grilled cheese, slicing zucchini.</li>
+    </ul>
+  </div>
+
+  <!-- PART 2: Reliability & RL -->
+  <div class="card">
+    <h2>🔁 Part 2 — Achieving Long-Term Autonomy via Scalable RL</h2>
+
+    <h3>The espresso-making challenge</h3>
+    <ul>
+      <li>Goal: a robot that makes espresso reliably <span class="highlight">without constant babysitting</span>.</li>
+      <li>Challenges: forceful precise insertion of portafilter, smooth cup handling with liquid, accurate timing — harder than most ML problems.</li>
+      <li>Target: <span class="num">&gt;90% success rate</span>.</li>
+    </ul>
+
+    <h3>Standard ML loop — not enough</h3>
+    <ul>
+      <li>Collect data → train model → evaluate → iterate (add edge cases, rebalance data). Works, but human fatigue caps reliability at a plateau.</li>
+      <li>The solution: <strong>let the AI itself iterate automatically</strong> — detect where it needs more data, seek supervision, repeat for many more cycles. Looks like reinforcement learning (RL).</li>
+    </ul>
+
+    <h3>Why naive RL is too expensive for robots</h3>
+    <ul>
+      <li>Language model RL (PPO, GRPO) scales by running the model millions of times in a data center — pure compute, nearly free per attempt.</li>
+      <li>Robot RL requires <em>physical hardware running in the real world.</em> 1M attempts of a 1-minute task ≈ <span class="num">700 robot-days</span>. Not practical.</li>
+      <li>Need an algorithm that's much more <em>sample-efficient</em>.</li>
+    </ul>
+
+    <h3>π's scalable RL recipe — two key improvements</h3>
+    <ul>
+      <li><strong>1. Human-intervention recovery (avoiding dead-end trajectories)</strong>
+        <ul class="sub">
+          <li>Example: robot grabs two stacked cardboard boxes by mistake. Rather than letting it waste time fumbling, a human teleoperator intervenes immediately to show the recovery move.</li>
+          <li>The human guides the robot to separate the boxes, then steps back. If it recovers autonomously — great. If not, the human steps in again.</li>
+          <li>This focuses all robot time on <em>useful, informative</em> attempts instead of dead-ends.</li>
+        </ul>
+      </li>
+      <li><strong>2. General-purpose value function (amortized across prompts)</strong>
+        <ul class="sub">
+          <li>Standard RL rolls out 10–50 attempts per single prompt to estimate "good vs. bad." Expensive.</li>
+          <li>π trains a <em>single general-purpose value function</em> on diverse robot experience — predicts "time to success" across all scenarios.</li>
+          <li>Same value model knows: accidentally unfolding a shirt = bad (shown in red). Making forward folding progress = good. Opening a fridge = good.</li>
+          <li>Drastically reduces the number of attempts needed per task.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>The full improvement loop</h3>
+    <ul>
+      <li>Train foundation model on diverse data → collect autonomous experience with human interventions → train general-purpose value function → use value function to fine-tune model → repeat.</li>
+    </ul>
+
+    <h3>Real-world results</h3>
+    <ul>
+      <li><strong>Latte making:</strong> robot controls espresso (portafilter insertion, timing, dispensing, pouring steamed milk, handing off full cup). Ran for <span class="num">13 hours straight</span> reliably. The hardest step: carrying a full latte cup to the coaster without spilling — requires extreme delicacy.</li>
+      <li><strong>Dandelion Chocolate Factory:</strong> automated their real workflow — construct cardboard boxes, label them, stack. Trained to production standard.</li>
+      <li><strong>Laundry folding in new homes:</strong> clothing items the robot has never seen, homes it's never visited. Operated autonomously for extended periods.</li>
+      <li><strong>Quantitative results:</strong>
+        <ul class="sub">
+          <li>Pre-training → SFT stage → RL post-training: <span class="num">~2x throughput improvement</span> from RL stage alone.</li>
+          <li>Espresso task: <span class="num">&gt;90% success rate</span> achieved.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="quote-box">"Even with this improvement, the robot still makes mistakes. It's also still slower than people. There's a ton of room for improvement." — Chelsea Finn</div>
+  </div>
+
+  <!-- PART 3: Memory -->
+  <div class="card">
+    <h2>🧠 Part 3 — The Missing Ingredient: Memory</h2>
+
+    <h3>Most SOTA robot models have zero memory</h3>
+    <ul>
+      <li>They only see <em>current sensor readings</em>. No past context, no progress tracking.</li>
+      <li>Short repetitive tasks don't need memory. But any long-horizon multi-step task (make a meal, pack boxes in sequence) absolutely requires it.</li>
+    </ul>
+
+    <h3>Why memory is technically hard in robotics</h3>
+    <ul>
+      <li>Naive approach: feed past video as context. 10 seconds at 50Hz with 4 cameras at 256 tokens/image = <span class="num">500,000 tokens</span>. Completely impractical in real-time.</li>
+      <li>Even at 1 frame/second: <span class="num">10,000 tokens</span> for just 10 seconds. Still prohibitively expensive today.</li>
+    </ul>
+
+    <h3>π's solution</h3>
+    <ul>
+      <li>Developed a multi-scale memory architecture (technical details not disclosed in this talk) that makes real-time context feasible.</li>
+      <li>Enables tracking which steps in a long task have been completed and what comes next.</li>
+    </ul>
+  </div>
+
+  <!-- PART 4: PIO7 Generalist Model -->
+  <div class="card">
+    <h2>🤖 Part 4 — PIO7: One Model to Rule Them All</h2>
+
+    <h3>The goal: going from BERT to GPT for robotics</h3>
+    <ul>
+      <li>BERT-era: you pre-train, then fine-tune a specialist for every downstream task.</li>
+      <li>GPT-era: one pre-trained model works <em>out of the box</em> across countless tasks.</li>
+      <li>π's goal for PIO7: a single robot model that <strong>matches or beats fine-tuned specialists</strong> without per-task post-training.</li>
+    </ul>
+
+    <h3>PIO7 key ingredients</h3>
+    <ul>
+      <li><strong>Diverse data:</strong> massive, intentionally varied robot experience across many tasks, environments, robot platforms.</li>
+      <li><strong>Metadata prompting:</strong> the model is conditioned on rich metadata about each task, environment, quality tier. This enables it to extract signal even from low-quality data — adding more low-quality data <em>with</em> metadata prompting <span class="highlight">actually improves</span> performance (without prompting, it hurts).</li>
+      <li><strong>Sub-goal image conditioning:</strong> the model "imagines" what a future state should look like, then acts toward that imagined goal.</li>
+    </ul>
+
+    <h3>What PIO7 can do — single model, all tasks</h3>
+    <ul>
+      <li>Folding a collared shirt</li>
+      <li>Precision assembly: inserting a screw and drilling it into a robot arm</li>
+      <li>Replacing a trash bag in a trash can</li>
+      <li>Coffee/espresso making (matches the RL-specialized PIO6 performance)</li>
+      <li>Cardboard box building (matches the specialist)</li>
+    </ul>
+
+    <h3>Compositional generalization — the exciting part</h3>
+    <ul>
+      <li><strong>Test 1 — Novel appliance (air fryer):</strong> model had essentially no air fryer training data (only 3 accidental episodes in the full dataset). Yet it could open the air fryer, place a sweet potato inside, and close it — combining known manipulation skills with an unseen object. After Lucy provided a high-level policy, the task ran fully autonomously.</li>
+      <li><strong>Test 2 — New robot platform (BARM industrial robot):</strong>
+        <ul class="sub">
+          <li>All folding data was collected on a small standard bimanual arm.</li>
+          <li>Zero folding data existed for the much larger BARM robot (different joint configurations, link lengths).</li>
+          <li>PIO7 compositionally generalized — folded shirts on BARM without task-specific training.</li>
+          <li>"When we first saw the robot do this, we were floored." First attempt takes a few tries; eventually succeeds.</li>
+          <li>Sub-goal images visible top-left as it works toward each step.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Quantitative results</h3>
+    <ul>
+      <li>PIO7 (pre-trained, zero fine-tuning) matches or <em>outperforms</em> PIO6 (fine-tuned with RL post-training) on espresso making and box building.</li>
+      <li>Folding on the BARM platform (zero training data): performance approaches <span class="highlight">human teleop level</span>.</li>
+      <li>Most diverse data subset matters most: removing the top diverse 20% tanks performance far more than removing a random 20%.</li>
+    </ul>
+
+    <div class="quote-box">"Like going from a BERT-like pre-trained model to a model that really works out of the box like GPT." — Chelsea Finn</div>
+  </div>
+
+  <!-- PART 5: Where are we now -->
+  <div class="card">
+    <h2>📍 Part 5 — Where Are We Now?</h2>
+
+    <h3>Robotics is now in the "ChatGPT + DALL-E" era</h3>
+    <ul>
+      <li>Two years ago: specialist models, research demos.</li>
+      <li>Today: generalist models deployed in real workflows. Physical intelligence is firmly on the right side of the ML-in-production timeline.</li>
+    </ul>
+
+    <h3>Real-world deployments today</h3>
+    <ul>
+      <li><strong>Ultra (YC company):</strong> fine-tuned π models for laundry folding in production.</li>
+      <li><strong>Weave (YC company):</strong> warehouse packaging with π models.</li>
+      <li><strong>Diverse embodiments:</strong> standard bimanual arms, drones, quadcopters, surgical robots, <em>tractors</em>.</li>
+    </ul>
+
+    <h3>Open source</h3>
+    <ul>
+      <li>PIO Zero and PIO5 are fully open-source. Many teams already building on them.</li>
+      <li>Fine-tuning an open-source model from day one is the recommended starting point for small teams.</li>
+    </ul>
+  </div>
+
+  <!-- PART 6: Q&A highlights -->
+  <div class="card">
+    <h2>❓ Part 6 — Q&amp;A: Key Insights</h2>
+
+    <h3>How far is a "ChatGPT moment" for robotics?</h3>
+    <ul>
+      <li>Distribution will be slower than software — you need physical hardware.</li>
+      <li>Waymo-style rollout model: incredible but takes time.</li>
+      <li>Capability-wise: "We are very much on the horizon in the next few years" for ChatGPT-level generality in physical tasks.</li>
+    </ul>
+
+    <h3>When should a startup switch to a generalist policy?</h3>
+    <ul>
+      <li><strong>Right away.</strong> Start with PIO5 or your favorite open-source model and fine-tune immediately — don't build from scratch.</li>
+      <li>Exception: extremely constrained environments (no internet, underpowered GPU in an OR basement) — but even then, local inference on a workstation is feasible.</li>
+    </ul>
+
+    <h3>Is a PhD still worth it in fast-moving robotics?</h3>
+    <ul>
+      <li>Chelsea's father (civil engineer) told her he wouldn't hire PhDs. She went anyway.</li>
+      <li>Key value of a PhD: learning to <strong>handle uncertainty</strong> — picking good problems when you don't know if they're solvable in 6 months or 10 years.</li>
+      <li>Highly useful for frontier AI work where nobody knows the right path.</li>
+      <li>But industry paths are equally valid — the engineering stack (software, hardware, infra, data pipelines) has massive opportunities requiring zero PhD.</li>
+    </ul>
+
+    <h3>Robotics equivalent of internet-scale data?</h3>
+    <ul>
+      <li>There's no substitute for <em>robot experience on the actual platform</em>. Watching humans do something (YouTube) helps but isn't enough — just as watching Federer doesn't make you a tennis player.</li>
+      <li>Human video + web data + captioned images are valuable as auxiliary signal.</li>
+      <li>The majority of future robotics data will be: <strong>autonomous robots attempting tasks in the real world</strong>, similar to how LLM synthetic data generation works.</li>
+    </ul>
+
+    <h3>Will robotics models be democratized via open source?</h3>
+    <ul>
+      <li>Embodied data is harder to acquire than text data — harder to scrape from the internet.</li>
+      <li>But large open-source datasets and powerful open models already exist (PIO Zero, PIO5, Open-X dataset).</li>
+      <li>Even closed-source leaders (like Google with Gemma) open-source to build ecosystems. Optimistic that a strong open-source robotics community will emerge.</li>
+    </ul>
+
+    <h3>Output representation: raw motors vs joint positions?</h3>
+    <ul>
+      <li>π models output <strong>target joint positions + gripper positions in 3D space</strong>, controlled by a PD controller underneath.</li>
+      <li>Could also go to raw voltages/torques (pro: variable stiffness control). But joint targets work well and aren't currently a bottleneck — so they focus on actual bottlenecks.</li>
+    </ul>
+
+    <h3>Do robots need "imagination"?</h3>
+    <ul>
+      <li>PIO7 has sub-goal image generation (imagining future state → act toward it). Shows quantitative improvement, especially for folding.</li>
+      <li>Surprise: even <em>without</em> imagination, the model performed so well that Chelsea almost didn't include imagination as a feature. "It was so good without that we felt we needed to explain what was actually driving the results."</li>
+      <li>Conclusion: helps, but not as dramatically as one might expect. Still hard to say if it'll be a critical long-term component.</li>
+    </ul>
+
+    <h3>Why are robots slow? How to fix it?</h3>
+    <ul>
+      <li>Teleoperation data is slow — humans operate robots cautiously.</li>
+      <li>RL post-training improved speed (~2x throughput). The "RL Token" release showed speeds <em>exceeding</em> human teleop.</li>
+      <li>Two paths forward: (1) generate inherently faster training data, or (2) train models to exceed the speed of their training data. Evidence for both exists.</li>
+    </ul>
+
+    <h3>Most surprising thing Chelsea has seen a robot do?</h3>
+    <ul>
+      <li><strong>Hand equivariance emergence:</strong> While training PIO7 to assemble a pinwheel (always pin in right hand, paper in left), the robot made an error — paper ended up on the right, pin on the left. Without ever seeing this configuration in training, the robot <em>spontaneously switched hands</em> and successfully inserted the pin. "It had learned equivariance between left and right hands — I hadn't seen anything like that before in a robot model."</li>
+    </ul>
+
+    <h3>How to break into robotics from software engineering?</h3>
+    <ul>
+      <li>Robots need <em>a lot</em> of software engineers — join a company directly.</li>
+      <li>Or: buy a cheap robot arm, fine-tune an open-source model on something, and show what you built. Cold-email researchers.</li>
+      <li>Real example: Jenny — came from algorithmic trading → Harvey (legal AI) → bought a robot, tinkered in her bedroom, sent Chelsea a cold email. Now works at π.</li>
+    </ul>
+  </div>
+
+  <hr class="divider">
+
+  <footer>
+    <span>🤖 Generated by Dot DiBot · Aug 18, 2026</span>
+    <span><a href="https://www.youtube.com/watch?v=cRZNwgvcWUg" target="_blank">▶ YouTube</a> · <a href="transcripts/chelsea-finn-state-of-art-robotics.txt" target="_blank">📄 Transcript</a></span>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
