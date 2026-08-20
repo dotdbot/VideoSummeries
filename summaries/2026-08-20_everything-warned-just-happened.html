@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Everything I Warned You About Just Happened... All in One Week — Felix Prin</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #1a3a1a; color: var(--green); }
+    .badge-macro { background: #3d1a1a; color: var(--red); }
+    .badge-interview { background: #1a2744; color: var(--accent); }
+    .badge-gold { background: #2d2000; color: var(--yellow); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 16px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .event-item { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 16px; border-left: 4px solid var(--red); }
+    .event-item.gold { border-left-color: var(--yellow); }
+    .event-item.warning { border-left-color: var(--yellow); }
+    .event-num { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 1px; margin-bottom: 6px; }
+    .event-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .event-body { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-top: 10px; }
+    .tag-bearish { background: #3d1a1a; color: var(--red); }
+    .tag-cautious { background: #2d2000; color: var(--yellow); }
+    .tag-watch { background: #0d2030; color: var(--accent); }
+    .quote-block { background: var(--surface2); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 15px; color: var(--text); }
+    .quote-block cite { display: block; margin-top: 8px; font-style: normal; font-size: 12px; color: var(--muted); }
+    ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+    ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+    .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+    .stat-box { background: var(--surface2); border-radius: 8px; padding: 12px 18px; flex: 1; min-width: 130px; text-align: center; }
+    .stat-box .val { font-size: 22px; font-weight: 700; color: var(--red); }
+    .stat-box .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-macro">⚠️ Macro Warning</span>
+      <span class="badge badge-gold">🥇 Gold / Silver</span>
+      <span class="badge badge-interview">🎙️ Felix Prin</span>
+    </div>
+    <h1>Everything I Warned You About Just Happened... All in One Week</h1>
+    <div class="meta">
+      <span>📅 August 20, 2026</span>
+      <span>⏱️ ~22 min</span>
+      <span>🎙️ Felix Prin — Goat Academy</span>
+      <a href="https://youtu.be/N4PJJzCCcK0" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+      <a href="transcripts/everything-warned-just-happened.txt" target="_blank" style="color:var(--muted)">📄 Full Transcript</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/N4PJJzCCcK0" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> Felix Prin (economist, ex-investment banker, founder of Goat Academy) lays out <strong>five major macro events that all hit in a single week</strong> — all of which he had predicted months in advance: Japan's bond market crisis, South Korea's stock market circuit breaker, the Fed quietly printing money again, US long-term interest rates rising on bad news, and the US Vice President calling the dollar's reserve currency status a <strong>"curse."</strong> His conclusion: this isn't five separate stories — it's one story about the <strong>deliberate devaluation of paper money</strong>. His long-standing trade recommendation: <strong>gold and silver</strong>, now endorsed by Bank of America's top strategist.
+  </div>
+
+  <!-- KEY STATS -->
+  <div class="card">
+    <h2>📊 Key Numbers from the Week</h2>
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="val">3%</div>
+        <div class="lbl">Japan 10-yr yield (highest since 1996)</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">4%+</div>
+        <div class="lbl">Japan 30-yr yield</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">163</div>
+        <div class="lbl">Yen/USD — 40-yr low</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">$85B</div>
+        <div class="lbl">US+Japan rescue in 2 days</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">-10%</div>
+        <div class="lbl">South Korea market — worst day ever</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">$40B/mo</div>
+        <div class="lbl">Fed "reserve management" (QE)</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">$40T</div>
+        <div class="lbl">US national debt soon</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">$1.4T/yr</div>
+        <div class="lbl">US interest expense (bigger than defense)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 EVENTS -->
+  <div class="card">
+    <h2>🌍 The 5 Events — One Story</h2>
+
+    <div class="event-item">
+      <div class="event-num">Event 1</div>
+      <div class="event-title">🇯🇵 Japan's Bond Market Broke</div>
+      <div class="event-body">
+        For decades Japan lent money to the world at near-zero interest. That deal snapped this month. Japan's 10-year yield jumped to nearly 3% — highest since 1996. The 30-year yield exceeded 4%. The yen fell to 163/USD — its weakest in 40 years. The US and Japan quietly spent <strong>$85 billion in two days</strong> to prevent a full market collapse — without calling it a rescue. Felix had predicted this in multiple prior videos:
+        <ul class="bullets" style="margin-top:10px;">
+          <li>Aug 10: "They Crashed Japan on Purpose"</li>
+          <li>Jul ~25: "Japan Central Bank Just Collapsed"</li>
+          <li>Jul: "Japan's Currency Just Exploded — the hint was gold"</li>
+        </ul>
+        <span class="tag tag-bearish">🔴 Crisis</span>
+        <span class="tag tag-cautious">Rescued in the dark</span>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-num">Event 2</div>
+      <div class="event-title">🇰🇷 South Korea's Stock Market Circuit Breaker</div>
+      <div class="event-body">
+        South Korea's KOSPI fell <strong>10% in a single session</strong> — the worst single day in the market's entire history. The exchange triggered a circuit breaker, halting all trading. A few days later it fell again. The two dominant stocks — <strong>SK Hynix</strong> and <strong>Samsung</strong> (both AI/chip giants) — fell 9% and 6% respectively in one session. Two root causes:
+        <ul class="bullets" style="margin-top:10px;">
+          <li><strong>Extreme concentration:</strong> The entire Korean market had piled into a tiny handful of AI and chip stocks. When those dropped, everything collapsed.</li>
+          <li><strong>Leverage (borrowed money):</strong> Margin calls forced panic selling → more price drops → more margin calls. A self-reinforcing spiral.</li>
+        </ul>
+        Felix's prior calls:
+        <ul class="bullets" style="margin-top:10px;">
+          <li>Jul 22: "Korea's AI Bubble Just Exploded"</li>
+          <li>Jul ~15: "Wall Street is Pumping AI Stocks. Why Are They Falling?"</li>
+        </ul>
+        <span class="tag tag-bearish">🔴 Circuit Breaker</span>
+        <span class="tag tag-cautious">⚠️ Most concentrated AI bet on earth</span>
+      </div>
+    </div>
+
+    <div class="event-item warning">
+      <div class="event-num">Event 3</div>
+      <div class="event-title">🖨️ The Fed Is Printing Money Again — Quietly</div>
+      <div class="event-body">
+        The US Federal Reserve's balance sheet started growing again this month — the clearest signal of money printing. Instead of calling it "quantitative easing" (a term the public learned after 2008), they now use euphemisms:
+        <ul class="bullets" style="margin-top:10px;">
+          <li><strong>"Reserve management purchases"</strong> = buying government bonds with newly created dollars</li>
+          <li><strong>"Repo market emergency lending"</strong> = banks borrowing from the Fed</li>
+        </ul>
+        Scale: <strong>$40 billion per month</strong>. The $85B Japan rescue? Same machine — when the Fed helps foreign markets, it prints dollars. Felix connects this to the Japan intervention: one single faucet, now back on. Prior calls:
+        <ul class="bullets" style="margin-top:10px;">
+          <li>Aug 4: "The Fed Just Did the Unthinkable — Global Monetary Reset"</li>
+          <li>Jul 10: "The Fed Just Reset the Stock Market"</li>
+          <li>Jun: "Trump to Flood the Market on This Date"</li>
+        </ul>
+        <span class="tag tag-bearish">🔴 Inflationary</span>
+        <span class="tag tag-cautious">Disguised QE</span>
+      </div>
+    </div>
+
+    <div class="event-item warning">
+      <div class="event-num">Event 4</div>
+      <div class="event-title">📈 US Interest Rates Rose on Bad Economic News</div>
+      <div class="event-body">
+        Normally when economic data is bad, investors flee to the safety of US government bonds — demand rises, yields fall. This week that relationship broke down entirely. A <strong>terrible jobs report came out, and long-term interest rates went UP</strong>. That's a major "tell" — the bond market signaling it no longer trusts the US government. 
+
+        Context: US national debt is approaching <strong>$40 trillion</strong>. Interest payments are heading toward <strong>$1.4 trillion per year</strong> — more than the entire defense budget. Bank of America's top strategist Michael Hartnett published a note titled *"Strife Begins at 40"* (a play on 40T) with one core trade:
+        <div class="quote-block">
+          "The trade is long gold. Anything but bonds. Anything but the dollar."
+          <cite>— Michael Hartnett, Bank of America Head Strategist</cite>
+        </div>
+        Felix's prior calls:
+        <ul class="bullets" style="margin-top:10px;">
+          <li>May: "The First Domino in the US Debt Crisis"</li>
+          <li>Apr: "The New Fed Chair's Plan to Cancel America's Debt"</li>
+        </ul>
+        <span class="tag tag-bearish">🔴 Bond market distrust</span>
+        <span class="tag tag-watch">👀 Watch: 40T milestone</span>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-num">Event 5</div>
+      <div class="event-title">💵 The VP Called the Dollar's Reserve Status a "Curse"</div>
+      <div class="event-body">
+        This was the one Felix genuinely didn't expect — even he was shocked. US Vice President <strong>JD Vance</strong> went on camera <em>twice</em> and described the dollar's reserve currency status as a <strong>"resource curse."</strong> His argument:
+        <ul class="bullets" style="margin-top:10px;">
+          <li>Being the world's reserve currency acts like a <strong>massive subsidy for American consumers</strong></li>
+          <li>...but a <strong>massive tax on American producers</strong> (hurts exports, manufacturing)</li>
+          <li>He called this arrangement something they'd like to "put down"</li>
+        </ul>
+        Felix's analysis: When the people holding the crown start calling it "a little heavy," dedollarization is no longer a fringe theory — it's being narrated out loud by the sitting VP. Prior calls:
+        <ul class="bullets" style="margin-top:10px;">
+          <li>Jul 30: "Global Currency Reset — The Petrodollar Collapse"</li>
+          <li>May: "The Global Monetary Reset — Everything You Need to Know"</li>
+        </ul>
+        <span class="tag tag-bearish">🔴 De-dollarization accelerating</span>
+        <span class="tag tag-cautious">⚠️ Unprecedented official statement</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCLUSIONS -->
+  <div class="card">
+    <h2>🎯 Conclusions &amp; The One Story</h2>
+    <ul class="bullets">
+      <li>All five events are <strong>one story</strong>: the slow, deliberate devaluation of paper money globally to deal with unpayable government debt</li>
+      <li>The Japan story, the Korea story, the Fed printing, rising interest rates, and the VP's speech are all symptoms of the same structural breakdown</li>
+      <li>The bond market is now publicly saying it <strong>doesn't trust any government</strong> — this has historically been the warning signal, not the aftermath</li>
+      <li>Ordinary people are always the last to know: "the 1% have already moved their money before the headline appears"</li>
+      <li>The Korea situation is a warning for any portfolio concentrated in 3–4 tech names: <em>"You have a Korea-shaped hole in your portfolio"</em></li>
+      <li>The slow, deliberate shrinking of the value of money in your bank account <strong>isn't coming — it already started</strong></li>
+    </ul>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <div class="card">
+    <h2>💡 Recommendations</h2>
+    <ul class="bullets">
+      <li><strong>Gold &amp; Silver:</strong> The one asset that has protected investors for 5,000 years when paper money is debased. Felix cites Bank of America's own strategist: "long gold, anything but bonds, anything but the dollar." Gold is currently ~20% below its earlier 2026 all-time high — Felix sees this as a buying-out-of-correction opportunity</li>
+      <li><strong>Reduce concentration risk:</strong> If most of your gains this year came from 3–4 tech names, that's the Korea pattern. Diversify now, before a circuit breaker event hits your portfolio</li>
+      <li><strong>Understand what's really happening to your cash:</strong> Every $40B in monthly Fed "reserve management purchases" quietly dilutes the dollars in your savings account. This is not future risk — it's happening now</li>
+      <li><strong>Have a system, not just positions:</strong> The wealthy don't have better stocks — they have <em>rules that tell them what to do before the crisis</em>. Build a plan before the bad morning, not after</li>
+      <li><strong>Watch gold's recovery from the mid-year dip:</strong> Felix says the best time to look at an asset is when it's climbing out of a correction with no cheerleaders — that's now</li>
+      <li><strong>Jim Rogers endorsement:</strong> Legendary investor (co-founded Quantum Fund with George Soros, ~100x market returns in 10 years) has sold "basically everything" except gold, silver, and a few commodity-linked shares</li>
+    </ul>
+  </div>
+
+  <!-- KEY QUOTES -->
+  <div class="card">
+    <h2>💬 Key Quotes</h2>
+
+    <div class="quote-block">
+      "The slow, deliberate shrinking of the money sitting in your bank account isn't coming anymore. It's already here. It already started."
+      <cite>— Felix Prin</cite>
+    </div>
+
+    <div class="quote-block">
+      "It's not that the information is hidden. It's just that it's coming at you in all these pieces out of order, days late, and you're trying to figure it out."
+      <cite>— Felix Prin</cite>
+    </div>
+
+    <div class="quote-block">
+      "When the guys holding the crown start calling it a little heavy, I think it's important to listen."
+      <cite>— Felix Prin (on VP Vance's dollar comments)</cite>
+    </div>
+
+    <div class="quote-block">
+      "The trade is long gold. Anything but bonds. Anything but the dollar."
+      <cite>— Michael Hartnett, Bank of America Head Strategist (note titled "Strife Begins at 40")</cite>
+    </div>
+
+    <div class="quote-block">
+      "The people who get quietly wiped out in a week like this don't do it by picking bad stocks. They do it because they never had a system."
+      <cite>— Felix Prin</cite>
+    </div>
+
+    <div class="quote-block">
+      "Gold is building itself back up again from that midyear dip quietly while everyone's distracted by AI stocks."
+      <cite>— Felix Prin</cite>
+    </div>
+  </div>
+
+  <!-- ABOUT FELIX -->
+  <div class="card">
+    <h2>👤 About Felix Prin</h2>
+    <ul class="bullets">
+      <li>Economist and former investment banker, based primarily in Hong Kong (closer to Asian market developments)</li>
+      <li>Founder of <strong>Goat Academy</strong> — has taught 25,000+ people (mentors teach from the platform)</li>
+      <li>Has a co-host/mascot named <strong>Winston</strong> — described as "head of research"</li>
+      <li><strong>Revenue model:</strong> Never paid for endorsements, never affiliated with any brokerage, index fund, or brand — explicitly independent</li>
+      <li>Runs a free report at <strong>felixf.org/dollar</strong> on where money is quietly leaking and what to do</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Summarized by Dot DiBot • August 20, 2026</span>
+    <a href="https://dotdbot.github.io/VideoSummeries/">← All Summaries</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
