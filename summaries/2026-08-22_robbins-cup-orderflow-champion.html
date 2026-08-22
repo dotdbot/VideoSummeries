@@ -43,31 +43,31 @@
     .stat { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 18px; flex: 1; min-width: 120px; text-align: center; }
     .stat .val { font-size: 22px; font-weight: 700; color: var(--green); }
     .stat .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
-    /* Frames gallery */
-    .frames-section h2 { font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-    .frames-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-    .frame-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: border-color 0.2s; }
-    .frame-card:hover { border-color: var(--accent); }
-    .frame-card.has-diagram { border-color: var(--purple); }
-    .frame-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
-    .frame-body { padding: 12px 14px; }
-    .frame-ts { font-size: 11px; color: var(--muted); font-family: monospace; margin-bottom: 4px; }
-    .frame-type { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-bottom: 6px; }
-    .type-whiteboard { background: #2d1a4a; color: var(--purple); }
-    .type-interview { background: #1a2a1a; color: var(--green); }
-    .type-title { background: #1a1a2e; color: var(--accent); }
-    .type-ad { background: #2d2000; color: var(--yellow); }
-    .type-two { background: #1a2a1a; color: #9ecf9e; }
-    .frame-caption { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    .frame-story { font-size: 12px; color: var(--muted); line-height: 1.5; }
-    .frame-concepts { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; }
-    .concept-tag { background: var(--surface2); color: var(--accent); padding: 2px 7px; border-radius: 10px; font-size: 10px; }
+
+    /* Diagram Gallery */
+    .diagrams-section { margin-top: 32px; }
+    .diagrams-section > h2 { font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .diagrams-section > p { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+    .diagram-group { margin-bottom: 36px; }
+    .diagram-group h3 { font-size: 16px; font-weight: 700; color: var(--purple); border-left: 4px solid var(--purple); padding-left: 12px; margin-bottom: 16px; }
+    .diagrams-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+    .diagram-card { background: var(--surface); border: 1px solid var(--purple); border-radius: 10px; overflow: hidden; }
+    .diagram-card img { width: 100%; display: block; object-fit: cover; cursor: zoom-in; }
+    .diagram-card img:hover { opacity: 0.92; }
+    .diagram-body { padding: 14px 16px; }
+    .diagram-ts { font-size: 11px; color: var(--muted); font-family: monospace; margin-bottom: 6px; }
+    .diagram-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .diagram-what { font-size: 13px; color: var(--muted); margin-bottom: 8px; line-height: 1.6; }
+    .diagram-connection { font-size: 12px; background: var(--surface2); border-radius: 6px; padding: 8px 10px; color: #c9b8ff; line-height: 1.5; }
+    .diagram-connection strong { color: var(--purple); }
+    .diagram-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; }
+    .dtag { background: var(--surface2); color: var(--accent); padding: 2px 7px; border-radius: 10px; font-size: 10px; }
+
     footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
     footer a { color: var(--accent); text-decoration: none; }
     .toc { background: var(--surface2); border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
     .toc h3 { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
     .toc a { color: var(--accent); text-decoration: none; font-size: 14px; display: block; margin-bottom: 5px; }
-    .toc a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -93,874 +93,439 @@
     <iframe src="https://www.youtube.com/embed/PL7LKUsCgIQ" allowfullscreen></iframe>
   </div>
 
-  <!-- Table of Contents -->
   <div class="toc">
     <h3>📋 Contents</h3>
     <a href="#tldr">TL;DR</a>
-    <a href="#stats">Key Numbers</a>
-    <a href="#background">Background: From Broke to World Champion</a>
     <a href="#step1">Step 1 — Environment (Market Structure + GEX)</a>
     <a href="#step2">Step 2 — Location (Value Area, Discount/Premium)</a>
     <a href="#step3">Step 3 — Confirmation (Order Flow + Delta)</a>
     <a href="#step4">Step 4 — Entry / Exit / Risk Management</a>
-    <a href="#filters">Trade Filters & When NOT to Trade</a>
-    <a href="#psychology">Psychology: A/B/C Game Sessions</a>
-    <a href="#rules">Rules, Self-Awareness & Breaking Points</a>
-    <a href="#advice">Advice for Struggling Traders</a>
-    <a href="#frames">50 Frames: Visual Breakdown</a>
+    <a href="#filters">Filters & When NOT to Trade</a>
+    <a href="#psychology">Psychology: A/B/C Sessions & Good vs Bad Losses</a>
+    <a href="#diagrams">Whiteboard Diagrams — Visual Breakdown</a>
   </div>
 
-  <!-- TL;DR -->
   <div class="tl-dr" id="tldr">
-    <strong>TL;DR —</strong> Chris Creamer, 26, won the <strong>Robbins Cup Micro Day Trading Championship</strong> for July with a <strong>100% return</strong>. In this live, in-person interview he breaks down his complete 4-step trading system: <strong>Environment → Location → Confirmation → Entry</strong>. He uses market structure to define regime, <strong>GEX (gamma exposure)</strong> to understand volatility, <strong>volume profile</strong> to define where to trade, and <strong>order flow with delta</strong> to time the exact entry. The result: ~60–65% win rate, 1.5–2R average, ~1.8 profit factor. More importantly, he reveals the actual reason traders fail — not strategy, but <strong>C-game sessions that destroy weeks of A-game profits.</strong>
+    <strong>TL;DR —</strong> Chris Creamer, 26, won the <strong>Robbins Cup Micro Day Trading Championship</strong> for July with a <strong>100% return</strong>. He reveals his 4-step live whiteboard system: <strong>Environment</strong> (market structure + GEX gamma exposure) → <strong>Location</strong> (discount/premium value areas) → <strong>Confirmation</strong> (order flow absorption + delta shift) → <strong>Entry/Exit</strong> (imbalance trigger, swing targets, trail stop). Result: ~60–65% win rate, 1.5–2R average, ~1.8 profit factor. Core insight: consistency comes from eliminating <strong>C-game sessions</strong>, not chasing more A-game setups.
   </div>
 
-  <!-- Stats -->
-  <div class="stat-row" id="stats">
-    <div class="stat"><div class="val">100%</div><div class="lbl">Return in July (Robbins Cup)</div></div>
-    <div class="stat"><div class="val">26</div><div class="lbl">Chris's Age</div></div>
+  <div class="stat-row">
+    <div class="stat"><div class="val">100%</div><div class="lbl">Return in July</div></div>
+    <div class="stat"><div class="val">26</div><div class="lbl">Age — youngest champion</div></div>
     <div class="stat"><div class="val">60–65%</div><div class="lbl">Win Rate</div></div>
-    <div class="stat"><div class="val">1.5–2R</div><div class="lbl">Average Risk:Reward</div></div>
+    <div class="stat"><div class="val">1.5–2R</div><div class="lbl">Risk:Reward</div></div>
     <div class="stat"><div class="val">~1.8</div><div class="lbl">Profit Factor</div></div>
-    <div class="stat"><div class="val">90 min</div><div class="lbl">Max daily trading window</div></div>
-    <div class="stat"><div class="val">20K</div><div class="lbl">Min contracts/5-min candle (MNQ threshold)</div></div>
-    <div class="stat"><div class="val">1–3</div><div class="lbl">Trades per day maximum</div></div>
+    <div class="stat"><div class="val">90 min</div><div class="lbl">Max session length</div></div>
+    <div class="stat"><div class="val">20K</div><div class="lbl">Min MNQ contracts/5-min</div></div>
+    <div class="stat"><div class="val">1–3</div><div class="lbl">Trades per day max</div></div>
   </div>
 
-  <!-- Background -->
-  <div class="card" id="background">
-    <h2>🧭 Background: From Broke to World Champion</h2>
-    <ul>
-      <li><strong>Early journey:</strong> Quit his job, traveled, saw "40K in 15 minutes" on Instagram and started trading. Had no idea what he was doing — pure strategy-hopping and pattern matching.</li>
-      <li><strong>The losing streak:</strong> Woke at 4–4:30 AM every day on the West Coast. Lost money. Felt embarrassed. Eventually went into <strong>debt</strong>, depleted savings, pulled money out of crypto in a bear market.</li>
-      <li><strong>The turning point:</strong> Reached a "disgusted with myself" breaking point. Made a reckless but decisive choice: figure it out or lose everything. Key insight: <em>stopped focusing on money, started focusing on execution.</em></li>
-      <li><strong>The fix:</strong> Sized down to one micro on prop firms. Got reps. Removed money from the equation as much as possible. Money became the byproduct of proper execution.</li>
-      <li><strong>World Championship:</strong> Won the <strong>Robbins Cup Micro Day Trading Championship for July</strong> — +100% return, beating veterans with decades of experience.</li>
-    </ul>
-    <div class="quote-box">
-      "The money is the byproduct of proper execution. It took me a long time to come to terms with that."
-    </div>
-    <div class="quote-box">
-      "I was so disgusted in myself. I never want to be that version of myself again. That's my motivation."
-    </div>
-  </div>
-
-  <!-- Step 1 -->
   <div class="card" id="step1">
-    <h2>1️⃣ Step 1: ENVIRONMENT — Market Structure + GEX</h2>
-    <p style="color:var(--muted); font-size:14px; margin-bottom:14px;">Done <strong>before the market opens</strong>. Never during live price action.</p>
-
+    <h2>1️⃣ ENVIRONMENT — Market Structure + GEX</h2>
+    <p style="color:var(--muted); font-size:13px; margin-bottom:14px;">All done <strong>before market opens</strong>. Never during live price action.</p>
     <div class="step-block">
-      <h3>Market Structure (Higher Time Frames: 1H / 4H)</h3>
+      <h3>Market Structure (1H / 4H charts)</h3>
       <ul>
-        <li>Identify: <strong>Value Up</strong> (higher highs, higher lows), <strong>Value Down</strong>, or <strong>Sideways</strong></li>
-        <li>Where is value being created? Where is it moving to?</li>
-        <li>What has the week been doing? What did last week do?</li>
-        <li>This defines the <em>directional bias</em> — do NOT trade against it without extreme confirmation</li>
+        <li>Identify regime: <strong>Value Up</strong> (higher highs, higher lows), <strong>Value Down</strong>, or <strong>Sideways</strong></li>
+        <li>Where is value being created? Where is the market searching for new value?</li>
+        <li>Check prior week + current week — sets the directional bias</li>
       </ul>
     </div>
-
     <div class="step-block">
-      <h3>GEX — Gamma Exposure (via Tanuki Trade)</h3>
+      <h3>GEX — Gamma Exposure (Tanuki Trade)</h3>
       <ul>
-        <li><strong>What is GEX?</strong> Dealers/market makers hedge options exposure in the underlying (futures). Their hedging behavior creates predictable volatility patterns.</li>
-        <li><strong>Positive Gamma:</strong> Dealers <em>sell into rips, buy into dips</em> → <strong>Volatility Dampening</strong> → Choppy, failed breakouts. Retail who love breakouts get killed here.</li>
-        <li><strong>Negative Gamma:</strong> Dealers <em>buy into rips, sell into dips</em> → <strong>Volatility Amplifier</strong> → Bigger, faster moves. More momentum continuation.</li>
-        <li>Chris uses <strong>Naive GEX</strong> (broad calculations) for NQ/QQQ/NDX — CBOE data is expensive ($300/mo for SPX only)</li>
-        <li>Key levels to identify: <strong>Call Wall</strong> (resistance), <strong>Put Wall</strong> (support), <strong>Gamma Flip Zone</strong> (positive↔negative boundary = "line in the sand")</li>
-        <li>Result: Know what type of day you're walking into before the open</li>
+        <li><strong>Positive Gamma (+):</strong> Dealers sell rips, buy dips → <em>volatility dampened</em> → failed breakouts, choppy. Retail breakout strategies get destroyed here.</li>
+        <li><strong>Negative Gamma (-):</strong> Dealers buy rips, sell dips → <em>volatility amplified</em> → bigger, faster directional moves. Order flow edge is strongest here.</li>
+        <li>Key levels: <strong>Call Wall</strong> (705 zone in example), <strong>Put Wall</strong> (788/886), <strong>Gamma Flip Zone</strong> — the line between regimes</li>
+        <li>Uses Naive GEX for NQ/QQQ (CBOE data = SPX only, costs $300/mo)</li>
       </ul>
     </div>
-
     <div class="highlight-box">
-      <strong style="color:var(--green);">Example setup:</strong> Value Up structure + Negative Gamma environment = Expect big, fast moves to the upside when structure triggers. NOT necessarily bearish — just volatile. Perfect for order flow entries with momentum.
+      <strong style="color:var(--green);">Whiteboard example:</strong> Value Up structure + Negative Gamma = expect large fast moves upward when triggered. Pre-market setup complete before clicking any buttons.
     </div>
-    <div class="quote-box">
-      "I will never do this while price is moving a million miles an hour. I need to build my scenarios before the market actually opens."
-    </div>
+    <div class="quote-box">"I will never do this while price is moving a million miles an hour. I need to build my scenarios before the market actually opens."</div>
   </div>
 
-  <!-- Step 2 -->
   <div class="card" id="step2">
-    <h2>2️⃣ Step 2: LOCATION — Where to Do Business</h2>
-
+    <h2>2️⃣ LOCATION — Where to Do Business</h2>
     <div class="step-block">
-      <h3>Value Area Concept</h3>
+      <h3>Value Area + Discount / Premium</h3>
       <ul>
-        <li>The market constantly auctions to find where value is accepted — the <strong>Value Area</strong></li>
-        <li><strong>Discount:</strong> Anything below value area → favorable to BUY</li>
-        <li><strong>Premium:</strong> Anything above value area → favorable to SELL</li>
-        <li>In a <em>Value Up</em> structure → look for longs in discount. Do NOT buy expensive. Do NOT short in premium.</li>
-        <li>Selling in premium during an uptrend = "you're going to get run over"</li>
+        <li><strong>Value Area:</strong> Range where most volume was accepted — buyers and sellers "agree"</li>
+        <li><strong>Discount:</strong> Below Value Area → favorable to BUY. <strong>Premium:</strong> Above → favorable to SELL.</li>
+        <li>In Value Up structure: only look for longs in discount. Never sell in premium into trend.</li>
       </ul>
     </div>
-
     <div class="step-block">
       <h3>Low Volume Nodes (LVNs)</h3>
       <ul>
-        <li>If price moved through an area quickly (Asia session pop, London push) = <strong>inefficient move</strong></li>
-        <li>Low volume nodes = not much business was transacted = price will likely return</li>
-        <li>When price returns to a LVN in discount → high-probability location for reversal</li>
-        <li>Combined with Value Area Low (VAL) breakdown → entering discount = prime buy zone</li>
+        <li>Asia session / London session often creates fast inefficient moves through areas with little volume</li>
+        <li>Those gaps = Low Volume Nodes = price will be "attracted back" to fill them</li>
+        <li>When NY open starts dropping back into a LVN in discount → <strong>prime location</strong></li>
       </ul>
     </div>
-
-    <div class="warn-box">
-      ⚠️ <strong>Key warning:</strong> When price breaks VAL and drops into discount, do NOT sell it there. That is exactly the <em>most optimal area to buy</em>. Location tells you the direction of the trade — order flow tells you the timing.
-    </div>
-
-    <div class="step-block">
-      <h3>Practical Location Example (Whiteboard)</h3>
-      <ul>
-        <li>Asia session pushes higher → creates inefficient, low-volume move</li>
-        <li>At NY open, price drops → breaks VAL → enters discount</li>
-        <li>This is the <strong>Location</strong> — now wait for confirmation</li>
-        <li>Do NOT sell because "it's dropping" — you'd be selling at the bottom of a range in an uptrend</li>
-      </ul>
-    </div>
+    <div class="warn-box">⚠️ "When price drops to discount and breaks VAL — do NOT sell it there. That is exactly the most optimal area to buy. Location tells the direction; order flow tells the timing."</div>
   </div>
 
-  <!-- Step 3 -->
   <div class="card" id="step3">
-    <h2>3️⃣ Step 3: CONFIRMATION — Order Flow + Delta</h2>
-    <p style="color:var(--muted); font-size:14px; margin-bottom:14px;">Now zoomed into 5-minute candles, watching two overlay types: <strong>Volume Profile per candle</strong> + <strong>Delta Profile per candle</strong></p>
-
+    <h2>3️⃣ CONFIRMATION — Order Flow + Delta</h2>
+    <p style="color:var(--muted); font-size:13px; margin-bottom:14px;">Zoomed into 5-minute MNQ candles. Two overlays: <strong>Volume Profile</strong> + <strong>Delta Profile</strong> per candle.</p>
     <div class="step-block">
-      <h3>Reading Order Flow Candles</h3>
+      <h3>The Absorption Pattern</h3>
       <ul>
-        <li>Normal candlestick = only the <em>scoreboard</em>. Order flow shows <em>how</em> the auction developed</li>
-        <li><strong>Volume Profile inside candle:</strong> Where is the POC (Point of Control = most contracts)? If POC is at the low → buyers were trapped, not in control</li>
-        <li><strong>Delta Profile inside candle:</strong> Shows net aggression. <strong>Negative delta</strong> = more aggressive sellers. <strong>Positive delta</strong> = more aggressive buyers</li>
-        <li>Numbers ladder at each price level — Chris's indicator bolds any imbalance of <strong>400%+</strong> (aggressive side has 4× more orders than passive side)</li>
+        <li><strong>Phase 1:</strong> Price in discount. Sellers aggressive. Candle = large wick down, negative delta at low, POC at bottom.</li>
+        <li><strong>Phase 2:</strong> Candle closes <em>bullish</em> despite seller aggression → sellers got NO result for their effort.</li>
+        <li><strong>Phase 3:</strong> Next candle opens up, sellers try again — but fail at a <em>higher</em> level. Failure of sellers.</li>
+        <li><strong>Phase 4:</strong> Candle flips bullish, 400%+ imbalance of aggressive buyers fires on bid×ask ladder. → <strong>GO LONG.</strong></li>
       </ul>
     </div>
-
     <div class="step-block">
-      <h3>The Absorption Pattern (The Core Entry Setup)</h3>
+      <h3>The Bid × Ask Imbalance System</h3>
       <ul>
-        <li><strong>Phase 1:</strong> Price in discount. Sellers aggressive. Candle = large wick down, negative delta at low, POC at bottom. Sellers making effort.</li>
-        <li><strong>Phase 2:</strong> Candle closes bullish despite seller aggression. Result = sellers got NO reward for their effort.</li>
-        <li><strong>Phase 3:</strong> Next candle opens up, immediately pulls back. Sellers try again → but this time fail at a <em>higher level</em>. Failure of sellers.</li>
-        <li><strong>Phase 4:</strong> Candle flips bullish again, positive delta builds. <strong>Shift of dominance</strong> from sellers to buyers confirmed.</li>
-        <li>→ <strong>GO LONG.</strong> Stop loss under the structure.</li>
+        <li>Right side (Ask) = aggressive buyers. Left side (Bid) = aggressive sellers.</li>
+        <li>Indicator bolds numbers when imbalance ≥ <strong>400%</strong> on one side.</li>
+        <li>Bold buyers lighting up after seller absorption = confirmed dominance shift → entry trigger.</li>
       </ul>
     </div>
-
-    <div class="step-block">
-      <h3>Bid × Ask Ladder — The Imbalance System</h3>
-      <ul>
-        <li><strong>Right side (Ask):</strong> Passive sell orders filled by <em>aggressive buyers</em></li>
-        <li><strong>Left side (Bid):</strong> Passive buy orders filled by <em>aggressive sellers</em></li>
-        <li>When bold numbers light up (400%+ imbalance) on the right side → aggressive buyers overwhelming sellers → time to go long</li>
-        <li>Chris waits for sellers to fail <em>twice</em> before entering. No FOMO on first signal.</li>
-      </ul>
-    </div>
-
-    <div class="quote-box">
-      "I use order flow mainly to filter trades OUT. Some days I take zero trades. The moment we start seeing order flow used to take more trades — that's the wrong direction."
-    </div>
-    <div class="quote-box">
-      "Absorption doesn't mean automatic reversal. What I need to see is dominance shifting back the other direction."
-    </div>
+    <div class="quote-box">"I use order flow mainly to filter trades OUT. Some days I take zero trades. Order flow shouldn't make you take more trades — it should make you take fewer, better ones."</div>
   </div>
 
-  <!-- Step 4 -->
   <div class="card" id="step4">
-    <h2>4️⃣ Step 4: ENTRY / EXIT / RISK MANAGEMENT</h2>
-
-    <div class="step-block">
-      <h3>Entry</h3>
-      <ul>
-        <li>Trigger: Shift of dominance confirmed (sellers fail twice, buyers light up imbalance)</li>
-        <li>No chasing. No anticipating before confirmation. No FOMO. No premature entry.</li>
-        <li>Enter on the rejection/flip, not the initial signal</li>
-      </ul>
-    </div>
-
-    <div class="step-block">
-      <h3>Stop Loss</h3>
-      <ul>
-        <li>Always below the key location/structure level that defined the setup</li>
-        <li>NOT a "small tight stop." Prefers confirmation over a better entry price.</li>
-        <li>"I don't want to look cool. I want to be right. I'll take a worse R for more correct calls."</li>
-      </ul>
-    </div>
-
-    <div class="step-block">
-      <h3>Targets</h3>
-      <ul>
-        <li>Primary: <strong>Swing points</strong> (previous highs/lows) — "The market must take swing points or it flatlines"</li>
-        <li>Secondary: POC of the value area, Call Wall</li>
-        <li>As price approaches resistance zones → start trailing stop</li>
-        <li>Result: typically <strong>1.5–2R</strong> per trade. Not chasing 10R home runs.</li>
-      </ul>
-    </div>
-
-    <div class="highlight-box">
-      <strong style="color:var(--green);">Prop firm math:</strong> $50K account with $2K drawdown, $3K profit target = 1.5R. At 65% win rate, this works cleanly. Simple. Effective. Repeatable.
-    </div>
-    <div class="quote-box">
-      "The guys who are going for 10R or 20R, posting their tiny stop screenshots — I don't care. I want to be right. I'll take the extra confirmation even if it ruins my bottom tick."
-    </div>
-  </div>
-
-  <!-- Filters -->
-  <div class="card" id="filters">
-    <h2>🚫 Trade Filters — When NOT to Trade</h2>
+    <h2>4️⃣ ENTRY / EXIT / RISK MANAGEMENT</h2>
     <ul>
-      <li><strong>Volume Threshold:</strong> Below <strong>20,000 contracts per 5-minute MNQ candle</strong> → don't touch it. Participation dying = lunch hour, slow grind, no edge</li>
-      <li><strong>Time Cutoff:</strong> Hard stop after <strong>90 minutes</strong> from NY open. Data shows trades get dramatically worse after that.</li>
-      <li><strong>No confirmation:</strong> If in discount but sellers are NOT being absorbed + dominance NOT shifting → do not trade "because it seems cheap"</li>
-      <li><strong>News events:</strong> If news hits right before price reaches the key level — skip</li>
-      <li><strong>After 2 consecutive losses:</strong> Hard rule. Probability of a C-game session spikes after 2 losses in a row</li>
-      <li><strong>Balanced market:</strong> When buyers and sellers are comfortable, no one is forced → no edge. Wait for imbalance.</li>
+      <li><strong>Entry:</strong> After second seller failure + buyer imbalance confirmed. No FOMO, no anticipation, no premature entry.</li>
+      <li><strong>Stop:</strong> Below the structural level that defined the setup. Prefers confirmation over a better entry price.</li>
+      <li><strong>Targets:</strong> Previous swing highs/lows (primary). POC or Call Wall (secondary). Trail stop as price enters resistance.</li>
+      <li><strong>Result:</strong> 1.5–2R average. Not chasing 10R — "I want to be right, not look cool."</li>
     </ul>
-    <div class="warn-box">
-      ⚠️ <strong>Trades on MNQ, NOT NQ.</strong> "Most people disagree with me — they say use NQ. I use MNQ. It works for me. I watch MNQ order flow. That's just what I do."
-    </div>
-    <div class="quote-box">
-      "Your biggest advantage as a trader is selective participation. Most traders don't use it. They think if you're not trading, you're doing something wrong."
+    <div class="highlight-box">
+      <strong style="color:var(--green);">Prop firm math on the whiteboard:</strong> $50K account → $2,000 drawdown limit / $3,000 profit target = literal 1.5R. At 65% win rate = consistent funded payouts. Simple and repeatable.
     </div>
   </div>
 
-  <!-- Psychology -->
-  <div class="card" id="psychology">
-    <h2>🧠 Psychology: A/B/C Game Sessions</h2>
+  <div class="card" id="filters">
+    <h2>🚫 Filters — When NOT to Trade</h2>
+    <ul>
+      <li><strong>Volume below 20,000 contracts / 5-min MNQ candle</strong> → participation dying, skip. Lunch hour territory.</li>
+      <li><strong>After 90 minutes from NY open</strong> → hard cutoff. Data shows dramatic quality degradation after this.</li>
+      <li><strong>No confirmation in location</strong> → being in discount isn't enough; must see seller absorption + dominance shift.</li>
+      <li><strong>After 2 consecutive losses</strong> → stop. Probability of C-game session spikes sharply.</li>
+      <li><strong>Balanced / choppy market</strong> → buyers and sellers comfortable, no forced participation = no edge.</li>
+      <li><strong>News event at the level</strong> → skip the setup entirely.</li>
+    </ul>
+    <div class="quote-box">"Your biggest advantage as a trader is selective participation. Most traders don't use it — they think if you're not trading, you're doing something wrong."</div>
+  </div>
 
+  <div class="card" id="psychology">
+    <h2>🧠 Psychology — A/B/C Sessions & Good vs Bad Losses</h2>
     <div class="step-block">
-      <h3>The Three Session Types (Unrelated to P&L)</h3>
+      <h3>Three Session Types (Unrelated to P&L)</h3>
       <ul>
-        <li><strong>A-Game:</strong> Executed exactly according to plan. No hesitation, no chase, no FOMO. Proper stops. Proper targets. Even if it loses — this is an A-game session.</li>
-        <li><strong>B-Game:</strong> Minor deviations. Still broadly followed the process.</li>
-        <li><strong>C-Game:</strong> Emotional decisions. Bent rules. Sized up out of frustration. Removed stops. Tilted. One C-game session can destroy a week of A-game profits.</li>
+        <li><strong>A-Game:</strong> Executed exactly per plan — no hesitation, no FOMO, no chasing. Even a losing A-game session is a success.</li>
+        <li><strong>C-Game:</strong> Rules bent, oversized, stopped out, tilted, chased. One C-game session can erase a week of A-game profits.</li>
+        <li><strong>Key insight:</strong> Consistency = eliminating C-games. You can't control how many great setups appear. You CAN control the dumb losses.</li>
       </ul>
     </div>
-
-    <div class="highlight-box">
-      <strong style="color:var(--green);">The key insight:</strong> Consistency doesn't come from more A-game sessions. It comes from <strong>eliminating C-game sessions</strong>. You can't control how many great setups appear. You CAN control the dumb, preventable losses.
-    </div>
-
     <div class="step-block">
       <h3>Good Loss vs. Bad Loss</h3>
       <ul>
-        <li><strong>Good Loss:</strong> Setup was valid, confirmation was present, execution was correct, the market just went against you. Accept it. Variance is real.</li>
-        <li><strong>Bad Loss:</strong> You were in discount but had no seller absorption. You "anticipated" the reversal without confirmation. You guessed. Even if this wins occasionally, it reinforces the wrong behavior.</li>
-        <li>Bad losses → frustration → chasing → tilt → account gone. This is the prop firm "boom and bust" loop.</li>
+        <li><strong>Good loss:</strong> Valid setup, proper execution, market said no. Accept it — variance is real.</li>
+        <li><strong>Bad loss:</strong> You guessed (entered without confirmation), anticipated, forced a trade. Even if it occasionally wins = reinforcing wrong behavior.</li>
+        <li>Bad loss → frustration → rule-bending → tilt → account gone. The prop firm "boom and bust" loop.</li>
       </ul>
     </div>
-
-    <div class="quote-box">
-      "If you keep going for 10R and you're a profitable trader, you're probably going to be losing a lot of trades — and for a beginner, that's mentally devastating. They start doing random stuff. Now the account's gone."
+    <div class="step-block">
+      <h3>Chris's Specific Rules (Discovered via Trade Data)</h3>
+      <ul>
+        <li>Hard stop: 90 minutes after NY open — his trades "get dramatically worse" after this point.</li>
+        <li>Hard stop: 2 consecutive losses — 50/50 chance of bad decisions from loss #3 onward.</li>
+        <li>Premature entry or chase = immediate shutdown, no exceptions.</li>
+        <li>Motivation: "I think back to the version of me waking at 4:30 AM and losing every day. I never want to be that person again."</li>
+      </ul>
     </div>
+    <div class="quote-box">"If you're struggling, size all the way down to the point where it's almost insulting. Now you can focus on actually executing properly — not on P&L screenshots."</div>
   </div>
 
-  <!-- Rules -->
-  <div class="card" id="rules">
-    <h2>⚙️ Rules, Self-Awareness & Breaking Points</h2>
-    <ul>
-      <li><strong>"Don't overtrade" is NOT a rule.</strong> Rules require a specific action attached. "Stop trading after 2 losses in a row" IS a rule. Specific. Measurable. Actionable.</li>
-      <li>Every trader has a <strong>line in the sand</strong> — the point where calculated decisions turn emotional. Find yours.</li>
-      <li>Breaking points are often <em>invisible</em> to the person it's happening to. You need to trace back: where in the session did it start falling apart?</li>
-      <li>It's rarely the big losing trade. Something earlier caused that. "Some sequence of events occurred."</li>
-      <li><strong>Chris's personal rules discovered through data:</strong>
-        <ul style="margin-top:8px; padding-left:18px; list-style:disc;">
-          <li>Hard cutoff: 90 minutes into NY open</li>
-          <li>Stop after 2 consecutive losses (not 3)</li>
-          <li>If he makes a premature entry or chases → shut it down immediately, no matter what</li>
-        </ul>
-      </li>
-      <li><strong>Overconfidence works both ways:</strong> Sometimes winning too much makes traders equally emotional. "They're not making calculated decisions anymore — they're making emotional ones."</li>
-    </ul>
-    <div class="quote-box">
-      "If you don't have self-control, trading's not for you. You need self-control. You can't go through life without self-control. Where you going to end up? Jail or dead. Trading is no different."
+  <!-- DIAGRAM GALLERY — REAL WHITEBOARD FRAMES -->
+  <div class="diagrams-section" id="diagrams">
+    <h2>📋 Whiteboard Diagrams — What's Actually Drawn</h2>
+    <p>All frames extracted from the standing whiteboard session (~13:00–34:00). These are the actual diagrams Chris draws live during the strategy walkthrough.</p>
+
+    <!-- Group 1: Environment -->
+    <div class="diagram-group">
+      <h3>Step 1: ENVIRONMENT — Market Structure + GEX</h3>
+      <div class="diagrams-grid">
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb01.jpg" alt="Market structure staircase" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~13:00</div>
+            <div class="diagram-title">Market Structure Staircase — Value Up</div>
+            <div class="diagram-what">Chris draws an irregular zigzag line moving upward in staircase formation. Each "plateau" represents a value area where buyers and sellers built positions. The upward staircase = Value Up structure. Below the main line he writes "pov" / "pov" annotations marking value area nodes.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> This is the very first thing Chris checks before the market opens. He looks at 1H/4H charts to see where value has been building. If the staircase points up → bias is long, only look for buys in discount.</div>
+            <div class="diagram-tags"><span class="dtag">Market Structure</span><span class="dtag">Value Up</span><span class="dtag">Higher Time Frame</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb02.jpg" alt="Market structure with value zones" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~14:00</div>
+            <div class="diagram-title">Value Creation Zones Identified</div>
+            <div class="diagram-what">The staircase now has rectangular boxes drawn around the "resting" zones — these are the value areas. Arrows show price leaving one value zone and searching for the next. The boxes represent areas where buyers and sellers reach temporary agreement before the next push.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> "The purpose of the market is to determine the value of this asset." When both sides are comfortable, they're building value. The moment one side gets aggressive = forced participation begins. Chris is showing HOW value gets built before it breaks.</div>
+            <div class="diagram-tags"><span class="dtag">Value Area</span><span class="dtag">Auction Market Theory</span><span class="dtag">Forced Participation</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb03.jpg" alt="GEX introduced on whiteboard" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~15:30</div>
+            <div class="diagram-title">GEX Introduced — "Gamma Exposure"</div>
+            <div class="diagram-what">On the left side of the board, below the market structure, Chris writes "GEX" in large letters and begins explaining the concept. The whiteboard shows the label before the full diagram is added. The market structure staircase remains on the right side.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> After defining market structure, Chris adds the second environmental layer: gamma exposure. This tells him what TYPE of day to expect — choppy or trending — before the market opens. Combined with structure, it defines the full "Environment."</div>
+            <div class="diagram-tags"><span class="dtag">GEX</span><span class="dtag">Gamma Exposure</span><span class="dtag">Environment</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb04.jpg" alt="GEX positive and negative labeled" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~17:00</div>
+            <div class="diagram-title">GEX: Positive+ and Negative- Labeled</div>
+            <div class="diagram-what">Below "GEX", Chris writes "Positive+" with a circle/oval drawn around it, and below that "NEG." with a different marker. The two regimes are now visually distinguished. He also draws small wave-like lines showing how each regime behaves: tight dampened waves for positive gamma, larger erratic waves for negative gamma.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> This is the core GEX insight. Positive = volatility dampener (failed breakouts). Negative = volatility amplifier (big fast moves). Retail traders love breakouts — and they keep getting burned in positive gamma environments because dealers are selling every rip.</div>
+            <div class="diagram-tags"><span class="dtag">Positive Gamma</span><span class="dtag">Negative Gamma</span><span class="dtag">Volatility Regime</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb05.jpg" alt="Positive gamma failed breakouts pattern" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~18:00</div>
+            <div class="diagram-title">Positive Gamma → Failed Breakouts</div>
+            <div class="diagram-what">Chris draws a choppy sideways wave pattern with multiple small peaks that turn back down — representing repeated failed breakout attempts. Each peak gets sold back. This is the positive gamma environment where dealer hedging (selling into rips, buying dips) keeps price contained.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> "People love to trade breakouts, but in a positive gamma environment, every time we try to break out, you have dealer positioning selling into the rips." This is why understanding the regime before the open saves entire accounts.</div>
+            <div class="diagram-tags"><span class="dtag">Failed Breakouts</span><span class="dtag">Dealer Hedging</span><span class="dtag">Choppy Market</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb06.jpg" alt="Negative gamma amplified moves" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~19:00</div>
+            <div class="diagram-title">Negative Gamma → Amplified Directional Moves</div>
+            <div class="diagram-what">Below the tight positive gamma waves, Chris draws a contrasting pattern: larger, more decisive directional move downward/upward with momentum — the negative gamma environment. The waves are bigger, faster, more sustained. Arrows indicate dealer behavior: buying into rips and selling into dips amplifies the move.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> Negative gamma is where Chris's order flow strategy has the most edge. Once a level breaks with confirmation, the dealer hedging behavior AMPLIFIES the move rather than dampening it. Same setup, much more momentum.</div>
+            <div class="diagram-tags"><span class="dtag">Negative Gamma</span><span class="dtag">Momentum</span><span class="dtag">Volatility Amplification</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb07.jpg" alt="Call Wall Put Wall Gamma Flip zone" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~20:00</div>
+            <div class="diagram-title">Call Wall / Put Wall / Gamma Flip Zone</div>
+            <div class="diagram-what">A horizontal price level diagram showing three key GEX levels: "Call Wall" (upper resistance zone), "Put Wall" (lower support zone), and the "Gamma Flip" zone between them. Numbers written: 705 (Call Wall area), 788 / 886 (Put Wall area). A horizontal line divides positive from negative gamma territory.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> These are the specific levels Chris identifies on Tanuki Trade every morning. The Call Wall is where dealers must sell (overhead resistance). The Put Wall is where dealers must buy (floor support). The Gamma Flip is the pivot — cross it and the regime changes from dampening to amplifying.</div>
+            <div class="diagram-tags"><span class="dtag">Call Wall</span><span class="dtag">Put Wall</span><span class="dtag">Gamma Flip</span><span class="dtag">Tanuki Trade</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb08.jpg" alt="Combined environment diagram" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~21:00</div>
+            <div class="diagram-title">Combined Environment: Structure + GEX</div>
+            <div class="diagram-what">The full left section of the board shows Environment complete: upper half = market structure staircase with value zones, lower half = GEX with Positive+/NEG- labels and the wave patterns for each regime. "1. ENVIRONMENT" is written as the header at top-left.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> Step 1 is fully drawn. Before the market opens, Chris has two layers defined: (1) Is price in a value up/down/sideways structure? (2) Is GEX positive (choppy) or negative (amplified)? Together they answer: what type of day is this, and what direction am I biased?</div>
+            <div class="diagram-tags"><span class="dtag">Step 1 Complete</span><span class="dtag">Pre-Market Prep</span><span class="dtag">Environmental Bias</span></div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
 
-  <!-- Advice -->
-  <div class="card" id="advice">
-    <h2>💡 Advice for Struggling Traders</h2>
-    <ul>
-      <li><strong>Stop blaming information.</strong> Most struggling traders have an information problem in their head — but the real issue is behavior.</li>
-      <li><strong>Brutally honest self-assessment:</strong> Some people are genuinely not suited for trading. The way they behave will never complement trading. Acknowledge that possibility.</li>
-      <li><strong>Stop watching other people's wins.</strong> Social media creates a distorted reality. You are not the only person losing.</li>
-      <li><strong>Size down to the point of insult.</strong> Micro so small it almost doesn't matter. Now you can focus on <em>how</em> you're trading rather than <em>how much</em>.</li>
-      <li><strong>Learn auction market theory first.</strong> Before any strategy: understand what drives price. Buyers, sellers, auctions, value, forced participation.</li>
-      <li><strong>Find ONE strategy that matches your personality.</strong> High-frequency scalping vs. 1-2 trades per day. Neither is wrong — but one suits you better. Don't mix them.</li>
-      <li><strong>Don't hop strategies.</strong> If you execute one strategy properly and it fails, then you know it fails. If you're jumping around, you know nothing.</li>
-      <li><strong>Tools to start:</strong> ATAS, Bookmap, DeepCharts — all have replay modes to get reps without real money</li>
-    </ul>
-    <div class="quote-box">
-      "Let's take a month, size all the way down. To the point where it's almost insulting. Perfect. Because now you can focus on actually executing properly."
+    <!-- Group 2: Location -->
+    <div class="diagram-group">
+      <h3>Step 2: LOCATION — Value Area, Discount & Premium</h3>
+      <div class="diagrams-grid">
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb09.jpg" alt="Location section begins" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~22:00</div>
+            <div class="diagram-title">"2. LOCATION" Header + Value Area Box</div>
+            <div class="diagram-what">The board now shows "2. LOCATION" written next to the Environment section. Chris draws a large horizontal rectangle representing the Value Area. Above it = Premium zone. Below it = Discount zone. A horizontal line through the middle marks Value Area High (VAH) and Value Area Low (VAL).</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> Location answers "WHERE do I want to do business?" In a value-up structure, Chris only wants to buy in DISCOUNT — below the value area. "I don't want to do it up here — that's an expensive place to want to get involved."</div>
+            <div class="diagram-tags"><span class="dtag">Location</span><span class="dtag">Value Area</span><span class="dtag">VAH / VAL</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb10.jpg" alt="Discount and premium zones labeled" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~23:00</div>
+            <div class="diagram-title">Discount Below / Premium Above — Labeled on Board</div>
+            <div class="diagram-what">The value area rectangle now has "Discount" written below it and "Premium" implied above. Arrows show price trading in the discount zone beneath the value area — this is where Chris wants to see the setup develop. The rectangle sits in the context of the upward-trending market structure from Step 1.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> "If we're in a value-up structure, I don't want to sell in premium — I could get run over. I want to wait for us to come into discount." This is the logical link between Environment (bias up) and Location (buy in discount).</div>
+            <div class="diagram-tags"><span class="dtag">Discount Zone</span><span class="dtag">Premium Zone</span><span class="dtag">Trend Following</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb11.jpg" alt="Asia London session inefficient move" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~24:00</div>
+            <div class="diagram-title">Asia Session Fast Move → Low Volume Node</div>
+            <div class="diagram-what">Chris draws a session profile: small range at left (Asia session), then a quick vertical push up (London session), creating a gap/inefficient zone below the current price. He labels "Asia" and "London" on the time axis. The fast move created a low-volume node — an area with minimal business transacted.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> "If Asia session pushed it up quickly — this may be a very inefficient part of the move. We didn't spend a lot of time there. Not a lot of volume." When NY open drops back into this LVN zone → that IS the location. Price is drawn back to fill the inefficiency.</div>
+            <div class="diagram-tags"><span class="dtag">Asia Session</span><span class="dtag">London Session</span><span class="dtag">Low Volume Node</span><span class="dtag">Inefficient Move</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb12.jpg" alt="NY open drop into discount location" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~25:00</div>
+            <div class="diagram-title">NY Open Drops into Discount → "HERE is Location"</div>
+            <div class="diagram-what">The session diagram now shows a large arrow pointing DOWN at NY open, dropping below the Value Area Low and into the discount/low-volume zone. Chris circles this area and writes or points to it as "LOCATION" — the moment price hits this zone, the setup is primed for confirmation.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> This is where most traders would panic-sell or get short, thinking "it's dropping fast." Chris does the opposite — he's been waiting for exactly this. Price is now IN the location. The next step is waiting for confirmation that sellers are being rejected.</div>
+            <div class="diagram-tags"><span class="dtag">NY Open</span><span class="dtag">Value Area Low</span><span class="dtag">Setup Location</span><span class="dtag">Discount Entry</span></div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="quote-box">
-      "You do not need to be the greatest trader ever to make money with prop firms. You really don't. What you need to do is eliminate the bad losses."
+
+    <!-- Group 3: Confirmation / Order Flow -->
+    <div class="diagram-group">
+      <h3>Step 3: CONFIRMATION — Order Flow, Delta & Absorption</h3>
+      <div class="diagrams-grid">
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb13.jpg" alt="5 minute candle with volume profile" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~26:00</div>
+            <div class="diagram-title">Order Flow Candle Type 1: Volume Profile Embedded</div>
+            <div class="diagram-what">Chris draws a tall bearish candle (large wick down) with a volume profile histogram embedded inside it. The horizontal bars of the histogram are concentrated near the BOTTOM of the candle — the POC (Point of Control, most contracts traded) is at the low. This is drawn inside a box labeled "9" (or discount zone marker).</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> "On a normal candlestick, you have open, high, low, close — it's the scoreboard. But I want to see HOW it formed." POC at the bottom means the most business happened at the LOW — sellers were most active there. If the candle still closes bullish despite this = absorption in action.</div>
+            <div class="diagram-tags"><span class="dtag">Volume Profile</span><span class="dtag">POC</span><span class="dtag">Point of Control</span><span class="dtag">5-Min Candle</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb14.jpg" alt="Delta profile candle negative delta" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~27:00</div>
+            <div class="diagram-title">Order Flow Candle Type 2: Delta Profile — Sellers at Low</div>
+            <div class="diagram-what">Next to the volume profile candle, Chris draws the second candle type: delta profile. Small horizontal numbers arranged in a ladder pattern (the bid×ask ladder) show large negative delta values at the bottom of the candle — aggressive sellers concentrated at the wick low. The candle body still closes higher.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> Negative delta = more aggressive sellers than aggressive buyers. Sellers are ATTACKING the discount zone. But if the candle still closes bullish = they're getting ABSORBED. "You see all the participation from sellers happening in discount in location and they're not getting rewarded for that behavior."</div>
+            <div class="diagram-tags"><span class="dtag">Delta Profile</span><span class="dtag">Negative Delta</span><span class="dtag">Seller Absorption</span><span class="dtag">Bid Ask Ladder</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb15.jpg" alt="Bullish candle close after absorption" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~28:00</div>
+            <div class="diagram-title">Bullish Close = Sellers Failed — Dominance Shift Begins</div>
+            <div class="diagram-what">A new candle is drawn to the right: it shows price pulling back down (sellers retrying) but this second attack fails at a HIGHER level than the first. The candle closes bullish again. "Failure of sellers here" is the concept — sellers tried twice and couldn't progress. The board shows both candles side by side in the discount zone.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> This is the confirmation signal. "I want to see the next candle open up, immediately pull back. I want to see that aggression from sellers again — but this time I want it to fail higher up." Two-failure confirmation = dominance has shifted to buyers. Time to enter.</div>
+            <div class="diagram-tags"><span class="dtag">Bullish Close</span><span class="dtag">Effort vs Result</span><span class="dtag">Dominance Shift</span><span class="dtag">Double Failure</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb22.jpg" alt="Full board with all three sections including confirmation candles" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~27:30</div>
+            <div class="diagram-title">Full Board — Environment + Location + Confirmation Together</div>
+            <div class="diagram-what">The entire whiteboard is visible: LEFT = "1. ENVIRONMENT" (market structure staircase + GEX Positive+/NEG- labels). CENTER-RIGHT = "2. LOCATION" (value area wave with call wall / put wall labels). RIGHT = "3. CONFIRMATION" header with the order flow candle diagrams showing absorption pattern. Chris is actively drawing, adding details to the confirmation section.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> This is the most important single frame — the complete system on one board. Environment defines the bias. Location defines where. Confirmation defines when. Every element Chris has described verbally is now visible as a single integrated diagram, showing how the three steps flow into each other.</div>
+            <div class="diagram-tags"><span class="dtag">Complete System</span><span class="dtag">All 3 Steps</span><span class="dtag">Full Whiteboard</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb16.jpg" alt="Entry arrow marked on whiteboard" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~29:00</div>
+            <div class="diagram-title">Entry Marked — "I'm Going Long"</div>
+            <div class="diagram-what">An upward arrow is drawn on the board after the two-failure candle sequence. The entry point is marked at the flip back to bullish after the second seller failure. Stop loss is drawn below the structural low of the candles. The entry is inside the discount zone, within the low-volume node, in a value-up environment.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> All four pieces aligned: (1) Value Up environment + Negative Gamma. (2) Price in discount/LVN = location. (3) Seller absorption with delta confirmation = confirmation. (4) Entry on second failure with imbalance firing. "We flip bullish. I'm going long."</div>
+            <div class="diagram-tags"><span class="dtag">Entry Signal</span><span class="dtag">Stop Loss</span><span class="dtag">Long Setup</span><span class="dtag">All Criteria Met</span></div>
+          </div>
+        </div>
+
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb17.jpg" alt="Target at swing high trailing stop" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~30:00</div>
+            <div class="diagram-title">Target: Swing High + Trailing Stop Mechanism</div>
+            <div class="diagram-what">Above the entry arrow, Chris draws a target zone at the previous swing high. A trail path is shown: as price rises toward the target, a trailing stop line follows price upward, eventually sitting below the most recent swing. The diagram shows a completed trade from entry at discount to partial exit at POC and full exit at swing high.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> "I'm usually aiming for swing points because if the market never takes a swing point — what are we doing? We flatline." Once near the target, trail the stop. If the call wall or POC is in the way, start trailing earlier. Result = 1.5–2R. Not chasing 10R.</div>
+            <div class="diagram-tags"><span class="dtag">Swing High Target</span><span class="dtag">Trailing Stop</span><span class="dtag">1.5-2R</span><span class="dtag">Exit Strategy</span></div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
 
-  <!-- 50 Frames Visual Breakdown -->
-  <div class="frames-section" id="frames">
-    <h2>🎬 50 Frames — Visual Breakdown of the Video</h2>
-    <p style="color:var(--muted); font-size:14px; margin-bottom:20px;">One frame every ~70 seconds. Purple border = contains whiteboard drawing or diagram. Covers the complete arc from intro through whiteboard strategy session to psychology discussion.</p>
-    <div class="frames-grid">
+    <!-- Group 4: Complete Board + Prop Math -->
+    <div class="diagram-group">
+      <h3>Complete Board + Prop Firm Math</h3>
+      <div class="diagrams-grid">
 
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0001.jpg" alt="Frame 1" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~0:00</div>
-          <span class="frame-type type-title">INTRO CINEMATIC</span>
-          <div class="frame-caption">Dark arena with spotlight on a championship trophy</div>
-          <div class="frame-story">Epic cinematic intro. Sets the stakes — this is a World Championship-level achievement. The trophy metaphor signals: this is not a casual trading video, but a champion's reveal.</div>
-          <div class="frame-concepts"><span class="concept-tag">Robbins Cup</span><span class="concept-tag">World Champion</span></div>
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb18.jpg" alt="Full whiteboard complete system" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~31:00</div>
+            <div class="diagram-title">Full Whiteboard — Complete Strategy Overview</div>
+            <div class="diagram-what">The entire whiteboard is filled: "1. ENVIRONMENT" on the left with the staircase structure and GEX diagram. "2. LOCATION" in the center with value area, discount zone, and the Asia/London/NY session profile. "3. CONFIRMATION" on the right with the order flow candles (volume profile + delta profile), absorption pattern, entry arrow, and target. Stop loss is marked below entry.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> This is the culmination of the whiteboard session — everything Chris has described for 30+ minutes is visible in one frame. This is his exact championship-winning strategy: the complete visual representation of how he turned $X into 100% in one month at the Robbins Cup. Every concept connected, every step shown.</div>
+            <div class="diagram-tags"><span class="dtag">Complete System</span><span class="dtag">Robbins Cup Strategy</span><span class="dtag">Championship Method</span></div>
+          </div>
         </div>
-      </div>
 
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0002.jpg" alt="Frame 2" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~1:10</div>
-          <span class="frame-type type-title">INTRO CINEMATIC</span>
-          <div class="frame-caption">Championship trophy on illuminated podium — cinematic continuation</div>
-          <div class="frame-story">Second cinematic shot. The production builds anticipation — "What strategy won this?" The answer will be revealed step-by-step on a whiteboard.</div>
-          <div class="frame-concepts"><span class="concept-tag">Micro Day Trading</span><span class="concept-tag">100% Return</span></div>
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb19.jpg" alt="Full board with tabletop paper beginning" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~32:00</div>
+            <div class="diagram-title">Whiteboard Complete — Moving to Tabletop Detail Work</div>
+            <div class="diagram-what">The whiteboard shows the complete three-section system. Chris is beginning to move to a tabletop paper session to draw more granular examples — the order flow candles with the actual bid×ask ladder numbers (the "X pattern" showing imbalances). The whiteboard serves as the macro overview; the paper as the micro zoom.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> After showing the big picture, Chris zooms in on the exact mechanics of how to READ the order flow candles. The ladder numbers, bold imbalances, the shift from red (sellers) to green (buyers) — this is the trigger-level detail that comes after the three macro steps.</div>
+            <div class="diagram-tags"><span class="dtag">Transition</span><span class="dtag">Micro Detail</span><span class="dtag">Bid Ask Numbers</span></div>
+          </div>
         </div>
-      </div>
 
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0003.jpg" alt="Frame 3" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~2:20</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Chris Creamer introduced — 26 years old, Robbins Cup champion</div>
-          <div class="frame-story">Host introduces Chris's achievement: youngest to win, 100% in one month, beat veterans. Frames this as "never done before — world champion live on camera, step by step."</div>
-          <div class="frame-concepts"><span class="concept-tag">Introduction</span><span class="concept-tag">Credentials</span></div>
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb20.jpg" alt="Complete board all three sections visible" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~32:30</div>
+            <div class="diagram-title">Three-Section Board at Maximum Completeness</div>
+            <div class="diagram-what">Clearest view of the full whiteboard: LEFT quadrant shows market structure zigzag with value boxes + GEX section with "Positive+" circled and "NEG." below + wave patterns for each. CENTER shows "2. LOCATION" with value area horizontal lines and call wall / put wall labeled. RIGHT shows "3. CONFIRMATION" with the W-pattern candles (absorption + second failure + entry).</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> "Here we are in the environment — value up structure, negative gamma environment. Here is location — price in discount, low volume node. Here is confirmation — sellers absorbed, dominance shifted. Here is the entry." This single frame captures the complete decision sequence Chris runs through on every trade.</div>
+            <div class="diagram-tags"><span class="dtag">Macro View</span><span class="dtag">Decision Sequence</span><span class="dtag">Full Framework</span></div>
+          </div>
         </div>
-      </div>
 
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0004.jpg" alt="Frame 4" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~3:30</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Chris discusses the #1 thing that clicked — moving from setup-hopping to process</div>
-          <div class="frame-story">Key early admission: Chris was strategy-hopping for years. The click was realizing it's NOT about the setup. It's about understanding forced participation and what other participants are doing.</div>
-          <div class="frame-concepts"><span class="concept-tag">Strategy Hopping</span><span class="concept-tag">Forced Participation</span><span class="concept-tag">Process vs Setup</span></div>
+        <div class="diagram-card">
+          <img src="frames/robbins-cup/wb21.jpg" alt="Prop firm math 2000 3000 written" loading="lazy">
+          <div class="diagram-body">
+            <div class="diagram-ts">⏱ ~34:30</div>
+            <div class="diagram-title">Prop Firm Math — "2000 / 3000" = 1.5R Written on Board</div>
+            <div class="diagram-what">At the bottom of the whiteboard, Chris has written "2000" and "3000" — representing a prop firm account's drawdown limit ($2,000) and profit target ($3,000). The ratio is literally 1.5R. This visual makes concrete why his 1.5–2R average is perfectly calibrated for the prop firm environment. The rest of the board (all three steps) is still visible above.</div>
+            <div class="diagram-connection"><strong>Story connection:</strong> "The drawdown is 2,000. The profit target is 3,000. That's literally a 1.5R. So if you just constantly take 1.5R trades, you'll be fine." This is why Chris doesn't chase 10R home runs — the math of prop firms requires consistent 1.5R execution, not occasional large wins.</div>
+            <div class="diagram-tags"><span class="dtag">Prop Firm Math</span><span class="dtag">1.5R</span><span class="dtag">Drawdown</span><span class="dtag">Profit Target</span></div>
+          </div>
         </div>
-      </div>
 
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0005.jpg" alt="Frame 5" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~4:40</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Explaining auction market theory — buyers, sellers, positioning</div>
-          <div class="frame-story">Chris frames the market as an auction. Buyers/sellers build positions when "comfortable." The moment one side gets aggressive = forced participation begins. This is his core mental model.</div>
-          <div class="frame-concepts"><span class="concept-tag">Auction Market Theory</span><span class="concept-tag">Positioning</span><span class="concept-tag">Value Area</span></div>
-        </div>
       </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0006.jpg" alt="Frame 6" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~5:50</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Trapped participants — the core edge concept</div>
-          <div class="frame-story">"When it fails, it creates trapped participants — they're offsides." This is the heart of the strategy: find where participants are forced to exit, creating cascade pressure. No need for home runs — 50-100 points is enough.</div>
-          <div class="frame-concepts"><span class="concept-tag">Trapped Participants</span><span class="concept-tag">Mean Reversion</span><span class="concept-tag">Short Squeeze</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0007.jpg" alt="Frame 7" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~7:00</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Host asks for whiteboard walkthrough — transition to strategy session</div>
-          <div class="frame-story">The host requests the step-by-step breakdown. This marks the pivot from conceptual discussion to the actual 4-step system drawn live on the whiteboard.</div>
-          <div class="frame-concepts"><span class="concept-tag">4-Step Process</span><span class="concept-tag">Whiteboard Setup</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0008.jpg" alt="Frame 8" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~8:10</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Chris explains the 4 steps: Environment, Location, Confirmation</div>
-          <div class="frame-story">First verbal reveal of the 4-step framework before drawing it. "Context, location, confirmation" — but he reframes the first step as "Environment" which is broader than context.</div>
-          <div class="frame-concepts"><span class="concept-tag">Environment</span><span class="concept-tag">Location</span><span class="concept-tag">Confirmation</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0009.jpg" alt="Frame 9" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~9:20</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Moving to whiteboard area — strategy breakdown begins</div>
-          <div class="frame-story">Transition to the whiteboard session. Chris begins the most valuable part of the interview — drawing out every element of his system live for the first time on camera.</div>
-          <div class="frame-concepts"><span class="concept-tag">Live Strategy Session</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0010.jpg" alt="Frame 10" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~10:30</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Chris at whiteboard — begins drawing market structure</div>
-          <div class="frame-story">First whiteboard drawings appear. Market structure basics: value being created higher, higher, higher. 1H/4H charts. Higher highs, higher lows = value up structure.</div>
-          <div class="frame-concepts"><span class="concept-tag">Market Structure</span><span class="concept-tag">Higher Time Frame</span><span class="concept-tag">Value Creation</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0011.jpg" alt="Frame 11" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~11:40</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Market structure drawing — value up, value creation zones</div>
-          <div class="frame-story">Whiteboard shows a price series creating value at progressively higher levels. The concept: market "builds value" at areas where buyers and sellers agree on price, then searches for new value.</div>
-          <div class="frame-concepts"><span class="concept-tag">Value Area</span><span class="concept-tag">Market Structure</span><span class="concept-tag">Value Up Structure</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0012.jpg" alt="Frame 12" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~12:50</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">GEX diagram introduced — positive vs. negative gamma zones</div>
-          <div class="frame-story">The second piece of Environment. Whiteboard shows a GEX profile with positive (green, dampening) and negative (red, amplifying) gamma zones. Chris explains why this matters: dealer hedging behavior creates predictable market dynamics.</div>
-          <div class="frame-concepts"><span class="concept-tag">GEX</span><span class="concept-tag">Gamma Exposure</span><span class="concept-tag">Positive Gamma</span><span class="concept-tag">Negative Gamma</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0013.jpg" alt="Frame 13" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~14:00</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Gamma profile showing call wall, put wall, and gamma flip zone</div>
-          <div class="frame-story">The whiteboard now shows three key GEX levels: Call Wall (overhead resistance where dealers sell), Put Wall (floor where dealers buy), and the Gamma Flip (where regime changes). These are plotted daily before the open.</div>
-          <div class="frame-concepts"><span class="concept-tag">Call Wall</span><span class="concept-tag">Put Wall</span><span class="concept-tag">Gamma Flip Zone</span><span class="concept-tag">Tanuki Trade</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0014.jpg" alt="Frame 14" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~15:10</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Positive gamma = choppy failed breakouts visualized</div>
-          <div class="frame-story">Drawing shows how in positive gamma, every breakout attempt gets sold by dealers. The typical retail breakout strategy fails here repeatedly. This is why understanding GEX regime saves accounts.</div>
-          <div class="frame-concepts"><span class="concept-tag">Failed Breakouts</span><span class="concept-tag">Dealer Behavior</span><span class="concept-tag">Volatility Dampening</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0015.jpg" alt="Frame 15" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~16:20</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Negative gamma = amplified moves, momentum continuation</div>
-          <div class="frame-story">Contrasting drawing: negative gamma dealers buy rips and sell dips → feedback loop → larger, faster directional moves. This is where Chris's order flow strategy has the most edge — fast momentum after confirmation.</div>
-          <div class="frame-concepts"><span class="concept-tag">Negative Gamma</span><span class="concept-tag">Volatility Amplification</span><span class="concept-tag">Momentum</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0016.jpg" alt="Frame 16" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~17:30</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Combined environment: value up + negative gamma = setup context</div>
-          <div class="frame-story">The two environmental layers combined on one drawing. Value Up structure on higher time frame + Negative Gamma regime = expect fast upside moves when triggered. This pre-defines the trade bias before the market opens.</div>
-          <div class="frame-concepts"><span class="concept-tag">Environment</span><span class="concept-tag">Bias</span><span class="concept-tag">Pre-Market Preparation</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0017.jpg" alt="Frame 17" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~18:40</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Step 2: Location — value area, discount zone highlighted</div>
-          <div class="frame-story">Now drawing Location. The whiteboard shows value area box with "Discount" zone below it. In a value-up trend: the goal is to BUY in discount, not sell in premium. "An expensive place to want to get involved."</div>
-          <div class="frame-concepts"><span class="concept-tag">Location</span><span class="concept-tag">Discount</span><span class="concept-tag">Premium</span><span class="concept-tag">Value Area</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0018.jpg" alt="Frame 18" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~19:50</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Asia/London session range drawn — showing inefficient low-volume move</div>
-          <div class="frame-story">Whiteboard shows Asia session pushing price up quickly (thin, low volume = inefficient). The resulting gap down to value area at NY open creates the prime setup location — a low volume node that price must revisit.</div>
-          <div class="frame-concepts"><span class="concept-tag">Asia Session</span><span class="concept-tag">London Session</span><span class="concept-tag">Low Volume Node</span><span class="concept-tag">Inefficient Move</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0019.jpg" alt="Frame 19" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~21:00</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">NY Open drop into discount — "Here is Location"</div>
-          <div class="frame-story">The completed location drawing: NY open prices drop, breaks value area low, enters discount. This is the "HERE" moment — price is where Chris wants to do business. Now confirmation is needed.</div>
-          <div class="frame-concepts"><span class="concept-tag">NY Open</span><span class="concept-tag">Value Area Low (VAL)</span><span class="concept-tag">Discount Zone</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0020.jpg" alt="Frame 20" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~22:10</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Zoomed-in view — 5-minute candle order flow introduced</div>
-          <div class="frame-story">Transition from macro (structure + GEX + location) to micro (5-minute candles). The zoom-in shows individual candles entering the discount zone. Now Chris explains what he's watching inside those candles.</div>
-          <div class="frame-concepts"><span class="concept-tag">5-Minute Candles</span><span class="concept-tag">Order Flow</span><span class="concept-tag">Zoom In</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0021.jpg" alt="Frame 21" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~23:20</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Order flow candle with volume profile overlay drawn</div>
-          <div class="frame-story">First detailed candle drawing. Shows a 5-minute candle with a volume profile embedded inside it. POC (Point of Control) marked at the bottom = most contracts traded near the low = sellers in control so far.</div>
-          <div class="frame-concepts"><span class="concept-tag">Volume Profile</span><span class="concept-tag">POC</span><span class="concept-tag">Point of Control</span><span class="concept-tag">Order Flow Candle</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0022.jpg" alt="Frame 22" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~24:30</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Delta profile candle — negative delta shown at the low</div>
-          <div class="frame-story">Second candle type: delta profile. Shows aggressive sellers (negative delta) concentrated at the bottom of the candle. The large wick down with negative delta at low = sellers attacking but NOT progressing — they're getting absorbed.</div>
-          <div class="frame-concepts"><span class="concept-tag">Delta</span><span class="concept-tag">Negative Delta</span><span class="concept-tag">Sellers</span><span class="concept-tag">Absorption</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0023.jpg" alt="Frame 23" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~25:40</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Bullish candle close after seller absorption — shift of dominance setup</div>
-          <div class="frame-story">Critical moment: candle closes bullish despite negative delta at its low. This is the "effort vs result" principle — sellers put in max effort, got NO result. The close bullish signals dominance is shifting.</div>
-          <div class="frame-concepts"><span class="concept-tag">Bullish Close</span><span class="concept-tag">Effort vs Result</span><span class="concept-tag">Dominance Shift</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0024.jpg" alt="Frame 24" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~26:50</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Second candle test — sellers fail higher, confirmation complete</div>
-          <div class="frame-story">The confirmation sequence: next candle opens up, pulls back immediately, sellers try again — but fail at a HIGHER level than before. "Failure of sellers here." This double-failure confirmation is the trigger to go long.</div>
-          <div class="frame-concepts"><span class="concept-tag">Second Test</span><span class="concept-tag">Failure Pattern</span><span class="concept-tag">Long Entry Signal</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0025.jpg" alt="Frame 25" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~28:00</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Entry marked — "I'm going long" moment on the whiteboard</div>
-          <div class="frame-story">The whiteboard shows the complete pattern: discount location, seller absorption (negative delta, POC at low, bullish close), second test fails higher, positive delta builds. Entry arrow drawn. Stop below structure.</div>
-          <div class="frame-concepts"><span class="concept-tag">Entry</span><span class="concept-tag">Stop Loss Placement</span><span class="concept-tag">Long Setup Complete</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0026.jpg" alt="Frame 26" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~29:10</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Bid × Ask ladder imbalance system — 400% threshold marked</div>
-          <div class="frame-story">The bid × ask ladder diagram. Each price level shows aggressive buyers (ask side) vs aggressive sellers (bid side). When bold numbers appear (400%+ imbalance on buy side), aggressive buyers are overwhelming sellers. This fires the entry signal.</div>
-          <div class="frame-concepts"><span class="concept-tag">Bid Ask Ladder</span><span class="concept-tag">400% Imbalance</span><span class="concept-tag">Aggressive Buyers</span><span class="concept-tag">Imbalance Indicator</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0027.jpg" alt="Frame 27" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~30:20</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Target selection — swing points and trailing stop methodology</div>
-          <div class="frame-story">Target drawing: primary targets are previous swing highs (market must take swing points or it flatlines). Secondary: POC or call wall. Trailing stop activated as price enters resistance zones. Result: 1.5–2R.</div>
-          <div class="frame-concepts"><span class="concept-tag">Targets</span><span class="concept-tag">Swing Points</span><span class="concept-tag">Trailing Stop</span><span class="concept-tag">Risk Reward</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0028.jpg" alt="Frame 28" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~31:30</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Complete trade on whiteboard from location to exit</div>
-          <div class="frame-story">Full annotated trade shown: discount zone → seller absorption → dominance shift → entry → trailing stop → target at swing high. This is the complete "textbook" version of Chris's setup, end to end.</div>
-          <div class="frame-concepts"><span class="concept-tag">Complete Trade</span><span class="concept-tag">Full Process</span><span class="concept-tag">End to End</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0029.jpg" alt="Frame 29" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~32:40</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Prop firm math drawn — drawdown vs. profit target = 1.5R</div>
-          <div class="frame-story">The whiteboard shows the prop firm risk model: $2K drawdown, $3K profit target = literal 1.5R. At 65% win rate with this R multiple = consistent funded payouts. Simple math that demystifies prop trading success.</div>
-          <div class="frame-concepts"><span class="concept-tag">Prop Firms</span><span class="concept-tag">Risk Management</span><span class="concept-tag">1.5R</span><span class="concept-tag">Drawdown</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0030.jpg" alt="Frame 30" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~33:50</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Trade filters — volume threshold (20K contracts/5-min) marked</div>
-          <div class="frame-story">Filter criteria drawn: the 20,000 contract per 5-minute MNQ threshold. Below this = participation dying = no trade. This is what limits Chris to the first 90 minutes of NY open where volume is highest.</div>
-          <div class="frame-concepts"><span class="concept-tag">Volume Filter</span><span class="concept-tag">20K Threshold</span><span class="concept-tag">MNQ</span><span class="concept-tag">Selective Participation</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0031.jpg" alt="Frame 31" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~35:00</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Edge cases on whiteboard — when the system breaks down</div>
-          <div class="frame-story">Chris annotates situations where the setup fails: no confirmation despite location, balanced market, low volume, news event at the level. The 886 mention — specific structure levels that invalidate the setup.</div>
-          <div class="frame-concepts"><span class="concept-tag">Edge Cases</span><span class="concept-tag">Setup Invalidation</span><span class="concept-tag">Risk Avoidance</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card has-diagram">
-        <img src="frames/robbins-cup/frame_0032.jpg" alt="Frame 32" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~36:10</div>
-          <span class="frame-type type-whiteboard">WHITEBOARD</span>
-          <div class="frame-caption">Summary box on whiteboard — all 4 steps annotated together</div>
-          <div class="frame-story">Final whiteboard view with the complete framework annotated: Environment (structure + GEX), Location (discount/premium), Confirmation (order flow absorption + delta), Entry/Exit (imbalance trigger, swing targets, trail). The complete system on one board.</div>
-          <div class="frame-concepts"><span class="concept-tag">Complete Framework</span><span class="concept-tag">4 Steps</span><span class="concept-tag">System Overview</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0033.jpg" alt="Frame 33" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~37:20</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Post-whiteboard Q&A begins — win rate and profit factor discussion</div>
-          <div class="frame-story">Back to interview after whiteboard. Host confirms the numbers: 60-65% win rate, ~1.8 profit factor. Chris explains why 1.5R is "more than enough" for prop firms — the math doesn't require perfection.</div>
-          <div class="frame-concepts"><span class="concept-tag">Win Rate</span><span class="concept-tag">Profit Factor</span><span class="concept-tag">Prop Firms</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0034.jpg" alt="Frame 34" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~38:30</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Chris explains why chasing 10R is counterproductive for most traders</div>
-          <div class="frame-story">"The guys posting their tiny stop screenshots — I don't care about looking cool, I want to be right." Explains how high-R strategies require losing a lot of trades, which psychologically breaks beginners who then abandon good setups.</div>
-          <div class="frame-concepts"><span class="concept-tag">Risk Reward</span><span class="concept-tag">Psychology</span><span class="concept-tag">High R Drawbacks</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0035.jpg" alt="Frame 35" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~39:40</div>
-          <span class="frame-type type-two">TWO PERSON</span>
-          <div class="frame-caption">Both interviewer and Chris discussing how to practice the system</div>
-          <div class="frame-story">Host asks: how to deliberately practice this strategy? Chris recommends: learn auction market theory, download order flow platform (ATAS/DeepCharts), use replay mode. The key is reps with intentional execution — not random live trading.</div>
-          <div class="frame-concepts"><span class="concept-tag">Practice</span><span class="concept-tag">Replay Mode</span><span class="concept-tag">ATAS</span><span class="concept-tag">Deep Charts</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0036.jpg" alt="Frame 36" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~40:50</div>
-          <span class="frame-type type-two">TWO PERSON</span>
-          <div class="frame-caption">A/B/C game session framework explained at the table</div>
-          <div class="frame-story">Pivotal concept introduced: A, B, C game sessions are defined by EXECUTION quality, NOT P&L. An A-game losing day > C-game winning day. "Consistency comes from eliminating the C-game, not from more A-game sessions."</div>
-          <div class="frame-concepts"><span class="concept-tag">A-Game</span><span class="concept-tag">B-Game</span><span class="concept-tag">C-Game</span><span class="concept-tag">Back-End Optimization</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0037.jpg" alt="Frame 37" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~42:00</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Good loss vs. bad loss explained by Chris</div>
-          <div class="frame-story">The distinction that changes everything: A good loss = valid setup, proper execution, market said no. A bad loss = you guessed, didn't wait for confirmation, bent rules. The second one — even if it sometimes wins — destroys long-term edge.</div>
-          <div class="frame-concepts"><span class="concept-tag">Good Loss</span><span class="concept-tag">Bad Loss</span><span class="concept-tag">Rule Following</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0038.jpg" alt="Frame 38" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~43:10</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">The tilt spiral — bad loss → frustration → rule-bending → account blown</div>
-          <div class="frame-story">Chris maps the exact tilt sequence: bad loss → frustration → "I need to make it back" → rules bent → FOMO trade → bigger loss → spiral → account gone. This is the prop firm "boom and bust" loop that traps most traders.</div>
-          <div class="frame-concepts"><span class="concept-tag">Tilt</span><span class="concept-tag">FOMO</span><span class="concept-tag">Emotional Trading</span><span class="concept-tag">Boom Bust Loop</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0039.jpg" alt="Frame 39" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~44:20</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Rules must have specific actions attached — "Don't overtrade" is NOT a rule</div>
-          <div class="frame-story">"Don't overtrade is not a rule. Rules require an action." A real rule: "Stop after 2 consecutive losses." Specific, measurable, executable. Chris explains how he discovered his own breaking points through data collection on his own trades.</div>
-          <div class="frame-concepts"><span class="concept-tag">Trading Rules</span><span class="concept-tag">Specificity</span><span class="concept-tag">Breaking Points</span><span class="concept-tag">Self-Awareness</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0040.jpg" alt="Frame 40" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~45:30</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Chris identifies his personal breaking points through trade data</div>
-          <div class="frame-story">By analyzing his own trade log, Chris noticed: after 90 minutes his trades "get dramatically worse." After 2 losses in a row, 50/50 chance he starts making bad decisions. These data-driven insights became his hard rules.</div>
-          <div class="frame-concepts"><span class="concept-tag">Trade Log</span><span class="concept-tag">Data Analysis</span><span class="concept-tag">90-Minute Cutoff</span><span class="concept-tag">2-Loss Rule</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0041.jpg" alt="Frame 41" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~46:40</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Overconfidence as a trigger — winning too much also causes bad decisions</div>
-          <div class="frame-story">Surprising insight: breaking points aren't just from losses. Some traders tilt from winning streaks — overconfidence leads to sizing up recklessly or abandoning the confirmation process. "They're making emotional decisions from winning."</div>
-          <div class="frame-concepts"><span class="concept-tag">Overconfidence</span><span class="concept-tag">Winning Streak Risk</span><span class="concept-tag">Emotional Decisions</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0042.jpg" alt="Frame 42" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~47:50</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Chris's motivation: waking at 4:30 AM losing every day — "I never want to go back"</div>
-          <div class="frame-story">Personal psychology revealed: Chris's motivation isn't ambition — it's aversion. He remembers the dark period of waking at 4:30 AM, losing money, feeling embarrassed, not telling people how bad it was. That memory stops him from clicking up size when frustrated.</div>
-          <div class="frame-concepts"><span class="concept-tag">Psychology</span><span class="concept-tag">Motivation</span><span class="concept-tag">Loss Aversion</span><span class="concept-tag">Identity</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0043.jpg" alt="Frame 43" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~49:00</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">The turning point story — debt, depleted savings, "figure it out or lose everything"</div>
-          <div class="frame-story">Chris's full rock-bottom story. Quit his job, traveled, lost everything to trading, went into debt, pulled from crypto in a bear market. Hit a point of feeling "like a loser" but was too far in to quit. Made the decision to change perspective completely.</div>
-          <div class="frame-concepts"><span class="concept-tag">Turning Point</span><span class="concept-tag">Rock Bottom</span><span class="concept-tag">Mindset Shift</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0044.jpg" alt="Frame 44" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~50:10</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Removing money from the equation — sized down to one micro on prop firms</div>
-          <div class="frame-story">"I sized down to one micro on a prop firm. Not passing accounts. Not getting payouts. Just getting reps." The insight: when the dollar amount is negligible, you focus on HOW you trade instead of how much you're making/losing.</div>
-          <div class="frame-concepts"><span class="concept-tag">Sizing Down</span><span class="concept-tag">Process Focus</span><span class="concept-tag">Execution</span><span class="concept-tag">Prop Firms</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0045.jpg" alt="Frame 45" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~51:20</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Money as byproduct — the execution focus realization</div>
-          <div class="frame-story">"When you focus on proper execution, money becomes the byproduct." Chris explains this isn't about pretending money doesn't exist — it's about where your primary focus is. He cares more about HOW he traded than what the P&L says.</div>
-          <div class="frame-concepts"><span class="concept-tag">Execution Focus</span><span class="concept-tag">Money as Byproduct</span><span class="concept-tag">Process over Outcome</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0046.jpg" alt="Frame 46" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~52:30</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Advice: if struggling, start over — size down to insulting levels</div>
-          <div class="frame-story">"Size all the way down to the point where it's almost insulting." This forces execution focus. No screenshots for Instagram. No ego. Just reps. This is how you build the right habits that lead to eventual profitability.</div>
-          <div class="frame-concepts"><span class="concept-tag">Beginner Advice</span><span class="concept-tag">Habit Building</span><span class="concept-tag">Reps</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0047.jpg" alt="Frame 47" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~53:40</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Be honest — some people are not suited for trading</div>
-          <div class="frame-story">Blunt honesty: "Some people are just not going to be good at trading. The way they behave is not going to complement trading." This matters because it saves people from years of pain. Not everyone needs to trade — and that's okay.</div>
-          <div class="frame-concepts"><span class="concept-tag">Self-Assessment</span><span class="concept-tag">Personality Fit</span><span class="concept-tag">Honest Advice</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0048.jpg" alt="Frame 48" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~54:50</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Stop watching social media wins — you are not the only person losing</div>
-          <div class="frame-story">"Stop looking at people winning on the internet and think you're the only one losing." Social media distorts trading reality. The cure: stop consuming comparison content and focus internally on your own execution journal.</div>
-          <div class="frame-concepts"><span class="concept-tag">Social Media</span><span class="concept-tag">Comparison Trap</span><span class="concept-tag">Internal Focus</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0049.jpg" alt="Frame 49" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~56:00</div>
-          <span class="frame-type type-interview">INTERVIEW</span>
-          <div class="frame-caption">Find the strategy that fits YOUR personality — don't hop around</div>
-          <div class="frame-story">Final strategic advice: some people can handle 10 setups/day, others can't. Find the one that fits your psychological makeup. Then execute ONLY that one until you have sufficient data. Strategy hopping is how you learn nothing about anything.</div>
-          <div class="frame-concepts"><span class="concept-tag">Strategy Selection</span><span class="concept-tag">Personality Match</span><span class="concept-tag">Focus</span></div>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <img src="frames/robbins-cup/frame_0050.jpg" alt="Frame 50" loading="lazy">
-        <div class="frame-body">
-          <div class="frame-ts">⏱ ~57:10</div>
-          <span class="frame-type type-two">CLOSING</span>
-          <div class="frame-caption">Closing — host thanks Chris, confirms 100% Robbins Cup win at 26</div>
-          <div class="frame-story">Final closing shot. Host acknowledges this as a remarkable achievement. Chris thanks IQ Capital for the first live in-person interview. "100% return, Robbins Cup Micro Day Trading, July, age 26. Really impressive, man." — a fitting close to a landmark interview.</div>
-          <div class="frame-concepts"><span class="concept-tag">Closing</span><span class="concept-tag">IQ Capital</span><span class="concept-tag">Robbins Cup</span><span class="concept-tag">100% Return</span></div>
-        </div>
-      </div>
-
     </div>
-  </div>
 
-  <!-- Transcript -->
-  <div class="card" style="margin-top:24px;">
-    <h2>📄 Transcript</h2>
-    <p style="color:var(--muted); font-size:14px;">Full transcript available via YouTube captions (auto-generated English). The video is available with full captions on the <a href="https://youtu.be/PL7LKUsCgIQ" target="_blank" style="color:var(--accent);">YouTube page</a>.</p>
-  </div>
+  </div><!-- end diagrams-section -->
 
   <footer>
     <span>Dot DiBot • VideoSummeries</span>
