@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Stock Market Is SHIFTING — Financial Education</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #1a3a1a; color: var(--green); }
+    .badge-stocks { background: #0d2030; color: var(--accent); }
+    .badge-macro { background: #3d1a1a; color: var(--red); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #2d0a0a; border: 1px solid var(--red); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 16px; line-height: 1.8; }
+    .tl-dr strong { color: var(--red); }
+    .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+    .stat-box { background: var(--surface2); border-radius: 8px; padding: 12px 18px; flex: 1; min-width: 130px; text-align: center; }
+    .stat-box .val { font-size: 22px; font-weight: 700; color: var(--red); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.green { color: var(--green); }
+    .stat-box .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .event-item { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-left: 4px solid var(--red); }
+    .event-item.yellow { border-left-color: var(--yellow); }
+    .event-item.green { border-left-color: var(--green); }
+    .event-item.blue { border-left-color: var(--accent); }
+    .event-num { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 1px; margin-bottom: 6px; }
+    .event-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .event-body { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .event-body strong { color: var(--text); }
+    .tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-top: 10px; margin-right: 6px; }
+    .tag-bearish { background: #3d1a1a; color: var(--red); }
+    .tag-cautious { background: #2d2000; color: var(--yellow); }
+    .tag-watch { background: #0d2030; color: var(--accent); }
+    .tag-bullish { background: #0d2a1a; color: var(--green); }
+    ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+    ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+    .rotation-row { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--surface2); border-radius: 8px; margin-bottom: 8px; }
+    .rot-ticker { font-family: monospace; font-weight: 900; font-size: 15px; min-width: 60px; }
+    .rot-pct { font-family: monospace; font-weight: 900; font-size: 17px; margin-left: auto; }
+    .rot-pct.neg { color: var(--red); }
+    .rot-pct.pos { color: var(--green); }
+    .rot-label { font-size: 13px; color: var(--muted); flex: 1; }
+    .scenario-item { background: var(--surface2); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; border-left: 4px solid var(--yellow); }
+    .scenario-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--yellow); }
+    .scenario-item p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .scenario-item.blue { border-left-color: var(--accent); }
+    .scenario-item.blue h4 { color: var(--accent); }
+    .scenario-item.green { border-left-color: var(--green); }
+    .scenario-item.green h4 { color: var(--green); }
+    .quote-block { background: var(--surface2); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 15px; color: var(--text); }
+    .quote-block cite { display: block; margin-top: 8px; font-style: normal; font-size: 12px; color: var(--muted); }
+    .ticker-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .ticker-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 13px; }
+    .ticker-chip .sym { font-family: monospace; font-weight: 900; color: var(--accent); display: block; font-size: 15px; }
+    .ticker-chip .issue { font-size: 11px; color: var(--red); margin-top: 2px; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-macro">⚠️ Macro Warning</span>
+      <span class="badge badge-stocks">📊 Stocks</span>
+    </div>
+    <h1>The Stock Market Is SHIFTING‼️😳 Listen UP</h1>
+    <div class="meta">
+      <span>📅 August 23, 2026</span>
+      <span>⏱️ ~25 min</span>
+      <span>🎙️ Financial Education</span>
+      <a href="https://youtu.be/murLVwR7DFA" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+      <a href="transcripts/stock-market-shifting.txt" target="_blank" style="color:var(--muted)">📄 Full Transcript</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/murLVwR7DFA" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> The mega-cap tech companies powering the S&P 500 and Nasdaq are in a <strong>free cash flow crisis</strong>. Corporate debt is getting more expensive, credit default swaps on Nvidia have <strong>doubled</strong>, Oracle's CDS implies a <strong>16% default probability</strong>, and Meta, Amazon, and Microsoft are all burning through cash on AI CapEx. Meanwhile, a clear <strong>rotation is underway</strong>: money is flowing OUT of chip stocks (SNDK –47%, MU –30%, AMD –19%) and INTO SaaS companies (Salesforce +31%, ServiceNow +42%, Palantir +64%). The next 1–2 years will be <strong>messy</strong> at the top of the market — but long-term the market always recovers. Three Q4 scenarios outlined.
+  </div>
+
+  <!-- KEY NUMBERS -->
+  <div class="card">
+    <h2>📊 Key Numbers</h2>
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="val">$1.68T</div>
+        <div class="lbl">US corporate bond issuance (Jan–Jul), +27% YoY</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">80 bps</div>
+        <div class="lbl">Nvidia 5-yr CDS spread (up from 35–40 bps in May)</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">200 bps</div>
+        <div class="lbl">Oracle 5-yr CDS spread (was 40 bps a year ago, ×5)</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">16%</div>
+        <div class="lbl">Oracle implied cumulative default probability</div>
+      </div>
+      <div class="stat-box">
+        <div class="val yellow">$8T</div>
+        <div class="lbl">Cash sitting on the sidelines (record high)</div>
+      </div>
+      <div class="stat-box">
+        <div class="val yellow">$397B</div>
+        <div class="lbl">Berkshire Hathaway cash pile now being deployed</div>
+      </div>
+      <div class="stat-box">
+        <div class="val neg" style="color:var(--red)">–40%</div>
+        <div class="lbl">Meta EPS — quarter over quarter</div>
+      </div>
+      <div class="stat-box">
+        <div class="val green">+64%</div>
+        <div class="lbl">Palantir since June lows (+2,288% all-time in public account)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREDIT CRISIS AT THE TOP -->
+  <div class="card">
+    <h2>💣 The Credit Storm Brewing in Mega-Cap Tech</h2>
+
+    <div class="event-item">
+      <div class="event-num">Warning 1</div>
+      <div class="event-title">📈 Corporate Debt Getting More Expensive</div>
+      <div class="event-body">
+        Corporate debt is now roughly <strong>0.5% more expensive</strong> than a year ago. The AI CapEx boom — Amazon, Google, Meta, Microsoft all borrowing massively to build data centers — has pushed US corporate bond issuance to a staggering <strong>$1.68 trillion through July alone</strong>, up nearly 27% year over year. This heavy supply of corporate paper forces companies to offer higher yields to attract investors. The 30-year treasury is also heading higher. It's a <strong>fight for money</strong>. This is just the tip of the iceberg.
+        <span class="tag tag-cautious">⚠️ Rising cost of capital</span>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-num">Warning 2</div>
+      <div class="event-title">🔴 Nvidia's Credit Default Swaps More Than Doubled</div>
+      <div class="event-body">
+        Nvidia's 5-year credit default swap spread has surged from <strong>35–40 basis points in late May to 80 basis points now</strong> — more than doubling. A CDS is essentially insurance against corporate default. Sophisticated credit traders (not retail — not Robinhood) are pricing materially higher risk into Nvidia's balance sheet. The core concern: <strong>circular financing</strong> — Nvidia invests $5B in a company, that company buys $5B in Nvidia chips back. If CapEx spending pulls back in 1–3 years, what happens to Nvidia's pricing power and margins?
+        <div class="quote-block" style="margin-top:12px;">
+          "That's a little suspect there, right? A company like Nvidia — arguably the most high-quality company out there — their CDS spread has more than doubled in just a few months."
+          <cite>— Financial Education</cite>
+        </div>
+        <span class="tag tag-bearish">🔴 CDS alarm</span>
+        <span class="tag tag-cautious">Circular financing risk</span>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-num">Warning 3</div>
+      <div class="event-title">💥 Oracle — The Most Stressed Investment-Grade Tech Borrower</div>
+      <div class="event-body">
+        Oracle's 5-year CDS spread has skyrocketed from <strong>40 bps a year ago to 200 bps now — quintupled</strong>. This pushes Oracle's implied cumulative default probability over <strong>16%</strong> — making it the single most stressed investment-grade technology borrower. Oracle is guiding CapEx to explode toward <strong>$90–95 billion</strong>. Its free cash flow has collapsed so dramatically that it literally <strong>broke the thousandxstocks.com charting feature</strong> — the line went off the bottom of the chart. The free cash flow per share chart is "dramatic" — never been seen before.
+        <span class="tag tag-bearish">🔴 16% default probability</span>
+        <span class="tag tag-bearish">FCF off the chart — literally</span>
+      </div>
+    </div>
+
+    <div class="event-item yellow">
+      <div class="event-num">Warning 4</div>
+      <div class="event-title">📉 Meta, Amazon — Free Cash Flow Deteriorating Fast</div>
+      <div class="event-body">
+        <strong>Meta:</strong> Free cash flow per share topped long ago and is clearly trending down. On a quarterly basis it's "really ugly." Q-o-Q EPS is down <strong>over 40%</strong>. Year-over-year EPS down <strong>13%</strong>. Meta used to be the company you could always count on for growing EPS — not anymore. CapEx is still accelerating, not slowing down.
+        <br><br>
+        <strong>Amazon:</strong> Free cash flow was exploding — now it's gone <strong>into the negatives</strong>. And it's going to get a lot worse before it gets better. The thesis that made these stocks great — insane FCF, massive buybacks, compounding profitability — is <strong>gone for at least 1–4 years</strong>.
+        <span class="tag tag-cautious">⚠️ FCF negative</span>
+        <span class="tag tag-watch">1–4 year recovery timeline</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE 11 COMPANIES THAT RUN THE MARKET -->
+  <div class="card">
+    <h2>🏛️ The 11 Mega-Caps That Run the Market — All Have Problems</h2>
+    <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">These 11 stocks effectively dictate the S&P 500 and Nasdaq 100. Right now, almost every one has a material problem:</p>
+    <div class="ticker-grid">
+      <div class="ticker-chip">
+        <span class="sym">NVDA</span>
+        <span class="issue">CDS doubled, circular financing</span>
+      </div>
+      <div class="ticker-chip">
+        <span class="sym">AAPL</span>
+        <span class="issue">Valuation — fwd P/E deep in 30s</span>
+      </div>
+      <div class="ticker-chip">
+        <span class="sym">MSFT</span>
+        <span class="issue">CapEx overload, depreciation</span>
+      </div>
+      <div class="ticker-chip">
+        <span class="sym">AMZN</span>
+        <span class="issue">FCF gone negative</span>
+      </div>
+      <div class="ticker-chip">
+        <span class="sym">GOOGL</span>
+        <span class="issue">CapEx problems</span>
+      </div>
+      <div class="ticker-chip">
+        <span class="sym">AVGO</span>
+        <span class="issue" style="color:var(--yellow)">Best positioned — cheaper chip alternative</span>
+      </div>
+      <div class="ticker-chip">
+        <span class="sym">META</span>
+        <span class="issue">FCF down, EPS –40% QoQ</span>
+      </div>
+      <div class="ticker-chip">
+        <span class="sym">TSLA</span>
+        <span class="issue">Laugh out loud situation</span>
+      </div>
+      <div class="ticker-chip">
+        <span class="sym">MU</span>
+        <span class="issue">Scared stock — 2028-30 demand unknown</span>
+      </div>
+      <div class="ticker-chip">
+        <span class="sym">WMT</span>
+        <span class="issue">Valuation problems</span>
+      </div>
+      <div class="ticker-chip">
+        <span class="sym">SpaceX</span>
+        <span class="issue">SPAC stock — shouldn't be in this group</span>
+      </div>
+    </div>
+    <div class="quote-block" style="margin-top:16px;">
+      "The case for owning these stocks used to be: insane free cash flow, massive buybacks, compounding profitability. You can't count on any of that now. It's gone the opposite way."
+      <cite>— Financial Education</cite>
+    </div>
+  </div>
+
+  <!-- THE ROTATION -->
+  <div class="card">
+    <h2>🔄 The Rotation: Chips → SaaS</h2>
+    <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">A clear rotation is underway since the June peaks. Money is flowing OUT of semiconductor stocks and INTO SaaS companies:</p>
+
+    <p style="font-size:13px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">📉 Chip Stocks — DOWN Since June Peak</p>
+    <div class="rotation-row">
+      <span class="rot-ticker" style="color:var(--red)">SNDK</span>
+      <span class="rot-label">SanDisk — was the hottest stock in the market</span>
+      <span class="rot-pct neg">–47%</span>
+    </div>
+    <div class="rotation-row">
+      <span class="rot-ticker" style="color:var(--red)">MU</span>
+      <span class="rot-label">Micron — scared about 2028-2030 demand</span>
+      <span class="rot-pct neg">–30%</span>
+    </div>
+    <div class="rotation-row">
+      <span class="rot-ticker" style="color:var(--red)">AMD</span>
+      <span class="rot-label">AMD — topped last day of June</span>
+      <span class="rot-pct neg">–19%</span>
+    </div>
+
+    <p style="font-size:13px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin: 16px 0 8px;">📈 SaaS Stocks — UP Since June</p>
+    <div class="rotation-row">
+      <span class="rot-ticker" style="color:var(--green)">PLTR</span>
+      <span class="rot-label">Palantir — +2,288% in public account all-time</span>
+      <span class="rot-pct pos">+64%</span>
+    </div>
+    <div class="rotation-row">
+      <span class="rot-ticker" style="color:var(--green)">NOW</span>
+      <span class="rot-label">ServiceNow — major position</span>
+      <span class="rot-pct pos">+42%</span>
+    </div>
+    <div class="rotation-row">
+      <span class="rot-ticker" style="color:var(--green)">CRM</span>
+      <span class="rot-label">Salesforce — major position</span>
+      <span class="rot-pct pos">+31%</span>
+    </div>
+
+    <p style="font-size:14px; color:var(--muted); margin-top:14px; line-height:1.7;">When stocks are sold, the money has to go <em>somewhere</em>. Buying pressure is flooding into SaaS; every chip bounce comes back to a lower high. Year-to-date the chip stocks still look great (SNDK +350%, MU +173%, AMD +110%) but the trend since June is unmistakably negative.</p>
+    <span class="tag tag-bearish">🔴 Chip pressure</span>
+    <span class="tag tag-bullish">🟢 SaaS catching the bid</span>
+  </div>
+
+  <!-- Q4 SCENARIOS -->
+  <div class="card">
+    <h2>🗓️ Three Q4 Scenarios to Watch</h2>
+
+    <div class="scenario-item">
+      <h4>Scenario 1 — Rotation Reverses: SaaS → Chips</h4>
+      <p>This could flip in September–October. Money exits SaaS stocks (which have run hard) and rotates back into chip stocks. AMD, Micron, SanDisk could approach all-time highs again. Why? Investors may pre-position for <strong>Q1 2027 CapEx budgets</strong> — if whisper numbers suggest more AI spending, semiconductors get the bid.</p>
+    </div>
+
+    <div class="scenario-item blue">
+      <h4>Scenario 2 — Big Tech Cracks, Chips Win</h4>
+      <p>Money flows OUT of Meta, Amazon, Google, Microsoft (CapEx fears, FCF destruction) and INTO semiconductor stocks. Both scenarios 1 and 2 could play out simultaneously: SaaS slips, big tech slips, chips rip. AMD and Micron at all-time highs becomes possible.</p>
+    </div>
+
+    <div class="scenario-item green">
+      <h4>Scenario 3 — Treasury Yields Fall, All Boats Rise</h4>
+      <p>The 2-year treasury looks like it may have topped. If yields fall substantially over the next 4 months, <strong>$8 trillion in sideline cash</strong> starts moving into equities broadly. Big tech gets a bid, chips get the biggest bid, SaaS continues higher. The tide lifts all boats. <strong>Key trigger:</strong> 2-year heads back to mid-3s in Q4.</p>
+    </div>
+  </div>
+
+  <!-- BERKSHIRE SIGNAL -->
+  <div class="card">
+    <h2>🐂 Berkshire Starts Deploying $397B Cash Pile</h2>
+    <p style="font-size:15px; line-height:1.8;">After accumulating cash for <strong>14 consecutive quarters</strong>, Berkshire Hathaway has begun deploying its massive $397 billion cash pile. Actions include: buying back their own stock, acquiring <strong>Taylor Morrison</strong>, and purchasing <strong>Google (GOOGL)</strong> stock. When Buffett sees attractive stocks and starts spending, it signals that smart money sees value somewhere. Combined with the potential treasury yield decline, this is a meaningful bullish signal for the medium term.</p>
+    <span class="tag tag-bullish">🟢 Buffett buying</span>
+    <span class="tag tag-watch">📡 Watch: treasury yields Q4</span>
+  </div>
+
+  <!-- LONG-TERM VIEW -->
+  <div class="card">
+    <h2>🔭 The Long-Term View — Don't Miss the Forest</h2>
+    <div class="quote-block">
+      "Yeah, this party's starting to get messy. Yeah, people are starting to throw up at this party and you know, people are starting to fight. But there will be more parties again. We'll clean up this party, right? And we will have fun in the future."
+      <cite>— Financial Education</cite>
+    </div>
+    <ul class="bullets" style="margin-top:16px;">
+      <li>Short term (1–2 years): <strong>messy</strong> at the top. Free cash flow crisis across mega-caps, rising corporate debt costs, credit stress signals.</li>
+      <li>But every market crisis: "This time is different, we won't recover" — and we always do, stronger.</li>
+      <li>Some stocks will deliver <strong>incredible gains over the next 2–3 years</strong> even through the mess (see: PLTR, CRM, NOW).</li>
+      <li><strong>Don't build a portfolio for 2026 or 2027.</strong> Build it for the 2030s and 2040s.</li>
+      <li>Seven-figure club: 200+ private group members have crossed $1M+ by staying long-term focused through every mess.</li>
+      <li>Eight-figure club coming soon.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Summary by Dot DiBot · <a href="https://dotdbot.github.io/VideoSummeries/">VideoSummeries</a></span>
+    <a href="https://youtu.be/murLVwR7DFA" target="_blank">▶ Watch on YouTube</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
