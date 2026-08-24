@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הביטקוין מזנק: מה צריך לקרות כדי שהראלי בקריפטו יימשך?</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; direction: rtl; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; direction: ltr; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-he   { background: #1a3a5c; color: var(--accent); }
+    .badge-crypto { background: #2a1a4a; color: #c0a0ff; }
+    .badge-macro  { background: #3d1a1a; color: var(--red); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; direction: ltr; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 16px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+    .stat-box { background: var(--surface2); border-radius: 8px; padding: 12px 18px; flex: 1; min-width: 130px; text-align: center; }
+    .stat-box .val { font-size: 22px; font-weight: 700; color: var(--green); font-family: monospace; direction: ltr; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.red { color: var(--red); }
+    .stat-box .val.purple { color: #c0a0ff; }
+    .stat-box .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .event-item { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-right: 4px solid var(--accent); }
+    .event-item.yellow { border-right-color: var(--yellow); }
+    .event-item.green { border-right-color: var(--green); }
+    .event-item.red { border-right-color: var(--red); }
+    .event-item.purple { border-right-color: #c0a0ff; }
+    .event-num { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 1px; margin-bottom: 6px; }
+    .event-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .event-body { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .event-body strong { color: var(--text); }
+    .tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-top: 10px; margin-left: 6px; }
+    .tag-bullish  { background: #0d3320; color: #3fb950; }
+    .tag-cautious { background: #2d2000; color: #d29922; }
+    .tag-wait     { background: #2d2000; color: #d29922; }
+    .tag-watch    { background: #002020; color: #39d353; }
+    .tag-bearish  { background: #3d1a1a; color: var(--red); }
+    .coin-row { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: var(--surface2); border-radius: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+    .coin-sym { font-family: monospace; font-weight: 900; font-size: 16px; color: var(--accent); min-width: 55px; }
+    .coin-label { flex: 1; font-size: 14px; color: var(--muted); }
+    .coin-label strong { color: var(--text); }
+    .coin-sentiment { font-size: 12px; font-weight: 700; }
+    .coin-sentiment.bull { color: var(--green); }
+    .coin-sentiment.caut { color: var(--yellow); }
+    .calendar-item { background: var(--surface2); border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; display: flex; gap: 14px; align-items: flex-start; }
+    .cal-day { font-family: monospace; font-weight: 700; font-size: 13px; color: var(--yellow); min-width: 60px; }
+    .cal-desc { font-size: 14px; color: var(--muted); }
+    .cal-desc strong { color: var(--text); }
+    ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+    ul.bullets li::before { content: "← "; color: var(--accent); font-weight: 700; }
+    .quote-block { background: var(--surface2); border-right: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 15px; color: var(--text); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; direction: ltr; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-he">🇮🇱 עברית</span>
+      <span class="badge badge-crypto">₿ קריפטו</span>
+      <span class="badge badge-macro">⚠️ מאקרו</span>
+    </div>
+    <h1>הביטקוין מזנק: מה צריך לקרות כדי שהראלי בקריפטו יימשך?</h1>
+    <div class="meta">
+      <span>📅 24 אוגוסט 2026</span>
+      <span>⏱️ ~13 דקות</span>
+      <span>🎙️ ניתוח קריפטו ומאקרו</span>
+      <a href="https://youtu.be/A_4FjRzMauo" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+      <a href="transcripts/bitcoin-rally-crypto-what-next.txt" target="_blank" style="color:var(--muted)">📄 תמליל מלא</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/A_4FjRzMauo" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> הביטקוין מזנק על רקע נרטיב <strong>דה-דולריזציה</strong> וכניסת <strong>~2 מיליארד דולר ביום</strong> לקרנות הסל. אבל הכל תלוי בשבוע הקרוב: <strong>PCE אינפלציה, GDP, ג'קסון הול (פאואל ביום שישי)</strong> ובעיקר — <strong>דוחות Nvidia</strong> ברביעי/חמישי. עד אז השוק ממתין. תשואות האגח עדיין גבוהות למרות ניסיון ביסנט להוריד, <strong>בעיית החוב לא נפתרת</strong>. לטווח הקצר — ביטקוין נראה חיובי אבל צריך לשמור על רמות המפתח.
+  </div>
+
+  <!-- KEY NUMBERS -->
+  <div class="card">
+    <h2>📊 מספרים מפתח</h2>
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="val purple">~$2B</div>
+        <div class="lbl">כניסות יומיות לביטקוין ETFs</div>
+      </div>
+      <div class="stat-box">
+        <div class="val yellow">68%</div>
+        <div class="lbl">הסתברות להפחתת ריבית בספטמבר 2026</div>
+      </div>
+      <div class="stat-box">
+        <div class="val red">5%+</div>
+        <div class="lbl">תשואת אגח ל-30 שנה — רמה גבוהה</div>
+      </div>
+      <div class="stat-box">
+        <div class="val red">$36T+</div>
+        <div class="lbl">חוב לאומי אמריקאי — הבעיה המרכזית</div>
+      </div>
+      <div class="stat-box">
+        <div class="val green">2</div>
+        <div class="lbl">הפחתות ריבית צפויות בשנת 2026</div>
+      </div>
+      <div class="stat-box">
+        <div class="val yellow">2.2%</div>
+        <div class="lbl">PCE צפוי — מעל = בעיה לשוק</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MACRO BACKGROUND -->
+  <div class="card">
+    <h2>🏦 הרקע המאקרו — הכוחות שמניעים את השוק</h2>
+
+    <div class="event-item red">
+      <div class="event-num">כוח 1 — בעיית החוב</div>
+      <div class="event-title">💸 $36 טריליון חוב — בעיה שאין לה פתרון מהיר</div>
+      <div class="event-body">
+        שר האוצר <strong>ביסנט</strong> ניסה להוריד תשואות אגח על ידי <strong>הקטנת הנפקת האגח הממשלתי לטווח ארוך</strong>. תחילה זה עבד — תשואות ירדו, שווקים עלו. אבל תוך יום אחד התשואות <strong>חזרו לאותה רמה</strong>. הסיבה: אין מי שיכול לפתור חוב של $36 טריליון בצעד אחד. <strong>ביסנט אין לו שליטה אמיתית על השווקים החופשיים.</strong>
+      </div>
+    </div>
+
+    <div class="event-item yellow">
+      <div class="event-num">כוח 2 — אינפלציה</div>
+      <div class="event-title">📈 אינפלציה מוגברת בגלל המלחמה ארה"ב–איראן</div>
+      <div class="event-body">
+        עלייה במחירי האנרגיה בעקבות המתיחות בין ארה"ב לאיראן <strong>שיבשה את נתוני האינפלציה</strong>. פאואל, שצריך לתת נאום ב<strong>ג'קסון הול ביום שישי</strong>, ייאלץ להיות זהיר — צריך ריביות גבוהות יותר כדי לבלום אינפלציה, אבל גם צריך להוריד ריביות כדי להקל על חוב. <strong>דילמה קשה.</strong>
+      </div>
+    </div>
+
+    <div class="event-item">
+      <div class="event-num">כוח 3 — דה-דולריזציה</div>
+      <div class="event-title">🌍 בריחה מהדולר → ביטקוין וזהב עולים</div>
+      <div class="event-body">
+        השוק מתמחר <strong>דה-דולריזציה</strong> — פחות אמון במשטר הדולרי בגלל חוב עצום. כתוצאה: <strong>זהב ⬆, ביטקוין ⬆</strong> — נכסים שנחשבים ל"הגנה" מחוץ למערכת הבנקאית. הטרמפ-מכסים שבתחילת השנה גרמו גל ראשון של בריחה. כרגע הנרטיב הזה ממשיך לדחוף.
+      </div>
+    </div>
+
+    <div class="event-item green">
+      <div class="event-num">כוח 4 — ריביות</div>
+      <div class="event-title">✂️ שוק מתמחר שתי הפחתות ריבית ב-2026</div>
+      <div class="event-body">
+        <strong>68% הסתברות להפחתה בספטמבר</strong>, עוד הפחתה אחרי בדצמבר. כרגע השוק ממתין לאישור — ג'קסון הול יכול לאשר או לשבש את הציפיות הללו. <strong>PCE גבוה מ-2.2% = בעיה.</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK AHEAD -->
+  <div class="card">
+    <h2>📅 אירועי השבוע הקרובים — הקטליסטים</h2>
+
+    <div class="calendar-item">
+      <span class="cal-day">שלישי</span>
+      <span class="cal-desc"><strong>PCE — מדד אינפלציה מועדף על הפד</strong>. מודד ההוצאה הצרכנית. ציפיות: 2.2%. מעל = שלילי לשווקים ולקריפטו. מתחת = חיובי.</span>
+    </div>
+    <div class="calendar-item">
+      <span class="cal-day">שלישי</span>
+      <span class="cal-desc"><strong>GDP ארה"ב</strong> — מדד חשוב להבנת מצב הכלכלה. גם GDP בריטי.</span>
+    </div>
+    <div class="calendar-item">
+      <span class="cal-day">רביעי</span>
+      <span class="cal-desc">⭐ <strong>דוחות Nvidia (NVDA)</strong> — הקטליסט הגדול ביותר. "לנוידיה לדבר ולעזור לשווקים להבין לאן הכסף הולך." שוק ממתין לזה.</span>
+    </div>
+    <div class="calendar-item">
+      <span class="cal-day">חמישי</span>
+      <span class="cal-desc"><strong>ג'קסון הול — ועידת הבנקאים המרכזיים</strong> מתחילה. נאומים של מנהלי בנקים מרכזיים מרחבי העולם.</span>
+    </div>
+    <div class="calendar-item">
+      <span class="cal-day">שישי</span>
+      <span class="cal-desc">⭐ <strong>נאום פאואל בג'קסון הול — 18:00 שעון ישראל</strong>. זה הרגע המכריע. הצהרה על כיוון הריביות.</span>
+    </div>
+    <div class="calendar-item">
+      <span class="cal-day">רביעי/חמישי</span>
+      <span class="cal-desc"><strong>Salesforce + Workday + Marvel</strong> — דוחות נוספים. ביום חמישי אחרי סגירה.</span>
+    </div>
+  </div>
+
+  <!-- CRYPTO ANALYSIS -->
+  <div class="card">
+    <h2>₿ ניתוח קריפטו</h2>
+
+    <div class="coin-row">
+      <span class="coin-sym">BTC</span>
+      <span class="coin-label">
+        <strong>Bitcoin — חיובי בזהירות</strong><br>
+        ~$2B כניסות יומיות דרך ETFs. נרטיב דה-דולריזציה תומך. יש כסף חנוי בסביבות $85K. שאלה: האם ביטקוין יצליח לנקות את האזורים מעל ולפרוץ לפני שחוזר לטפס? הממנה רואה "סקוירינג" — לא עדיין בול-ראן מאושר.
+      </span>
+      <span class="coin-sentiment caut">⚠️ זהירות</span>
+    </div>
+
+    <div class="coin-row">
+      <span class="coin-sym">ETH</span>
+      <span class="coin-label">
+        <strong>Ethereum — חיובי, לעקוב</strong><br>
+        עולה יחד עם ביטקוין. אזור מפנה — שלא ילך לשמונה מאות? הממנה רואה "חיובי יחסית". לעקוב אחרי כניסת כסף.
+      </span>
+      <span class="coin-sentiment bull">✅ חיובי</span>
+    </div>
+
+    <div class="coin-row">
+      <span class="coin-sym">XRP</span>
+      <span class="coin-label">
+        <strong>XRP — לעקוב</strong><br>
+        עולה, אבל יש פוזיציות לא מגודרות. "לא בטוח מה יקרה" — לעקוב בזהירות.
+      </span>
+      <span class="coin-sentiment caut">👁️ לעקוב</span>
+    </div>
+
+    <div class="quote-block">
+      "כשאנחנו רואים שהשוק מבין שיש טריליוני דולר חוב ואף אחד לא יכול לסגור את החוב הזה — כסף בורח לנכסים כמו זהב וביטקוין. זה בדיוק מה שאנחנו רואים."
+    </div>
+  </div>
+
+  <!-- WHAT NEEDS TO HAPPEN -->
+  <div class="card">
+    <h2>🔭 מה צריך לקרות כדי שהראלי יימשך?</h2>
+    <ul class="bullets">
+      <li><strong>PCE מגיע בסביבות הצפי (2.2%) או מתחתיו</strong> — אינפלציה מתונה = ירוק לשוק</li>
+      <li><strong>Nvidia מדווחת דוחות חזקים</strong> — הקטליסט הכי גדול לשוק כולו</li>
+      <li><strong>פאואל בג'קסון הול מאותת הפחתות ריבית</strong> — ציפייה ל-2 הפחתות ב-2026</li>
+      <li><strong>תשואות אגח נשארות יציבות / יורדות</strong> — תנאי לעלייה מתמשכת</li>
+      <li><strong>ביטקוין נשאר מעל רמות התמיכה</strong> — עוד לא אושר בול-ראן רשמי</li>
+      <li><strong>ריביות יורדות</strong> → כסף חוזר לנכסי סיכון מהצד (כסף חנוי שממתין)</li>
+    </ul>
+
+    <div style="margin-top:16px; padding:14px 18px; background:var(--surface2); border-radius:8px; border-right:4px solid var(--yellow);">
+      <strong style="color:var(--yellow);">⚠️ סיכון עיקרי:</strong>
+      <span style="font-size:14px; color:var(--muted);"> PCE גבוה מ-2.2% + פאואל הודג' בג'קסון הול = שוק יכול לתקן. סיפור גרוע חדש עם איראן = ביטקוין יורד.</span>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="card">
+    <h2>💡 מסקנות</h2>
+    <ul class="bullets">
+      <li>השבוע הוא <strong>שבוע מפתח</strong> — הרבה קטליסטים בפרק זמן קצר</li>
+      <li>השוק ב<strong>מצב המתנה</strong> — אף אחד לא ממהר לקנות/למכור לפני הנתונים</li>
+      <li>ביטקוין <strong>נראה חיובי</strong> אבל עדיין לא אישור בול-ראן — "squirek"</li>
+      <li>הממנה רוצה לראות <strong>ירידה קצרה במדדים</strong> כדי לקנות בנקודה טובה</li>
+      <li>בסופו של דבר: <strong>נוידיה תדבר</strong> — שם תהיה ההכרעה הקצרה טווח</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Dot DiBot — VideoSummeries</span>
+    <a href="https://youtu.be/A_4FjRzMauo" target="_blank">▶ Watch on YouTube</a>
+    <a href="../index.html">← כל הסיכומים</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
