@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>יומי פלאס 24.8.26 — MNDY, KRE, eBay</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; direction: rtl; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; direction: ltr; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-he   { background: #1a3a5c; color: var(--accent); }
+    .badge-stocks { background: #0d2030; color: var(--accent); }
+    .badge-trading { background: #2d0a0a; color: #ff8080; }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; direction: ltr; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 16px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+    .stat-box { background: var(--surface2); border-radius: 8px; padding: 12px 18px; flex: 1; min-width: 130px; text-align: center; }
+    .stat-box .val { font-size: 22px; font-weight: 700; color: var(--green); font-family: monospace; direction: ltr; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.red { color: var(--red); }
+    .stat-box .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .stock-item { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-right: 4px solid var(--accent); }
+    .stock-item.green { border-right-color: var(--green); }
+    .stock-item.yellow { border-right-color: var(--yellow); }
+    .stock-num { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: 1px; margin-bottom: 6px; }
+    .stock-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .stock-body { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .stock-body strong { color: var(--text); }
+    .tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-top: 10px; margin-left: 6px; }
+    .tag-bullish { background: #0d3320; color: #3fb950; }
+    .tag-lt-bullish { background: #1a3a5c; color: #58a6ff; }
+    .tag-cautious { background: #2d2000; color: #d29922; }
+    .tag-wait { background: #2d2000; color: #d29922; }
+    .tag-watch { background: #002020; color: #39d353; }
+    .ticker-sym { font-family: monospace; font-weight: 900; font-size: 18px; color: var(--accent); background: var(--surface); padding: 2px 10px; border-radius: 6px; border: 1px solid var(--border); }
+    .key-level { background: var(--surface2); border-radius: 8px; padding: 10px 16px; margin: 8px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .key-level .lbl { font-size: 13px; color: var(--muted); }
+    .key-level .val { font-family: monospace; font-weight: 700; font-size: 16px; color: var(--yellow); direction: ltr; }
+    .key-level .val.green { color: var(--green); }
+    .key-level .val.red { color: var(--red); }
+    ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+    ul.bullets li::before { content: "← "; color: var(--accent); font-weight: 700; }
+    .quote-block { background: var(--surface2); border-right: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 15px; color: var(--text); border-left: none; }
+    .potential-box { background: var(--surface2); border-radius: 10px; padding: 16px 20px; margin: 12px 0; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .potential-box .pct { font-family: monospace; font-weight: 900; font-size: 32px; color: var(--green); direction: ltr; }
+    .potential-box .pct.yellow { color: var(--yellow); }
+    .potential-box .desc { font-size: 14px; color: var(--muted); flex: 1; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; direction: ltr; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-he">🇮🇱 עברית</span>
+      <span class="badge badge-stocks">📈 מניות</span>
+      <span class="badge badge-trading">⚡ יומי פלאס</span>
+    </div>
+    <h1>יומי פלאס לתאריך 24.8.26</h1>
+    <div class="meta">
+      <span>📅 24 אוגוסט 2026</span>
+      <span>⏱️ ~8 דקות</span>
+      <span>🎙️ יומי פלאס</span>
+      <a href="https://youtu.be/Nenzo60AqyA" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+      <a href="transcripts/yomi-plus-24-08-26.txt" target="_blank" style="color:var(--muted)">📄 תמליל מלא</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/Nenzo60AqyA" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>תקציר –</strong> ניתוח 3 מניות ליום 24.8.26: <strong>Monday.com (MNDY)</strong> עם פוטנציאל של <strong>58%</strong> לאחר פריצה מעל 174.7 בווליום גבוה, <strong>KRE</strong> (בנקים אזוריים) שהגיע לסייבל ואמור לתקן לאזור 74–71 לפני המשך, ו-<strong>eBay</strong> שנמצאת בנקודה מפנה עם נר שינוי כיוון + ווליום עולה ופוטנציאל של <strong>~21%</strong>. הדגש: עוד לא ברור אם הכל ימשיך — תמיד יש סטופ.
+  </div>
+
+  <!-- KEY NUMBERS -->
+  <div class="card">
+    <h2>📊 מספרים מפתח</h2>
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="val">174.7</div>
+        <div class="lbl">MNDY — רמת פריצה מפתח</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">+58%</div>
+        <div class="lbl">פוטנציאל מהלך MNDY (עומק הספל)</div>
+      </div>
+      <div class="stat-box">
+        <div class="val yellow">74.8</div>
+        <div class="lbl">KRE — רמת בדיקת מחאה / תמיכה</div>
+      </div>
+      <div class="stat-box">
+        <div class="val yellow">+16%</div>
+        <div class="lbl">פוטנציאל KRE מרמת התמיכה</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">100</div>
+        <div class="lbl">eBay — גובה ספל / מחיר יעד</div>
+      </div>
+      <div class="stat-box">
+        <div class="val">+21%</div>
+        <div class="lbl">פוטנציאל eBay (מ-79 ל-100)</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--muted);">הערה: הסרטונים של יומי פלאס השבוע יעלו מאוחר יותר — הצלם נמצא בטיים-זון מערבי יותר.</p>
+  </div>
+
+  <!-- STOCK 1: MNDY -->
+  <div class="card">
+    <h2>📈 מנייה 1 — Monday.com</h2>
+
+    <div class="stock-item green">
+      <div class="stock-num">מנייה 1</div>
+      <div class="stock-title">
+        <span class="ticker-sym">MNDY</span>
+        Monday.com — פריצה + ווליום + פוטנציאל 58%
+        <span class="tag tag-bullish">Bullish</span>
+      </div>
+      <div class="stock-body">
+        <strong>Monday.com</strong> היא חברה בשווי שוק של <strong>92 מיליארד דולר</strong> עם הכנסות של <strong>6.5 מיליארד דולר</strong> בשנה — חברה רווחית עם כ-<strong>3–4 מיליארד דולר תזרים חופשי</strong>. היה לה פיצול מניות ושינויים מבניים שצריך לקחת בחשבון בהשוואה היסטורית.
+        <br><br>
+        <strong>ניתוח טכני:</strong> המנייה ירדה חזק מ-<strong>174 ל-71</strong> בין 2021–2022, ואז חזרה מ-71 ל-177, תיקנה ל-139 ועכשיו פרצה. הגרף מראה <strong>שפלים עולים + סיימים עולים + EMA עולים</strong> — תמונה טכנית נקייה.
+      </div>
+    </div>
+
+    <h3 style="font-size:15px; margin:16px 0 10px; color:var(--muted);">רמות מפתח</h3>
+    <div class="key-level">
+      <span class="lbl">🔑 רמת כניסה / פריצה</span>
+      <span class="val green">מעל $174.7</span>
+    </div>
+    <div class="key-level">
+      <span class="lbl">⚠️ תנאי שמירה (תמיכה)</span>
+      <span class="val">$174.7 — צריך להישאר מעליה</span>
+    </div>
+    <div class="key-level">
+      <span class="lbl">📊 ווליום בפריצה</span>
+      <span class="val green">גבוה — אישור מגמה</span>
+    </div>
+    <div class="key-level">
+      <span class="lbl">⏳ מצב נוכחי</span>
+      <span class="val yellow">מעל 174.7 — עדיין לא בסי</span>
+    </div>
+
+    <div class="potential-box">
+      <div class="pct">+58%</div>
+      <div class="desc">
+        <strong>חישוב עומק הספל:</strong> עומק הספל מ-174 ל-71 = 103 נקודות. פוטנציאל מהלך מהפריצה = 58%. המנייה <strong>עדיין לא בסי שלה</strong> — יש עוד דרך לעלות.<br>
+        <span style="color:var(--muted); font-size:12px;">ATR שבועי: ~2% → מנייה רגועה, לא תגרום לקפיצות לילה. מנייה שניתן להחזיק בסבלנות.</span>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      "המנייה הזו היא מנייה רגועה, שלווה — אפשר להחזיק אותה ולישון בשקט. היא לא מניה שתגיד לך מה לעשות עם הסטופ באמצע הלילה."
+    </div>
+  </div>
+
+  <!-- STOCK 2: KRE -->
+  <div class="card">
+    <h2>🏦 מנייה 2 — KRE (בנקים אזוריים)</h2>
+
+    <div class="stock-item yellow">
+      <div class="stock-num">מנייה 2</div>
+      <div class="stock-title">
+        <span class="ticker-sym">KRE</span>
+        SPDR S&P Regional Banking ETF
+        <span class="tag tag-wait">המתנה / תיקון</span>
+      </div>
+      <div class="stock-body">
+        KRE עלה <strong>78%</strong> מהשפל שלו ועכשיו הגיע לסייבל שלו. הגיע חזק, נתקע ועכשיו מתקן. המרחק מממוצע ה-150 יום מצדיק תיקון.
+      </div>
+    </div>
+
+    <h3 style="font-size:15px; margin:16px 0 10px; color:var(--muted);">רמות מפתח</h3>
+    <div class="key-level">
+      <span class="lbl">🛡️ תמיכה ראשונה</span>
+      <span class="val yellow">$74–74.8</span>
+    </div>
+    <div class="key-level">
+      <span class="lbl">📉 תמיכה עמוקה יותר</span>
+      <span class="val red">~$71</span>
+    </div>
+    <div class="key-level">
+      <span class="lbl">🎯 יעד ממרמת תמיכה</span>
+      <span class="val green">+16% מ-74.8</span>
+    </div>
+
+    <div class="potential-box">
+      <div class="pct yellow">+16%</div>
+      <div class="desc">
+        <strong>תבנית:</strong> קאפ עם שפלים עולים → פריצה → בדיקת מחאה 74.8 → תנועה. זה המהלך הפוטנציאלי. <br>
+        <strong>אסטרטגיה:</strong> לא להיכנס עכשיו. להמתין לתיקון לאזור 74–71, לראות תמיכה ואז לשקול כניסה.
+      </div>
+    </div>
+  </div>
+
+  <!-- STOCK 3: EBAY -->
+  <div class="card">
+    <h2>🛒 מנייה 3 — eBay</h2>
+
+    <div class="stock-item">
+      <div class="stock-num">מנייה 3</div>
+      <div class="stock-title">
+        <span class="ticker-sym">EBAY</span>
+        eBay — נר שינוי כיוון + ווליום עולה
+        <span class="tag tag-watch">Watch / כניסה פוטנציאלית</span>
+      </div>
+      <div class="stock-body">
+        <strong>eBay</strong> עלתה, ירדה לבדוק תמיכה ועכשיו נמצאת בנקודה מפנה. בשבועי: <strong>נר שינוי כיוון עם ווליום עולה</strong> — סיגנל שהמנייה רוצה להתחיל מהלך. ווליום בעלייה → תיקון → ווליום עולה שוב בנקודת ההיפוך.
+      </div>
+    </div>
+
+    <h3 style="font-size:15px; margin:16px 0 10px; color:var(--muted);">חישוב פוטנציאל</h3>
+    <div class="key-level">
+      <span class="lbl">📉 עומק ספל</span>
+      <span class="val red">$79</span>
+    </div>
+    <div class="key-level">
+      <span class="lbl">📈 גובה ספל / יעד</span>
+      <span class="val green">~$100–101</span>
+    </div>
+    <div class="key-level">
+      <span class="lbl">📊 פוטנציאל</span>
+      <span class="val green">~$20 / ~21%</span>
+    </div>
+
+    <div class="potential-box">
+      <div class="pct yellow">+21%</div>
+      <div class="desc">
+        <strong>חישוב:</strong> עומק ספל = $79, גובה = $100-101. 20 דולר על בסיס של 100 = <strong>פוטנציאל 20-21.8%</strong>. לא ירוקה עדיין, אבל יש סיגנל טכני חיובי. המנייה לא "דתית" (לא מניות צמיחה ידועות) — מהסוג שאפשר למצוא בהן פוטנציאל טוב.
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTLOOK -->
+  <div class="card">
+    <h2>🔭 תצפית כללית</h2>
+    <ul class="bullets">
+      <li><strong>השוק ממשיך לעלות</strong> — כל עוד זה קורה, הפוקוס הוא על מציאת ההזדמנויות הנכונות</li>
+      <li><strong>חוב אמריקאי, אגחים, איראן</strong> — כולם לא מפריעים לשוק כרגע. הכל יכול להשתנות בכל רגע</li>
+      <li><strong>סטופים תמיד</strong> — זה הכלי שמאפשר שינה טובה בלילה</li>
+      <li><strong>MNDY</strong> — הזדמנות עם פוטנציאל גדול על מנייה "שלווה"</li>
+      <li><strong>KRE</strong> — לחכות לתיקון לפני כניסה, לא להיכנס עכשיו</li>
+      <li><strong>eBay</strong> — סיגנל טכני מעניין, לעקוב</li>
+      <li>מניות עם ATR נמוך יכולות להביא תשואות מצוינות — 58% על מנייה "משעממת" זה תשואה מעולה</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Dot DiBot — VideoSummeries</span>
+    <a href="https://youtu.be/Nenzo60AqyA" target="_blank">▶ יומי פלאס 24.8.26</a>
+    <a href="../index.html">← כל הסיכומים</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
