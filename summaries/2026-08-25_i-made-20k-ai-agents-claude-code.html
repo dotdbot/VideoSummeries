@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Made $20K In 7 Days: AI Agents & Claude Code (No Code)</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-ai { background: #1a1a3d; color: var(--purple); }
+    .badge-biz { background: #2d2000; color: var(--yellow); }
+    .badge-interview { background: #1a2744; color: var(--accent); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 26px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.purple { color: var(--purple); }
+    .stat-box .lbl { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 8px; font-size: 14px; line-height: 1.7; }
+    ul li strong { color: var(--text); }
+
+    .section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .section-item { background: var(--surface2); border-radius: 8px; padding: 14px; font-size: 14px; line-height: 1.6; }
+    .section-item .icon { font-size: 22px; margin-bottom: 6px; }
+    .section-item strong { display: block; margin-bottom: 4px; color: var(--text); }
+
+    .quote { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .quote strong { color: var(--accent); font-style: normal; }
+
+    .highlight { background: #1e2a1e; border: 1px solid #2d4a2d; border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .highlight .hl-title { font-weight: 700; color: var(--green); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-top: 10px; }
+    .tool-item { background: var(--surface2); border-radius: 8px; padding: 12px; text-align: center; font-size: 13px; }
+    .tool-item .t-icon { font-size: 20px; margin-bottom: 4px; }
+    .tool-item strong { display: block; color: var(--accent); }
+    .tool-item span { color: var(--muted); font-size: 11px; }
+
+    .step-list { list-style: none; padding: 0; counter-reset: steps; }
+    .step-list li { counter-increment: steps; display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; font-size: 14px; }
+    .step-list li::before { content: counter(steps); background: var(--accent); color: #0d1117; border-radius: 50%; width: 24px; height: 24px; min-width: 24px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px; margin-top: 2px; }
+
+    .pitfall-list { list-style: none; padding: 0; }
+    .pitfall-list li { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; font-size: 14px; }
+    .pitfall-list li::before { content: "⚠️"; font-size: 16px; margin-top: 1px; }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media(max-width:600px) { .section-grid { grid-template-columns: 1fr; } .tool-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-ai">🤖 AI / Claude Code</span>
+      <span class="badge badge-biz">💰 Entrepreneurship</span>
+      <span class="badge badge-interview">🎙️ Interview</span>
+    </div>
+    <h1>I Made $20K In 7 Days: The Fastest Way To Use AI Agents To Make Money &amp; Be More Productive (No Code)</h1>
+    <div class="meta">
+      <span>📺 The Calum Johnson Show</span>
+      <span>📅 July 9, 2026</span>
+      <span>⏱️ 59:24</span>
+      <a href="https://youtu.be/XWWbIDQuHJc" target="_blank" style="color:var(--accent);">▶ Watch on YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/XWWbIDQuHJc" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> Calum Johnson interviews Ollie (Aliya), a creator &amp; entrepreneur who went from being skeptical about AI to building a $40K+ membership platform called <strong>Digital Creator Club</strong> — in a single weekend using Claude Code, with no engineering team. The episode covers the mindset shift from selling time to building scalable products, a live demo of Claude Code building a to-do app, and how to use connectors to link real services (Gmail, Calendar, PayPal) into AI-built tools. Core message: <strong>if you're not using AI agents in 2026, you're falling behind.</strong>
+  </div>
+
+  <!-- Key Stats -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="val">$20K</div>
+      <div class="lbl">First week revenue from Digital Creator Club</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">$40K+</div>
+      <div class="lbl">Total revenue from the club (minimal ads)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val yellow">1 weekend</div>
+      <div class="lbl">Time to build full membership platform w/ Claude Code</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">5 min</div>
+      <div class="lbl">To build a live to-do app (live demo)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val purple">$100K+</div>
+      <div class="lbl">Estimated saved dev costs for the membership platform</div>
+    </div>
+  </div>
+
+  <!-- Ollie's Journey -->
+  <div class="card">
+    <h2>🚀 Ollie's Story: From Skeptic to $40K+ with Claude Code</h2>
+    <ul>
+      <li><strong>Used to be anti-AI:</strong> Thought it was hype and a gimmick — "not really going to help me." That all changed in late 2025.</li>
+      <li><strong>First "magic" moment (Sep/Oct 2025):</strong> Gave Claude Code one prompt — "look at this folder of photos and build me a gallery website" — and it was done in 5 minutes. Would have taken him days to code manually.</li>
+      <li><strong>Second moment (January 2026):</strong> Built <strong>digitalcreatorclub.com</strong> — a full membership platform with payments, database, email invites, Discord integration, pricing logic, and content — all in a weekend. No database or API experience needed.</li>
+      <li><strong>First week live:</strong> Made nearly <strong>$20,000 in sales</strong>. Blown away. Had planned to give access away for free.</li>
+      <li><strong>Key lesson from a friend:</strong> Putting a price tag on the club raised the quality of members dramatically. Free attracts low-commitment people; a price filters for serious creators, investors, and builders.</li>
+      <li><strong>Total revenue:</strong> ~$40,000 with minimal advertising. Now considers raising the price further to raise the bar even more.</li>
+    </ul>
+    <div class="quote">"I think the limit is really my imagination on what I could build." <strong>— Ollie</strong></div>
+  </div>
+
+  <!-- What is Claude Code -->
+  <div class="card">
+    <h2>🧠 What Is Claude Code &amp; Why It's Different</h2>
+    <ul>
+      <li><strong>Not the same as regular Claude or ChatGPT:</strong> Instead of giving you answers, it <em>makes stuff</em>. It writes code, creates logic, builds apps — all from plain English.</li>
+      <li><strong>The "code" in the name is misleading:</strong> You don't need to know how to code. Claude Code uses natural language. The word "code" makes people feel it's too technical — it's not.</li>
+      <li><strong>Development used to cost $50K–$200K+:</strong> Now a solo creator can build the same thing in a weekend for a subscription cost. The gap between developer and non-developer is closing fast.</li>
+      <li><strong>Always asks permission:</strong> Designed to be safe. You pick a local folder, it works inside that folder only. Can't randomly delete files or access things it wasn't given access to.</li>
+      <li><strong>Three tools in the Claude ecosystem:</strong>
+        <ul>
+          <li>💬 <strong>Claude (chat):</strong> Everyday Q&amp;A, replacing Google Search</li>
+          <li>🤝 <strong>Claude Co-work:</strong> Scheduled tasks, file sorting, automations (e.g., "every Sunday, pull my top 5 emails")</li>
+          <li>🏗️ <strong>Claude Code:</strong> Building — websites, apps, tools, platforms</li>
+        </ul>
+      </li>
+      <li><strong>Ollie's advice:</strong> Use the Claude app (not the terminal). It has all three tabs built in. The terminal is too intimidating, even for experienced users.</li>
+    </ul>
+    <div class="highlight">
+      <div class="hl-title">🔑 Key Distinction</div>
+      Regular Claude answers. Claude Co-work does. Claude Code <em>builds</em>.
+    </div>
+  </div>
+
+  <!-- Live Demo -->
+  <div class="card">
+    <h2>🎬 Live Demo: Building a To-Do App in Real Time</h2>
+    <p style="color:var(--muted); font-size:14px; margin-bottom:14px;">Ollie built a live to-do app on camera during the interview. Here's exactly what happened:</p>
+    <ol class="step-list">
+      <li>Created a new Claude Code session, pointed it to a local folder.</li>
+      <li>Typed the prompt: <em>"Build me a to-do app in a minimalist style list format. I want to be able to tick off any items that I've completed and automatically strike through them and move to the bottom of the list. Show me a preview once it's done."</em></li>
+      <li>Waited ~5–10 minutes while Claude Code generated the app.</li>
+      <li>Opened the HTML file by double-clicking — no copy-pasting URLs needed.</li>
+      <li>Tested it: added tasks, ticked them off, watched them strike through and move to the bottom automatically.</li>
+      <li>Added a bonus: <em>"Can you give the app an Apple style aesthetic? Add some colors, backgrounds, cards etc."</em></li>
+      <li>Result: App transformed to look like Apple's Reminders app — blue gradient background, cards, smooth hover animations, blue tick marks — in another few minutes.</li>
+    </ol>
+    <div class="quote">"We just built the reminders app in 10 minutes." <strong>— Calum</strong></div>
+    <h3>💡 Prompting Tips from Ollie</h3>
+    <ul>
+      <li>Don't overthink the prompt — but do include specific behaviors you want.</li>
+      <li>You don't need to "one-shot" everything. Refine iteratively. The best products are built through refinement, not single prompts.</li>
+      <li>You can give it brand colors, fonts, typography guidelines, or even link to a website you like — it can pull the styling from that site and apply it.</li>
+      <li>Screenshots work too (though less reliable than text/data input).</li>
+    </ul>
+  </div>
+
+  <!-- Connectors -->
+  <div class="card">
+    <h2>🔌 Connectors: Linking Real Data to Claude Code</h2>
+    <p style="font-size:14px; margin-bottom:14px; color:var(--muted);">In the Claude app, there's a "Customize" → "Connectors" tab. Each connector links Claude to a live external service.</p>
+    <div class="tool-grid">
+      <div class="tool-item"><div class="t-icon">📋</div><strong>ClickUp</strong><span>Project tasks</span></div>
+      <div class="tool-item"><div class="t-icon">🎨</div><strong>Framer</strong><span>Web design</span></div>
+      <div class="tool-item"><div class="t-icon">🐙</div><strong>GitHub</strong><span>Code repos</span></div>
+      <div class="tool-item"><div class="t-icon">📅</div><strong>Google Calendar</strong><span>Scheduling</span></div>
+      <div class="tool-item"><div class="t-icon">💸</div><strong>PayPal</strong><span>Balance + transactions</span></div>
+      <div class="tool-item"><div class="t-icon">⚙️</div><strong>N8N</strong><span>Automation flows</span></div>
+      <div class="tool-item"><div class="t-icon">🚂</div><strong>Railway</strong><span>App hosting</span></div>
+      <div class="tool-item"><div class="t-icon">📧</div><strong>Gmail</strong><span>Email (available)</span></div>
+      <div class="tool-item"><div class="t-icon">📁</div><strong>Google Drive</strong><span>Files &amp; sheets</span></div>
+    </div>
+    <div class="quote" style="margin-top:16px;">Example prompt with connectors: "Go to my Google Calendar, get this spreadsheet from Google Drive, put it into a website, email someone from Gmail, and if they reply with a calendar link, add it to my calendar." <strong>— Ollie demonstrating the power of chained connectors</strong></div>
+    <h3>Claude Co-work for Scheduled Tasks</h3>
+    <ul>
+      <li>Use <strong>Claude Co-work</strong> (not Code) for recurring scheduled tasks.</li>
+      <li>Example: "Every Sunday at 8pm, go through my inbox and tell me the first 5 emails I need to respond to Monday morning."</li>
+      <li>Ollie uses Co-work for things like: sorting images in a folder by type, automated file organization — tasks that complete in 10–20 seconds that would take minutes manually.</li>
+    </ul>
+  </div>
+
+  <!-- Mindset + Scalability -->
+  <div class="card">
+    <h2>💡 Mindset Shift: Stop Selling Time, Start Building Scale</h2>
+    <ul>
+      <li><strong>Selling time has a ceiling:</strong> Ollie was a UI/UX designer charging ~£500/day. That's great money, but it's capped — 8 hours, 5 days, calls, and you can't charge more than market rate.</li>
+      <li><strong>Digital products broke that ceiling:</strong> Before AI, he switched from client work to digital products (back in the Tumblr era, 2010–2014). Scalable = not tied to your hours.</li>
+      <li><strong>AI agents are the ultimate scalability layer:</strong> They work 24/7, can run in parallel, don't need salaries. Like having an army of employees at massive scale — think tens of thousands of workers — without the overhead.</li>
+      <li><strong>Just working hard ≠ wealthy:</strong> Lesson learned from watching successful people. You must work on things that scale, not just put in more hours.</li>
+      <li><strong>AI changes the equation further:</strong> Now anyone — 9-to-5 worker, creative, side hustler — can build scalable products that rival what once needed a 6-figure dev team.</li>
+    </ul>
+    <div class="quote">"If you're not using AI tools, AI agents, Claude Code — I very much believe you're going to fall behind. Whether it's your business, your work, or your lifestyle." <strong>— Ollie</strong></div>
+    <h3>AI Beyond Work: Lifestyle Use Cases</h3>
+    <ul>
+      <li>Wedding websites, birthday sites, event invites — things that "just couldn't exist before" for ordinary people.</li>
+      <li>Personal websites as a "public CV" — but people come intentionally, already interested. Shows credibility, archive, and professionalism.</li>
+      <li>Ollie's site has 9+ products, services, newsletters, and affiliates all housed in a single hub — built with Claude Code.</li>
+    </ul>
+  </div>
+
+  <!-- Pitfalls + Troubleshooting -->
+  <div class="card">
+    <h2>⚠️ Common Pitfalls &amp; How to Handle Them</h2>
+    <ul class="pitfall-list">
+      <li><strong>Things won't always work:</strong> Especially in complex projects like Digital Creator Club. Don't panic — this is normal.</li>
+      <li><strong>Don't try to fix code yourself:</strong> Screenshot the error, paste it back into Claude Code with "there's something wrong, look at it and fix it." Claude can usually figure it out.</li>
+      <li><strong>Demoralization trap:</strong> People try to build something, it breaks, they give up. The fix is to learn basic error-pasting. Claude does the diagnosis, not you.</li>
+      <li><strong>Don't use the terminal:</strong> Ollie's strongest recommendation — even after 6–7 months of use, he stopped using the terminal. The app is more than powerful enough for most people.</li>
+      <li><strong>Don't one-shot everything:</strong> Start simple ("build a personal website"), then refine. The best results come from iterative building.</li>
+      <li><strong>Intimidation by the word "code":</strong> Ignore it. Claude Code is natural language. If you've used ChatGPT or regular Claude, you're already qualified to use Claude Code.</li>
+    </ul>
+  </div>
+
+  <!-- Getting Started -->
+  <div class="card">
+    <h2>🎯 Where to Start: Ollie's Recommendations</h2>
+    <div class="section-grid">
+      <div class="section-item">
+        <div class="icon">🌐</div>
+        <strong>Step 1: Build a Personal Website</strong>
+        Easiest first project. Takes ~5 minutes. Add your photo from Instagram (drag &amp; drop), pick your favorite colors and fonts, tweak until it's yours. Creates momentum.
+      </div>
+      <div class="section-item">
+        <div class="icon">💼</div>
+        <strong>Step 2: Build for Your Dream Business</strong>
+        Everyone has a dream idea. Build the website or app for it. Even if it's rough, seeing Claude Code bring it to life shifts your mindset from "that's impossible" to "maybe this could be something."
+      </div>
+      <div class="section-item">
+        <div class="icon">🏢</div>
+        <strong>9-to-5 Workers</strong>
+        Show your colleagues you can do tasks faster with AI. Look better to your boss. Compact your work hours. Use AI to "compress time." Ollie has done this with close friends — the shift is instant once they see a live demo.
+      </div>
+      <div class="section-item">
+        <div class="icon">📱</div>
+        <strong>Use the Claude App</strong>
+        Includes Claude (chat), Co-work (automation), and Claude Code (building) in one place. Context and memory carry across all three. Don't use the terminal.
+      </div>
+    </div>
+    <div class="highlight" style="margin-top:16px;">
+      <div class="hl-title">🚀 Ollie's closing message</div>
+      "Don't feel bad that you haven't started yet — you just didn't know what was possible. But if two or three years from now you still haven't done anything… then feel bad."
+    </div>
+  </div>
+
+  <!-- Key Takeaways -->
+  <div class="card">
+    <h2>✅ Key Takeaways</h2>
+    <ul>
+      <li><strong>Claude Code is the tool:</strong> Not ChatGPT, not Midjourney — Claude Code is the one that's actually changed what's possible for non-technical creators in 2026.</li>
+      <li><strong>$20K in week 1</strong> from a membership site built in one weekend with zero dev team — this is the new reality.</li>
+      <li><strong>Price your products:</strong> Free access attracts low-quality engagement. A price tag filters for serious members and raises the entire community's bar.</li>
+      <li><strong>Connectors = power unlocked:</strong> Linking Gmail, Calendar, Drive, PayPal to Claude turns it from a builder into a complete business operating system.</li>
+      <li><strong>AI agents = scalability without headcount:</strong> The equivalent of tens of thousands of employees, running 24/7, at a fraction of the cost.</li>
+      <li><strong>The limit is your imagination</strong> — Ollie hasn't found the ceiling of what Claude Code can do for his use cases, and he's been using it for months.</li>
+      <li><strong>Start now:</strong> Build a personal website this weekend. The first step creates momentum. Everything after that compounds.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Summarized by Dot DiBot · Aug 25, 2026</span>
+    <a href="transcripts/i-made-20k-ai-agents-claude-code.txt">📄 Raw Transcript</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
