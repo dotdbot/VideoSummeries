@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How I Work: $77K/Month Solopreneur</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-biz { background: #2d2000; color: var(--yellow); }
+    .badge-ai { background: #1a1a3d; color: var(--purple); }
+    .badge-solo { background: #1a2030; color: var(--accent); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 26px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.orange { color: var(--orange); }
+    .stat-box .val.purple { color: var(--purple); }
+    .stat-box .lbl { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 8px; font-size: 14px; line-height: 1.7; }
+    ul li strong { color: var(--text); }
+    .quote { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .quote strong { color: var(--accent); font-style: normal; }
+    .highlight { background: #1e2a1e; border: 1px solid #2d4a2d; border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .highlight .hl-title { font-weight: 700; color: var(--green); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .timeline { list-style: none; padding: 0; }
+    .timeline li { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; font-size: 14px; }
+    .timeline-time { background: var(--accent); color: #0d1117; border-radius: 6px; padding: 2px 10px; font-weight: 800; font-size: 12px; white-space: nowrap; min-width: 60px; text-align: center; margin-top: 2px; }
+    .timeline-time.yellow { background: var(--yellow); }
+    .timeline-time.green { background: var(--green); }
+    .timeline-time.muted { background: var(--surface2); color: var(--muted); }
+    .section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .section-item { background: var(--surface2); border-radius: 8px; padding: 14px; font-size: 14px; line-height: 1.6; }
+    .section-item .icon { font-size: 22px; margin-bottom: 6px; }
+    .section-item strong { display: block; margin-bottom: 4px; color: var(--text); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media(max-width:600px) { .section-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-solo">🧑‍💻 Solopreneur</span>
+      <span class="badge badge-biz">💰 Entrepreneurship</span>
+      <span class="badge badge-ai">🤖 AI / Indie Hacking</span>
+    </div>
+    <h1>How I Work: $77K/Month Solopreneur</h1>
+    <div class="meta">
+      <span>📺 Marc Manson (Indie Hacker)</span>
+      <span>📅 August 29, 2026</span>
+      <span>⏱️ ~10 min</span>
+      <a href="https://www.youtube.com/watch?v=D4fkiQfzw_I" target="_blank" style="color:var(--accent);">▶ Watch on YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/D4fkiQfzw_I" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> Marc Manson is a solo developer making <strong>$77,000/month</strong> from 35 shipped startups — 30 of which failed. His formula: relentless daily shipping, 4–6 hours of uninterrupted deep work every morning (phone off, emails off, no social media), and radical consistency — same day, 365 days a year. His most important insight: <strong>the only KPI that matters is how many things you ship</strong>, not how sophisticated your AI workflow is. Keep rolling the dice.
+  </div>
+
+  <!-- Key Stats -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="val">$77K</div>
+      <div class="lbl">Monthly revenue (solopreneur)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val yellow">35</div>
+      <div class="lbl">Startups shipped total</div>
+    </div>
+    <div class="stat-box">
+      <div class="val orange">5%</div>
+      <div class="lbl">Hit rate — ~5 of 35 actually worked</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">$35K+</div>
+      <div class="lbl">Trust the Mual marketplace (monthly)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">$1K</div>
+      <div class="lbl">Day-1 revenue on posture app launch</div>
+    </div>
+    <div class="stat-box">
+      <div class="val purple">300</div>
+      <div class="lbl">Features shipped in last 3 months</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">6</div>
+      <div class="lbl">New apps shipped in 2026 so far</div>
+    </div>
+    <div class="stat-box">
+      <div class="val yellow">9 PM</div>
+      <div class="lbl">Bedtime — same time every single night</div>
+    </div>
+  </div>
+
+  <!-- Daily Routine -->
+  <div class="card">
+    <h2>⏰ The Daily Routine — Same Day, 365 Days a Year</h2>
+    <ul class="timeline">
+      <li><span class="timeline-time green">6–7 AM</span><div>Wake up naturally — no alarm. The body wakes itself up after solid sleep. Coffee and breakfast with his wife.</div></li>
+      <li><span class="timeline-time">Morning</span><div><strong>Gym with his wife</strong> — currently training for Hyrox. Sled push, squats, running. Non-negotiable.</div></li>
+      <li><span class="timeline-time green">~9 AM</span><div><strong>Deep work begins.</strong> Phone completely off. No emails. No social media. No internet. Opens code editor only. Works for <strong>4–6 hours straight</strong>.</div></li>
+      <li><span class="timeline-time yellow">~3 PM</span><div>App/feature launches happen here — tweet, LinkedIn, Threads, Reddit simultaneously.</div></li>
+      <li><span class="timeline-time yellow">~4 PM</span><div>Goes online. Checks Twitter, emails, handles support, does the "boring" creative-light work.</div></li>
+      <li><span class="timeline-time">5:30 PM</span><div>Dinner — usually long, watching Better Call Saul. Winds down.</div></li>
+      <li><span class="timeline-time muted">Evening</span><div>Walk. <strong>Phone off. Computer off. No work talk.</strong> Sometimes a movie or reading before bed.</div></li>
+      <li><span class="timeline-time muted">8–9 PM</span><div><strong>Wind-down routine:</strong> dim the lights at home for 30–60 minutes before sleep. Falls asleep instantly.</div></li>
+      <li><span class="timeline-time green">9 PM</span><div><strong>Bed — every single night at 9 PM.</strong> "It's a bit religious."</div></li>
+    </ul>
+    <div class="quote">"I love my day so much that I want to repeat it every single day. I don't like Sundays. My fun is actually making stuff." <strong>— Marc</strong></div>
+  </div>
+
+  <!-- Deep Work Philosophy -->
+  <div class="card">
+    <h2>🧠 The Deep Work Block — Why Morning is Sacred</h2>
+    <ul>
+      <li><strong>4–6 hours of zero distraction every morning</strong> — this is the non-negotiable core of the entire system. Everything else is built around protecting it.</li>
+      <li><strong>Why no social media in the morning:</strong> AI is moving so fast that checking feeds triggers FOMO — "I'm not fast enough, I should do more." One hour disappears. Motivation drops. The morning is ruined.</li>
+      <li><strong>No email in the morning:</strong> If he reads an email about a broken feature, he'll spend the morning on bug fixes instead of building what truly matters. Reactive work kills creative output.</li>
+      <li>He only opens one thing: <strong>his code editor</strong>. That's the entire workspace for 4–6 hours.</li>
+      <li>The phone — "this little boy here" — is described as <strong>"the worst enemy."</strong> Off. Not silent. Off.</li>
+    </ul>
+    <div class="highlight">
+      <div class="hl-title">🔑 The Core Principle</div>
+      Deep work is "what got me here." If I want to go further, I must keep protecting it. Everything else — support, emails, social — comes after the creative block is complete.
+    </div>
+  </div>
+
+  <!-- The 5% Hit Rate -->
+  <div class="card">
+    <h2>🎲 The 5% Hit Rate — Why Shipping Volume Is the Strategy</h2>
+    <ul>
+      <li><strong>35 startups shipped. ~30 of them = nothing.</strong> No users. No revenue. No traction. That's a 5% hit rate.</li>
+      <li>The math is simple: <em>"If you roll the dice once, nothing crazy will happen. But if you keep playing, playing, playing — at some point one roll will work. You'll have happy users, you'll start to make money, you can leave your job, and then roll the dice more often."</em></li>
+      <li>Marc has <strong>never met a single person</strong> who said "I've tried 10 times and it never worked." He's met hundreds who have a brilliant idea stuck in their head or on a hard drive, never shipped.</li>
+      <li><strong>Shipping is the only way to validate an idea.</strong> Not user research. Not surveys. Not beta lists. A live product with a buy button.</li>
+      <li>Every new ship teaches you more. Every launch grows your audience a little. Every failure gives you new ideas for the next thing.</li>
+    </ul>
+    <div class="quote">"I cannot recall a single person who told me: 'Hey, I've tried 10 times and it never worked.' Just remember to keep shipping." <strong>— Marc</strong></div>
+  </div>
+
+  <!-- What He Builds -->
+  <div class="card">
+    <h2>🛠️ What He Builds — Two Types of Products</h2>
+    <div class="section-grid">
+      <div class="section-item">
+        <div class="icon">💡</div>
+        <strong>Type 1: "This must exist"</strong>
+        He spots a personal problem, decides the solution <em>should exist</em>, builds it. No revenue projection. No market sizing. Example: <strong>Posture Pal</strong> — a macOS app that analyzes posture via webcam and alerts when you're slouching. Built because he spends all day at a computer. Day-1 revenue: ~$1,000. Users started posting about it on Twitter immediately.
+      </div>
+      <div class="section-item">
+        <div class="icon">🔍</div>
+        <strong>Type 2: "This sparked my curiosity"</strong>
+        He sees a gap or an interesting idea online, gets curious, builds it. Example: <strong>Trust the Mual</strong> — started from a Peter Levels tweet about people faking revenue online. Marc built a leaderboard of verified revenues. It evolved into a <strong>marketplace now doing $35K+/month</strong>.
+      </div>
+    </div>
+    <h3>How He Decides What to Build Next</h3>
+    <ul>
+      <li>He maintains a massive to-do list. "Even if I live 200 years, I wouldn't be able to make all my ideas real."</li>
+      <li>After shipping something, he scans the list and asks: <strong>"Which one has the most impact on users? Which one would make me happiest?"</strong> Then just picks it.</li>
+      <li>Every day he ends with <em>more</em> items on his list than he started with. Feedback, user requests, new observations — all fuel new ideas.</li>
+    </ul>
+  </div>
+
+  <!-- AI & Productivity Take -->
+  <div class="card">
+    <h2>🤖 The Controversial AI Take — "The KPI Hasn't Changed"</h2>
+    <ul>
+      <li>Marc has a <strong>"slightly controversial take"</strong> on AI productivity: most people are obsessing over agent setups, multi-threaded workflows, teams of AI running in the background — but the <strong>single KPI that matters hasn't changed</strong>.</li>
+      <li><strong>The only KPI that matters: number of things you ship.</strong> That's it. Same as before AI.</li>
+      <li>His own AI setup: <strong>"The most boring setup ever."</strong> One code editor. One chat window on the right. Talks to the AI, it builds a feature, he ships it, moves on.</li>
+      <li>He's shipped <strong>300 features on his marketplace in the last 3 months</strong> and <strong>6 new apps in 2026</strong> — with this simple, single-threaded approach.</li>
+      <li><strong>"People fall for the productivity trick"</strong> — spending hours optimizing their AI workflow instead of shipping. You could do a lot with the first version of ChatGPT and a basic code editor.</li>
+    </ul>
+    <div class="highlight">
+      <div class="hl-title">💡 The Insight</div>
+      Complexity in your tooling is often a proxy for avoiding the real work. Shipping is the work. A simple setup that ships daily beats an elaborate agent system that ships monthly.
+    </div>
+  </div>
+
+  <!-- Sleep & Recovery -->
+  <div class="card">
+    <h2>😴 Sleep — "The Most Underrated Thing"</h2>
+    <ul>
+      <li>For the first ~10 years of his adult life (ages 18–28), he was always sleepy. Would fall asleep mid-task at his computer.</li>
+      <li>Once he fixed his sleep, everything changed: <strong>emotional stability, locked-in focus for 4+ hours without breaks, genuine energy throughout the day.</strong></li>
+      <li>The system: <strong>dim lights 30–60 min before bed → same bedtime every night (9 PM) → no alarm → body wakes itself at 6–7 AM naturally.</strong></li>
+      <li>"When you go to bed, you fall asleep instantly." That's the goal — not forcing sleep, but engineering the conditions for it.</li>
+      <li><strong>"Sleep is really underrated. I think it's so important."</strong> Not a hack — the foundation.</li>
+    </ul>
+  </div>
+
+  <!-- Don't Get Attached -->
+  <div class="card">
+    <h2>🚫 The Biggest Mistake — Emotional Attachment to a Single Project</h2>
+    <ul>
+      <li>Pattern he sees constantly: someone ships an idea, gets a few users and a little revenue, and it <strong>becomes their "pet project."</strong> They pour everything into it. They stop shipping new things.</li>
+      <li>The problem: that project might take <strong>3 years</strong> to reach income-replacement level. But a new idea could do it <strong>100× faster.</strong></li>
+      <li>Staying attached to one slow-growing project means missing the next one that might explode.</li>
+      <li>The solution: <strong>keep rolling the dice.</strong> Don't treat any single launch as your one shot. Treat shipping as a permanent practice, not a one-time event.</li>
+      <li>Each new launch grows your audience, your skills, and your portfolio of ideas. The compounding effect is in the <em>habit of shipping</em>, not in any single product.</li>
+    </ul>
+    <div class="quote">"Don't you dare give up. Don't you dare give up." <strong>— Marc (closing words)</strong></div>
+  </div>
+
+  <footer>
+    <span>Summarized by Dot DiBot • Aug 29, 2026</span>
+    <a href="transcripts/77k-month-solopreneur-how-i-work.txt">📄 Full Transcript</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
