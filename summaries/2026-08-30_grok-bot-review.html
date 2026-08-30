@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What You Need to Know About Grok Bot... (it's not that good)</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-ai { background: #1a1a3d; color: var(--purple); }
+    .badge-biz { background: #1a2744; color: #79c0ff; }
+
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.red { color: var(--red); }
+    .stat-box .val.purple { color: var(--purple); }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 8px; font-size: 14px; line-height: 1.7; }
+    ul li strong { color: var(--text); }
+
+    .quote { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .quote strong { color: var(--accent); font-style: normal; }
+
+    .highlight { background: #1e2a1e; border: 1px solid #2d4a2d; border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .highlight .hl-title { font-weight: 700; color: var(--green); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .red-box { background: #2d0a0a; border: 1px solid var(--red); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .red-box .hl-title { font-weight: 700; color: var(--red); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; margin: 2px; }
+    .tag-bullish { background: #0d3320; color: var(--green); }
+    .tag-cautious { background: #2d2000; color: var(--yellow); }
+    .tag-pass { background: #2d0a0a; color: var(--red); }
+    .tag-watch { background: #1a2744; color: var(--accent); }
+
+    /* Feature comparison */
+    .gen-row { display: flex; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; }
+    .gen-box { flex: 1; min-width: 200px; background: var(--surface2); border-radius: 10px; padding: 16px; }
+    .gen-box.good { border-left: 4px solid var(--green); }
+    .gen-box.bad { border-left: 4px solid var(--red); }
+    .gen-box.mid { border-left: 4px solid var(--yellow); }
+    .gen-box-title { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+
+    /* Feature item cards */
+    .feature-item { background: var(--surface2); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; border-left: 4px solid var(--accent); }
+    .feature-item.caution { border-left-color: var(--yellow); }
+    .feature-item.bad { border-left-color: var(--red); }
+    .feature-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .feature-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+    .feature-desc strong { color: var(--text); }
+
+    /* Plan table */
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--surface2); }
+    tr:last-child td { border-bottom: none; }
+    td:first-child { color: var(--yellow); font-weight: 600; }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-ai">🤖 AI Agents</span>
+      <span class="badge badge-biz">🛠️ Tool Review</span>
+    </div>
+    <h1>What You Need to Know About Grok Bot... (it's not that good)</h1>
+    <div class="meta">
+      <span>📺 Tech With Tim</span>
+      <span>📅 August 30, 2026</span>
+      <span>⏱️ ~15 min</span>
+      <a href="https://www.youtube.com/watch?v=ezANo2RNryU" target="_blank" style="color:var(--accent);">▶ Watch on YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/ezANo2RNryU" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> <strong>Grok Bot</strong> is xAI/Cursor's new multi-agent platform — a team of always-on AI agents with their own cloud computers, launched August 11, 2026. Tim's verdict: <strong>cool beta, but not worth $200/month for most people.</strong> If you're already on Super Grok Heavy or Cursor Ultra, go ahead and try it. But for standalone use, <strong>Hermes Agent</strong> and open-source tools like <strong>Buzz</strong> offer significantly better value. Key issues: expensive, Grok-models-only, broken integrations (X/Twitter never worked), agents sometimes just hang. The cloud browser and persistent sessions are genuinely cool — but the maturity isn't there yet.
+  </div>
+
+  <!-- Key Stats -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="val red">$200</div>
+      <div class="lbl">Min price per month</div>
+    </div>
+    <div class="stat-box">
+      <div class="val yellow">7 days</div>
+      <div class="lbl">Free trial available</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">Aug 11</div>
+      <div class="lbl">Launch date (2026)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val purple">Grok only</div>
+      <div class="lbl">Models supported</div>
+    </div>
+    <div class="stat-box">
+      <div class="val red">Closed</div>
+      <div class="lbl">Source code</div>
+    </div>
+    <div class="stat-box">
+      <div class="val yellow">Beta</div>
+      <div class="lbl">Current stage</div>
+    </div>
+  </div>
+
+  <!-- WHAT IS GROK BOT -->
+  <div class="card">
+    <h2>🤖 What is Grok Bot?</h2>
+    <ul>
+      <li><strong>Team of always-on AI agents</strong> — each agent has its own persistent cloud computer (browser, file system, terminal)</li>
+      <li><strong>Origin:</strong> Started as an internal prototype at <strong>SpaceX AI</strong>, then opened in partnership with <strong>Cursor</strong></li>
+      <li><strong>Launched August 11, 2026</strong> as an early beta</li>
+      <li><strong>Interface:</strong> Slack-like workspace — DMs with each bot, you can tag bots in conversations, bots can message each other</li>
+      <li><strong>Model lock-in:</strong> Grok models only (xAI). Can't bring your own model or change the backend</li>
+      <li><strong>Marketing pitch:</strong> "ChatGPT and Claude just answer questions. Grok Bot does the work." — Tim notes he's seen this framing "literally everywhere" across AI tools</li>
+      <li><strong>Background execution:</strong> Agents only ping you when they actually need a human action. Otherwise they run silently</li>
+    </ul>
+
+    <h3>Plans Required to Access It</h3>
+    <table>
+      <thead><tr><th>Plan</th><th>Type</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Super Grok Heavy</td><td>xAI plan</td><td>Includes Grok Bot access</td></tr>
+        <tr><td>Cursor Ultra</td><td>Cursor plan</td><td>Includes Grok Bot access</td></tr>
+        <tr><td>Teams Premium</td><td>Team plan</td><td>Includes Grok Bot access</td></tr>
+        <tr><td>Standalone access</td><td>Individual</td><td style="color:var(--red);">Minimum ~$200/month</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="card">
+    <h2>⚙️ Features Breakdown</h2>
+
+    <div class="feature-item">
+      <div class="feature-title">☁️ Cloud Computer (The Big Differentiator)</div>
+      <div class="feature-desc">
+        Each agent has its own <strong>remote virtual desktop</strong> — browser, file system, terminal — always on in the background.
+        You can watch the agent work in real-time or take over manually if it gets stuck (e.g. CAPTCHA, account sign-in).
+        <strong>Persistent sessions:</strong> if an agent signs into an account, it stays signed in — useful for tasks that require authentication.
+        Works from mobile: since it's cloud-based, you don't need a computer open for it to keep running.
+        <br><br>
+        ⚠️ <strong>Downside:</strong> It runs on a VPS so it's "a little bit slow." Also a security concern — you're handing credentials to xAI's infrastructure.
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-title">💻 Local Computer Access (Your Own Machine)</div>
+      <div class="feature-desc">
+        <strong>In addition to the cloud computer</strong>, agents can also control your own machine directly — opening Chrome, navigating tabs, etc.
+        <strong>Important:</strong> you have to be explicit about which one you want — "use my local browser" vs. the remote browser. The agent defaults to cloud if unspecified.
+        This is useful if you don't want to put sensitive credentials into the remote cloud environment.
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-title">💬 Multi-Agent Communication</div>
+      <div class="feature-desc">
+        Agents can talk to each other. You can tag a bot in a conversation, or ask one bot to delegate work to another.
+        Example: Tim told his "Team Leader" bot to have the "VA" bot check his school community for feedback → the VA received the message, opened the community, and started navigating.
+        <strong>Orchestrator pattern:</strong> you can build one master agent that coordinates a team of specialists (VA, presentation maker, researcher, etc.)
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-title">📅 Routines (Scheduled Tasks)</div>
+      <div class="feature-desc">
+        You can set up <strong>scheduled routines</strong> or <strong>trigger-based automations</strong>.
+        Example: Tim asked his VA (connected to Slack) to create a routine: "Whenever a message arrives in the #sponsorships Slack channel, log it, track upcoming deadlines, and remind me if something's about to be late."
+        Grok Bot created two routines automatically: one triggered on new Slack messages, one a daily 9 AM weekday check-in.
+        <br><br>
+        ⚠️ <strong>Hiccup observed:</strong> Asked it to connect Slack (already connected) — it asked to re-connect anyway. Minor friction.
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-title">🎥 Teach by Demonstration</div>
+      <div class="feature-desc">
+        <strong>Record yourself doing a task</strong> in the agent's browser — Grok Bot watches it like a video, figures out what you did, and writes a reusable skill the agent can repeat on demand.
+        Tim demoed: searched Google for "TechWithTim", browsed results, then searched Reddit for reviews. After stopping the recording, the agent analyzed the demo and created a "weekly reputation research" skill.
+        <strong>Useful for:</strong> multi-step browser flows that are hard to describe in text — show once, reuse forever.
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-title">🔗 Connectors</div>
+      <div class="feature-desc">
+        Agents can connect to external services (Slack, X/Twitter, etc.) for real integrations.
+        <br><br>
+        ⚠️ <strong>Tim's experience:</strong> He could <em>not</em> get X (Twitter) to connect despite trying "about a hundred times." Several other connections timed out or failed. This is a real reliability issue in the current beta.
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-title">🌐 here.now — Free Deployment Sidecar</div>
+      <div class="feature-desc">
+        Tim's tip (not Grok-specific): he uses <strong>here.now</strong> to deploy any HTML/website the agent creates — no account needed by default, site lives for 24 hours free.
+        To use: copy the "agent skill" from here.now docs → paste into agent → say "deploy with here.now" → agent deploys to a URL automatically.
+        <strong>Claim the URL</strong> (connect an account) to make it permanent. Supports custom domains, databases, access controls.
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT -->
+  <div class="card">
+    <h2>⚖️ Tim's Honest Verdict</h2>
+    <span class="tag tag-watch">👁️ Interesting Beta</span>
+    <span class="tag tag-cautious">⚠️ Overpriced for Standalone</span>
+
+    <div class="gen-row" style="margin-top: 16px;">
+      <div class="gen-box good">
+        <div class="gen-box-title" style="color:var(--green);">✅ USE IT IF...</div>
+        <ul>
+          <li>Already paying for Super Grok Heavy or Cursor Ultra</li>
+          <li>You like Grok models and are already locked into the xAI ecosystem</li>
+          <li>You want persistent cloud-browser sessions without managing your own VPS</li>
+          <li>You work primarily from mobile and need background agents running</li>
+        </ul>
+      </div>
+      <div class="gen-box bad">
+        <div class="gen-box-title" style="color:var(--red);">❌ SKIP IT IF...</div>
+        <ul>
+          <li>You'd be paying $200/month standalone just for Grok Bot</li>
+          <li>You want to use different models (Claude, GPT-4o, Gemini) — locked out</li>
+          <li>You rely on X/Twitter integrations — broken in current beta</li>
+          <li>You need production-grade reliability — agents sometimes just hang</li>
+          <li>You care about security of credentials stored in cloud browser</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warn-box" style="margin-top: 16px;">
+      <div class="hl-title">💡 Better Alternatives (Tim's Own Picks)</div>
+      <ul>
+        <li><strong>Hermes Agent</strong> — Tim explicitly named this as offering "significantly better value" at this price point</li>
+        <li><strong>Buzz</strong> — open source, connect any model, any agent. Tim covered this previously.</li>
+        <li>Tim: <em>"If it was $20 a month, I'd have a different analysis."</em></li>
+      </ul>
+    </div>
+
+    <div class="quote">
+      "I don't see it being significantly better than something like Hermes Agent, or even something like Buzz, which is open source and you can connect any model and any agent too."
+      <cite>— Tech With Tim</cite>
+    </div>
+  </div>
+
+  <!-- PROS AND CONS -->
+  <div class="card">
+    <h2>📋 Pros &amp; Cons Summary</h2>
+    <div class="gen-row">
+      <div class="gen-box good">
+        <div class="gen-box-title" style="color:var(--green);">👍 Pros</div>
+        <ul>
+          <li>Cloud computer is always on — no need to keep your machine open</li>
+          <li>Persistent sessions (stay logged into accounts across tasks)</li>
+          <li>Multi-agent communication and orchestration built-in</li>
+          <li>Teach-by-demonstration is genuinely cool</li>
+          <li>Works from mobile</li>
+          <li>Slack-like interface is intuitive and easy to use</li>
+          <li>7-day free trial to test it</li>
+        </ul>
+      </div>
+      <div class="gen-box bad">
+        <div class="gen-box-title" style="color:var(--red);">👎 Cons</div>
+        <ul>
+          <li>$200/month minimum — very expensive</li>
+          <li>Grok models only — no model flexibility</li>
+          <li>Closed source</li>
+          <li>Limited customization overall</li>
+          <li>X/Twitter connector completely broken (tried ~100 times)</li>
+          <li>Other connectors also time out / fail</li>
+          <li>Agents sometimes hang and don't complete tasks</li>
+          <li>Cloud browser is slow (running on VPS)</li>
+          <li>Security concern: credentials stored in xAI's cloud</li>
+          <li>Still very early beta — not production ready</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY TAKEAWAYS -->
+  <div class="card">
+    <h2>🎯 Key Takeaways</h2>
+    <ul>
+      <li><strong>Cool concept, not ready for prime time:</strong> The idea of always-on AI agents with their own cloud computers is genuinely exciting — the execution is still rough</li>
+      <li><strong>The cloud browser is the real differentiator</strong> — persistent sessions, mobile access, and background execution are things most AI tools don't offer natively</li>
+      <li><strong>Price is the dealbreaker:</strong> $200/month for what's essentially an early beta with broken integrations is hard to justify over open-source alternatives</li>
+      <li><strong>The teach-by-demonstration feature</strong> is promising — watch once, repeat forever is a powerful UX pattern</li>
+      <li><strong>Best use case:</strong> Teams already on Cursor Ultra or Super Grok Heavy — add Grok Bot for free (bundled) and experiment</li>
+      <li><strong>Competition is fierce:</strong> Tim explicitly prefers Hermes Agent and Buzz — both offer more flexibility and lower cost</li>
+      <li><strong>Watch this space:</strong> Tim says he's excited to see what they do with it — wants to try again when it "really levels up"</li>
+    </ul>
+  </div>
+
+  <p style="color:var(--muted); font-size:13px; margin-top:8px;">
+    📄 <a href="transcripts/2026-08-30_grok-bot-review.txt" style="color:var(--accent);">Full transcript</a>
+  </p>
+
+  <footer>
+    <span>Dot DiBot • VideoSummeries</span>
+    <a href="../index.html">← All Summaries</a>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
