@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stocks With the MOST UPSIDE for the Rest of 2026‼️💰</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-stocks { background: #0d2030; color: var(--accent); }
+    .badge-biz { background: #2d2000; color: var(--yellow); }
+
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.red { color: var(--red); }
+    .stat-box .val.orange { color: var(--orange); }
+    .stat-box .val.purple { color: var(--purple); }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 8px; font-size: 14px; line-height: 1.7; }
+    ul li strong { color: var(--text); }
+
+    .quote { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .quote strong { color: var(--accent); font-style: normal; }
+
+    .highlight { background: #1e2a1e; border: 1px solid #2d4a2d; border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .highlight .hl-title { font-weight: 700; color: var(--green); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; margin: 2px; }
+    .tag-bullish { background: #0d3320; color: var(--green); }
+    .tag-lt-bullish { background: #0d2a1e; color: #7ee8a2; }
+    .tag-cautious { background: #2d2000; color: var(--yellow); }
+    .tag-wait { background: #1a1a3d; color: var(--purple); }
+    .tag-watch { background: #1a2744; color: var(--accent); }
+
+    /* Stock cards */
+    .stock-card { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-left: 4px solid var(--green); }
+    .stock-card.yellow { border-left-color: var(--yellow); }
+    .stock-card.watching { border-left-color: var(--accent); }
+    .stock-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .stock-ticker { font-family: monospace; font-size: 20px; font-weight: 900; color: var(--yellow); }
+    .stock-name { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .stock-target { font-family: monospace; font-size: 18px; font-weight: 900; color: var(--green); }
+
+    /* Energy drink table */
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--surface2); }
+    tr:last-child td { border-bottom: none; }
+    td:first-child { color: var(--yellow); font-weight: 600; }
+    .winner-row td { background: #0d2a1a; }
+    .winner-row td:first-child { color: var(--green); }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-stocks">📈 Stocks / Analysis</span>
+      <span class="badge badge-biz">💰 Portfolio</span>
+    </div>
+    <h1>Stocks With the MOST UPSIDE for the Rest of 2026‼️💰</h1>
+    <div class="meta">
+      <span>📺 Financial Education (Jeremy)</span>
+      <span>📅 August 30, 2026</span>
+      <span>⏱️ ~20 min</span>
+      <a href="https://www.youtube.com/watch?v=HW154AEXl4w" target="_blank" style="color:var(--accent);">▶ Watch on YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/HW154AEXl4w" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> Jeremy reveals the <strong>5 stocks he believes have the most upside through end of 2026</strong>: Celsius (CELH), e.l.f. Beauty (ELF), Honest Company (HNST), Revolve (RVLV), and AMD. He also names two new stocks on his watchlist — Bath &amp; Body Works and RH. Fresh energy drink volume data shows Alani Nu (+38%) carrying Celsius while the core brand recovers. AMD is entering its seasonally weak window but Jeremy expects an <strong>epic rip rally</strong> from mid-fall through Q1 2027. Market macro commentary from a guest strategist points to FOMO-driven upside but elevated yield risk and a VIX that may be too low at 15.
+    <br><br>
+    <strong>Hard rule from Jeremy:</strong> None of this changes his long-term focus. He is <em>not</em> buying heavier, not buying options, not re-weighting based on any of these short-term calls — positions are already built.
+  </div>
+
+  <!-- Key Stats Row -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="val">$4.7M</div>
+      <div class="lbl">Jeremy's public portfolio</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">$650+</div>
+      <div class="lbl">AMD year-end target (Jeremy)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val yellow">$550</div>
+      <div class="lbl">AMD 1-yr price target (Capital)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">$140</div>
+      <div class="lbl">ELF best-case year-end target</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">$10</div>
+      <div class="lbl">HNST upside case (bought at $2.10)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val red">-10%</div>
+      <div class="lbl">Celsius brand volumes (latest 4wk)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val orange">+38%</div>
+      <div class="lbl">Alani Nu volumes (latest 4wk)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val yellow">~15</div>
+      <div class="lbl">VIX level (analyst says: too low)</div>
+    </div>
+  </div>
+
+  <!-- ===== STOCKS WITH MOST UPSIDE ===== -->
+  <div class="card">
+    <h2>🚀 5 Stocks With Most Upside Through End of 2026</h2>
+
+    <!-- CELH -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">CELH</div>
+          <div class="stock-name">Celsius Holdings</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-target">$50 near-term → $100+ long</div>
+          <span class="tag tag-bullish">💚 Bullish</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Two-brand strategy is working:</strong> Celsius brand is down -10% on volumes, but Alani Nu is up 38% — they offset each other and the combined company grew 4.2% (beating Red Bull's 3.7%)</li>
+        <li><strong>Pricing power is real:</strong> Celsius raised prices +3.9% in the latest 4-week period — the largest price increase in the entire energy drink category (Monster +3.6%, Red Bull +1.3%, category +1.8%)</li>
+        <li><strong>Conviction unchanged or higher</strong> after this data — Jeremy says "I feel more bullish or the same as 24 hours ago"</li>
+        <li><strong>Near-term catalyst:</strong> "What happens when Celsius volumes go up 10–12% again AND Alani Nu is still doing 38%? Watch out — Celsius goes to $50."</li>
+        <li><strong>Long-term thesis:</strong> $100+ stock. Two great brands, long runway of growth. Holds strong.</li>
+      </ul>
+      <div class="highlight">
+        <div class="hl-title">📊 Energy Drink Volume Data — Latest 4 Weeks</div>
+        <table>
+          <thead>
+            <tr><th>Brand</th><th>Volume Growth</th><th>Avg Price Gain</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Category Overall</td><td style="color:var(--text);">+7.4%</td><td>+1.8%</td><td>Strong across the board</td></tr>
+            <tr><td>Monster</td><td style="color:var(--green);">+5.2%</td><td>+3.6%</td><td>Very strong quarter</td></tr>
+            <tr><td>Red Bull</td><td style="color:var(--text);">+3.7%</td><td>+1.3%</td><td>Decent</td></tr>
+            <tr class="winner-row"><td>Celsius (incl. Alani Nu)</td><td style="color:var(--green);">+4.2%</td><td style="color:var(--green);font-weight:700;">+3.9% 🥇</td><td>Alani Nu carried, Celsius brand -10%</td></tr>
+            <tr><td>Celsius brand only</td><td style="color:var(--red);">-10%</td><td>—</td><td>Elephant in the room — needs to recover</td></tr>
+            <tr><td>Alani Nu only</td><td style="color:var(--green);">+38%</td><td>—</td><td>Carrying the combined brand right now</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ELF -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">ELF</div>
+          <div class="stock-name">e.l.f. Beauty</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-target">$100–$140 year-end</div>
+          <span class="tag tag-bullish">💚 Bullish</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Current price:</strong> ~$105</li>
+        <li><strong>Worst case year-end:</strong> $100 (roughly flat)</li>
+        <li><strong>Best case year-end:</strong> $140 (midpoint: ~$120)</li>
+        <li>Seasonally strong around this time of year — tends to run into holiday season</li>
+        <li>Jeremy expects the stock to continue to run based on momentum and seasonal tailwinds</li>
+      </ul>
+    </div>
+
+    <!-- HNST -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">HNST</div>
+          <div class="stock-name">The Honest Company</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-target">$5+ → closer to $10</div>
+          <span class="tag tag-bullish">💚 Bullish — Exceeded Expectations</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Jeremy bought shares at $2.10 earlier this year</strong> — stock is now approaching 4–5x from his entry</li>
+        <li>Originally called for $5+ exit year-end — after the most recent earnings report he has <strong>upgraded the target to closer to $10</strong></li>
+        <li>Described as "an honestly great performance" — earnings were strong on multiple fronts</li>
+        <li>Calls it one of the best run-up stories of the year in his portfolio</li>
+      </ul>
+      <div class="quote">
+        "What a run. What a run. That's honestly an honestly great performance."
+        <cite>— Jeremy on HNST</cite>
+      </div>
+    </div>
+
+    <!-- RVLV -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">RVLV</div>
+          <div class="stock-name">Revolve Group</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-target" style="color:var(--yellow);">$30+ year-end</div>
+          <span class="tag tag-lt-bullish">📈 Bullish — Adding on Dips</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Rarely discussed stock in the public account</strong> — currently up ~$35,000 in Jeremy's public portfolio</li>
+        <li><strong>Why bullish:</strong> Margins look good, income statement strong, balance sheet healthy, guidance should be good going into holiday season</li>
+        <li>"Clicking on all cylinders" — momentum play into Q4 holiday season</li>
+        <li>If it drops at all → Jeremy will likely <strong>buy more shares</strong></li>
+        <li>Year-end target: <strong>$30+</strong></li>
+      </ul>
+    </div>
+
+    <!-- AMD -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">AMD</div>
+          <div class="stock-name">Advanced Micro Devices</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-target">$650+ year-end</div>
+          <span class="tag tag-bullish">🚀 Epic Rally Expected</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Currently in weak season:</strong> AMD typically struggles late summer into September — Jeremy says this is expected and doesn't change the thesis</li>
+        <li><strong>Strong season ahead:</strong> AMD historically performs best from <strong>mid-November through mid-February</strong> — the party is about to start</li>
+        <li><strong>Wall Street tailwinds:</strong>
+          <ul>
+            <li>Raymond James upgraded AMD to <strong>Strong Buy from Outperform</strong> — citing AI accelerator and data center processor market share gains</li>
+            <li>Capital initiated coverage with a <strong>bullish $550 one-year price target</strong></li>
+          </ul>
+        </li>
+        <li><strong>Jeremy's target: $650+ by year-end</strong> — "I know that seems insane from the 400s with 4 months left, but I think it goes on an absolute ripper rally"</li>
+        <li><strong>Nvidia earnings catalyst:</strong> Nvidia earnings the next day (expected to beat strongly) — will lift all semis including AMD even though they compete</li>
+        <li><strong>NOT playing options, NOT margining up</strong> — position already built. Holding for long term. Could exit some shares Mar–Apr 2027.</li>
+        <li>"The death of AMD stock has been greatly exaggerated."</li>
+      </ul>
+      <div class="warn-box">
+        <div class="hl-title">⚠️ Caveat — seasonality is not destiny</div>
+        What if the market sells off 25% in Q4 like 2018? Jeremy explicitly warns: "Maybe this year is different. Maybe it's just weak in the fall and winter. That's fine. I'm not going to trip off that. I'm going to hold strong."
+      </div>
+      <div class="highlight">
+        <div class="hl-title">📅 AMD Seasonality Pattern</div>
+        <ul style="padding-left: 0; list-style: none;">
+          <li style="margin-bottom: 6px;">🔴 <strong>Weak period:</strong> Late summer → September (current window)</li>
+          <li style="margin-bottom: 6px;">🟢 <strong>Strong period:</strong> Mid-November → Mid-February (the rally window)</li>
+          <li>📣 College football starts this weekend, NFL the next — "as soon as you see football, you know fall is here"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== NEW STOCKS WATCHING ===== -->
+  <div class="card">
+    <h2>👀 New Stocks on Jeremy's Watchlist (No Position Yet)</h2>
+
+    <div class="stock-card watching">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">BBWI</div>
+          <div class="stock-name">Bath &amp; Body Works</div>
+        </div>
+        <div style="text-align:right;">
+          <span class="tag tag-watch">👁️ Watching — May Start Position</span>
+        </div>
+      </div>
+      <ul>
+        <li>Jeremy has been watching BBWI <strong>the entire year</strong> without starting a position — may be getting closer</li>
+        <li><strong>Why interested:</strong> Value dividend stock — dividend yield approximately <strong>4.5%</strong></li>
+        <li>Mass-market retailer (candles, soaps, lotions) — accessible price points, wide customer base</li>
+        <li><strong>Characterized as:</strong> "Far less risky than RH" with good value characteristics</li>
+        <li>Keeping a very close eye over the next few days</li>
+      </ul>
+    </div>
+
+    <div class="stock-card watching">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">RH</div>
+          <div class="stock-name">RH (Restoration Hardware)</div>
+        </div>
+        <div style="text-align:right;">
+          <span class="tag tag-watch">👁️ Watching — Higher Risk/Reward</span>
+        </div>
+      </div>
+      <ul>
+        <li>Also zero shares currently — watching closely alongside BBWI</li>
+        <li><strong>Why interested:</strong> More likely long-term upside than BBWI, but much higher risk</li>
+        <li>Ultra high-end home furnishings — very different customer profile from BBWI</li>
+        <li>Jeremy mentioned this was discussed in more detail in his previous video (yesterday's summary on this site covers RH in depth)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== MARKET MACRO ===== -->
+  <div class="card">
+    <h2>📊 Market Macro Commentary</h2>
+
+    <h3>Nvidia Earnings (Next Day)</h3>
+    <ul>
+      <li>Jeremy: "They're going to be good. This is a question of how much are they going to beat by."</li>
+      <li>Just needs a <strong>couple-billion-dollar beat</strong> to keep Nvidia around $200</li>
+      <li>For a breakout to $250, you'd need a <strong>$4B beat on guidance</strong> — a "big boy number"</li>
+      <li>Missing anything (revenue or guidance) would be "shocking" — very low probability</li>
+      <li>Outcome matters for all semiconductors including AMD</li>
+    </ul>
+
+    <h3>Guest Strategist: Yield Risk &amp; FOMO</h3>
+    <ul>
+      <li><strong>VIX at ~15:</strong> Analyst says this is "definitely low" given macro risks ahead</li>
+      <li><strong>Most important chart right now:</strong> The <strong>10-year yield</strong> — not always, but right now yes</li>
+      <li><strong>Bond market pressure:</strong> September will bring renewed capital markets issuance — hyperscalers, global sovereigns, US Treasury all issuing — this pressures yields upward</li>
+      <li><strong>Earnings season tailwind is over:</strong> Was an incredible catalyst. Now "hanging out with macro risk."</li>
+      <li><strong>S&amp;P 9,000 target:</strong> Analyst had called 9,000 by year-end — now admits "we're not going to get there this year." But confident it happens before the cycle ends (FOMO + massive IPO wave still ahead)</li>
+      <li><strong>FOMO is the bull case driver:</strong> "It's definitely FOMO. No question about it."</li>
+    </ul>
+
+    <h3>Negative Beta Stocks as Hedge</h3>
+    <ul>
+      <li>~<strong>25% of the S&amp;P 500 has negative beta</strong> (surprising fact)</li>
+      <li>These stocks correlate inversely to the S&amp;P day-to-day — a natural hedge without buying puts</li>
+      <li>Examples: <strong>McDonald's (MCD), PepsiCo (PEP)</strong>, utilities, insurance</li>
+      <li>Analyst argument: Index put hedges have repeatedly burned people — negative beta stocks give index-like diversification without the cost of options</li>
+    </ul>
+
+    <h3>Jeremy's Hedging Strategy</h3>
+    <ul>
+      <li>Would love the market to rally hard through the rest of 2026 → then buy <strong>put options on the QQQ</strong> at year-end or early 2027 to protect against 2027 risks</li>
+      <li>Simplest hedge for non-advanced investors: <strong>Hold a bit more cash</strong></li>
+      <li>Very bullish on <strong>under-$20B market cap stocks</strong> — "real economy" type names — through 2027–2029 even if large caps face headwinds</li>
+    </ul>
+
+    <div class="quote">
+      "Being a stock picker wins. You can look at opportunities wherever they exist in the market. Is it work? Yeah, it's work. But damn does it pay good."
+      <cite>— Jeremy</cite>
+    </div>
+  </div>
+
+  <!-- ===== KEY TAKEAWAYS ===== -->
+  <div class="card">
+    <h2>🎯 Key Takeaways</h2>
+    <ul>
+      <li><strong>Top 5 for H2 2026:</strong> CELH → ELF → HNST → RVLV → AMD — all existing portfolio positions, no changes planned</li>
+      <li><strong>AMD is the highlight:</strong> Currently in weak season, expects epic rally mid-Nov through Feb, target $650+</li>
+      <li><strong>Celsius:</strong> The brand split (Celsius -10% / Alani Nu +38%) is not a crisis — it's a feature of owning two brands. Long-term conviction intact</li>
+      <li><strong>HNST is a monster win:</strong> $2.10 → potential $10 — one of the best calls of 2026</li>
+      <li><strong>Nvidia earnings tomorrow:</strong> Almost certain to beat, key question is magnitude of the guide beat</li>
+      <li><strong>Macro risk:</strong> September yield pressure + low VIX = asymmetric downside risk ignored by market. Have some cash ready.</li>
+      <li><strong>Long-term always wins:</strong> $4.7M public portfolio built on long-term focus — not 4-month predictions. Jeremy uses these as "fun discussion" not portfolio action signals</li>
+    </ul>
+  </div>
+
+  <!-- Transcript link -->
+  <p style="color:var(--muted); font-size:13px; margin-top:8px;">
+    📄 <a href="transcripts/2026-08-30_stocks-most-upside-2026.txt" style="color:var(--accent);">Full transcript</a>
+  </p>
+
+  <footer>
+    <span>Dot DiBot • VideoSummeries</span>
+    <a href="../index.html">← All Summaries</a>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
