@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>לקהילה 20 דק' 20 מניות – 31.8.2026</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.7; direction: rtl; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-he { background: #1a2a1a; color: var(--green); }
+    .badge-stocks { background: #0d2030; color: var(--accent); }
+    .badge-biz { background: #2d2000; color: var(--yellow); }
+    .badge-live { background: #2d0a2d; color: var(--purple); }
+
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.9; }
+    .tl-dr strong { color: var(--accent); }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 130px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.red { color: var(--red); }
+    .stat-box .val.purple { color: var(--purple); }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    ul { padding-right: 20px; padding-left: 0; }
+    ul li { margin-bottom: 8px; font-size: 14px; line-height: 1.8; }
+    ul li strong { color: var(--text); }
+
+    .quote { background: var(--surface2); border-right: 3px solid var(--accent); border-radius: 8px 0 0 8px; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .quote strong { color: var(--accent); font-style: normal; }
+
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .danger-box { background: #2d0a0a; border: 1px solid var(--red); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .danger-box .hl-title { font-weight: 700; color: var(--red); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .highlight { background: #1e2a1e; border: 1px solid #2d4a2d; border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .highlight .hl-title { font-weight: 700; color: var(--green); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; margin: 2px; }
+    .tag-bullish { background: #0d3320; color: var(--green); }
+    .tag-lt-bullish { background: #0d2a1e; color: #7ee8a2; }
+    .tag-cautious { background: #2d2000; color: var(--yellow); }
+    .tag-pass { background: #2d0a0a; color: var(--red); }
+    .tag-wait { background: #1a1a3d; color: var(--purple); }
+    .tag-watch { background: #1a2744; color: var(--accent); }
+
+    /* Stock cards */
+    .stock-card { background: var(--surface2); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; border-right: 4px solid var(--green); }
+    .stock-card.yellow { border-right-color: var(--yellow); }
+    .stock-card.red { border-right-color: var(--red); }
+    .stock-card.blue { border-right-color: var(--accent); }
+    .stock-card.purple { border-right-color: var(--purple); }
+    .stock-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .stock-ticker { font-family: monospace; font-size: 22px; font-weight: 900; color: var(--yellow); }
+    .stock-name { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { text-align: right; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--surface2); }
+    tr:last-child td { border-bottom: none; }
+    td:first-child { color: var(--yellow); font-weight: 600; font-family: monospace; }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← חזרה לכל הסיכומים</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-he">🇮🇱 עברית</span>
+      <span class="badge badge-live">🔴 לייב קהילה</span>
+      <span class="badge badge-stocks">📈 20 מניות</span>
+      <span class="badge badge-biz">⏱️ 20 דקות</span>
+    </div>
+    <h1>לקהילה – 20 דק' 20 מניות | 31.8.2026</h1>
+    <div class="meta">
+      <span>📺 יומי פלאס / לייב קהילה</span>
+      <span>📅 31 באוגוסט 2026</span>
+      <span>⏱️ ~29 דקות</span>
+      <a href="https://www.youtube.com/live/TDAUCMW03kI" target="_blank" style="color:var(--accent);">▶ צפייה ביוטיוב</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/TDAUCMW03kI" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tl-dr">
+    <strong>תקציר:</strong> לייב קהילה לאחר חופשה — חזרה עם <strong>20 דקות, 20 מניות</strong>. הפעם 25 דקות, כולל הסבר מפורט לרביטל על ניהול סטופ-לוס אחרי תנועה קיצונית של +47% ב-3 ימים. השאלה המרכזית: <em>"למה אתם בטריד?"</em> — התשובה קובעת הכל. מניות שנבחרו מ-450 שורות שהוגשו ע"י חברי הקהילה. <strong>SMH בתבנית דובית</strong>, <strong>PLTR מצבר מומנטום</strong>, <strong>SOFI ממתינה לפריצה</strong>, <strong>AVGO — לא להחזיק כטריד לדיווח</strong>. NVDA — המוכרים לא ברורים לו.
+  </div>
+
+  <!-- Stats row -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="val">450</div>
+      <div class="lbl">שורות הוגשו</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">20</div>
+      <div class="lbl">מניות נבחרו</div>
+    </div>
+    <div class="stat-box">
+      <div class="val red">+47%</div>
+      <div class="lbl">תנועת הדוגמה (3 ימים)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val yellow">4×</div>
+      <div class="lbl">לייבים בשבוע (א-ד)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">23</div>
+      <div class="lbl">SOFI — רמת פריצה</div>
+    </div>
+  </div>
+
+  <!-- ===== LESSON: STOP LOSS ===== -->
+  <div class="card">
+    <h2>📚 השיעור המרכזי — ניהול סטופ לאחר תנועה חדה</h2>
+    <p style="font-size:14px; color:var(--muted); margin-bottom:16px;">שאלת רביטל — מה לעשות עם סטופ כשמניה זזה 47% ב-3 ימים?</p>
+
+    <div class="warn-box">
+      <div class="hl-title">⚠️ השאלה הראשונה — למה אתם בטריד?</div>
+      <ul>
+        <li><strong>טריד קצר טווח:</strong> אם נכנסתם לקחת תנועה ספציפית — הגיעה, תצאו. אפשר סטופ ניגרר (Trailing Stop). ATR של 7% כמרחק — עוקב אחרי הגבוה הכי גבוה ומוריד ממנו 7%.</li>
+        <li><strong>השקעה ארוכת טווח:</strong> לא נוגעים בסטופ. לא אכפת אם תתקן 40%. מחזיקים ומאמינים בחברה.</li>
+        <li><strong>הטעות הנפוצה:</strong> לשבת בטריד, להזיז את הסטופ למטה כי "אוהב את המניה לשנים", לספר לעצמכם סיפורים. זה לא טריד ולא השקעה — זה בעיה.</li>
+      </ul>
+    </div>
+
+    <h3>ניתוח מקרה — מניה שעלתה 47% ב-3 ימים (ATR = 7%)</h3>
+    <ul>
+      <li><strong>47% ב-3 ימים</strong> = כ-15% ליום ≈ 2× ה-ATR של 7% ליום</li>
+      <li>תנועה כזו היא <strong>אנומליה קיצונית</strong> — לא לינארית, לא נורמלית</li>
+      <li>בשלב זה: <strong>להעלות את הסטופ</strong> לגבוה של היום הקודם ≈ 68</li>
+      <li>אם המניה יורדת ביום שלמחרת — יצאתם עם רווח מצוין. <strong>אין אכזבות.</strong></li>
+      <li>אם ממשיכה לעלות — הסטופ ינגרר אחריה</li>
+    </ul>
+
+    <div class="danger-box">
+      <div class="hl-title">🚨 אזהרה: פמפ</div>
+      <ul>
+        <li>כל מה שאתם רואים <strong>בספרות העברית</strong> — הכסף הגדול כבר יודע ומכיר</li>
+        <li>אין "מידע ייחודי" — לאף אחד. גם לא לי. אני רק מתרגם ומוסיף אינפוט.</li>
+        <li>כשמישהו מדבר על מניה "שיש לה דאטה בייס מיוחד" — <strong>זה סיגנל פמפ</strong></li>
+        <li>מניה שעלתה 47% ב-3 ימים ונמצאת 41% מתחת לשיא — ממש לא "ייחודית"</li>
+      </ul>
+    </div>
+
+    <div class="quote">
+      "אין לי מידי ייחודי על כלום. אם היה לי אי פעם מידע ייחודי, הייתי אומר לכם."
+    </div>
+  </div>
+
+  <!-- ===== STOCKS ===== -->
+  <div class="card">
+    <h2>📊 מניות היום — סקירה מהירה</h2>
+
+    <!-- AAPL -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">AAPL</div>
+          <div class="stock-name">Apple — היום האחרון של טים קוק</div>
+        </div>
+        <span class="tag tag-cautious">⚠️ לא נקודת כניסה</span>
+      </div>
+      <ul>
+        <li>היום <strong>היום האחרון של טים קוק</strong> — תקופה שבה המניה על ×22 תשואה ב-15 שנה. פשוט מדהים.</li>
+        <li>המניה <strong>זזה בתוך טווח</strong> — לא עולה ולא יורדה משמעותית</li>
+        <li>אם לא בפנים, לא בנקודת כניסה אופטימלית — <strong>לא נראית מעניינת כרגע</strong></li>
+        <li>יש gap פתוח — לא צפוי שיסגור בקרוב. מתחת ל-258 — לא רוצה להיות שם</li>
+      </ul>
+    </div>
+
+    <!-- AVGO -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">AVGO</div>
+          <div class="stock-name">Broadcom — דיווח תוצאות ביום רביעי</div>
+        </div>
+        <span class="tag tag-cautious">⚠️ לא לטריידרים לפני דיווח</span>
+      </div>
+      <ul>
+        <li>דיווח תוצאות <strong>ביום רביעי</strong> — נראית לא טוב טכנית, מתחת לקו תמיכה, מתנגשת עם ממוצעים</li>
+        <li><strong>כטריד</strong> — לא הייתי נשאר. יחס סיכוי/סיכון גרוע לפני דיווח</li>
+        <li><strong>לטווח ארוך</strong> — בסדר גמור, מוכן לספוג ירידה של 10% בדיווח ולהחזיק</li>
+        <li>מי שלא בפנים ושוקל כניסה לפני הדיווח — סתם התבדות מיותרת</li>
+        <li>בניגוד ל-NBIS שיכולה לזוז ±15% — Broadcom הרבה יותר יציבה. פחות פחד, אבל אותה עיקרון.</li>
+      </ul>
+    </div>
+
+    <!-- CVX -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">CVX</div>
+          <div class="stock-name">Chevron — נשמר על הקו</div>
+        </div>
+        <span class="tag tag-lt-bullish">💚 בסדר</span>
+      </div>
+      <ul>
+        <li>יש <strong>סטאפ טכני</strong>, נשארה מעל הקו</li>
+        <li>כל עוד נשמרת <strong>מעל 197.6</strong> — אין מה לגעת בה</li>
+      </ul>
+    </div>
+
+    <!-- DELL -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">DELL</div>
+          <div class="stock-name">Dell Technologies — דיווח תוצאות קרוב</div>
+        </div>
+        <span class="tag tag-cautious">⚠️ לא לטריידרים</span>
+      </div>
+      <ul>
+        <li>אם לא היה דיווח תוצאות — היה אומר <strong>"קנו בפריצה"</strong>, עם מטרה ברורה</li>
+        <li>הבעיה: <strong>יחס 1:1</strong> — אם מרוויחים 23%, סוכנים 23%. זה <strong>יחס דפוק</strong> לכל טריידר</li>
+        <li>לטריידרים — <strong>חכו לדיווח תוצאות</strong>. אם הכל בסדר, תיכנסו אחרי.</li>
+        <li>80% סיכוי לעלות = גם 20% סיכוי לרדת. הימור על תוצאות = התבדות.</li>
+      </ul>
+    </div>
+
+    <!-- EBAY -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">EBAY</div>
+          <div class="stock-name">eBay</div>
+        </div>
+        <span class="tag tag-lt-bullish">💚 בסדר</span>
+      </div>
+      <ul>
+        <li>כל עוד שומרת <strong>מעל 100</strong> — בסדר גמור</li>
+        <li>מעל 103 — אין צורך לברוח</li>
+      </ul>
+    </div>
+
+    <!-- GEV -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">GEV</div>
+          <div class="stock-name">GE Vernova — ירידה מתחת לממוצע</div>
+        </div>
+        <span class="tag tag-wait">🔵 לחכות</span>
+      </div>
+      <ul>
+        <li>המניה ירדה <strong>מתחת לממוצע</strong> — עכשיו קונים נכנסים</li>
+        <li>אבל: <strong>יום אחד לא מספיק</strong> — צריך עוצמה ונפח לאורך זמן</li>
+        <li><strong>לחכות שתחצה את הממוצע</strong> ותקבל עוצמה, לא לקפוץ עכשיו</li>
+        <li>לא חברה רעה — פשוט הזמן לקנות עוד לא הגיע</li>
+      </ul>
+    </div>
+
+    <!-- GOOGL -->
+    <div class="stock-card blue">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">GOOGL</div>
+          <div class="stock-name">Google / Alphabet</div>
+        </div>
+        <span class="tag tag-watch">🔵 מעניין</span>
+      </div>
+      <ul>
+        <li>הוזכרה פעמים רבות (גם כ-GOOG וגם כ-GOOGL — מעצבן)</li>
+        <li>אמזון גם בלתי נסבלת. מודה ממש מעצבנת. עדיין לפי הסטופ.</li>
+        <li>אם הסטופ מעל — אין לחץ. אם נכנסתי וסטופ הופעל — ממתין לפריצה חוזרת</li>
+      </ul>
+    </div>
+
+    <!-- HPQ -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">HPQ</div>
+          <div class="stock-name">HP Inc.</div>
+        </div>
+        <span class="tag tag-lt-bullish">💚 בסדר</span>
+      </div>
+      <ul>
+        <li>מעל <strong>29-40</strong> — בסדר</li>
+      </ul>
+    </div>
+
+    <!-- MSFT -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">MSFT</div>
+          <div class="stock-name">Microsoft — תקועה</div>
+        </div>
+        <span class="tag tag-wait">🔵 לא יודע</span>
+      </div>
+      <ul>
+        <li>הבעיה התמידית עם מיקרוסופט: <strong>או שתקועה, או שעולה חזק ואז נרגעת עד...</strong></li>
+        <li>מי שבפנים — ממילא לא ימכור</li>
+        <li>מי שלא בפנים ושואל אם להיכנס — <strong>"לא יודע"</strong> = לא הייתי קונה כרגע</li>
+      </ul>
+    </div>
+
+    <!-- NBIS -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">NBIS</div>
+          <div class="stock-name">Nebius Group</div>
+        </div>
+        <span class="tag tag-cautious">⚠️ ללא שינוי</span>
+      </div>
+      <ul>
+        <li>ה<strong>סטאפ לא השתנה</strong> — אותן התנגדויות, אותה תמונה</li>
+        <li>יכולה לזוז ±15% בדיווח תוצאות — מניה תנודתית מאוד</li>
+        <li>SMH (ETF השבבים) בתבנית דובית — מה שמשפיע על NBIS</li>
+      </ul>
+    </div>
+
+    <!-- NVDA -->
+    <div class="stock-card blue">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">NVDA</div>
+          <div class="stock-name">Nvidia — מוחקת את העלייה מהדיווח</div>
+        </div>
+        <span class="tag tag-watch">🔵 בוחן</span>
+      </div>
+      <ul>
+        <li>התנועה אחרי דיווח התוצאות <strong>עומדת למחוק את כל ההתלהבות</strong></li>
+        <li><strong>"אני לא מבין את המכירה הזאת"</strong> — בעיניו זה לא הגיוני</li>
+        <li>שווה לבחון כניסה ברגע שיש קונים</li>
+      </ul>
+    </div>
+
+    <!-- ONDS -->
+    <div class="stock-card red">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">ONDS</div>
+          <div class="stock-name">Ondas Holdings</div>
+        </div>
+        <span class="tag tag-pass">🔴 שלילי</span>
+      </div>
+      <ul>
+        <li><strong>מתחת לקו</strong> — לא רואה שום דבר חיובי כרגע</li>
+        <li>כל עוד שומרת מעל 130-135 — פחות גרוע</li>
+      </ul>
+    </div>
+
+    <!-- PLTR -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">PLTR</div>
+          <div class="stock-name">Palantir — מומנטום נבנה</div>
+        </div>
+        <span class="tag tag-bullish">💚 בולישי</span>
+      </div>
+      <ul>
+        <li>יש <strong>התכנסות של כמה ימים → ואז עלייה</strong> — התבנית חוזרת</li>
+        <li>המניה רוצה להגיע <strong>ל-all time high</strong></li>
+        <li><strong>מומנטום נבנה</strong> — בסדר מבחינתו</li>
+        <li>מייקל בארי (Short) לא מזיז אותו — הוא "מאמין שצריך להגיע ל-1", זה לא אותה פלנטה</li>
+      </ul>
+    </div>
+
+    <!-- NOW -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">NOW</div>
+          <div class="stock-name">ServiceNow — חזקה אבל מתוחה</div>
+        </div>
+        <span class="tag tag-lt-bullish">💚 חזקה — לחכות לתיקון</span>
+      </div>
+      <ul>
+        <li>חזקה וטובה — <strong>4 ימים רצופים עם נפח גבוה</strong></li>
+        <li>אבל: <strong>כבר מתוחה</strong>. לדעתו: לתת קצת תיקון ואז להיכנס</li>
+        <li>יש פוטנציאל מלא — חצי שנה טובה צפויה</li>
+        <li>תבנית: נפח יורד → נפח עולה = מומנטום חזק</li>
+      </ul>
+    </div>
+
+    <!-- SMH -->
+    <div class="stock-card red">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">SMH</div>
+          <div class="stock-name">VanEck Semiconductor ETF — תבנית דובית</div>
+        </div>
+        <span class="tag tag-pass">🔴 מבנה דובי</span>
+      </div>
+      <ul>
+        <li>תבנית <strong>Inverse Head & Shoulders (הפוכה = דובי)</strong></li>
+        <li>כרגע: באזור של ה"כתף" — מתחת לקו הצוואר</li>
+        <li>השלכות על כל מניות השבבים (NVDA, NBIS ועוד)</li>
+      </ul>
+    </div>
+
+    <!-- SNDK -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">SNDK</div>
+          <div class="stock-name">Sandisk — Head & Shoulders בבנייה</div>
+        </div>
+        <span class="tag tag-wait">🔵 לחכות לפריצה</span>
+      </div>
+      <ul>
+        <li>יש תבנית Head & Shoulders — עדיין <strong>לא פרצה</strong></li>
+        <li>אפשר לקחת סיכון עם סטופ ב-14.53 — אבל מסוכן</li>
+        <li>הרבה יותר בטוח: <strong>לחכות לפריצת 18.27</strong> — שם גם תהיה שבירת ה-H&S</li>
+        <li>כל אחד בוחר את הסיכון שלו</li>
+      </ul>
+    </div>
+
+    <!-- SOFI -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">SOFI</div>
+          <div class="stock-name">SoFi Technologies — ממתינה לפריצה</div>
+        </div>
+        <span class="tag tag-wait">🔵 לחכות לפריצת 23</span>
+      </div>
+      <ul>
+        <li>לא שלילי על סופאי — <strong>פשוט עדיין לא הזמן</strong></li>
+        <li>יש בריש + התכנסות → הפריצה בדרך כלל היא פריצה שורית</li>
+        <li>בעבר היה קונה "ומנסה להציל" — <strong>למד שזה יכול להימשך שנתיים</strong></li>
+        <li>עכשיו: <strong>לחכות לפריצה</strong>. הפריצה = מעל 23 (הטווח: 19.74-20.3 → פריצה מעל 23)</li>
+        <li>עד שלא פורצת — אפשר להתכונן, אין מה לעשות לפני</li>
+      </ul>
+    </div>
+
+    <!-- מניות שהוזכרו בפלאש -->
+    <div class="stock-card blue">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">BMNR / CVX / AMZN</div>
+          <div class="stock-name">ועוד מניות שהוזכרו</div>
+        </div>
+        <span class="tag tag-watch">🔵 ראיות בלבד</span>
+      </div>
+      <ul>
+        <li><strong>BMNR</strong> — מעל 24 בסדר. יודעת לקחת כסף יפה מאוד אם מתחת.</li>
+        <li><strong>AMZN</strong> — "בלתי נסבלת" — לפי הסטופ האישי</li>
+        <li><strong>HPQ</strong> — מעל 29-40 בסדר</li>
+        <li>רשימה ארוכה של מניות שנרשמו אך לא נכנסו לחתך היום: AMAT, ARNU, AXXT, FIG, CAT, DE, MIPR, OAKU, OKLO, UNITD, GLAB, HPLN, MRVL, INTC, ועוד</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Format explanation -->
+  <div class="card">
+    <h2>ℹ️ איך עובד הלייב 20 דקות 20 מניות</h2>
+    <ul>
+      <li><strong>450 שורות</strong> מוגשות ע"י חברי הקהילה לפני כל לייב</li>
+      <li>450 שורות ≠ 450 מניות — מניה יכולה להופיע פעמים רבות</li>
+      <li>נבחרות <strong>20 המניות שהוזכרו הכי הרבה פעמים</strong></li>
+      <li>אם המניה שלכם לא הופיעה — ייתכן שלא נבחרה מספיק פעמים</li>
+      <li>הלייב קורה <strong>4× בשבוע: ראשון, שני, שלישי, רביעי. שישי — לא.</strong></li>
+      <li>היום: 25 דקות (חזרה מחופשה + הסבר מורחב לרביטל)</li>
+    </ul>
+    <div class="danger-box">
+      <div class="hl-title">🚫 אסור לשתף לינקים של הלייב מחוץ לקהילה!</div>
+      מי שנתפס: (1) עורך דין מגיש תביעה על הפרת חוקי הקהילה, (2) מורחקים מהקהילה ונחסמים מכל האפשרויות. זה גם עושה אתכם ספאמרים. פשוט אל תעשו את זה.
+    </div>
+  </div>
+
+  <footer>
+    <span>סיכום ע"י Dot DiBot • 31 באוגוסט 2026</span>
+    <a href="transcripts/20-dakot-20-maniut.txt">📄 תמלול מלא</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
