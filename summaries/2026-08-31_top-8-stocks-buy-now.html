@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 8 Stocks to BUY NOW (High Growth Stocks)</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-stocks { background: #0d2030; color: var(--accent); }
+    .badge-biz { background: #2d2000; color: var(--yellow); }
+
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.red { color: var(--red); }
+    .stat-box .val.orange { color: var(--orange); }
+    .stat-box .val.purple { color: var(--purple); }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 8px; font-size: 14px; line-height: 1.7; }
+    ul li strong { color: var(--text); }
+
+    .quote { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .quote strong { color: var(--accent); font-style: normal; }
+
+    .highlight { background: #1e2a1e; border: 1px solid #2d4a2d; border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .highlight .hl-title { font-weight: 700; color: var(--green); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; margin: 2px; }
+    .tag-bullish { background: #0d3320; color: var(--green); }
+    .tag-lt-bullish { background: #0d2a1e; color: #7ee8a2; }
+    .tag-cautious { background: #2d2000; color: var(--yellow); }
+    .tag-wait { background: #1a1a3d; color: var(--purple); }
+    .tag-watch { background: #1a2744; color: var(--accent); }
+
+    /* Stock cards */
+    .stock-card { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-left: 4px solid var(--green); }
+    .stock-card.yellow { border-left-color: var(--yellow); }
+    .stock-card.caution { border-left-color: var(--orange); }
+    .stock-card.watching { border-left-color: var(--accent); }
+    .stock-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .stock-ticker { font-family: monospace; font-size: 20px; font-weight: 900; color: var(--yellow); }
+    .stock-name { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .stock-return { font-family: monospace; font-size: 18px; font-weight: 900; color: var(--green); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--surface2); }
+    tr:last-child td { border-bottom: none; }
+    td:first-child { color: var(--yellow); font-weight: 600; }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-stocks">📈 Stocks / Portfolio</span>
+      <span class="badge badge-biz">💰 High Growth</span>
+    </div>
+    <h1>Top 8 Stocks to BUY NOW (High Growth Stocks)</h1>
+    <div class="meta">
+      <span>📺 Real Fintech</span>
+      <span>📅 August 31, 2026</span>
+      <span>⏱️ ~30 min</span>
+      <a href="https://www.youtube.com/watch?v=gymSw4Urmzw" target="_blank" style="color:var(--accent);">▶ Watch on YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/gymSw4Urmzw" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> A solution architect for Fortune 500 companies reveals his <strong>actual stock portfolio</strong> — 8 high-growth picks each targeting a key technology trend: AI infrastructure (Marvell), internet backbone + AI agents (Cloudflare), data observability (Datadog), cybersecurity AI (CrowdStrike), US fintech (SoFi), Latin American fintech (Nu Holdings), quantum photonics (Coherent), and quantum AI (Google/Alphabet). Core investing thesis: <em>focus on the product, not just the numbers — massive growth happens when you have the perfect product in a quickly growing market before that market appears.</em> Palantir +2,100% example used as proof of concept. The host is sponsored by <strong>InvestingPro (55% + 15% off with code "real fintech")</strong>.
+  </div>
+
+  <!-- Key Stats Row -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="val">8</div>
+      <div class="lbl">Stocks in Portfolio</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">+2,100%</div>
+      <div class="lbl">Palantir $10K → $220K (3yr)</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">$600B</div>
+      <div class="lbl">US AI Investment in 2026</div>
+    </div>
+    <div class="stat-box">
+      <div class="val orange">$325B</div>
+      <div class="lbl">CrowdStrike TAM by 2030</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">139M</div>
+      <div class="lbl">Nu Holdings Customers</div>
+    </div>
+    <div class="stat-box">
+      <div class="val yellow">$1–2T</div>
+      <div class="lbl">Quantum computing market impact (McKinsey)</div>
+    </div>
+  </div>
+
+  <!-- ===== PORTFOLIO OVERVIEW ===== -->
+  <div class="card">
+    <h2>📊 Portfolio Snapshot — All 8 Positions</h2>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Ticker</th><th>Company</th><th>Shares</th><th>Value</th><th>Return</th><th>Theme</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td style="color:var(--green);font-weight:700;">MRVL</td><td>Marvell Technology</td><td>—</td><td>—</td><td style="color:var(--green);">+175%</td><td>AI Interconnects</td></tr>
+        <tr><td>2</td><td style="color:var(--green);font-weight:700;">NET</td><td>Cloudflare</td><td>172</td><td>$50,000</td><td style="color:var(--green);">+326%</td><td>Internet Infrastructure</td></tr>
+        <tr><td>3</td><td style="color:var(--green);font-weight:700;">DDOG</td><td>Datadog</td><td>146</td><td>$34,000</td><td style="color:var(--green);">+80%</td><td>Data Observability</td></tr>
+        <tr><td>4</td><td style="color:var(--green);font-weight:700;">CRWD</td><td>CrowdStrike</td><td>464</td><td>$88,000</td><td style="color:var(--green);">+400%</td><td>Cybersecurity AI</td></tr>
+        <tr><td>5</td><td style="color:var(--yellow);font-weight:700;">SOFI</td><td>SoFi Technologies</td><td>2,500</td><td>$47,000</td><td style="color:var(--green);">+178%</td><td>US Fintech</td></tr>
+        <tr><td>6</td><td style="color:var(--green);font-weight:700;">NU</td><td>Nu Holdings (NuBank)</td><td>~1,400</td><td>$20,000</td><td style="color:var(--green);">+50%</td><td>LatAm Fintech</td></tr>
+        <tr><td>7</td><td style="color:var(--green);font-weight:700;">COHR</td><td>Coherent Corp</td><td>—</td><td>—</td><td style="color:var(--green);">+400%</td><td>Quantum Photonics</td></tr>
+        <tr><td>8</td><td style="color:var(--green);font-weight:700;">GOOGL</td><td>Alphabet / Google</td><td>123</td><td>$42,000</td><td style="color:var(--green);">+100%</td><td>Quantum AI</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== 8 STOCKS ===== -->
+  <div class="card">
+    <h2>🔬 Stock Deep Dives — All 8 Covered</h2>
+
+    <!-- #1 MRVL -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">MRVL</div>
+          <div class="stock-name">Marvell Technology — AI Interconnects + Custom Silicon</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-return">+175% (from peak +300%)</div>
+          <span class="tag tag-lt-bullish">💚 Long-Term Bullish</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Thesis:</strong> As AI data centers scale, the bottleneck is shifting from processing (Nvidia GPUs) → memory (Micron HBM) → <em>interconnects</em> — the physical hardware that connects AI data centers together. Marvell is the Gartner-rated leader in optical connectivity.</li>
+        <li><strong>Two product stories:</strong>
+          <ul>
+            <li><strong>Interconnects:</strong> Growing 70% YoY (current driver). Helps move data between data center components at massive scale.</li>
+            <li><strong>Custom Silicon:</strong> Growing 20% YoY — but expected to accelerate to 53% CAGR by 2028 (vs. interconnects at 35% CAGR). Bigger long-term opportunity.</li>
+          </ul>
+        </li>
+        <li><strong>Fair Value:</strong> InvestingPro shows MRVL at ~17% overvalued at current prices across 13 valuation models (PE ratio, DCF, etc.) — valued as if growth materializes, so the premium makes sense IF they execute.</li>
+        <li><strong>Financial health:</strong> Healthy cash flow, strong growth + price momentum. Held back by relative valuation.</li>
+        <li><strong>Risk #1 — Valuation:</strong> Trading at the high end of virtually all valuation models. If growth disappoints, re-rating risk is high.</li>
+        <li><strong>Risk #2 — Competition:</strong> Marvell partnered with Google on TPU custom chips (competing with Broadcom). Google and Broadcom recently <em>expanded</em> their partnership with Anthropic for TPU capacity. Marvell has to out-compete a larger rival (Broadcom) to capture the custom silicon opportunity.</li>
+        <li><strong>PE ratio vs. growth:</strong> Warren AI (InvestingPro AI) found Marvell has the <strong>second-best PEG ratio behind Intel</strong> — strong strategic position but significantly more volatile than peers.</li>
+      </ul>
+    </div>
+
+    <!-- #2 NET -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">NET</div>
+          <div class="stock-name">Cloudflare — Internet Backbone + AI Agent Infrastructure</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-return">+326% since purchase</div>
+          <span class="tag tag-bullish">💚 Holding Strong</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Scale:</strong> Powers ~20% of the entire internet. <strong>45% of Fortune 500</strong> are paying customers. 95% of the world's internet population is within 50ms of a Cloudflare data center.</li>
+        <li><strong>Evolution:</strong> Started as website hosting + firewall → now a full cloud company competing with AWS, Azure, GCP via Cloudflare Workers (serverless compute). One of the most innovative companies in the host's portfolio.</li>
+        <li><strong>AI tailwind — double-sided play:</strong>
+          <ul>
+            <li><strong>For AI developers:</strong> Full stack for building AI agents (compute, networking, zero trust security).</li>
+            <li><strong>For content owners:</strong> New <strong>"Pay Per Crawl"</strong> product — websites can charge AI crawlers (like bots scraping data for LLMs) instead of blocking them. AI traffic = 50% of all Cloudflare traffic, up 1,700% in AI agent requests YoY.</li>
+          </ul>
+        </li>
+        <li><strong>Latest earnings:</strong> ~$700M revenue in one quarter, <strong>+36% YoY</strong>, positive free cash flow of $56M. Technically not GAAP profitable but generating real cash.</li>
+        <li><strong>Risk — Workforce cuts:</strong> Co-founders announced <strong>reduction of 1,000+ employees globally</strong> (May 2026). CEO claims it's a restructuring to invest in AI — not cost-cutting. However, fast-growing companies cutting staff raises questions: did they over-hire? The host will watch future earnings closely for confirmation.</li>
+        <li><strong>Risk — Valuation:</strong> Always been expensive due to consistent growth. The workforce cut complicates the premium valuation story.</li>
+      </ul>
+      <div class="highlight">
+        <div class="hl-title">📈 TAM Expansion Path</div>
+        Three pillars: Developer Cloud → Networking → Zero Trust Security. Each expands total addressable market as Cloudflare adds products. The bet: innovation continues, TAM grows, market share increases.
+      </div>
+    </div>
+
+    <!-- #3 DDOG -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">DDOG</div>
+          <div class="stock-name">Datadog — Data Observability + AI Context Layer</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-return">+80% since purchase</div>
+          <span class="tag tag-lt-bullish">💚 Long-Term Bullish</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Core business:</strong> Observability and security platform — takes a company's apps, infrastructure, security, and AI agents and unifies them behind a single dashboard. The "refinery" for corporate data.</li>
+        <li><strong>AI angle:</strong> AI is only as good as its context. Datadog's deep expertise in connecting and formatting enterprise data maps perfectly onto LLM context needs — same pitch as Palantir (worth ~$500B) but Datadog is ~$100B. Huge gap = potential upside.</li>
+        <li><strong>New product:</strong> LLM Execution Flow Graph — visualizes how AI agents step through tasks, call other agents, and use company data. Critical for enterprises with sensitive data or compliance requirements.</li>
+        <li><strong>Earnings:</strong> Revenue +36% YoY, added ~900 new customers spending $100K+/year (recurring). Growth actually <em>accelerated</em> during the SaaS/vibe-coding fears period — the opposite of peers.</li>
+        <li><strong>Data tailwind:</strong> Global data generated approaching <strong>200 zettabytes in 2026</strong> — with generative AI, the hockey stick is steeper than any forecast from 2017 predicted. More data = more Datadog opportunity.</li>
+        <li><strong>Gartner Magic Quadrant:</strong> Leader in observability, ahead of Dynatrace and Grafana Labs — strongest ability to execute, second strongest completeness of vision.</li>
+        <li><strong>Risk #1 — Competition:</strong> Cloudflare and others building observability tools as AI opportunity grows. When markets are big, more competition follows.</li>
+        <li><strong>Risk #2 — Usage-based revenue:</strong> Largest customer renewed but <em>cut usage</em>. Usage costs can be slashed fast in downturns — a leading indicator. One customer isn't alarming but is a pattern to watch.</li>
+        <li>146 shares valued at $34,000, +80% overall.</li>
+      </ul>
+    </div>
+
+    <!-- #4 CRWD -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">CRWD</div>
+          <div class="stock-name">CrowdStrike — AI-Powered Agentic Security Platform</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-return">$17K → $88K (+400%)</div>
+          <span class="tag tag-bullish">💚 Long-Term Hold</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Most underrated aspect — Data:</strong> CrowdStrike has access to massive amounts of security + behavioral data (you give everything to your security vendor). This data advantage powers their AI.</li>
+        <li><strong>New product — AI Detection & Response:</strong> Specifically monitors how users interact with AI tools and agents inside the enterprise. AI usage leaves a "path" that's vulnerable to prompt injection attacks, dangerous links, etc. CrowdStrike can see and protect this.</li>
+        <li><strong>Not just slapping AI on:</strong> CrowdStrike has used ML to spot threats proactively for years. New <strong>AI Triage</strong> feature = AI orchestrator that uses all CrowdStrike tools to triage threats faster. Works because the underlying system is already built — the AI sits on top of real intelligence, not marketing fluff.</li>
+        <li><strong>Threat Graph:</strong> Graph database tracking not just data points but all <em>connections</em> between them — creates ultra-rich context for AI models. No competitor can replicate this overnight.</li>
+        <li><strong>Market leadership:</strong> Top-right quadrant across multiple Gartner/IDC/Forrester reports: Endpoint Protection, Exposure Management, Managed Detection & Response, and more.</li>
+        <li><strong>TAM:</strong> Expects $325B addressable market by 2030. Revenue growing linearly, gross profit margins steady. SG&A starting to <em>plateau</em> even as revenue climbs — leverage is emerging. R&D investment growing faster than sales.</li>
+        <li><strong>Risk #1 — Reputation:</strong> Was sued over a major Windows outage from a bad update (affected global infrastructure). A future cyber attack <em>through</em> CrowdStrike (not just by them) would be far more damaging to the stock.</li>
+        <li><strong>Risk #2 — Valuation / priced for perfection:</strong> Even beating earnings might not move the stock if the beat isn't large enough. Short-term upside is limited; long-term thesis (5+ years) is very strong.</li>
+        <li>464 shares valued at $88,000, up +400%.</li>
+      </ul>
+    </div>
+
+    <!-- #5 SOFI -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">SOFI</div>
+          <div class="stock-name">SoFi Technologies — US Fintech Bank (Three-in-One)</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-return">+178% overall</div>
+          <span class="tag tag-cautious">⚠️ Risk-Weighted Hold</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Three businesses in one:</strong>
+          <ul>
+            <li><strong>Financial Services:</strong> Credit cards, checking/savings — low barrier products to acquire customers</li>
+            <li><strong>Lending (cash cow):</strong> Personal loans, student loans, home loans — upsell existing customers using internal data. $27B in personal loan originations last year.</li>
+            <li><strong>Technology Platform:</strong> Runs SoFi as a bank; also powers other fintechs (Robinhood ran on Galileo/SoFi Tech). Renamed "SoFi Tech Solutions."</li>
+          </ul>
+        </li>
+        <li><strong>The loop:</strong> Capture customers with easy products → cross-sell to lending → run everything on tech platform. Cross-buying at <strong>51% of members</strong> in Q2 2026, accelerating.</li>
+        <li><strong>Growth metrics:</strong> Members +37% CAGR since 2022 (reaccelerating). Products per member growing faster than members. Financial services revenue +29% YoY. Lending revenue <strong>+59% YoY</strong>. Net income: from -57% in 2023 to <strong>+13% in most recent quarter</strong> (now profitable).</li>
+        <li><strong>Risk #1 — Short report:</strong> Muddy Waters Research (March 2026) claimed unrecorded debt and higher-than-reported charge-off rates. Personal loans are unsecured — if bad, money is just gone. Quick ratio of 0.5 = yellow flag. Free cash flow margin = <strong>-263%</strong> (burning cash aggressively).</li>
+        <li><strong>Risk #2 — Interest rate sensitivity:</strong> Fed minutes show September rate cut unlikely, possible hike. Higher rates benefit SoFi's lending spread in the short term, but rate uncertainty = stock volatility.</li>
+        <li><strong>Net assessment:</strong> Not a crazy good deal today, but long-term investors in a bull market environment have real upside. Risks are real and priced in — whether you agree or disagree with the market's risk assessment determines the alpha.</li>
+        <li>2,500 shares valued at $47,000, +178% overall.</li>
+      </ul>
+    </div>
+
+    <!-- #6 NU -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">NU</div>
+          <div class="stock-name">Nu Holdings (NuBank) — Latin American Super-App Fintech</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-return">+50% since purchase</div>
+          <span class="tag tag-lt-bullish">💚 Slightly Undervalued</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>What it is:</strong> Brazil-based super app — credit cards, financial services, shopping, payments, ridesharing. Listed at <em>slightly undervalued</em> at current prices per InvestingPro.</li>
+        <li><strong>Scale:</strong> <strong>139 million customers</strong> — added 74 million over 4 years. Now <strong>#1 digital bank in Brazil</strong> by customer count. Saturating the Brazilian market → pivoting to ARPU expansion and geographic growth.</li>
+        <li><strong>Revenue per customer:</strong> Average revenue per user = $17, more than doubled in recent years. Gross revenue CAGR of <strong>75% since 2022</strong>.</li>
+        <li><strong>Strategy #1 — Brazil depth:</strong> Cross-selling to existing 139M base. Expanding upmarket (premium customers) and down-market (unbanked). Adding B2B business banking.</li>
+        <li><strong>Strategy #2 — Mexico expansion:</strong> Entered Mexico in 2020, now the <strong>#1 digital bank in Mexico</strong> with 16 million customers. Large portion of customers are <em>newly banked</em> — previously had no bank account or credit card. Tailored products to local financial habits and culture. Mexico monetizing faster than Brazil did at the same stage.</li>
+        <li><strong>Risk #1 — FX exposure:</strong> Brazilian Real fluctuations directly impact USD-denominated returns. Currency risk is real for US investors.</li>
+        <li><strong>Risk #2 — Mexico credit risk:</strong> Mexico customer base grew +32% YoY but with increased credit risk and higher cost-per-customer. Investing aggressively for market share — if Mexico succeeds, stock could fly; if it fails, it could anchor the whole company.</li>
+        <li>~1,400 shares valued at $20,000, +50% overall.</li>
+      </ul>
+    </div>
+
+    <!-- #7 COHR -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">COHR</div>
+          <div class="stock-name">Coherent Corp — Photonics, Lasers & Quantum Optics</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-return">+400% since coverage</div>
+          <span class="tag tag-watch">🔵 Long-Term Quantum Bet</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Not a pure-play quantum stock</strong> — primarily a data center + telecom optical components company (~75% of revenue), with a growing quantum optics division.</li>
+        <li><strong>Quantum angle:</strong> Builds the lasers, fibers, and optical components that quantum computers depend on — for long-distance precision (signal over distance), small-scale portable systems, and <strong>extremely cold-temperature optics</strong> (quantum systems require cryogenic operation).</li>
+        <li><strong>Use case:</strong> Quantum computers can simulate molecular behavior at quantum scale → feed this data to AI models → better predictions. This is why Google merged quantum into "Google Quantum AI."</li>
+        <li><strong>Revenue:</strong> $2B in the most recent quarter. ~$4B in net income. Currently profitable — stable foundation.</li>
+        <li><strong>Risk — Segment concentration:</strong> 75% of revenue from data centers. If data center growth slows before quantum supply chain matures at scale, Coherent takes the hit first. The quantum optics segment is currently mainly serving research labs — not yet commercial scale.</li>
+        <li><strong>Assessment:</strong> Relatively stable grower. A "quantum ecosystem" bet with real cash flow backing it — not a speculative moonshot.</li>
+      </ul>
+    </div>
+
+    <!-- #8 GOOGL -->
+    <div class="stock-card watching">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">GOOGL</div>
+          <div class="stock-name">Alphabet / Google — Quantum AI Division + Scale</div>
+        </div>
+        <div style="text-align:right;">
+          <div class="stock-return">+100% overall</div>
+          <span class="tag tag-watch">🔵 Moonshot Long-Term</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Quantum AI is a research division within Google</strong> — graduated from Google X (the moonshot factory that also produced self-driving cars, delivery drones, and early AI agents). Has been a leader in quantum computing since 2012.</li>
+        <li><strong>CEO quote:</strong> <em>"I would say quantum is there where maybe AI was 5 years ago. So I think in 5 years from now we'll be going through a very exciting phase in quantum."</em> — Sundar Pichai.</li>
+        <li><strong>Google's plan:</strong> Use quantum machines to make existing AI models better. Quantum computing won't directly move Google's needle in the near-term, but Google has the user base, the capital, and the most advanced AI research to lead this industry at commercial scale.</li>
+        <li><strong>Strategy for early-stage industries:</strong> Host prefers investing in large platform companies with quantum divisions rather than pure-play quantum speculation — de-risked exposure to the upside.</li>
+        <li>123 shares valued at $42,000, +100% overall.</li>
+      </ul>
+      <div class="quote">
+        "Quantum is there where maybe AI was 5 years ago. I think in 5 years from now we'll be going through a very exciting phase in quantum." <strong>— Sundar Pichai, Google CEO</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Investing Framework -->
+  <div class="card">
+    <h2>🧠 Investing Framework & Key Principles</h2>
+    <h3>Product First, Numbers Second</h3>
+    <ul>
+      <li>Understand the actual products a company builds before analyzing financials</li>
+      <li>Massive growth happens when you have the <em>perfect product in a quickly growing market before that market appears</em></li>
+      <li>Classic example: $10K in Palantir 3 years ago = $220K today (+2,100%)</li>
+    </ul>
+    <h3>Circle of Competence</h3>
+    <ul>
+      <li>Host is a solution architect for Fortune 500 companies — technology is what he knows best</li>
+      <li>Everything outside tech = index funds. Know your edge, stick to it.</li>
+    </ul>
+    <h3>Spotting the "Next Bottleneck"</h3>
+    <ul>
+      <li>AI buildout: GPU bottleneck (Nvidia +800%) → Memory bottleneck (Micron) → <strong>Interconnect bottleneck (Marvell)</strong> — each stage creates the next big opportunity</li>
+      <li>Before the bottleneck is obvious to the market is when fortunes are made</li>
+    </ul>
+    <h3>InvestingPro (Sponsor)</h3>
+    <ul>
+      <li>Tool by investing.com. 13 valuation models per stock (PE, DCF, etc.)</li>
+      <li>AI stock screener (ProPix), curated portfolios (Warren Buffett picks, Tech Titans — +3,200% over 13 years)</li>
+      <li>Warren AI = ChatGPT with all of investing.com's proprietary data</li>
+      <li>55% off summer sale + additional 15% with code <strong>"real fintech"</strong></li>
+    </ul>
+  </div>
+
+  <!-- Key Risks Summary -->
+  <div class="card">
+    <h2>⚠️ Cross-Portfolio Risk Themes</h2>
+    <ul>
+      <li><strong>Valuation risk (MRVL, NET, CRWD):</strong> Multiple positions priced for perfection. Strong fundamentals justify premiums only if growth materializes — any miss = significant downside.</li>
+      <li><strong>AI spending cycle risk:</strong> Multiple holdings depend on continued AI capex. If the $600B/year AI investment wave slows, MRVL, DDOG, COHR, and NET all face headwinds simultaneously.</li>
+      <li><strong>Macro / rate sensitivity (SOFI):</strong> Fed rate decisions directly impact SoFi's lending spread and stock price. Potential rate hike discussed in September.</li>
+      <li><strong>Emerging market FX (NU):</strong> Brazilian Real volatility can wipe out fundamental gains when measured in USD.</li>
+      <li><strong>Workforce restructuring (NET):</strong> First major sign of operational uncertainty from a previously ultra-consistent grower — needs monitoring in future quarters.</li>
+      <li><strong>Quantum timeline (COHR, GOOGL):</strong> Quantum commercial-scale is still years away. Patient capital required; quantum positions are long-duration bets.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Summarized by Dot DiBot • August 31, 2026</span>
+    <a href="transcripts/top-8-stocks-buy-now.txt">📄 Full Transcript</a>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
