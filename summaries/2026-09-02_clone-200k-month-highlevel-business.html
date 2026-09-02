@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Me Clone a $200K/Month Business in 5 Minutes</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #1a3a1a; color: var(--green); }
+    .badge-biz { background: #1a2744; color: var(--accent); }
+    .badge-solo { background: #1a2030; color: var(--accent); }
+    .badge-saas { background: #2d1a5c; color: var(--purple); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; font-size: 16px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+    ul.bullets li::before { content: "→ "; color: var(--accent); font-weight: 700; }
+    .quote-block { background: var(--surface2); border-left: 3px solid var(--accent); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+    .biz-card { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 16px; border-left: 4px solid var(--accent); }
+    .biz-card.gold { border-left-color: var(--yellow); }
+    .biz-card.platinum { border-left-color: #a8b9c8; }
+    .biz-card.diamond { border-left-color: #9ef0f0; }
+    .biz-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .biz-name { font-size: 18px; font-weight: 700; }
+    .biz-tier { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+    .tier-gold { background: #2d2000; color: var(--yellow); }
+    .tier-platinum { background: #1a2030; color: #a8b9c8; }
+    .tier-diamond { background: #0d2430; color: #9ef0f0; }
+    .biz-niche { color: var(--muted); font-size: 13px; margin-bottom: 10px; }
+    .stat-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+    .stat-pill { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 6px 14px; font-size: 13px; }
+    .stat-pill span { color: var(--green); font-weight: 700; }
+    .biz-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .tool-item { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .tool-item:last-child { border-bottom: none; }
+    .tool-num { background: var(--accent); color: #0d1117; border-radius: 6px; padding: 2px 10px; font-weight: 800; font-size: 13px; white-space: nowrap; min-width: 32px; text-align: center; margin-top: 2px; }
+    .tool-content .tool-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .tool-content .tool-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .math-box { background: #0d3320; border: 1px solid var(--green); border-radius: 10px; padding: 20px 24px; margin-top: 12px; }
+    .math-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+    .math-row:last-child { border-bottom: none; font-weight: 700; color: var(--green); font-size: 16px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+    th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--surface2); }
+    tr:last-child td { border-bottom: none; }
+    td:first-child { color: var(--yellow); font-weight: 600; }
+    .demo-step { background: var(--surface2); border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; display: flex; gap: 12px; }
+    .demo-step-num { background: var(--green); color: #0d1117; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; flex-shrink: 0; margin-top: 2px; }
+    .demo-step-content { font-size: 14px; line-height: 1.7; }
+    .demo-step-content strong { color: var(--text); }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @media (max-width: 640px) { .stat-row { flex-direction: column; } }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-saas">⚡ SaaS / White Label</span>
+      <span class="badge badge-biz">💼 Business</span>
+    </div>
+    <h1>Watch Me Clone a $200K/Month Business in 5 Minutes</h1>
+    <div class="meta">
+      <span>📅 September 2, 2026</span>
+      <span>⏱️ ~25 min</span>
+      <span>🎙️ The Kern Office</span>
+      <a href="https://youtu.be/VOo3M3ZHUoA" target="_blank" style="color:var(--accent)">▶ YouTube</a>
+      <a href="transcripts/clone-200k-month-highlevel-business.txt" target="_blank" style="color:var(--muted)">📄 Full Transcript</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/VOo3M3ZHUoA" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR –</strong> There's a public awards page where <strong>hundreds of businesses white-labeling GoHighLevel software</strong> openly display their customer count and pricing — giving anyone with a calculator the ability to reverse-engineer a <strong>$50K–$200K+/month business</strong>. This video walks through 5 real companies (event rentals, med spa, gym, dental, roofing), 5 free reverse-engineering tools, and ends with a <strong>live demo</strong> building a missed-call text-back product for roofers from scratch in real time. The secret: all-in software cost is <strong>$4.97/month flat</strong> regardless of how many customers you have.
+  </div>
+
+  <!-- THE CHEAT CODE -->
+  <div class="card">
+    <h2>🏆 The Public Cheat Code: SaaSpreneur Awards</h2>
+    <ul class="bullets">
+      <li><strong>GoHighLevel</strong> is an all-in-one marketing/CRM software from Dallas. Anyone can white-label it — your name, logo, pricing, your customers never know GoHighLevel exists.</li>
+      <li>Every year GoHighLevel runs the <strong>SaaSpreneur Awards</strong> — a public leaderboard recognizing partners by customer count tier.</li>
+      <li><strong>Gold</strong> = 100+ paying customers. <strong>Platinum</strong> = 500+. <strong>Diamond</strong> = 1,000+.</li>
+      <li>Tier is public → go to any winner's website → find their pricing → multiply. That's their revenue. On a napkin. Legally.</li>
+      <li><strong>Total software cost:</strong> $4.97/month. Whether you have 10 customers or 10,000 customers. Same price.</li>
+      <li><strong>Minimum resale price:</strong> $97/month per customer. Most charge $200–$500/month. Some charge $1,000+/month.</li>
+      <li><strong>Over 2 million businesses</strong> already use GoHighLevel. It's a massive, boring, unsexy iceberg.</li>
+    </ul>
+
+    <div class="math-box" style="margin-top: 16px;">
+      <div style="font-weight:700; margin-bottom:12px; font-size:15px;">📊 Napkin Math at Each Tier</div>
+      <div class="math-row"><span>Gold winner (101 customers × $297/mo)</span><span style="color:var(--green)">$30,000/mo revenue</span></div>
+      <div class="math-row"><span>Software cost (all tiers)</span><span style="color:var(--red)">-$4.97/mo</span></div>
+      <div class="math-row"><span>Gold net profit (no employees)</span><span style="color:var(--green)">~$29,499/mo (~98% margin)</span></div>
+      <div class="math-row"><span>Diamond winner (1,500 customers × $97/mo minimum)</span><span style="color:var(--green)">$145,000/mo revenue</span></div>
+      <div class="math-row"><span>Diamond (realistic margin with remote team)</span><span>35–50% → $50–$70K/mo take-home</span></div>
+    </div>
+  </div>
+
+  <!-- 5 BUSINESSES -->
+  <div class="card">
+    <h2>🏢 5 Real Businesses — Reverse Engineered</h2>
+
+    <!-- Business 1: Event Hawk -->
+    <div class="biz-card platinum">
+      <div class="biz-header">
+        <div class="biz-name">1. Event Hawk</div>
+        <span class="biz-tier tier-platinum">🥈 Platinum (500+ customers)</span>
+      </div>
+      <div class="biz-niche">📦 Marketing software for party / event rental companies (bounce houses, tables, chairs, photo booths, tents)</div>
+      <div class="stat-row">
+        <div class="stat-pill">Pricing: <span>$297 / $597 / $1,000/mo</span></div>
+        <div class="stat-pill">Est. avg customer: <span>~$400/mo</span></div>
+        <div class="stat-pill">Est. revenue: <span>~$200,000/mo</span></div>
+        <div class="stat-pill">Employees: <span>~26 (mostly VAs)</span></div>
+        <div class="stat-pill">Market size: <span>~9,800–10,000 US businesses</span></div>
+      </div>
+      <div class="biz-desc">
+        Originally launched as a generic ad agency (myadacademy.com — 5 years old), then narrowed into party rentals. <strong>Wayback Machine</strong> shows their full learning curve for free — started generic, niched down, never had to change the domain. 26 live Facebook ads, oldest running since Nov 2024, showing what's converting. The fact that they have 5% market share and make $200K/month means 95% of the market is still untouched.
+      </div>
+    </div>
+
+    <!-- Business 2: Asthetics -->
+    <div class="biz-card gold">
+      <div class="biz-header">
+        <div class="biz-name">2. Asthetics (yes, misspelled)</div>
+        <span class="biz-tier tier-gold">🥇 Gold (100+ customers)</span>
+      </div>
+      <div class="biz-niche">💆 Booking & lead capture software for med spas</div>
+      <div class="stat-row">
+        <div class="stat-pill">Pricing: <span>$300–$500/mo</span></div>
+        <div class="stat-pill">Est. customers: <span>~200</span></div>
+        <div class="stat-pill">Est. revenue: <span>~$80,000/mo</span></div>
+        <div class="stat-pill">Ad strategy: <span>Google Ads (not Meta)</span></div>
+      </div>
+      <div class="biz-desc">
+        Med spas are exploding per Google Trends. They live and die on filled appointment slots. <strong>Despite a terrible name</strong> (misspelled, unsearchable) they're a gold tier winner — proof that niche and execution matter more than branding. Running Google Ads (sponsored results visible on search), no Meta ads found. Strategy: start with Google Ads here instead of Facebook. Use third-party tools to reverse-engineer their keywords, negative keywords, and targeting areas.
+      </div>
+    </div>
+
+    <!-- Business 3: Push Press Grow -->
+    <div class="biz-card diamond">
+      <div class="biz-header">
+        <div class="biz-name">3. Push Press Grow</div>
+        <span class="biz-tier tier-diamond">💎 Diamond (1,000+ customers)</span>
+      </div>
+      <div class="biz-niche">🏋️ All-in-one software for gyms and fitness businesses</div>
+      <div class="stat-row">
+        <div class="stat-pill">Pricing: <span>Free + processing fee / $159 / $229/mo</span></div>
+        <div class="stat-pill">Processing markup: <span>~2.25% on card swipes</span></div>
+        <div class="stat-pill">Est. avg revenue/customer: <span>~$100/mo</span></div>
+        <div class="stat-pill">Est. revenue: <span>$100,000+/mo</span></div>
+        <div class="stat-pill">Market size: <span>112,000+ US gyms, millions worldwide</span></div>
+      </div>
+      <div class="biz-desc">
+        Cleverly uses a "free" tier but charges a 5% processing fee while paying ~2.75%, pocketing the ~2.25% markup on every card swipe. 49 active Facebook ads (2x Event Hawk's count), all from 2026 — none from 2025. The ads with the most impressions relative to their age reveal where they're pouring ad spend. The UK Meta Ads Library shows <strong>exact targeting demographics</strong> — which audiences they're hitting.
+      </div>
+    </div>
+
+    <!-- Business 4: Dental Implant Machine -->
+    <div class="biz-card gold">
+      <div class="biz-header">
+        <div class="biz-name">4. Dental Implant Machine</div>
+        <span class="biz-tier tier-gold">🥇 Gold (100+ customers)</span>
+      </div>
+      <div class="biz-niche">🦷 Full-arch dental implant marketing agency for dentists and orthodontists</div>
+      <div class="stat-row">
+        <div class="stat-pill">Pricing: <span>$2,500–$5,000/mo (hidden — book a call)</span></div>
+        <div class="stat-pill">Est. customers: <span>750+</span></div>
+        <div class="stat-pill">Est. revenue: <span>$1,000,000+/mo</span></div>
+        <div class="stat-pill">Market: <span>202,000 US dentists</span></div>
+      </div>
+      <div class="biz-desc">
+        Dentists pay premium because a single full-arch implant is $15,000–$36,000. If the software brings in even one new patient, it pays for itself many times over. "Book your free call" pricing = we're expensive and worth it. 17 live Facebook ads. The #2 most-viewed ad started running only 2 weeks ago, signaling massive new investment — <strong>that's the ad to copy first</strong>. 202,000 dentists in the US × 4% = scale the US, then go global.
+      </div>
+    </div>
+
+    <!-- Business 5: Roofers (Live Demo) -->
+    <div class="biz-card" style="border-left-color: var(--green);">
+      <div class="biz-header">
+        <div class="biz-name">5. Roofing — Missed Call Text Back (Live Demo)</div>
+        <span class="biz-tier" style="background:#0d3320; color:var(--green);">🛠️ Built Live On Screen</span>
+      </div>
+      <div class="biz-niche">🏠 Wedge product: automated missed-call-to-SMS for roofing companies</div>
+      <div class="stat-row">
+        <div class="stat-pill">Entry price: <span>$100–$300/mo</span></div>
+        <div class="stat-pill">Roofer's risk: <span>$30,000 job per missed call</span></div>
+        <div class="stat-pill">Demo time: <span>90 seconds from a phone</span></div>
+      </div>
+      <div class="biz-desc">
+        The "wedge product" — gets your foot in the door. Roofers are on roofs, can't answer their phone, and their personal cell is the business number. Every missed call is a potential $30,000 job walking away. <strong>Missed call text back fires instantly:</strong> "Sorry I'm with a customer — want us to inspect your roof? Book here." Demo in 90 seconds. Then upsell: ads, website, CRM, everything.
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE DEMO STEPS -->
+  <div class="card">
+    <h2>🛠️ Live Demo — Build It in 5 Minutes (GoHighLevel)</h2>
+
+    <div class="demo-step">
+      <div class="demo-step-num">1</div>
+      <div class="demo-step-content"><strong>Create a sub-account</strong> — In your GoHighLevel agency view, go to Sub Accounts → Create Sub Account → search "roofing" → pick "Home Services Roofing" template. Search Google for a real roofing business and use their info as a demo client.</div>
+    </div>
+    <div class="demo-step">
+      <div class="demo-step-num">2</div>
+      <div class="demo-step-content"><strong>Add a local phone number</strong> — Switch to the sub-account view → Settings → Phone System → Add Number → pick a number matching the roofer's area code. Cost: $1.15/month. Have the roofer forward their personal cell to this new number.</div>
+    </div>
+    <div class="demo-step">
+      <div class="demo-step-num">3</div>
+      <div class="demo-step-content"><strong>Set up call forwarding</strong> — Forward calls to their cell. Set 20-second ring timeout. Toggle voicemail OFF (critical — if voicemail is on, call registers as answered and the automation never fires).</div>
+    </div>
+    <div class="demo-step">
+      <div class="demo-step-num">4</div>
+      <div class="demo-step-content"><strong>Create workflow from template</strong> — Go to Automations → Create Workflow → Select from Template → search "Missed Call Text Back" → pick the template with 13,000+ uses. Enable auto-save. Workflow: Call missed → slight delay (0.2 hrs feels human) → assign user → send SMS → GoHighLevel notification.</div>
+    </div>
+    <div class="demo-step">
+      <div class="demo-step-num">5</div>
+      <div class="demo-step-content"><strong>Create a booking calendar</strong> — Calendars → New → choose "Roof Inspection." Copy the shareable calendar link.</div>
+    </div>
+    <div class="demo-step">
+      <div class="demo-step-num">6</div>
+      <div class="demo-step-content"><strong>Set the SMS text</strong> — Back in the workflow: "Sorry I missed your call. How can we help? Would you like us to come out and inspect your roof? Book here: [calendar link]." Save. Publish.</div>
+    </div>
+    <div class="demo-step">
+      <div class="demo-step-num">7</div>
+      <div class="demo-step-content"><strong>Demo to the roofer</strong> — Call their number, don't pick up. In 12 seconds they get a text with a live calendar link. 90-second demo. Close the deal.</div>
+    </div>
+
+    <div class="quote-block" style="margin-top: 16px;">"While this business owner is on the roof inspecting or on the ground talking to a customer, he misses a call. That customer gets texted a dynamic calendar invite link that's synced with everything — and I just showed you how to do it right here in just a few minutes."</div>
+  </div>
+
+  <!-- 5 REVERSE ENGINEERING TOOLS -->
+  <div class="card">
+    <h2>🔍 5 Free Reverse-Engineering Tools</h2>
+
+    <div class="tool-item">
+      <div class="tool-num">1</div>
+      <div class="tool-content">
+        <div class="tool-title">Pricing Page × Customer Count</div>
+        <div class="tool-desc">Go to any SaaSpreneur award winner's website. Find their pricing. Multiply by tier minimum (100/500/1000). That's their minimum revenue. Completely public, completely legal.</div>
+      </div>
+    </div>
+    <div class="tool-item">
+      <div class="tool-num">2</div>
+      <div class="tool-content">
+        <div class="tool-title">Wayback Machine (web.archive.org)</div>
+        <div class="tool-desc">See exactly what a business's website looked like 1, 2, or 5 years ago. Watch them start broad, find their niche, improve. Saves you 5 years of figuring it out yourself. Free competitive intelligence on their entire learning curve.</div>
+      </div>
+    </div>
+    <div class="tool-item">
+      <div class="tool-num">3</div>
+      <div class="tool-content">
+        <div class="tool-title">Meta Ads Library (facebook.com/ads/library)</div>
+        <div class="tool-desc">See every active ad a business is running. Filter by country. Sort by most impressions — high impressions on a recent ad = they're pouring money into it = copy that one first. UK version shows <em>exactly who they're targeting</em>. Long-running ads = proven winners. Screenshot → drag to Claude → "build me 35 ads like these."</div>
+      </div>
+    </div>
+    <div class="tool-item">
+      <div class="tool-num">4</div>
+      <div class="tool-content">
+        <div class="tool-title">BuiltWith.com</div>
+        <div class="tool-desc">Shows every tech tool a website runs on: CRM, analytics, ads pixels, payment processors, WordPress plugins. Tells you exactly how they built it. Spoiler: usually boring tools, installed years ago and never changed.</div>
+      </div>
+    </div>
+    <div class="tool-item">
+      <div class="tool-num">5</div>
+      <div class="tool-content">
+        <div class="tool-title">LinkedIn (People + Company)</div>
+        <div class="tool-desc">Employee count, org structure, who works there. Most white-label agencies show remote VAs from the Philippines making $4–$12/hour. 26 employees × $2K/mo avg = $52K payroll on $200K revenue = 74% gross margin before ads.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW TO FIND YOUR NICHE -->
+  <div class="card">
+    <h2>🎯 How to Find Your Niche (AI Prompt Trick)</h2>
+    <ul class="bullets">
+      <li>Don't overthink the niche. Start with event rentals if you want — or use this Claude prompt:</li>
+    </ul>
+    <div class="quote-block" style="margin-top: 12px; font-style: normal; font-size: 14px; color: var(--text);">
+      "My friend makes $200K a month white-labeling GoHighLevel to event rental businesses to do their marketing. He finds all customers from Facebook ads. Give me 10 industries that are similar to event rentals from a first-principles perspective — that I could pick to have the same success. Something like dental is too far a reach. Something like skid steer rentals might be more accurate."
+    </div>
+    <div style="margin-top: 14px; font-size: 14px; color: var(--muted);">
+      Claude's answer: <strong>Dumpster rentals, porta potty rentals, skid steer & mini excavator rentals, storage container rentals, restroom trailer rentals, party bus & limo, photo booth rentals, temporary fence rentals, trailer rentals…</strong> Thousands of industries. Pick one. Doesn't work in 2 months? Pick another.
+    </div>
+    <div class="quote-block" style="margin-top: 14px;">"Your only competition are your excuses."</div>
+  </div>
+
+  <!-- KEY ECONOMICS -->
+  <div class="card">
+    <h2>💰 Key Economics — Why This Model Works</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Factor</th>
+          <th>Reality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Software cost</td>
+          <td style="color:var(--green)">$4.97/month flat — 10 or 10,000 customers, same price</td>
+        </tr>
+        <tr>
+          <td>Minimum resale price</td>
+          <td>$97/month per customer (GoHighLevel rule)</td>
+        </tr>
+        <tr>
+          <td>Typical resale price</td>
+          <td style="color:var(--green)">$200–$500/month. Some charge $1,000+/month</td>
+        </tr>
+        <tr>
+          <td>Gross margin (no employees)</td>
+          <td style="color:var(--green)">~98% (software costs $4.97, you keep the rest)</td>
+        </tr>
+        <tr>
+          <td>Gross margin (with remote team)</td>
+          <td style="color:var(--yellow)">35–50% net after payroll + ads</td>
+        </tr>
+        <tr>
+          <td>How customers are found</td>
+          <td>Facebook/Instagram ads — vertical video, 15–45s, constant testing</td>
+        </tr>
+        <tr>
+          <td>No-brainer offer framing</td>
+          <td>"Pay me $300/month and make $3,000/month more" — they say yes</td>
+        </tr>
+        <tr>
+          <td>Customer development time</td>
+          <td>GoHighLevel has 300+ templates — no coding, no engineering needed</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- KEY TAKEAWAYS -->
+  <div class="card">
+    <h2>💡 Key Takeaways</h2>
+    <ul class="bullets">
+      <li>The SaaSpreneur Awards page is a <strong>public treasure map</strong> — customer counts × pricing = real revenue math anyone can do.</li>
+      <li>White-labeling GoHighLevel costs <strong>$4.97/month flat</strong>, regardless of scale. Every dollar above that is near-pure profit.</li>
+      <li>The best niches serve <strong>local boring businesses</strong> that need more customers (roofers, bounce houses, med spas, dentists) — not glamorous tech.</li>
+      <li>Successful businesses <strong>started broad then niched down</strong> — the Wayback Machine shows their entire learning curve for free.</li>
+      <li>The Meta Ads Library tells you <strong>what's working right now</strong> — long-running ads are proven. High-impression new ads are where they're betting big.</li>
+      <li>The <strong>wedge product</strong> (missed call text back) is the easiest entry point — demo in 90 seconds, then upsell everything else.</li>
+      <li><strong>Copying proven models is smart, not lazy</strong> — they took the arrows on the front lines. You just learn from them and go around the ridge.</li>
+      <li>You <strong>don't need to start an event rental business</strong> — ask AI to generate 10 similar niches, pick one, test for 2 months, pivot if needed.</li>
+      <li>Facebook ads for these boring local niches <strong>absolutely work</strong> — there are enough event rental / roofing / gym business owners on Facebook to build a $200K/month business targeting only them.</li>
+      <li>Everything shown — website, automation, calendar, SMS — was built <strong>without a single line of custom code</strong>.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Generated by Dot DiBot · September 2, 2026</span>
+    <span style="display:flex; gap:16px;">
+      <a href="https://youtu.be/VOo3M3ZHUoA" target="_blank">▶ YouTube</a>
+      <a href="transcripts/clone-200k-month-highlevel-business.txt" target="_blank">📄 Full Transcript</a>
+    </span>
+  </footer>
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>

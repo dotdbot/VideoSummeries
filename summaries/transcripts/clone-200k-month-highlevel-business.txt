@@ -1,0 +1,414 @@
+All right, so this is a little weird. There's 
+an awards page on the internet. This is public   and it's basically a leaderboard of hundreds 
+of businesses that are all selling the exact   same piece of [music] software. Same software, 
+different logo, different name, different website,   different price, but some of these companies, 
+based on math anyone in the world can do on the   back of a napkin, are pulling in 50, 100, 150,000 
+dollars a month of profit and almost nobody knows   this page [music] exists. Now, full disclosure, 
+I've gone down this same rabbit hole twice before   and both times [music] people watching 
+went and actually built these things.   I still get DMs about it. And no, you 
+don't need to even watch those videos,   those are kind of outdated. Everything I'm about 
+to show you lives on one public page and today I'm   going to slice and dice it in a way that I never 
+have. I'm only going to look at the businesses   selling software to local service companies. 
+Bounce house guys, med spas, pest control,   dentists, roofers, [music] because when I dig into 
+who builds something durable off of this business   model, it's going to be the people serving the 
+boring local businesses. Every single time.   So today we're covering five businesses and the 
+fifth one I'm not just going to [music] show you.   At the end of this video I'm going to open the 
+software and build the starter version of it live   on screen, mistakes and all, because I 
+test everything except drugs. So let's go. Okay, if you want to go to this website, you'll 
+see this page. This is HighLevel's SaaSpreneur   awards page. So HighLevel is a software company 
+out of Dallas, where I'm from. They make an   all-in-one piece of software that does marketing, 
+booking, phone system, AI, everything. And the   wild part is that anyone and their mom can white 
+label it. White label means to take someone else's   entire software that costs millions of dollars to 
+develop, slap your name and logo on it and resell   it as your own software and your customers will 
+never even know that some company called HighLevel   exists. It's kind of like when you go to Walmart 
+and you buy Great Value spaghetti noodles. Those   are made in the same factory as the Bertolli 
+spaghetti noodles, but they're white-labeled by   Walmart Great Value. So, high-level, every year 
+they have an awards ceremony and they recognize   people white-labeling their software at scale. 
+They have three tiers: gold, platinum, diamond,   and these levels are based on customer count, 
+which is public. That's the cheat code. If you're   gold, it means that you've crossed 100 paying 
+subscription customers. Okay? What do they charge?   Go to that business's website. For example, 
+let's say I have a CRM, a customer relationship   management software for dog walkers, okay? Chris's 
+dogwalkers.com. Anyone in the world can go there   and see you charge 39 bucks a month. Of course, 
+that's way too cheap, but stick with me here.   And then I go to the SaaSpreneur awards page 
+and see, "Wow, Chris's dog walkers has over   1,000 customers." Or let's say over 100 because 
+they're gold award winner, okay? And let's just be   conservative. It could be 900. Let's say it's only 
+101. That means that Chris's dog walking is making   at least $3,900 a month in revenue. We'll get to 
+the profit part later cuz that's not hard either,   okay? So, that's gold. Platinum is 500, at least 
+500 customers. So, you can see these are all   the gold tier award winners. They have over 100 
+paying customers. That's a lot. Here are all the   platinum award winners. They have over 500 paying 
+customers. That's a lot as well. And then diamond,   you guessed it, over 1,000 paying customers. And 
+it's actually quite interesting because there's   just about as many platinum as there are diamond 
+tier because once you hit escape velocity in any   business, not just this, it's pretty easy to grow, 
+right? And we're going to cover that as well. So,   back to the napkin math. To run this model at 
+scale, like once you have a bunch of customers,   your total software cost per month is right there, 
+$4.97. Cancel anytime. You got 10 customers,   $4.97. 10,000 customers, $4.97. Cool. And their 
+rules are that you have to resell their software   for at least $97 a month per customer. So, my 
+dog walking example isn't even applicable here.   But very few people charge the a Most of 
+these companies are charging between two and   $500 a month, sometimes over $1,000 a month. 
+1,000 * 1,000 is a million dollars a month,   which might be the case of one of these diamond 
+award winners. Okay, so let's say you've got   someone with 101 customers, they're gold 
+customer, and let's say they charge 297 a month,   okay? They're making $30,000 a month in revenue. 
+Oh, what's their overhead? Well, 497. So,   they're making $29,499 a month in profit. Of 
+course, internet charges, phone charges, maybe you   have an employee or five, right? There are other 
+costs that might come out. But, at a base level,   something like this happens all the time. You 
+can see it. You can go to LinkedIn, see their job   postings, how many employees do they have? It's 
+all public. That's the beauty of the internet. So,   I'll let you sit with that profit margin for 
+a second cuz we're looking at like 98% with no   employees or 50 plus percent with employees. Now, 
+go to the extreme case, a diamond award winner,   they probably have more than 1,000, right? What 
+are the chances they have 1,001? Let's say they   have 1,500 1,500 customers. And let's say they 
+charge bare minimum, right? They're able to scale   fast cuz they're cheaper, $97 a month, $145,000 a 
+month. Of course, at 1,500 customers, you're going   to have some employees, probably remote employees 
+overseas making five to eight dollars an hour, not   a ton. You've got some AI agents involved, like 
+your margins are still really, really good. So,   you get the point. I'm not making a random claim. 
+These are like public awards page numbers here.   And there are over 2 million businesses on 
+GoHighLevel. So, this is a very big, boring,   unsexy iceberg, and we've only ever been shown the 
+tip. Okay, business number one. And I'm starting   with my favorite because it kind of broke my brain 
+a little bit. Event Rentals. I'm going to go deep   on this one because you're going to love it. And 
+no, we're not starting an event rental business.   This is software for event rental businesses. 
+We're talking bounce houses, tables and chairs,   photo booths, tents, you get the idea. So, these 
+guys do something very simple. They help event   rental companies find more customers, okay? And 
+any business that helps other businesses make more   money is a really good idea. Okay, now I wanted 
+to start with a platinum award winner because   it's more realistic than diamond. The business 
+is called Event Hawk. They have no idea who I   am. We know [clears throat] factually they have 
+over 500 customers. And remember, these numbers   were calculated a year ago near the end of 2025. 
+So, they probably have a lot more customers than   that now. Here's the website. More bookings 
+for your party rental business. First thing   we're going to do here is go to their pricing. 
+Now, what's interesting about this website,   if you're thinking, "Oh, that's ugly. Like it's 
+not about pretty or ugly, it's about conversion   optimization. What works?" And HighLevel knows 
+what works. So, you can plug and play any of their   templates, hundreds of templates, and choose the 
+one that seems to convert best for you. And if you   don't like it, then a couple clicks you can swap 
+out the entire website design, format, etc. Okay,   $297 a month, $597 a month, $1,000 a month. Now, 
+with any pricing tier like this, three options,   there's going to be like a distribution curve. 
+Most people are going to be on the cheapest and   then call it, you know, 10 to 15% of people will 
+be on the middle tier and 5 to 10% will be on the   most expensive tier. So, I would say the average 
+customer of theirs is paying about 400 bucks a   month. Just to be conservative. Not far away from 
+their cheapest plan. Okay? It's kind of wild.   Let's say they only have 500. They haven't grown 
+at all since HighLevel calculated that they had   500 customers. They have 500 customers paying $400 
+a month, $200,000 a month in revenue reselling   software that cost them $497 a month. Okay? But 
+anyone can do that math, that's not why you're   here. We're going to figure out how they do what 
+they do, how we can copy them, etc. We're going   to do my whole reverse engineering toolkit on this 
+one company. Five tools, all of them are free or   basically free. This is legal corporate espionage. 
+Okay, tool number one, what we just did. Find   the pricing page, multiply by the customer count. 
+Cool. Tool number two, the Wayback Machine, baby.   Right here, myadacademy.com. Website's been around 
+for five years. We're in 2026 right now. I want to   see what it looked like when they first launched 
+party rental growth and marketing strategies. So,   they've been doing the same thing for basically 
+the whole time. Now, this doesn't look like a   GoHighLevel website, which tells me they use 
+something else and then switched to GoHighLevel   after a period of time. Okay, let's see what they 
+looked like about a year ago. A little better. The   formatting is not quite right just because of how 
+the Wayback Machine works. It doesn't mean that   their actual website looked like that. And then 
+we'll look at one more kind of in between time   period just to get a better feel for it. Okay, 
+hundreds of customers listed on their website.   That's not the smartest thing in the world, but 
+here we are. So, that was their website then and   remember here is their website now. Much better, 
+much improved. You've got a YouTube video on the   homepage. It looks nice. It looks great. A lot of 
+social proof. Their old website showed that they   did all kinds of marketing things and now it's 
+just like we make event rental businesses more   money. Started generic, found the niche, they kept 
+saying yes, and then narrowed down. The Wayback   Machine shows you their entire learning curve for 
+free. So, you can save 5 years if you don't want   to figure out the hard way what niche to narrow 
+down on. Tool number three, the Meta Ads Library.   My favorite. Remember, Meta equals Facebook and 
+Instagram and the big dirty secret about most   profitable businesses in the world is they're just 
+finding customers through Facebook and Instagram   ads. That's it. Mostly vertical videos, mostly 15 
+to 45 seconds long. A lot of testing and they just   figure out how to turn $1 into three or five or 
+30 or 100. Believe it or not, it is possible. So,   we'll go here. We're going to go United States, 
+all ads, type in Event Hawk, and what do you know?   6,100 people follow it. Do they have any live 
+ads? They do. Of course, they do. 26 live ads,   which is medium, right? A lot of people just 
+have one to three, which I don't recommend.   Some people have hundreds. Big, big companies or 
+insanely profitable companies that no one's ever   heard of have thousands of live ads that cost 
+money each every single day. Thousands. Okay,   so we got some videos, we have some ugly pictures, 
+we have some text-only Need Inflatables yada yada   yada. So, if you were to think, "Well, Facebook 
+ads wouldn't work for me cuz how many event rental   business owners are there? How am I going to show 
+Facebook ads just to event rental businesses?"   Yeah, you will, and you'll be fine. Okay, so let's 
+say you want to copy these guys exactly. "Well,   I don't want to copy them cuz it's already been 
+done." Dude, the fact that it's already been done   is why you should copy them. They are the They are 
+on the front lines of this war called business.   The people on the front lines take the arrows, 
+take the bullets. You want to be behind them kind   of seeing, "All right, I need to go around that 
+ridge cuz I don't want to get shot like that guy."   That's the name of the game here. Oh, and let's 
+go look at 2024 award winners for SaaSpreneur. Oh,   and it goes without saying, I would love it if 
+you use my affiliate link if you're going to try   GoHighLevel. You don't have to white-label an 
+agency or a business like we're talking about   today. If you're just a business owner and you 
+need to keep track of your customers or low price,   you can also use GoHighLevel for that. So, my link 
+is at the top of the description below. You don't   pay any more for using it. You can get 14 or 30 
+days off using my link. I think 30 days. Free.   Risk-free. If you like my content, if you like 
+this channel, it would go a really long way just   if you used my link to do what you're going to do 
+anyway. It costs you nothing. Let's do a control   find for the word event. Three of them. Event Hawk 
+won in 2024 as well. Three of these businesses   have the word event in their name, but surely more 
+of them do the same thing as Event Hawk. They just   don't have the word event in their name. This is 
+proven. Well, how big is this industry anyway? Uh,   I don't know. 9,800 event rental businesses 
+just in the United States. I bet that's low   cuz a lot of them like are poorly optimized. 
+They don't have a Google Business Profile page.   Let's just say there's 10,000. Event Hawk has 
+5% of them and they're making $200,000 a month.   And if you're making them more money, if you're 
+making your customers more money by finding them   more customers, why wouldn't they say yes? It's 
+called a no-brainer offer. You're not selling   accounting services to them that, yeah, get them 
+more organized but takes money from them. You're   saying, "Hey, pay me $3 or pay me $300 and 
+you will make $3,000 more a month." Like, yes.   Oh, if it doesn't work, you don't pay. No-brainer 
+offer. So, what do their ads look like? Ugly,   AI-generated, text only, black background, a few 
+videos but not many. Like, you guys can do this.   Screenshot this whole thing, drag it over to 
+Claude, Grok, ChatGPT and say, "Make me 35 ads   just like these but insert my business name here." 
+Done. You don't know how to run Facebook ads?   I already posted a whole tutorial. Link below. 
+Facebook ads for noobs. I share my screen,   show you exactly how to do it. And here's 
+the big secret about the Meta Ads Library.   How long have they been running? How long have 
+the ads been running? Cuz if an ad starts running   and it doesn't perform, aka it doesn't create more 
+money than you spend on it, then you turn it off.   It's no longer active. Look at these. Started 
+running on November 24th, 2025. 10 months ago.   12 months ago. Let's find the oldest. Okay, I did 
+a control five for 2025. Six of 26 are from last   year and the other ones are months old. That 
+is a very, very good sign because it tells you   what's working for them. After a bunch of trial 
+and error and wasting a lot of money to Meta,   we don't care about their inactive ads. We want 
+to see what are they paying for today. They're   paying thousands of dollars a day on ads. Let's 
+say it's $3,000. That's $100,000 a month. And   why wouldn't they? They would because it works. 
+Oh, and if you still don't want to do, you know,   event rental marketing, that's fine. Pick any 
+other industry. There are thousands of industries.   You know what? Let's do it right now. This is 
+my Claude page. Here's my prompt. My friend   makes 200K a month white labeling GoHighLevel to 
+event rental businesses to do their marketing.   He finds all customers from Facebook ads. Give me 
+10 industries that are similar to event rentals   from a first principles perspective. That's the 
+key. That I could pick to have the same success   as him. Something like dental, give it examples, 
+is too far of a reach. Something like that rent   out skid steers, aka Bobcat's heavy equipment, 
+might be more accurate. Dumpster rentals,   porta potty rentals, skid steer and mini excavator 
+rentals. Where did you get that one from? Storage   container rentals, restroom trailer, party bus and 
+limo photo booth rentals, temporary fence rentals,   trailer rent Like there are so many industries, 
+guys. Just do that. Pick one of those. Doesn't   work after a couple months? Pick a different one. 
+Don't overcomplicate it. Okay, tool number four,   builtwith.com. You know what's funny? Sorry, I'm 
+ADHD is flaring up right now, but uh Remember,   it's an event rental marketing business and 
+their name, their probably their LLC name and   certainly their domain name is myadacademy.com. 
+Why? Because in the beginning, five years ago   when they launched this, they're like, "We should 
+start a business that helps other businesses find   more customers. Like we do ads for them. It's 
+an ad agency, right?" So they named it broad   and then they started with event rentals and it 
+worked. Like they never had to go broad because   presumably they're making so much money, 
+they're staying plenty busy doing event rentals   that they still have a broad name, but what 
+they do isn't broad. And that is a signal.   That tells you that there's still a lot of legs 
+left in the event rental marketing business. Oh,   well, how do I actually do marketing for event 
+rental business? It's It's all in GoHighLevel.   I have a playlist linked below with 11 plus 
+other videos about exactly how to like put these   marketing tools together inside GoHighLevel. It's 
+all there for free on the internet. You have no   excuses. Your only competition are your excuses. 
+So, what does builtwith.com do? Tells you what any   website runs on. What any website is built with. 
+Okay, what does myadacademy use? HubSpot, cool.   Hotjar, that gives you like a heat map of where 
+people are clicking on the website. HighLevel, of   course, we already knew that one. Facebook pixel, 
+of course they need that for their Facebook ads,   we already knew that one. Google conversion 
+tracking, of course, which means they're   probably running Google ads as well. There's 
+something to learn from that. Google Analytics,   of course. Microsoft Like guys, there's nothing 
+special here and if it was special, we'd know what   it was and we could use it as well. Elementor, 
+which is like a a WordPress theme. Remember,   just cuz you use HighLevel, doesn't mean you 
+can't use WordPress or other tools as well.   Google Tag Manager helps them with SEO and keeping 
+track of stuff. Yoast, another WordPress plugin.   WooCommerce, PayPal. The vast majority of these 
+are not needed. They probably installed them years   ago and haven't touched them since. Namecheap 
+is where they bought the domain name. Okay,   that's it. How do they build it? Just like this. 
+And they built it before AI was even a thing. So,   it's even easier for you now. You see their 
+website, the finished product, and you think,   "Man, these guys must have raised tens of millions 
+of dollars and hired a bunch of engineers." No,   they built it with these tools. White labeling the 
+same tool that everyone else on this, you know,   awards page is using. Tool number five, LinkedIn. 
+Course you know LinkedIn. We're going to type in   Event Hawk. Same purple logo. 8,000 followers. 
+11 to 50 employees. Now, that's a self-selected.   That could be in anything. Could be 5,000. 
+Could be zero. Right? If I have few employees,   I'm going to throw my competitors off the scent, 
+and I'm going to put more than I actually have. Or   if I want to impress people, I'm going to put more 
+than I actually have. Let's go to people. Okay?   She owns an event rental business called Toad's 
+Jump. Ditch the Marketer. 28 people are associated   with this business. Could be vendors, customers, 
+or employees. Total employee count. It says 26   right here. Boom, there it is. 26 employees. Okay? 
+I can tell you right now, looking at their names,   most of these are virtual assistants making 
+between four and 12 dollars an hour. How do I   know? Because I've been hiring virtual assistants 
+for 15 years. Highly recommend it. I mean,   for sure. Mostly from the Philippines. A few 
+Americans here. So, let's just say 26 employees.   Most part-time. A few are full-time. Let's say 
+they're making on average 2,000 a month. So,   50,000 a month in payroll. 25% of your overhead. 
+That's going to be most of your overhead. They   don't need an office. It's clearly fully 
+remote. Their software is 500 bucks a month. So,   their net profit margin is what the owner can 
+pay himself after paying for their employees   and their ads, which we don't know, each of those 
+ads could be a $5 a day budget, it could be 5,000.   We can't figure that out, unfortunately. But, 
+their net profit margins are anywhere from 0 to   70% call it. I would guess it's probably 
+somewhere like 35 to 40%. Which means the owner   could take home, if he wants to, 50 to 100,000 
+a month. Now, they have over 500 customers, but   under 1,000. Could be 900. If the average customer 
+pays 400 a month and they have 900 customers,   then it's almost twice what we calculated, 360,000 
+a year, but their overhead would be the same,   50,000 a month on that 360,000. Okay, businesses 
+two to four. Before I build out the actual roofing   business, these are going to be rapid fire cuz I 
+just showed you a bunch of tools. We're going to   highlight one of these tools and figure out what 
+their revenue is and just move real fast. Okay,   business number two. This is booking and follow-up 
+software for med spas. Med spas are exploding   right now. Look at the Google Trends chart, okay? 
+These guys charge real money and they live and die   on filled appointment slots. Right here, 2025 
+gold tier award winner, Asthetics. Sorry, guys.   I hope you're not watching this, but if you are, 
+that is the worst name ever. Who in their right   mind can spell that? So, the fact that they're 
+a gold tier award winner and they have that name   with that spelling, that's saying something in and 
+of itself. If I Google their name, look at that,   sponsored results. They're paying for Google Ads. 
+We don't need the Meta Ads Library to learn that.   Anyone in the world can learn that. We're not 
+going to click on that link cuz we don't want   to charge them money. We'll click on the organic 
+link. Very clean. Capture and convert more leads   to patients. Do you see a pattern here? I 
+make event rental businesses more money.   I make med spas more money. It works. Got to 
+look at their pricing. Woo! 300 to $500 a month   or custom pricing for multi-location. You already 
+know we got to look at the Meta Ads Library. Okay,   Asthetics audio, aesthetics nutrition, aesthetics 
+I don't know if these guys have a Facebook ad   running. So, one way you can do this is just by 
+Googling aesthetics here and then Facebook because   they're the name of their Facebook business 
+or their Facebook page might be different than   what appears on their website. Okay, here's 
+their Facebook page. This is what would appear   in the meta ads library. Looks like they're not 
+doing a lot here. They haven't posted in over   a year. I'm just going to kind of look at their 
+logo. Okay, blue and white. Then you go back to   the ad library and I don't see it. So, this means 
+one of two things. The pessimist would say they're   not running a Facebook ads cuz it doesn't work 
+for them. The optimist would say they're doing   so well with Google ads that they don't have 
+time, they don't need it, it's not on their   radar to do meta ads. One of those is true and 
+you won't know until you test. So, in this case,   I would take a different strategy than Event Hawk 
+and I would start with Google ads. Very simple to   use, easier than meta ads. You can use third-party 
+tools like this, this, or this that can help you   reverse engineer what their Google ad strategy 
+is. What are their negative keywords? What are   their keywords? What areas are they targeting? You 
+get the idea. So, aesthetics they have between 100   and 500 customers. Let's say 200. $400 a month. 
+That's $80,000 a month reselling software. Now,   third one. Let's do gyms. Why? Because there 
+are over 100,000 gyms in the United States,   about 112,000 to be exact, that we have 
+on record. Probably more. Worldwide,   there are millions of gyms. You know what these 
+guys need? They need more people in their gyms.   They need more customers. Of course, they do. Alex 
+Bro Mosey, that's how he got his start selling   stuff to gym owners. So, let's try it ourselves. 
+Let's not do gold. Let's not even do platinum.   Let's do diamond tier. We're going big here. 
+We're going diamond tier, over $1,000 a month.   Push Press Grow. Okay, this is a company selling 
+gym equipment. What do they do? Unlock the power   of your fitness business. Automate stream grow 
+your fitness business. So, this one isn't as   uh targeted as the first two where it's 
+just like make more money for your business,   but it's just like an all-in-one software for 
+gyms, okay? All-in-one, right there. Let's go   to the pricing page. All right, free, but they 
+charge more in processing, and that can be very   profitable because they're probably paying about 
+2.8% and they're charging 5%. So, they make a   markup there. Here, they probably don't make much 
+on their markup, but they make the flat fee of 159   and then 229 here. Okay, so let's say from 
+the processing fee markup, they're making,   let's be conservative, 50 bucks a month for all 
+their free tier customers cuz this it says free,   it's not really free, okay? Look at that. If they 
+can afford charging 2.75%, which surely they're   not losing money on, let's say conservatively 
+break even is 2.75, then right here they're making   2.25% for every card swipe that goes through that 
+gym. So, 50, 160, 220, let's be conservative and   say the average customer pays them 100 bucks a 
+month. They have over 1,000 customers, therefore   they're making over 100,000 a month. So, this is 
+interesting. More customers than the previous two   or three that we've looked at, but lower ticket. 
+That's fine, because you know what? It's much   easier to just resell like a CRM customer 
+relationship management software than it is   to build the flows and everything necessary to 
+actually help businesses find more customers. So,   a little less work, therefore they charge a little 
+less, therefore they have more customers. Many   ways to skin the cat. Are they running Facebook 
+ads? Boy, are they? Twice as many as Event Hawk.   PushPress gym software, they want everyone to know 
+exactly what they do in their name. 49 results,   all active. We'll do a control find 2025, none. 
+All 2026, we got any January? Nope. We're going   to sort these by most recent, as in the ad they 
+started running most recently. So, we can't learn   a ton from these cuz these only started running 
+a day ago, 14 hours ago, so they don't even know   if it's a good ad yet. We want to I'm going 
+to to the very bottom. This started running 2   months ago and it's still going. They're probably 
+putting a majority of their ad spend into these   old ads. And so, if we're going to make video 
+ads in this case for the same type of software,   we want to copy these ones down here. And you can 
+even sort by most impressions, okay? Which would   make sense. The ones with the most impressions 
+are the ones that have been running the longest.   But where is the outlier? Oh, I don't want to dig 
+through that. No big deal. Screenshot, drag over   to Claude, ChatGPT, whatever, and say, "Where's 
+the outlier? Where's the one that's near the top,   as in has the most impressions, but it isn't very 
+old, maybe August or July?" That's the one that   people are really pouring money into. I think this 
+is a new feature. I've never seen this before. I'm   kind of shocked that this exists cuz that's quite 
+easy. This kind of tells you what they're spending   on a specific ad compared to the rest of their 
+ads. More impressions, shorter period of time,   more money equals higher converting equals you 
+should copy that ad first. So, in this case, it's   going to be this one right here. It is the seventh 
+most viewed ad, but it was only posted a week ago.   You want to take the step further, you go to the 
+UK version of the Meta Ads Library, and they are   required, if you're running ads in the UK, the 
+Facebook is required to show the world who you are   targeting with those ads. There you go. It's worth 
+the price of admission on this video alone. Okay,   one more before I build a site for you live. 
+Now, next, we got to do dental. You already know   we got to do dental. Why? Because dentists 
+and orthodontists are notorious for paying   thousands or tens of thousands of dollars a month 
+for agencies to solve all their problems for them.   I don't know what it is. I don't know why, but it 
+just it's a law of the universe. Just for funsies,   we're going to go to this award page. We're going 
+to find for the word dental. There are at least   nine businesses on this page alone selling 
+stuff to dentists. At least nine. All right,   we're going to pick one, a gold award winner 
+called Dental Implant Machine. I'm assuming they   help dentists find new implant revenue, okay? Add 
+a million plus a new full arch revenue. Don't know   what that means, but it's a it's a big number. 
+So, what dentist is going to say no to that?   These are the guys I want to copy, right? What 
+is the pricing? Best sign in the world, book your   free strategy call. In other words, we're very 
+expensive. We're so expensive, we're embarrassed   to post our pricing on our website. Well, how do 
+I find out their pricing then? Well, first of all,   they have 750 plus customers, okay? Second of 
+all, there's this thing called Google. Have you   heard of that one? Of course you have. I joke, 
+I joke. Dental implant machine agency pricing,   okay? $2,500 to $5,000 per month. And why wouldn't 
+they? Because a single tooth dental implant costs   between three and $6,000. All-on-4 range from 15 
+to 36,000 per arch. There's that word again, arch.   Only arch I know about is McDonald's. So, yeah, 
+a million dollars in revenue added to a dentist,   you adds up pretty fast if you're finding 20 to 
+$30,000 customers. So, dentist can afford to pay   $2,500 to $5,000 plus per month for that service. 
+If they get one new customer a month, it more than   pays for itself. But, are they running Facebook 
+ads, you may ask? Of course they are. 17,   which is quite a few for dentists. Low impression 
+count, that's okay. We just need dentists to see   them. We're going to sort by impressions high to 
+low. All right. So, this one only started running   2 weeks ago, and it is the second highest viewed. 
+Second only to one that was started running like 5   months ago. So, this is the ad right here, and 
+there's no low impression count on this one,   that you want to copy. Let's watch it real quick. 
+Dear full arch marketing, generating leads, but   not booked and qualified consults? Most practices 
+don't have a lead problem. Okay, 1-minute long ad,   that's very long. This is amazing. Now, this 
+dental company, 500 customers a month minimum,   I'll say $2,000 a month minimum. That's a million 
+dollars a month. Oh, there's no way you make a   million dollars a month selling, you know, dental 
+agency services to dentists. Are you kidding me?   What kind of a love scarcity world do you live 
+in? There are 202,000 dentists in the United   States alone. Remember, the United States 
+is 4% of the world's population. You don't   think that you could convince 500 of those 200,000 
+dentists to pay you so they can make more money?   To convince them to say, "Hey, give me a dollar 
+and I'll give you five back." You don't think you   can do that with Facebook Ads? Then I can't help 
+you because you can. Okay. And last but certainly   not least, this is the one I'm going to build for 
+you cuz guys, it's not enough for me to just show   you how to reverse engineer without showing you 
+how to actually build what you're supposed to be   selling. That would be disingenuous cuz I actually 
+use HighLevel on a daily basis across multiple   businesses. My team uses it. I'm not just talking 
+here, okay? Roofers. I saved this one for last   because it is the easiest one to start out of all 
+these and we're going to do it together. Now, what   are we going to be building in this live demo? 
+Missed call text back. This is as if I'm starting   a business that sells missed call text back 
+services to roofing companies. I can obviously   do other things for a roofing customer. Once I 
+get my foot in the door, I can help them find more   customers. I can do ads, website, whatever, but 
+all of them need missed call text back. You're up   on a roof, you're quoting a job, you're talking 
+to a customer, your phone rings. Most roofing   businesses just have their personal cell phone 
+number as the number. You can't answer it. You're   talking to a customer. That lead, which could 
+be a $30,000 job, is gone. So, you need to be   able to text them right away as soon as you miss 
+a call. "Sorry, I'm with a customer right now.   What can I help you with?" That's almost as good 
+as actually answering the phone when you're unable   to actually answer the phone. I call this a wedge 
+product. You wedge yourself into this business,   earn their trust, show them that you know how 
+to implement these cool tools, and sell them   all kinds of other stuff. And you can demo this 
+to a roofer from your phone in like 90 seconds.   And here's exactly how how build it and how to 
+demo it. Okay, here's exactly how you do it.   I went to app.gohighlevel.com, I logged in. This 
+is my agency view, okay? And there's a difference   between agency view and sub account view. If 
+you own an event rental business, and you are my   customer, I have a GoHighLevel agency that like 
+we've been talking about, then you are going to   have a sub account view. But me, as the owner of 
+the event rental marketing business, for example,   I'm going to have an agency view. So, this is my 
+agency view. I'm going to click on sub accounts,   and then create sub account. Then we're going 
+to start searching for roofing right here. We're   going to pick this one. Home services roofing. 
+Cool. Now we're going to pick a roofing business   as if they are a customer. So, I'm just going to 
+search roofing, and I'm going to randomly pick   one. Neighborhood Roofing Solutions. Let's say 
+I just acquired this guy as my customer. Then   we're going to click down here. What we're doing 
+right now is basically saying, "Hey GoHighLevel,   I own a an agency that helps roofers find 
+more customers. I just acquired a new roofing   customer. GoHighLevel already has a database 
+of all the roofers. I searched the database,   which is what I just showed you. I picked 
+the one that I just acquired as a customer.   Now I'm going to build them a website, 
+right? Or to build them a better website,   cuz they probably already have one. Okay? So, 
+we're going to fill out all this info here   if it differs from what they already have listed 
+on the internet. I'm just going to put John Doe.   Okay, john@gmail.com. This is just for example 
+purposes. Business phone, that's actually his   phone. I'm going to change it by a digit, so 
+we don't mess anything up. Address, time zone.   Cool, pick whatever. And this is my client's 
+account. Cool. Add sub account. Now, this is   officially in our system as one of our customers. 
+In this case, a roofing business. Okay, now that   I have created the sub account, I'm going to click 
+up here at the top left. Click here to switch. I'm   going to search for them. Neighborhood Roofing 
+Services. Then I'm going to go to settings.   Remember, this is not the same settings that I 
+just was looking at when I had my agency view.   Now I'm looking at GoHighLevel as if I were my 
+roofing customer. Neighborhood Roofing Services.   Click on settings, go to phone system, phone 
+numbers, and then add number. Add phone number   used for SMS and calls. You're going to want to 
+pick a number that is the same area code as the   business owner's number or a similar area code. 
+One that people in that area would recognize.   Okay, I'm just going to pick the first one cuz 
+it doesn't matter, but you can obviously search   based on the area code or whatever. And I'm sorry 
+to say this is going to cost you a dollar 15.   Oops. But your customer's going to pay you a 
+hundred or multiple hundreds per month just   for this service. Cuz remember, it's a $30,000 job 
+that they might be missing out on. Proceed to buy.   It has to verify my identity because there 
+are government regulations around, you know,   texting and calling and all that. So I'll do that, 
+edit it out. So then we're simply going to take   the business owner's number and have it forward 
+to this new number. Forward calls to your cell,   20-second ring timeout, voicemail off. Okay? 
+But we're not done yet. Now we go to automation,   create workflow, select from template. Missed call 
+text back. We don't need to build this ourselves.   We'll just use a template. Hmm, this one's 
+been used 13,000 times versus 300 versus 1400.   We're going to go with this one. Boom. 3 seconds, 
+done. Enable auto save, done. What happens? Call   comes in, it's missed, busy, or voicemail. There's 
+a slight delay so that the auto text doesn't feel   like a bot. Okay? 0.2 hours, assign to a user. 
+You don't have to do this. Tag it as someone that,   you know, received a missed call text back. Send 
+it SMS. Like here's actually what you say in   the text. Tell the business owner that they just 
+sent a missed call text back. And then, you know,   add a notification to GoHighLevel so there's some 
+redundancy there. Boom. Boom. Save. Then we click   publish right there. Done. Then we go back here. 
+We go to calendars. We go to calendars. We go to   new. Okay? Remember these appointments are parts 
+of the template that we chose at the beginning   at the first step here. Roof installation, 
+roof inspection, roof replacement. Let's   say it's going to be a roof inspection. Click 
+share calendar. We're going to get that link.   And then we go back here, back to automations, 
+missed call text back, SMS. Here's what we send.   Sorry I missed your call. How can we help? Would 
+you like us to come out and inspect your roof?   If so, please do that here. Boom. That will 
+take them directly to a mobile-friendly   calendar booking link. Save action. That 
+is what they're going to get in their text.   So, while this business owner is on the roof 
+inspecting or on the ground talking to a customer,   he misses a call. That customer gets texted 
+a dynamic calendar invite link that's synced   with everything and I just showed you how 
+to do it right here in just a few minutes.   And of course, we could get a lot more granular 
+here. We could swap out their logo. We could   build them a website with a few clicks using a 
+roofing website template, whatever. Remember,   if your voicemail is toggled to on, then the 
+call will register as answered and this missed   call text back will never fire. So, that's exactly 
+how you do it. Guys, obviously, I am a GoHighLevel   affiliate. I love GoHighLevel. I use them. If you 
+use them through my link, I will make a little   kickback and you won't have to pay any extra. 
+I love making these videos because I work with   GoHighLevel all the time. I don't have to fake 
+anything. I don't have to fake that I love it. So,   if you appreciated this video, this free value I 
+just gave you, and if you want to use GoHighLevel,   maybe you own a roofing business and you don't 
+want to pay a greedy marketer like me a thousand   bucks a month, you just want to implement these 
+things yourself. If you own any business and you   don't want to start an agency, you just want to 
+use these tools yourself, not as a white label,   but it just as a GoHighLevel customer, please use 
+my affiliate link. If you want to start a business   like I covered today, please use my affiliate 
+link. It goes a really long way. Okay,   that's a wrap. I hope you learned enough so you 
+can go copy someone, reverse engineer someone,   build a new website for your landscaping business, 
+whatever. Again, please use my affiliate link if   you like this video, share it with a friend. 
+We'll see you next time on The Kern Office.
