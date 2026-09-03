@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>יומי פלאס – ניתוח סקטור האנרגיה 3.9.2026</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.7; direction: rtl; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-he { background: #1a2a1a; color: var(--green); }
+    .badge-stocks { background: #0d2030; color: var(--accent); }
+    .badge-energy { background: #2d1a00; color: var(--orange); }
+    .badge-macro { background: #3d1a1a; color: var(--red); }
+
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.9; }
+    .tl-dr strong { color: var(--accent); }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 130px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.red { color: var(--red); }
+    .stat-box .val.orange { color: var(--orange); }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    ul { padding-right: 20px; padding-left: 0; }
+    ul li { margin-bottom: 8px; font-size: 14px; line-height: 1.8; }
+    ul li strong { color: var(--text); }
+
+    .quote { background: var(--surface2); border-right: 3px solid var(--accent); border-radius: 8px 0 0 8px; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .quote strong { color: var(--accent); font-style: normal; }
+
+    .highlight { background: #1e2a1e; border: 1px solid #2d4a2d; border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .highlight .hl-title { font-weight: 700; color: var(--green); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; margin: 2px; }
+    .tag-bullish { background: #0d3320; color: var(--green); }
+    .tag-lt-bullish { background: #0d2a1e; color: #7ee8a2; }
+    .tag-cautious { background: #2d2000; color: var(--yellow); }
+    .tag-pass { background: #2d0a0a; color: var(--red); }
+    .tag-wait { background: #1a1a3d; color: var(--purple); }
+    .tag-watch { background: #1a2744; color: var(--accent); }
+
+    /* Stock cards */
+    .stock-card { background: var(--surface2); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; border-right: 4px solid var(--green); }
+    .stock-card.yellow { border-right-color: var(--yellow); }
+    .stock-card.red { border-right-color: var(--red); }
+    .stock-card.blue { border-right-color: var(--accent); }
+    .stock-card.purple { border-right-color: var(--purple); }
+    .stock-card.orange { border-right-color: var(--orange); }
+    .stock-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .stock-ticker { font-family: monospace; font-size: 22px; font-weight: 900; color: var(--yellow); }
+    .stock-name { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .stock-body { font-size: 14px; line-height: 1.8; }
+    .stock-body strong { color: var(--text); }
+
+    footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; text-align: center; }
+    footer a { color: var(--accent); text-decoration: none; }
+    .transcript-link { margin-top: 12px; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <a class="back" href="../index.html">← חזרה לדף הראשי</a>
+
+  <header>
+    <div>
+      <span class="badge badge-he">🇮🇱 עברית</span>
+      <span class="badge badge-stocks">📈 מניות</span>
+      <span class="badge badge-energy">⚡ אנרגיה</span>
+    </div>
+    <h1>יומי פלאס – ניתוח סקטור האנרגיה 3.9.2026</h1>
+    <div class="meta">
+      <span>📅 3 בספטמבר 2026</span>
+      <span>⏱ 11:56 דקות</span>
+      <span>📺 יומי פלאס</span>
+      <a href="https://www.youtube.com/watch?v=OxLWpERZjX4" target="_blank">▶ צפה ביוטיוב</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/OxLWpERZjX4" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR —</strong> סקירה מקיפה של סקטור האנרגיה: כמעט כל המניות נמצאות בנקודות פריצה פוטנציאליות ב-Cup & Handle / התכנסות. <strong>המפתח: הנפט הגולמי.</strong> אם הדלק יפרוץ מעל 100.91, כל מניות האנרגיה ירוצו. הכי מוכן עכשיו — <strong>HAL (הליברטון)</strong>. פוטנציאל הגדול ביותר — <strong>COP (קונוקו פיליפס)</strong> עם יעד $190. ממליץ לחכות יום אחד לאישור פריצה לפני כניסה.
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="val">14</div>
+      <div class="lbl">מניות נסקרו</div>
+    </div>
+    <div class="stat-box">
+      <div class="val orange">100.91</div>
+      <div class="lbl">פריצה קריטית בדלק</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">55$</div>
+      <div class="lbl">פוטנציאל COP</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">35%</div>
+      <div class="lbl">פוטנציאל EOG</div>
+    </div>
+    <div class="stat-box">
+      <div class="val">80%</div>
+      <div class="lbl">פוטנציאל SLB</div>
+    </div>
+  </div>
+
+  <!-- Key Thesis -->
+  <div class="card">
+    <h2>🛢️ התזה המרכזית – הנפט הגולמי כמפתח</h2>
+
+    <div class="highlight">
+      <div class="hl-title">⚡ תנאי הכרחי לכל הסקטור</div>
+      הנפט הגולמי נמצא כרגע <strong>מתכנס</strong> במשולש — מחכה לפריצה מעל <strong>100.91</strong>. זו הנקודה שתשחרר את כל מניות האנרגיה. ללא פריצה זו, יתכן תיקון בחלק מהמניות.
+    </div>
+
+    <ul>
+      <li><strong>סדרת C&H (Cup and Handle)</strong> מצטברת — פריצה אחת מעל 100.91 תביא את הריצה הבאה</li>
+      <li>היום היה <strong>דוג'י</strong> בנפט — זהירות, אך עדיין בתוך הדפוס</li>
+      <li>אם הנפט <strong>לא</strong> יפרוץ — חלק מהמניות עלולות לתקן</li>
+      <li>אם הנפט <strong>יפרוץ</strong> — "יהיה לנו פה הרבה הזדמנויות" (ציטוט ישיר)</li>
+    </ul>
+
+    <div class="quote">
+      <strong>ציטוט:</strong> "אנחנו לא יודעים מה קורה מאחורי כי בסוף גרף זה גרף — נסתכל על הגרפים וננתח אותם"
+    </div>
+  </div>
+
+  <!-- Top Picks -->
+  <div class="card">
+    <h2>⭐ המניות הכי מעניינות עכשיו</h2>
+
+    <!-- HAL -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">HAL</div>
+          <div class="stock-name">הליברטון (Halliburton)</div>
+        </div>
+        <div>
+          <span class="tag tag-bullish">🔥 READY NOW</span>
+          <span class="tag tag-bullish">Inverse H&S</span>
+        </div>
+      </div>
+      <div class="stock-body">
+        <strong>הכי מוכן מכולם לתנועה עכשיו.</strong>
+        <ul>
+          <li>עלתה מ-<strong>$18 → $43</strong>, תיקנה חזרה ל-<strong>$30</strong> (תיקון 50% פיבונאצ'י מושלם)</li>
+          <li>נראית כמו <strong>Inverse Head & Shoulders</strong> — תבנית היפוך בולישית חזקה</li>
+          <li>מעל ממוצע נע 150 עם <strong>נפח נכנס</strong> — אישור טכני</li>
+          <li>פריצה מעל <strong>$37.88</strong> = כניסה משמעותית לתבנית</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COP -->
+    <div class="stock-card orange">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">COP</div>
+          <div class="stock-name">קונוקו פיליפס (ConocoPhillips)</div>
+        </div>
+        <div>
+          <span class="tag tag-bullish">💰 פוטנציאל $55</span>
+          <span class="tag tag-watch">C&H</span>
+        </div>
+      </div>
+      <div class="stock-body">
+        <strong>הפוטנציאל הגדול ביותר בסקטור.</strong>
+        <ul>
+          <li>Cup & Handle + Handel ברור — רוצה לפרוץ</li>
+          <li>התנגדות ב-<strong>$135</strong> — פריצה שם מביאה אל <strong>$190</strong></li>
+          <li>פוטנציאל של <strong>$55 על $135</strong> — תנועה ענקית</li>
+          <li>תשאיר התראה על <strong>$135</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SLB -->
+    <div class="stock-card blue">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">SLB</div>
+          <div class="stock-name">שלומברז'ה (Schlumberger)</div>
+        </div>
+        <div>
+          <span class="tag tag-bullish">80% פוטנציאל</span>
+          <span class="tag tag-watch">C&H</span>
+        </div>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li>בנייה של Cup & Handle — תמיכה חזקה, התנגדות מעל הראש</li>
+          <li>פריצה מעל <strong>$60–$62</strong> = כניסה משמעותית</li>
+          <li>פוטנציאל של <strong>כמעט 80% מעלה</strong></li>
+          <li>מניה "לא תנודתית מידי" — פחות סיכון</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BKR -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">BKR</div>
+          <div class="stock-name">בייקר יוז (Baker Hughes)</div>
+        </div>
+        <div>
+          <span class="tag tag-lt-bullish">יעד $83</span>
+          <span class="tag tag-watch">C&H</span>
+        </div>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li>עושה <strong>עסקאות/רכישות</strong> (גם אם מחירי דלק ירדו, צריך מישהו שמתחזק ציוד)</li>
+          <li>Cup & Handle ברור — Handel מתפתח</li>
+          <li>פריצה מעל <strong>$66</strong> — יעד <strong>$83</strong></li>
+          <li>"לא יודע אם תגיע היום או בעוד כמה ימים, אבל זה נראה טוב"</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DVN -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <div class="stock-ticker">DVN</div>
+          <div class="stock-name">דבון אנרגי (Devon Energy)</div>
+        </div>
+        <div>
+          <span class="tag tag-bullish">פריצה קרובה</span>
+          <span class="tag tag-watch">C&H</span>
+        </div>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li>ה-lateral trend הישן סיים — Cup & Handle חדש בבנייה</li>
+          <li>פריצה ב-<strong>$49</strong> קרובה, קנייה ב-<strong>$52</strong></li>
+          <li>"האנרגיה הולכת לקבל חציון מאוד יפה"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- All Stocks -->
+  <div class="card">
+    <h2>📊 כל המניות שנסקרו</h2>
+
+    <h3>⚡ מוכנות לפריצה (Watch + התראה)</h3>
+
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">WMB</div><div class="stock-name">Williams Companies</div></div>
+        <span class="tag tag-bullish">כבר פרצה</span>
+      </div>
+      <div class="stock-body">כבר פרצה כלפי מעלה — אם תמשיך, תנועה אנרגטית משמעותית. פריצה מעל <strong>$76</strong>. ה-volume עולה, מחכה לאישור.</div>
+    </div>
+
+    <div class="stock-card blue">
+      <div class="stock-header">
+        <div><div class="stock-ticker">KMI</div><div class="stock-name">קינדר מורגן (Kinder Morgan)</div></div>
+        <span class="tag tag-wait">ממתין לפריצה</span>
+      </div>
+      <div class="stock-body">מקפץ על הקו, לחץ גדל. התכנסות ברורה. פריצה מעל <strong>$33</strong> — הזדמנות משמעותית.</div>
+    </div>
+
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">EOG</div><div class="stock-name">EOG Resources</div></div>
+        <span class="tag tag-bullish">35% פוטנציאל</span>
+      </div>
+      <div class="stock-body">
+        <strong>"The wider the base, the higher the space"</strong> — בנייה מאז נובמבר 2022. שפלים 97-98, שיאים 150, מתכנס. פוטנציאל <strong>35%</strong> אם יפרוץ. C&H קטן + Handel. פריצה ב-<strong>$24</strong>.
+      </div>
+    </div>
+
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div><div class="stock-ticker">1-OC</div><div class="stock-name">אונוק (OneOK)</div></div>
+        <span class="tag tag-bullish">12% פוטנציאל</span>
+      </div>
+      <div class="stock-body">התכנסות, התכנסות, התכנסות — רוצה לפרוץ. לא רחוקה מהממוצע. פוטנציאל <strong>12%</strong>. "סטאפ טוב".</div>
+    </div>
+
+    <div class="stock-card blue">
+      <div class="stock-header">
+        <div><div class="stock-ticker">XOM</div><div class="stock-name">אקסון מוביל</div></div>
+        <span class="tag tag-lt-bullish">תיקון קטן ואז מעלה</span>
+      </div>
+      <div class="stock-body">נראה טוב מאוד אבל מתחילים להיכנס מוכרים. <strong>תיקון קטן</strong> — ואז המשך מעלה. "דברים האלה נראים בולישים הרבה יותר ממניות ה-SAAS".</div>
+    </div>
+
+    <div class="stock-card blue">
+      <div class="stock-header">
+        <div><div class="stock-ticker">OVV</div><div class="stock-name">אובינטיב (Ovv)</div></div>
+        <span class="tag tag-cautious">זהירות – נפח</span>
+      </div>
+      <div class="stock-body">ממשיכה בעלייה — אבל שים לב ל-<strong>volume</strong>. כנראה תתקן לתוך הגאפ. המתן לתיקון ואז כניסה שנייה. "נראה מצוין".</div>
+    </div>
+
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">OXY</div><div class="stock-name">אוקסידנטל פטרוליום</div></div>
+        <span class="tag tag-lt-bullish">בסדר גמור</span>
+      </div>
+      <div class="stock-body">אין שומרה — נראה בסדר גמור. לא מבריק אבל לא רע.</div>
+    </div>
+
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">APA</div><div class="stock-name">APA Corporation</div></div>
+        <span class="tag tag-cautious">קצת רחוקה מהממוצע</span>
+      </div>
+      <div class="stock-body">סיפוח ב-<strong>$45–46</strong>, מחכה לפרוץ. הבעיה — קצת רחוקה מהממוצע. "מחכה לפריצה בצורה משמעותית יותר". תבנית טובה.</div>
+    </div>
+
+    <h3 style="margin-top: 20px;">🚫 לא מעניין כרגע</h3>
+
+    <div class="stock-card red">
+      <div class="stock-header">
+        <div><div class="stock-ticker">VLO</div><div class="stock-name">ולרו (Valero)</div></div>
+        <span class="tag tag-pass">כבר בחלל</span>
+      </div>
+      <div class="stock-body">כבר רחוקה מאוד מהממוצע — "בחלל". "אין מה לדבר על ולרו".</div>
+    </div>
+
+    <div class="stock-card red">
+      <div class="stock-header">
+        <div><div class="stock-ticker">PSX</div><div class="stock-name">פיליפס 66</div></div>
+        <span class="tag tag-pass">רחוקה מדי</span>
+      </div>
+      <div class="stock-body">רחוקה מדי מהממוצאים. "למה להתעסק עכשיו?"</div>
+    </div>
+
+    <div class="stock-card red">
+      <div class="stock-header">
+        <div><div class="stock-ticker">MPC</div><div class="stock-name">Marathon Petroleum</div></div>
+        <span class="tag tag-pass">מאוד רחוקה</span>
+      </div>
+      <div class="stock-body">מאוד רחוקה. לא להיכנס.</div>
+    </div>
+
+    <div class="stock-card red">
+      <div class="stock-header">
+        <div><div class="stock-ticker">EQT</div><div class="stock-name">EQT Corporation</div></div>
+        <span class="tag tag-pass">אין הזדמנות</span>
+      </div>
+      <div class="stock-body">כבר עלתה קצת — לא חושב שיש פה הזדמנות כרגע.</div>
+    </div>
+
+    <div class="stock-card red">
+      <div class="stock-header">
+        <div><div class="stock-ticker">TRGP</div><div class="stock-name">Targa Resources</div></div>
+        <span class="tag tag-pass">רחוקה</span>
+      </div>
+      <div class="stock-body">קצת רחוקה — "הייתי מתרחק כרגע".</div>
+    </div>
+  </div>
+
+  <!-- Conclusions -->
+  <div class="card">
+    <h2>🎯 מסקנות והמלצות</h2>
+    <ul>
+      <li>🛢️ <strong>הנפט הוא המפתח</strong> — המתן לפריצה מעל 100.91 לפני כניסה לכל מניית אנרגיה</li>
+      <li>⏳ <strong>חכה עוד יום</strong> — "חכו עוד יום לפריצה פשוט"</li>
+      <li>🔥 <strong>HAL ראשונה</strong> — הכי קרובה לתנועה, תבנית Inverse H&S + פיבו + נפח</li>
+      <li>💰 <strong>COP לטווח ארוך</strong> — $55 פוטנציאל, פריצה מעל $135</li>
+      <li>📉 <strong>לא להיכנס בתעוורת</strong> — "כדי שלא תיכנסו בתעוורת ותופתעו"</li>
+      <li>🧠 <strong>אנרגיה > SAAS</strong> — "מניות האנרגיה נראות בולישים הרבה יותר ממניות הטכנולוגיה"</li>
+      <li>🎯 <strong>תבחרו את מה שאתם רוצים</strong> — כולן נראות טוב, שמרו על discipline אישי</li>
+    </ul>
+
+    <div class="warn-box" style="margin-top: 16px;">
+      <div class="hl-title">⚠️ תנאי סיכון</div>
+      אם הנפט הגולמי <strong>לא</strong> יפרוץ מעל 100.91, חלק מהמניות עלולות לתקן. אל תיכנסו לפני אישור פריצה בנפט.
+    </div>
+  </div>
+
+  <footer>
+    <div>סוכם על ידי <strong>Dot DiBot</strong> · 3 בספטמבר 2026</div>
+    <div class="transcript-link">
+      <a href="transcripts/yomi-plus-energy-3-9-26.txt">📄 טקסט מלא (תמלול)</a>
+    </div>
+    <div style="margin-top: 8px;">
+      <a href="https://www.youtube.com/watch?v=OxLWpERZjX4" target="_blank">▶ יומי פלאס ביוטיוב</a>
+    </div>
+  </footer>
+
+</div>
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
