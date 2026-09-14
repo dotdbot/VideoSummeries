@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoFi, Palantir, Meta & ServiceNow Investors — Listen UP</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-stocks { background: #0d2030; color: var(--accent); }
+    .badge-biz { background: #2d2000; color: var(--yellow); }
+
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.red { color: var(--red); }
+    .stat-box .val.orange { color: var(--orange); }
+    .stat-box .val.purple { color: var(--purple); }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    ul { padding-left: 20px; }
+    ul li { margin-bottom: 8px; font-size: 14px; line-height: 1.7; }
+    ul li strong { color: var(--text); }
+
+    .quote { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .quote strong { color: var(--accent); font-style: normal; }
+
+    .highlight { background: #1e2a1e; border: 1px solid #2d4a2d; border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .highlight .hl-title { font-weight: 700; color: var(--green); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; margin: 2px; }
+    .tag-bullish { background: #0d3320; color: var(--green); }
+    .tag-lt-bullish { background: #0d2a1e; color: #7ee8a2; }
+    .tag-cautious { background: #2d2000; color: var(--yellow); }
+    .tag-rangebound { background: #1a1a3d; color: var(--purple); }
+    .tag-watch { background: #1a2744; color: var(--accent); }
+
+    /* Stock cards */
+    .stock-card { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-left: 4px solid var(--green); }
+    .stock-card.yellow { border-left-color: var(--yellow); }
+    .stock-card.purple { border-left-color: var(--purple); }
+    .stock-card.watching { border-left-color: var(--accent); }
+    .stock-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .stock-ticker { font-family: monospace; font-size: 20px; font-weight: 900; color: var(--yellow); }
+    .stock-name { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .stock-body { font-size: 14px; line-height: 1.8; }
+    .stock-body strong { color: var(--text); }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-stocks">📈 Stocks / Analysis</span>
+      <span class="badge badge-biz">💰 Portfolio</span>
+    </div>
+    <h1>SoFi, Palantir, Meta & ServiceNow Investors‼️ Listen UP</h1>
+    <div class="meta">
+      <span>📺 Jeremy Lefebvre Clips</span>
+      <span>📅 September 8, 2026</span>
+      <span>⏱️ ~26 min</span>
+      <a href="https://www.youtube.com/watch?v=MCaeXz5UCRI" target="_blank" style="color:var(--accent);">▶ Watch on YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/MCaeXz5UCRI" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> Jeremy breaks down his outlook on <strong>Meta, Palantir, ServiceNow, Salesforce, Honest Company, SoFi, Nike, Lululemon, and e.l.f. Beauty</strong>. Meta and Palantir are both <strong>rangebound tease stocks</strong> — exciting rallies followed by pullbacks — held back by massive capex (Meta) and decelerating growth comps (Palantir). ServiceNow and Salesforce still have <strong>momentum with room to run</strong>. Honest is on track to exit the year <strong>$7–$9</strong>. SoFi is the <strong>most exciting financial stock</strong> right now. Nike remains his worst public account position (−45%) but he's holding for the brand durability thesis. The star of the video is <strong>e.l.f. Beauty (ELF)</strong> — a $5B market cap company he sees reaching <strong>tens of billions</strong>, with a base-case stock price target of <strong>$250–$300 by 2030</strong> and a bull case of <strong>$400+</strong>.
+  </div>
+
+  <!-- Key Stats Row -->
+  <div class="stats-row">
+    <div class="stat-box"><div class="val">$610K</div><div class="lbl">Meta Position (Public)</div></div>
+    <div class="stat-box"><div class="val yellow">+2,387%</div><div class="lbl">Palantir Total Gain</div></div>
+    <div class="stat-box"><div class="val">$177K</div><div class="lbl">ServiceNow Position</div></div>
+    <div class="stat-box"><div class="val purple">$497K</div><div class="lbl">ELF Total (Public+Private)</div></div>
+  </div>
+
+  <!-- STOCK-BY-STOCK BREAKDOWN -->
+  <div class="card">
+    <h2>📊 Stock-by-Stock Breakdown</h2>
+
+    <!-- META -->
+    <div class="stock-card purple">
+      <div class="stock-header">
+        <div><div class="stock-ticker">META</div><div class="stock-name">Meta Platforms</div></div>
+        <span class="tag tag-rangebound">🔄 Rangebound</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li><strong>Huge position</strong> — $610,000 in the public account alone across multiple portfolios</li>
+          <li>Believes Meta is <strong>stuck between $500–$550 and $700–$750</strong> — a "tease stock" that rallies then falls back</li>
+          <li>Root cause: <strong>Zuckerberg won't chill on capex</strong> — probably another 1–2 years of massive AI spending</li>
+          <li><strong>Long-term (5-year) outlook: very bullish</strong>. Short-term (12 months): rangebound frustration</li>
+          <li>The stock will get everyone excited on rallies, then "just falls right back down"</li>
+        </ul>
+        <div class="quote">"I wish I could tell you Meta is going to break out, go a thousand, go 1,500 in the short term, but I believe Meta is still a rangebound stock."</div>
+      </div>
+    </div>
+
+    <!-- PALANTIR -->
+    <div class="stock-card purple">
+      <div class="stock-header">
+        <div><div class="stock-ticker">PLTR</div><div class="stock-name">Palantir Technologies</div></div>
+        <span class="tag tag-rangebound">🔄 Rangebound</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li><strong>Up $13,000, +2,387%</strong> from an average cost of $7.34</li>
+          <li>"Same exact situation as Meta" — a <strong>tease stock</strong></li>
+          <li>Valuations are pushed, and <strong>2027 comps will be brutal</strong> — no way they maintain 100%+ revenue growth</li>
+          <li>Expects <strong>decelerating growth rates in 2027</strong>, which will be "very deflating to the stock"</li>
+          <li>Called it last year: <strong>Palantir stuck between ~$125 and ~$200</strong> for "probably several years"</li>
+          <li>Still holding because it's a great company — "who knows, maybe they come in with 150% revenue growth"</li>
+        </ul>
+        <div class="warn-box">
+          <div class="hl-title">⚠️ Key Risk</div>
+          Decelerating growth comps in 2027 — the market expects hyper-growth, and any slowdown will pressure the stock hard.
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICENOW -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">NOW</div><div class="stock-name">ServiceNow</div></div>
+        <span class="tag tag-bullish">🚀 Momentum</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li><strong>Up $56,000</strong> on this position — "the run is still early"</li>
+          <li><strong>Very different from Meta/Palantir</strong> — ServiceNow and Salesforce can continue to have momentum</li>
+          <li>Expects a short-term top "probably at some point in Q4" but still bullish beyond that</li>
+          <li>$177,000 invested — "I wouldn't have that much in a stock if I didn't love Bill McDermott and their products"</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SALESFORCE -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">CRM</div><div class="stock-name">Salesforce</div></div>
+        <span class="tag tag-bullish">🚀 More Confident</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li><strong>More belief in Salesforce than ServiceNow</strong> — has significantly more money invested in CRM</li>
+          <li>Feels more confident in <strong>Salesforce's business model and in Benioff</strong> as a leader</li>
+          <li>Still early in the run — both CRM and NOW have momentum that other mega-caps lack right now</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HONEST -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">HNST</div><div class="stock-name">Honest Company</div></div>
+        <span class="tag tag-bullish">📈 Bullish</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li>Called at the start of the year that <strong>Honest exits 2026 at $5+</strong> — when it was $1–$2. People said he was crazy</li>
+          <li>Now believes <strong>$5+ is "in the bag"</strong> and real exit will be <strong>$7–$9</strong></li>
+          <li>Financials are dramatically improving: <strong>margins improving massively, balance sheet cleaned up</strong></li>
+          <li>Next year will see <strong>overall company revenue growth</strong> as exited product categories set them up for the ramp</li>
+        </ul>
+        <div class="highlight">
+          <div class="hl-title">✅ Thesis Playing Out</div>
+          Honest went from $1–$2 → $5+ already. Jeremy now sees $7–$9 exit for 2026 based on margin improvement and organic revenue growth.
+        </div>
+      </div>
+    </div>
+
+    <!-- SOFI -->
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">SOFI</div><div class="stock-name">SoFi Technologies</div></div>
+        <span class="tag tag-bullish">🔥 Most Exciting</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li>"The <strong>most exciting financial stock</strong> to be in" — between SoFi and Robinhood, SoFi wins for him</li>
+          <li>Robinhood had a huge +16.5% day — congrats to holders — but Jeremy will only buy Hood <strong>during the next major market correction/crash</strong></li>
+          <li>SoFi remains the #1 financial pick right now</li>
+        </ul>
+        <div class="quote">"SoFi remains the most exciting financial for me personally."</div>
+      </div>
+    </div>
+
+    <!-- NIKE -->
+    <div class="stock-card yellow">
+      <div class="stock-header">
+        <div><div class="stock-ticker">NKE</div><div class="stock-name">Nike</div></div>
+        <span class="tag tag-cautious">⚠️ Holding — Painful</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li><strong>Down 45%</strong> — worst stock in the public account "by a mile"</li>
+          <li>Posted about it on X — 92,000 people saw. "It's just awful"</li>
+          <li>Entire consumer/retail space has been terrible — Lululemon, Nike, all of them</li>
+          <li><strong>North America is actually growing</strong> — people don't realize Nike has turned around the US numbers</li>
+          <li>The problem is <strong>Asia/China</strong> — that's dragging the whole stock down</li>
+          <li>Currently <strong>clearing inventory this year</strong> — terrible for numbers, but sets up 2027 recovery</li>
+          <li>If North America growth continues + Asia recovers next year → <strong>"we're going to have a party in Nike stock"</strong></li>
+        </ul>
+        <div class="highlight">
+          <div class="hl-title">Nike vs. Lululemon — The Brand Thesis</div>
+          <strong>Nike is the only company with a long-lasting brand.</strong> Lululemon, Alo, Vuori, Hoka, On, Skechers — Jeremy considers them all "fly by night retailers" that are "here today, gone tomorrow." Nike is a <em>brand</em>, not a retailer, and that brand strength is what gets you through multi-year downturns and into the next upcycle. "When all the dust settles, they're going to be the one left."
+        </div>
+        <div class="quote">"Nike is the only company that has a brand strong enough to make it through decade after decade, generation after generation."</div>
+      </div>
+    </div>
+
+    <!-- ELF BEAUTY -->
+    <div class="stock-card" style="border-left-color: var(--green); border-left-width: 6px;">
+      <div class="stock-header">
+        <div><div class="stock-ticker">ELF</div><div class="stock-name">e.l.f. Beauty — ⭐ Star of the Video</div></div>
+        <span class="tag tag-bullish">🚀 Long-Term Compounder</span>
+      </div>
+      <div class="stock-body">
+
+        <h3>Position Size</h3>
+        <ul>
+          <li><strong>Public account: $153,000</strong> — of which $104,000 is pure gains</li>
+          <li>Shares bought in 2019 at $7.28 → <strong>up 1,215%</strong></li>
+          <li>Shares bought June 2026 at $49.09 → up 95%</li>
+          <li>Shares bought mid-July at $74.58 → up 28% ($10K gains)</li>
+          <li><strong>Private portfolio: $344,000</strong> — up $135,000 (avg cost $58.70)</li>
+          <li>Total ELF across portfolios: <strong>~$497,000</strong></li>
+        </ul>
+
+        <h3>Three Core Brands — Growth Levers Everywhere</h3>
+        <ul>
+          <li><strong>E.L.F. (core brand)</strong> — Just launched <strong>hair care products</strong> (shampoo, conditioner, gel at $9 price point) in partnership with Target. Displays selling out. Target is "more than happy" to be launch partner because ELF moves product</li>
+          <li><strong>Road (Rhoade)</strong> — "The hottest brand in beauty." Very <strong>exclusive distribution</strong> — not in Walmart or Target. Customers go directly to the site or through Sephora. Every retailer wants it. The exclusivity IS the power</li>
+          <li><strong>Notorium</strong> — Building out the body wash space. Wants to be <strong>everywhere</strong> — Ulta, Walmart, Target. Growing fast</li>
+        </ul>
+
+        <h3>Why ELF Is a "One of One"</h3>
+        <ul>
+          <li>Very few beauty companies can <strong>launch in an entirely new category</strong> (hair care) and immediately sell out — that's brand power</li>
+          <li>All three brands are <strong>relatively young in their scaling</strong> — Road barely existed a few years ago, Notorium nobody heard of 5–7 years ago</li>
+          <li>Massive <strong>margin expansion opportunity</strong> ahead as brands mature — "the ELF you're seeing today in terms of EPS and net income is literally a complete joke compared to where this company will be 2–6 years from now"</li>
+          <li>Growth levers: pricing power, marketing velocity, new product launches, new retail distribution, international expansion</li>
+          <li>Future M&A: profits will build a <strong>massive cash pile</strong> for either share buybacks or acquiring new brands</li>
+        </ul>
+
+        <h3>Valuation & Projections</h3>
+        <div class="stats-row">
+          <div class="stat-box"><div class="val">$5B</div><div class="lbl">Current Market Cap</div></div>
+          <div class="stat-box"><div class="val">$232B</div><div class="lbl">L'Oréal (For Reference)</div></div>
+          <div class="stat-box"><div class="val green">$250–$300</div><div class="lbl">Base Case 2030</div></div>
+          <div class="stat-box"><div class="val" style="color:var(--green);">$400+</div><div class="lbl">Bull Case 2030</div></div>
+        </div>
+
+        <h3>Jeremy's Base Case (2030)</h3>
+        <ul>
+          <li>Revenue: <strong>$3.3 billion</strong> (~15% average annual growth)</li>
+          <li>Net income: <strong>~$500 million</strong></li>
+          <li>Net income margin: <strong>~15%</strong></li>
+          <li>Fair PE at those growth rates: <strong>30–35x</strong></li>
+          <li>Stock price: <strong>$250–$300</strong></li>
+          <li>CAGR: <strong>~30% annually</strong> — "destroy the S&P 500 with ELF stock alone"</li>
+        </ul>
+
+        <h3>Jeremy's Bull Case (2030)</h3>
+        <ul>
+          <li>Revenue: <strong>~$4 billion</strong></li>
+          <li>Net income: <strong>~$647 million</strong></li>
+          <li>Net income margin: <strong>~17%</strong></li>
+          <li>Fair PE: <strong>35–40x</strong></li>
+          <li>Stock price: <strong>$400+</strong> (from under $100 today)</li>
+          <li>CAGR: <strong>deep into the 40s%</strong></li>
+        </ul>
+
+        <div class="warn-box">
+          <div class="hl-title">📊 Private Group Member Projections</div>
+          John (from Discord): Base case has core ELF USA at only 4% revenue growth — Jeremy thinks that's "insanely conservative." John's projections: ~$3.5B base / ~$4.7B bull case for 2030 revenue.
+        </div>
+
+        <div class="quote">"That ladies and gentlemen is ELF on a shelf. The stock's less than $100 today. Under my bull case, it's a $400 stock come 2030."</div>
+      </div>
+    </div>
+
+  </div><!-- end stock breakdown card -->
+
+  <!-- CONCLUSIONS -->
+  <div class="card">
+    <h2>💡 Key Conclusions</h2>
+    <ul>
+      <li><strong>Not all growth stocks are created equal right now:</strong> Meta and Palantir are rangebound traps; ServiceNow and Salesforce have genuine momentum</li>
+      <li><strong>Capex and comps matter enormously:</strong> Meta's AI spending and Palantir's impossible 2027 comps will cap their upside for 12–24 months</li>
+      <li><strong>Brand durability is the ultimate moat:</strong> Nike is the only athletic brand that survives generational cycles — the rest are "retailers"</li>
+      <li><strong>e.l.f. is the standout long-term opportunity:</strong> A $5B company with 3 scaling brands, expanding into new categories, with a path to tens of billions in market cap</li>
+      <li><strong>Honest Company thesis is playing out ahead of schedule:</strong> From $1–$2 → now targeting $7–$9 exit this year</li>
+      <li><strong>SoFi is the #1 financial stock pick</strong> over Robinhood — Hood gets bought on crashes only</li>
+      <li><strong>Short-term noise vs. long-term conviction:</strong> Jeremy explicitly says none of his short-term views change his position sizes or long-term thesis</li>
+    </ul>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <div class="card">
+    <h2>🎯 Actionable Takeaways</h2>
+    <ul>
+      <li><strong>META holders:</strong> Expect $500–$750 range for another 1–2 years. Long-term (5yr) still bullish. Don't chase breakouts — they fade</li>
+      <li><strong>PLTR holders:</strong> $125–$200 range for "probably several years." Hold if you believe, but don't expect a run to $400–$500</li>
+      <li><strong>NOW/CRM:</strong> These can still run. Possible Q4 short-term top. Jeremy has more conviction in CRM over NOW</li>
+      <li><strong>HNST:</strong> Upgraded exit target to $7–$9 from $5+. Margins and revenue trajectory both improving</li>
+      <li><strong>SOFI:</strong> Best-in-class financial. Hold and ride</li>
+      <li><strong>NKE:</strong> Painful now but brand thesis intact. North America growing; Asia recovery = major catalyst. Clearing inventory in 2026, building into 2027</li>
+      <li><strong>HOOD:</strong> Don't buy here — wait for a major market crash to pick it up at a discount</li>
+      <li><strong>ELF:</strong> The #1 conviction play. Under $100 today with base case $250–$300 by 2030. Three brands, massive margin expansion, brand power that lets them launch in new categories and sell out. "One of one" in beauty</li>
+    </ul>
+  </div>
+
+  <footer>
+    <a href="transcripts/sofi-palantir-meta-servicenow-listen-up.txt">📄 Raw Transcript</a>
+    <span>Auto-generated by Dot DiBot · Hermes Agent</span>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
