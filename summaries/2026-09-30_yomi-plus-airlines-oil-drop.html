@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>יומי פלאס 30.9.26 — ירידת הדלק: מי נהנה?</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.7; direction: rtl; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .back:hover { text-decoration: underline; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-he { background: #1a3a5c; color: var(--accent); }
+    .badge-stocks { background: #0d2030; color: var(--accent); }
+    .badge-energy { background: #2d1a00; color: var(--orange); }
+
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; text-align: right; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.9; text-align: right; }
+    .tl-dr strong { color: var(--accent); }
+
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; text-align: right; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+
+    ul { padding-right: 20px; padding-left: 0; }
+    ul li { margin-bottom: 8px; font-size: 14px; line-height: 1.8; }
+    ul li strong { color: var(--text); }
+
+    .stock-card { background: var(--surface2); border-radius: 10px; padding: 20px; margin-bottom: 14px; border-right: 4px solid var(--green); }
+    .stock-card.yellow { border-right-color: var(--yellow); }
+    .stock-card.red { border-right-color: var(--red); }
+    .stock-card.blue { border-right-color: var(--accent); }
+    .stock-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .stock-ticker { font-family: monospace; font-size: 22px; font-weight: 900; color: var(--yellow); }
+    .stock-name { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .stock-target { font-family: monospace; font-size: 18px; font-weight: 900; color: var(--green); }
+    .stock-body { font-size: 14px; line-height: 1.8; }
+
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; margin: 2px; }
+    .tag-bullish { background: #0d3320; color: var(--green); }
+    .tag-cautious { background: #2d2000; color: var(--yellow); }
+    .tag-pass { background: #2d0a0a; color: var(--red); }
+
+    .quote { background: var(--surface2); border-right: 3px solid var(--accent); border-radius: 8px 0 0 8px; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); text-align: right; }
+    .quote strong { color: var(--accent); font-style: normal; }
+
+    .highlight { background: #1e2a1e; border: 1px solid #2d4a2d; border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .highlight .hl-title { font-weight: 700; color: var(--green); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">→ חזרה לכל הסיכומים</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-he">🇮🇱 עברית</span>
+      <span class="badge badge-stocks">📈 מניות / ניתוח טכני</span>
+      <span class="badge badge-energy">⛽ אנרגיה / תעופה</span>
+    </div>
+    <h1>יומי פלאס 30.9.26 — הדלק יורד: מי נהנה?</h1>
+    <div class="meta">
+      <span>📺 Micha Stocks (מיכה סטוקס)</span>
+      <span>📅 30 בספטמבר 2026</span>
+      <span>⏱️ ~7 דק׳</span>
+      <a href="https://www.youtube.com/watch?v=hkw0NAO5u6M" target="_blank" style="color:var(--accent);">▶ צפייה ביוטיוב</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/hkw0NAO5u6M" allowfullscreen></iframe>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> הדלק יורד — מי מרוויח? מיכה מנתח טכנית את <strong>חברות התעופה</strong> (JETS, UAL, DAL, AAL), <strong>קרוזים</strong> (CCL), ו-<strong>UBER</strong>. שלד: שפלים עולים, תעלות ברורות, סטאפים מוכנים. <strong>UAL — פוטנציאל 30%</strong>, <strong>DAL — פוטנציאל ~20%</strong>. AAL? לא. CCL דיווחה תוצאות מצוינות (+13%). השוק מחכה ל"מישהו שישחרר אותו" — ירידת הדלק יכולה להיות הטריגר.
+  </div>
+
+  <!-- מניות -->
+  <div class="card">
+    <h2>✈️ ניתוח טכני — מי נהנה מירידת הדלק?</h2>
+
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">JETS</div><div class="stock-name">תעודת סל — חברות תעופה</div></div>
+        <span class="tag tag-bullish">📈 תעלה עולה</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li>שיא באזור <strong>33–34</strong></li>
+          <li><strong>שפלים עולים</strong>, קווי מגמה ברורים</li>
+          <li>יושבת על <strong>ממוצע 150</strong> — נקודת כניסה טובה</li>
+          <li>כרגע <strong>בחלק התחתון של תעלה</strong> — פוטנציאל כלפי מעלה</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">UAL</div><div class="stock-name">United Airlines</div></div>
+        <div><div class="stock-target">+30%</div><span class="tag tag-bullish">⭐ מועדף</span></div>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li><strong>כבר פרצה</strong> לפני הבלאגן באיראן — חזרה לנקודת פריצה</li>
+          <li>נקודת פריצה: <strong>$119</strong></li>
+          <li>"ברגע שהדלק ירד — <strong>היא תעוף למעלה</strong>"</li>
+          <li>לא תנודתית מדי — <strong>פוטנציאל ~30%</strong></li>
+          <li>תעלה יפה: שפלים עולים, שיאים עולים</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">DAL</div><div class="stock-name">Delta Air Lines</div></div>
+        <div><div class="stock-target">+19.8%</div><span class="tag tag-bullish">📈 סטאפ זהה</span></div>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li><strong>אותו סטאפ</strong> כמו UAL — שפלים עולים, שיאים עולים</li>
+          <li>קווי מגמה ברורים</li>
+          <li>פוטנציאל: <strong>~19.8%</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stock-card red">
+      <div class="stock-header">
+        <div><div class="stock-ticker">AAL</div><div class="stock-name">American Airlines</div></div>
+        <span class="tag tag-pass">❌ פחות טובה</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li>"<strong>נראית פחות טוב</strong> מהן"</li>
+          <li>אין סטאפ ברור — "יותר בבלאגן"</li>
+          <li>מיכה: "<strong>לא הייתי מתעסק איתה</strong>"</li>
+          <li>UAL ו-DAL הרבה יותר בריאות, עולות, פשוטות לניתוח</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stock-card">
+      <div class="stock-header">
+        <div><div class="stock-ticker">CCL</div><div class="stock-name">Carnival — קרוזים</div></div>
+        <span class="tag tag-bullish">🚢 תוצאות מצוינות</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li>דיווחה תוצאות מצוינות — <strong>עלתה ~13%</strong></li>
+          <li>ווליום <strong>פי 2 מהממוצע</strong></li>
+          <li>הזמנות משמעותיות — אנשים מזמינים קרוזים</li>
+          <li>השרשרת: קרוז → טיסות → דלק זול = רווח</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stock-card blue">
+      <div class="stock-header">
+        <div><div class="stock-ticker">UBER</div><div class="stock-name">Uber Technologies</div></div>
+        <span class="tag tag-cautious">📦 מלבן — טרייד</span>
+      </div>
+      <div class="stock-body">
+        <ul>
+          <li>קונים נכנסים <strong>כל פעם באותו מחיר</strong> — סימן חיובי</li>
+          <li>סטופ: <strong>$67</strong> (או $67.4)</li>
+          <li>טרייד בתוך מלבן — לא פריצה</li>
+          <li>הקשר: אנשים טסים → קרוז → <strong>לוקחים אובר</strong> — הכל מתחבר</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- מסקנה -->
+  <div class="card">
+    <h2>💡 מסקנה</h2>
+    <ul>
+      <li><strong>ירידת הדלק = טריגר</strong> לתעופה, קרוזים, ונלוות (UBER)</li>
+      <li><strong>UAL (30%) ו-DAL (~20%)</strong> — הסטאפים הכי נקיים</li>
+      <li><strong>AAL — דילוג</strong>. לא ברורה מספיק</li>
+      <li>הרבה סטאפים ב<strong>מלבנים או לפני פריצה</strong> — "תנו להם לפרוץ בשקט"</li>
+      <li>אם הדלק ימשיך לרדת → גם <strong>אג"ח ירד</strong> → השוק יצא מהתקיעות</li>
+    </ul>
+    <div class="quote">"ברגע שהשוק יתחיל לרוץ — הוא ירוץ. הוא מחכה שמישהו ישחרר אותו. עם הדלק שיורד ככה, אני מעודד."</div>
+  </div>
+
+  <footer>
+    <a href="transcripts/yomi-plus-airlines-oil-drop.txt">📄 תמליל גולמי</a>
+    <span>נוצר אוטומטית ע"י Dot DiBot · Hermes Agent</span>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
