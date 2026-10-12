@@ -44,7 +44,15 @@ def peek(t, url, translation=None, lang=""):
     a = t["author"]
     dt = fmt_date(t.get("created_at", ""))
     when = dt.strftime("%b %d, %Y · %H:%M UTC") if dt else t.get("created_at", "")
-    photos = (t.get("media") or {}).get("photos") or []
+    media = t.get("media") or {}
+    photos = media.get("photos") or []
+    if not photos and media.get("videos"):
+        v = media["videos"][0]
+        photos = [{"url": v.get("thumbnail_url", "")}] if v.get("thumbnail_url") else []
+        mins = int(v.get("duration", 0) // 60); secs = int(v.get("duration", 0) % 60)
+        vid_note = f" · 🎬 video {mins}:{secs:02d}"
+    else:
+        vid_note = ""
     img = f'<img class="peek-img" src="{html.escape(photos[0]["url"])}" alt="" loading="lazy">' if photos else ""
     if translation:
         body = (f'<div class="peek-text" dir="auto">{html.escape(translation)}</div>'
@@ -61,7 +69,7 @@ def peek(t, url, translation=None, lang=""):
         </div>
         {body}
         {img}
-        <div class="peek-meta">{when} · {stats}</div>
+        <div class="peek-meta">{when} · {stats}{vid_note}</div>
       </div>''', dt
 
 
