@@ -40,12 +40,18 @@ def fmt_date(s):
         return None
 
 
-def peek(t, url):
+def peek(t, url, translation=None, lang=""):
     a = t["author"]
     dt = fmt_date(t.get("created_at", ""))
     when = dt.strftime("%b %d, %Y · %H:%M UTC") if dt else t.get("created_at", "")
     photos = (t.get("media") or {}).get("photos") or []
     img = f'<img class="peek-img" src="{html.escape(photos[0]["url"])}" alt="" loading="lazy">' if photos else ""
+    if translation:
+        body = (f'<div class="peek-text" dir="auto">{html.escape(translation)}</div>'
+                f'<details class="orig"><summary>Translated from {html.escape(lang or "original")} · show original</summary>'
+                f'<div class="peek-text" dir="auto">{html.escape(t["text"])}</div></details>')
+    else:
+        body = f'<div class="peek-text" dir="auto">{html.escape(t["text"])}</div>'
     stats = f'❤ {t.get("likes", 0):,} · 🔁 {t.get("retweets", 0):,} · 💬 {t.get("replies", 0):,}'
     return f'''<div class="peek">
         <div class="peek-head">
@@ -53,7 +59,7 @@ def peek(t, url):
           <div><div class="peek-name">{html.escape(a["name"])}</div><div class="peek-handle">@{html.escape(a["screen_name"])}</div></div>
           <a class="peek-x" href="{html.escape(url)}" target="_blank" rel="noopener" title="Open on X">↗</a>
         </div>
-        <div class="peek-text">{html.escape(t["text"])}</div>
+        {body}
         {img}
         <div class="peek-meta">{when} · {stats}</div>
       </div>''', dt
@@ -65,16 +71,25 @@ def main():
     ap.add_argument("--summary", required=True)
     ap.add_argument("--title", default="")
     ap.add_argument("--tags", default="")
+    ap.add_argument("--translation", action="append", default=[],
+                    help="English translation of the tweet text, one per URL in order (use for languages other than Hebrew/English)")
+    ap.add_argument("--lang", default="", help="source language name, e.g. Chinese")
+    ap.add_argument("--replace", action="store_true", help="remove an existing card containing these tweet ids first")
     a = ap.parse_args()
 
     page = PAGE.read_text(encoding="utf-8")
+    if a.replace:
+        for u in a.urls:
+            tid = parse(u)[1]
+            page = re.sub(r'    <div class="tcard" data-ids="[^"]*\b%s\b.*?\n    </div>\n\n    ' % tid, "", page, flags=re.S)
     peeks, first_dt, ids = [], None, []
-    for u in a.urls:
+    for i, u in enumerate(a.urls):
         user, tid = parse(u)
         if f'data-ids="' in page and re.search(rf'data-ids="[^"]*\b{tid}\b', page):
             sys.exit(f"DUPLICATE: tweet {tid} already on the page")
         t = fetch(user, tid)
-        block, dt = peek(t, f"https://x.com/{user}/status/{tid}")
+        tr = a.translation[i] if i < len(a.translation) else None
+        block, dt = peek(t, f"https://x.com/{user}/status/{tid}", tr, a.lang)
         peeks.append(block)
         ids.append(tid)
         first_dt = first_dt or dt
