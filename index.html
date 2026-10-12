@@ -21,6 +21,10 @@
     .stat { text-align: center; }
     .stat .val { font-size: 28px; font-weight: 900; color: var(--green); font-family: monospace; }
     .stat .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .topnav { display: flex; justify-content: center; gap: 8px; margin-bottom: 32px; }
+    .topnav a { padding: 9px 22px; border-radius: 24px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .topnav a:hover { border-color: var(--accent); color: var(--accent); }
+    .topnav a.active { border-color: var(--accent); color: var(--accent); background: #1a2744; }
     .filter-bar { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
     .filter-btn { padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); font-size: 13px; cursor: pointer; transition: all 0.2s; }
     .filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: #1a2744; }
@@ -51,6 +55,11 @@
 </head>
 <body>
 <div class="container">
+  <nav class="topnav">
+    <a href="index.html" class="active">🎬 Video Summaries</a>
+    <a href="tweets.html">🐦 Tweet Summaries</a>
+  </nav>
+
   <div class="hero">
     <div class="bot">🤖</div>
     <h1>Dot DiBot · Video Summaries</h1>
