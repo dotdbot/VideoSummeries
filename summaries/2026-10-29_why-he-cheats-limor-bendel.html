@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>אם הוא אוהב אותך, אז למה הוא בוגד בך? (עם לימור בנדל)</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; text-align: right; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-he { background: #1a3a5c; color: var(--accent); }
+    .badge-rel { background: #2d0a2d; color: var(--purple); }
+    .badge-pod { background: #1a2030; color: var(--accent); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.9; }
+    .tl-dr strong { color: var(--accent); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--purple); font-family: monospace; }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; }
+    ul { padding-right: 20px; padding-left: 0; }
+    ul li { margin-bottom: 8px; font-size: 14px; line-height: 1.8; }
+    .quote { background: var(--surface2); border-right: 3px solid var(--accent); border-radius: 8px 0 0 8px; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+    th { text-align: right; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--surface2); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">→ חזרה לכל הסיכומים</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-he">🇮🇱 עברית</span>
+      <span class="badge badge-rel">❤️ זוגיות</span>
+      <span class="badge badge-pod">🎙️ פודקאסט</span>
+    </div>
+    <h1>אם הוא אוהב אותך, אז למה הוא בוגד בך? (עם לימור בנדל)</h1>
+    <div class="meta">
+      <span>📺 איימי בכור בוני — האקדמיה לניהול משברים</span>
+      <span>📅 29 באוקטובר 2026</span>
+      <span>⏱️ 1:01:43</span>
+      <a href="https://www.youtube.com/watch?v=pO-1F9E81rI" target="_blank" style="color:var(--accent);">▶ צפייה ביוטיוב</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/pO-1F9E81rI" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>בקצרה:</strong> עו"ד לענייני משפחה <strong>איימי בכור בוני</strong> (25+ שנה בתחום) מארחת את היועצת הזוגית והמינית <strong>לימור בנדל</strong> לפרק הראשון מתוך שניים על בגידות. הטענה המרכזית של לימור: <strong>אפשר לאהוב באמת ועדיין לבגוד</strong>, כי לפי <strong>המודל של פרופ' שטרנברג</strong> יש שלושה סוגי אהבה (חברית/ביטחון, רומנטית, תשוקה), ובגידה נכנסת בדרך כלל בחוסר של אחד מהם. מי שבוגד/ת מחפש/ת <strong>צורך שלא מקבל מענה</strong>: חופש, נראות, הערכה, תשוקה. היא טוענת שגברים רגשיים בדיוק כמו נשים, שבעיות מיניות לא מטופלות (שפיכה מהירה, זקפה, פורנו) מובילות לניתוק, ושאפשר להחזיר משיכה גם בתוך 21 יום. איימי פחות משוכנעת: היא פוגשת את הצד שנבגד. המסר המשותף: <strong>לא לבגוד — לדבר, ללכת לטיפול, ואם אין ברירה, להתגרש</strong>. בגידה מרסקת אמון, ואמון הוא הבסיס לחשק.
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box"><div class="val">3</div><div class="lbl">סוגי אהבה (שטרנברג)</div></div>
+    <div class="stat-box"><div class="val">~70%</div><div class="lbl">מהבגידות בעבודה (לטענת לימור)</div></div>
+    <div class="stat-box"><div class="val">21</div><div class="lbl">ימים להחזרת תשוקה (לטענתה)</div></div>
+    <div class="stat-box"><div class="val">20 שנ׳</div><div class="lbl">חיבוק להחזרת קרבה</div></div>
+  </div>
+
+  <div class="card">
+    <h2>💞 המודל: שלושה סוגי אהבה</h2>
+    <table>
+      <tr><th>סוג</th><th>מה זה</th></tr>
+      <tr><td><strong>1. אהבה חברית / ביטחון</strong></td><td>כבוד, אמון, ניהול בית משותף, "אני ואתה נגד העולם". הבסיס של הקשר.</td></tr>
+      <tr><td><strong>2. אהבה רומנטית</strong></td><td>קרבת לב, חיזור, פלרטוט, חיבוקים ונשיקות — <em>לא</em> סקס. הרבה זוגות "מאוהבים" אבל בלי יחסי מין ("הוא הילד הרביעי שלי").</td></tr>
+      <tr><td><strong>3. תשוקה וחייתיות</strong></td><td>האהבה המינית. <strong>כאן לרוב נכנסת הבגידה</strong> — אפשר לאהוב מאוד את בן הזוג ועדיין לחפש תשוקה בחוץ.</td></tr>
+    </table>
+    <p style="margin-top:12px;font-size:14px;color:var(--muted);">כשמישהו אומר "אני לא אוהב/ת אותו יותר", לימור בודקת לפי המודל איזה סוג אהבה חסר — ונותנת תרגילים ממוקדים.</p>
+  </div>
+
+  <div class="card">
+    <h2>🔍 למה בוגדים? "צורך שלא מקבל מענה"</h2>
+    <ul>
+      <li><strong>הכול:</strong> סקס, התרגשות, אישור שהם נחשקים, להיות מישהו אחר לכמה שעות. בקליניקה היא מחפשת את הצורך שחסר בזוגיות או אצל האדם עצמו.</li>
+      <li><strong>הצורך בחופש:</strong> אישה אחרי לידה, שכל חייה סביב הבית והילדים, מאבדת את עצמה ומחפשת חופש ברשתות — ושם "ידוגו אותה בשניות". הפתרון שלה: לדבר על הצורך <em>לפני</em>, לקבוע זמן לעצמה (ספורט, חברות, הליכה), ובן זוג ששווה בנטל — "זה מעלה לי את הליבידו עליו".</li>
+      <li><strong>אסתר פרל:</strong> לימור (שלמדה אצלה) מסכימה שלעיתים מחפשים לא בן זוג אחר אלא <strong>את עצמנו כמו שהיינו פעם</strong>. מי שמתאהבים בו זו בעצם הדמות החופשייה שלך בבגידה — ואפשר להחזיר אותה הביתה.</li>
+      <li><strong>"בגידה היא אהבה עצמית בצורתה הטהורה"</strong> — לא נרקיסיזם, אלא חשיבה רק על עצמי באותו רגע.</li>
+      <li><strong>נתונים שהיא מצטטת:</strong> 40–50% מהנשים בוגדות (איימי חושבת שיותר); לדבריה נשים היום בוגדות יותר מגברים; ~70% מהבגידות מתחילות בעבודה.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>☕ מקרה הבוחן: הקפה בבוקר</h2>
+    <ul>
+      <li>אישה נשואה 14 שנה, מאוהבת בבעלה, זוגיות טובה וילדים. מההתחלה הוא סירב לחלק מהמיניות שהיא רצתה, והיא "התפשרה" כדי להקים משפחה — מעין <strong>חוזה זוגי</strong>.</li>
+      <li>בעבודה גבר "מכוער" (במילים שלה) מביא לה קפה כל בוקר. שיחות רגילות → העמקה ואינטימיות רגשית (הוא מספר שאשתו לא שוכבת איתו חצי שנה) → רומן בחניון.</li>
+      <li>היא <strong>לא רצתה את המאהב — היא רצתה את בעלה</strong>. היא פנתה ללימור כדי להיפרד ממנו (תהליך של שלושה חודשים).</li>
+      <li>במקביל הבעל עצמו הציע לפנות לסקסולוגית; התברר שיש לו טראומה מגיל 16. בטיפול זה נפתר, והזוג חזר לחיבור מלא. הבעל לא יודע על הבגידה (חיסיון מוחלט).</li>
+    </ul>
+    <div class="quote">"אנשים משתנים — עם בגידה או בלי בגידה. אני בעד בלי בגידה, כי משבר אמון מרסק חשק מיני."</div>
+  </div>
+
+  <div class="card">
+    <h2>👫 גברים ונשים: המיתוס</h2>
+    <ul>
+      <li>לא נכון ש"גברים בוגדים בשביל סקס ונשים בשביל אהבה". <strong>גברים הם יצורים רגשיים בדיוק כמו נשים</strong> — הם משיגים אהבה דרך מין.</li>
+      <li>השגרה: הוא נכנס הביתה, היא בנייד ("קנית חלב?") — ולהפך. <strong>חוסר נראות וחוסר הערכה</strong> משני הצדדים; נשאר רק "האהבה הראשונה" בלי רומנטיקה.</li>
+      <li>אם כל מגע מוביל למין, האישה מפסיקה להרגיש בטוחה ונמנעת ממגע. צריך קודם אהבה רומנטית ורגשית.</li>
+      <li>יש גם גברים שבוגדים רק כי חסר להם סקס (נסיעות "שיירות" לחו"ל וכו').</li>
+      <li>גבר שנסגר רגשית — לרוב בגלל ביקורת ושיפוטיות. בפגישה אחת לימור הראתה לאישה שבעלה ה"לא רגשי" מדבר על רגשות 45 דקות. <strong>מה שמעלה לגבר את הליבידו: הערכה ומבט טוב</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🩺 בעיות מיניות שמובילות לניתוק</h2>
+    <ul>
+      <li>"אין דבר כזה לא מיני — כולנו מיניים." גבר שנראה "לא מיני" לרוב מתמודד עם בעיה שלא טופלה: <strong>שפיכה מהירה, בעיות זקפה, חרדת ביצוע, התמכרות לפורנו</strong>.</li>
+      <li>הדינמיקה: הוא מרגיש כישלון → בורח לפורנו → האישה מאשימה את עצמה ("אני לא יפה, הוא לא נמשך אליי") → דיאלוג של שנים שמגביר את חרדת הביצוע. חלק יוצאים לבגוד "כדי לבדוק אם זה עובד".</li>
+      <li>אחרי 7 באוקטובר — לדבריה, הרבה מילואימניקים חוו בעיות זקפה.</li>
+      <li>"<strong>זין רך זה מבורך</strong>" — זה לא קשור אלייך. הטיפול שלה "מבוסס חמלה": עבודה על הביטחון שלה, ופתרון הבעיה שלו. חסר חינוך מיני מקצועי בבתי ספר — היא רוצה להקים בית ספר "לכישורי חיים" (תקשורת, מיניות, ניהול משברים, פיננסים) ואף להיכנס לפוליטיקה.</li>
+      <li>שעמום: לדבריה נשים נשואות משתעממות במיטה אחרי ~4 שנים. גיוון וחידוש משחררים הורמונים של התאהבות. היא ובן זוגה פליקס גרימברג מתארים התנסויות משלהם.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>⚖️ סירוב ממושך: עילה לגירושין, לא לבגידה</h2>
+    <ul>
+      <li>איימי: סירוב ממושך למין ולטיפול — האם זו עילה לגירושין? לימור: <strong>בטח</strong>. אי אפשר להכריח מישהו.</li>
+      <li>אבל: "אם לא תשכב איתי אני אבגוד בך" — <strong>לא</strong>. זה מרסק את הביטחון והגבריות שלו. עדיף להתגרש מאשר לבגוד.</li>
+      <li>קודם לנסות: לשלוח לו פרקי פודקאסט, להציע מטפל גבר (פליקס גרימברג), ללכת לטיפול זוגי. מאחורי התנגדות יש משהו בדיאלוג.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>💔 המאהבת — לא תמיד הנבל</h2>
+    <ul>
+      <li>מקרה: רווקה בעבודה שניהלה רומן <strong>18 שנה</strong> עם גבר נשוי. הוא הכיר אותה כשאשתו הייתה אחרי לידה; הבטיח להתגרש; ילד שני, ילד שלישי... "חכי עוד". הוא חי שני חיים, משגשג בעבודה; היא "מסתפקת בפירורי תשוקה". לימור הצליחה להפריד ביניהם.</li>
+      <li>השורש: <strong>ביטחון עצמי וערך עצמי נמוך</strong>. איימי: "כמה פעמים הבעל בסוף התגרש — ולא הלך עם המאהבת".</li>
+      <li>זוג דתי עם שבעה ילדים שכל אחד מנהל רומן ורוצים לפרק משפחות. לימור: הפנטזיה על המאהב לא פוגשת את המציאות — "את לא יודעת איך הוא מקפל בגדים". איימי, כגרושה: "פירוק משפחה זה הדבר הכי נורא". לימור: בפעם השנייה הסיכוי לגירושין עולה.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🎯 משחק: בגידה או לא?</h2>
+    <table>
+      <tr><th>מקרה</th><th>התשובה של לימור</th></tr>
+      <tr><td>מתכתב כל לילה עם האקסית ומוחק</td><td><strong>בגידה באמון</strong> (אם האישה לא יודעת)</td></tr>
+      <tr><td>מפנטזת על אחר בזמן סקס עם בעלה</td><td><strong>לא בגידה</strong> — "מותר ואף רצוי". זוגות עם ביטחון גבוה יכולים אפילו לשתף בפנטזיות</td></tr>
+      <tr><td>משלם על תוכן מיני אישי (OnlyFans) בלי שאשתו יודעת</td><td>תלוי בזוג; יש נשים שמעדיפות להעלים עין</td></tr>
+      <tr><td>אישה ב"מערכת יחסים" עם צ'אט AI</td><td>מילוי צורך רגשי מחוץ לקשר — היא מראה לה שגם בעלה מסוגל לדבר כך</td></tr>
+      <tr><td>פליקס "התפלק" עם מישהי בכנס בחו"ל</td><td>תלוי בהסכמות; אצלם זה לא קורה. היא הייתה רוצה להבין מה גרם לזה ומה קורה באמון ביניהם</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>🩹 אחרי הבגידה</h2>
+    <ul>
+      <li><strong>"המחלה" של לדרוש פרטים:</strong> הנפגע/ת שואל/ת שוב ושוב איפה, מה, כמה פעמים. מובן — צורך בוודאות ושליטה — אבל זה "לחטט בפצע", ויכול להוביל לחרדות ולתרופות.</li>
+      <li>לימור לא שופטת: תרצי לסלוח — תעזור לסלוח; תרצי להתגרש — תעזור להתגרש. היא פורסת את המחירים של כל דרך.</li>
+      <li>לעבוד על ביטחון עצמי ועל <strong>"לא להתפשר על פירורים"</strong>. נשים נשארות מפחד כלכלי, אבל אם את לא רוצה אותו — להישאר באותו בית לא יפתור.</li>
+      <li><strong>"מי שבגד פעם יבגוד שוב?"</strong> לא בהכרח. תלוי אם מטפלים בצרכים. שיחה קשה: הבוגד לוקח אחריות מלאה (הוא האשם), והצד השני מבין את חלקו בדינמיקה — בלי לחפש אשמים.</li>
+      <li>"פתאום הוא ארז מזוודה אחרי 25 שנה"? לא פתאום — שנים הוא ביקש חיבוק, נראות, אהבה. לפעמים מי שעוזב עושה זאת <em>כדי לא לבגוד</em>.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>✅ המלצות מעשיות</h2>
+    <ul>
+      <li>כשבן הזוג נכנס הביתה — <strong>לעזוב את הנייד</strong>, לקום, להסתכל בעיניים, להודות ("איזה כיף שפרנסת").</li>
+      <li><strong>חיבוק של 20 שניות</strong> (משחרר אוקסיטוצין): יד על הלב מאחור, יד מעל הישבן, שלוש נשימות משותפות — בלי שזה יוביל למין. ואז: "מה שלומך? איך היה בעבודה?"</li>
+      <li>לזהות את הצורך שלך (חופש, נראות) ולבקש אותו במפורש לפני שמחפשים אותו בחוץ.</li>
+      <li>לטפל בבעיות מיניות — זה פתיר. לגוון ולחדש במיטה.</li>
+      <li>לא לבגוד. אם אין פתרון — טיפול, ואם צריך, גירושין.</li>
+    </ul>
+    <div class="warn-box">
+      <div class="hl-title">⚠️ הקשר</div>
+      זה פרק פודקאסט עם תוכן מיני מפורש. הנתונים (אחוזי בגידה, "70% בעבודה", "21 יום") הם טענות של לימור, לא מחקר שהוצג. לאורך הפרק יש קידום של הקורסים הדיגיטליים שלה ("האקדמיה במיטה", "21 ימים של תשוקה" וכו') ושל הפודקאסט שלה ושל פליקס גרימברג. התמליל האוטומטי משובש במקומות, ושמות המקרים שונו לפי הדוברת. זהו הפרק הראשון מתוך שניים — הפרק הבא יעסוק בחידוש התשוקה.
+    </div>
+  </div>
+
+  <footer>
+    <a href="transcripts/why-he-cheats-limor-bendel.txt">📄 תמליל גולמי</a>
+    <span>Auto-generated by Dot DiBot · Hermes Agent</span>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
