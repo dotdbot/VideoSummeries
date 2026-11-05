@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Websites Are Dead. Build THIS Instead</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-biz { background: #2d1a5c; color: #bc8cff; }
+    .badge-ai { background: #1a2744; color: var(--accent); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.red { color: var(--red); }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    ul, ol { padding-left: 20px; }
+    li { margin-bottom: 8px; font-size: 14px; line-height: 1.7; }
+    .quote { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+    th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--surface2); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-biz">💼 Business</span>
+      <span class="badge badge-ai">🤖 AI Marketing</span>
+    </div>
+    <h1>Websites Are Dead. Build THIS Instead</h1>
+    <div class="meta">
+      <span>📺 Luke Carter (BraveBrand)</span>
+      <span>📅 October 24, 2026</span>
+      <span>⏱️ 30:16</span>
+      <a href="https://www.youtube.com/watch?v=xwF08pXuTJQ" target="_blank" style="color:var(--accent);">▶ Watch on YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/xwF08pXuTJQ" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> Despite the title, Luke Carter (founder of branding agency BraveBrand, filming in Bali) argues websites aren't dead — <strong>brochure websites</strong> are. Using a packed Bali café ("Open House", 30+ ways to spend money) vs. empty competitors (4–5), he says the winners have many <strong>"collection points"</strong> — ways for the same audience to spend money with you. Social platforms and AI answers are "roads" you rent; you need a <strong>Digital Home</strong> you own (site, email list, data) with a <strong>value ladder</strong> of offers, each on five layers: <strong>offer → copy → content → landing page → funnel</strong>. AI recommends brands that are <strong>mentioned widely</strong> across the web; BraveBrand landed a <strong>$35K client who found them via ChatGPT</strong>.
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box"><div class="val yellow">~650K</div><div class="lbl">New websites per day</div></div>
+    <div class="stat-box"><div class="val red">~85%</div><div class="lbl">Of 1.5B sites inactive</div></div>
+    <div class="stat-box"><div class="val red">1 in 100</div><div class="lbl">Live sites make real money</div></div>
+    <div class="stat-box"><div class="val">$35K</div><div class="lbl">Client found via ChatGPT</div></div>
+  </div>
+
+  <div class="card">
+    <h2>☕ The Café Analogy</h2>
+    <ul>
+      <li><strong>Open House</strong> (Bali): queues outside, food, coffee, merch, even a sauna and ice bath. People come for breakfast and return for dinner; it has expanded to three locations.</li>
+      <li>Nearby cafés with good coffee and cool spaces sit empty and close within months. Opening a café is easy — just like launching a website now.</li>
+      <li><strong>The internet:</strong> websites grew by ~118M between January and July (~650K a day). Of ~1.5B sites, ~85% are inactive (parked, abandoned) and roughly 1 in 100 live sites makes real money.</li>
+    </ul>
+    <div class="quote">"85 dead, 14 brochures, one business." — a high street where 85 shops are boarded up, 14 have a window display with nothing to buy, and one is open.</div>
+  </div>
+
+  <div class="card">
+    <h2>😩 Three Common Website Problems</h2>
+    <ol>
+      <li><strong>"My site's out of date and I'm scared to touch it"</strong> — upkeep. Agencies charge $100–150/hour and owners are busy, so the site is abandoned, not beaten.</li>
+      <li><strong>"It looks beautiful but brings no clients"</strong> — the digital brochure. 82% of US small businesses have a site that just describes them (home, about, services, contact) with nothing to buy.</li>
+      <li><strong>"When I stop posting, the leads stop"</strong> — "digital homelessness": renting a stall in someone else's shopping center.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>🏢 Extremistan and Digital Landlords</h2>
+    <ul>
+      <li>From Nassim Taleb: in <strong>Mediocristan</strong> no one moves the average (height); in <strong>Extremistan</strong> one outlier dominates (wealth). The internet went from a high street of small sites to a few giant shopping centers.</li>
+      <li>Only <strong>~360 of every 1,000 US Google searches</strong> result in a click to an external site; nearly 6 in 10 end without a click. AI gives one answer with a few citations — it <strong>picks the winners</strong>.</li>
+      <li><strong>Amazon as landlord:</strong> sellers paid ~$172B in fees plus ~$68B in ads last year — roughly $200B in "rent". Rules and algorithms can change overnight; one of his clients had her account restricted.</li>
+      <li>You don't own your followers, data or relationship. Platforms are <strong>roads</strong> that lead past your door — rent them happily, but don't live in a tent on the road.</li>
+      <li><strong>Digital sovereignty:</strong> own the keys and the customer data.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🚪 Collection Points</h2>
+    <ul>
+      <li>From his mentor Paul Counsel: people will spend their money anyway; a <strong>collection point</strong> is a way for them to spend it with you. Coffee is one point, food another, art, merch, sauna, drinks — Open House has 30+; empty cafés have 4–5.</li>
+      <li>Most small-business websites have <strong>zero</strong>: no offer to buy, no free resource, no way to stay in touch.</li>
+      <li>Only about <strong>1 in 4</strong> customers come back to buy again (2024 study of 1,500+ Shopify stores) — so you need more doors for the same customer, not just repeat purchases.</li>
+    </ul>
+    <h3>Three questions for your site</h3>
+    <ol>
+      <li>What can someone buy from you <strong>today</strong>, straight from your website?</li>
+      <li>What can someone not ready to buy take <strong>for free</strong> in exchange for staying in touch?</li>
+      <li>What would you sell <strong>next</strong> to someone who already bought?</li>
+    </ol>
+    <p style="font-size:14px;">Can't answer all three? You've found your next collection point.</p>
+  </div>
+
+  <div class="card">
+    <h2>🎯 Doesn't This Contradict "One Offer"?</h2>
+    <ul>
+      <li>Hormozi's "one offer, one avatar, one channel" is right about <strong>focus</strong>: one audience, one problem. Selling coffee and car insurance would be chaos.</li>
+      <li>But everything the café sells is for the <strong>person already at the table</strong>. Even Hormozi's newer book <em>$100M Money Models</em> describes a <strong>sequence of offers</strong> to the same customer.</li>
+      <li>AI makes extra doors cheap: an idea on Monday can have a landing page, copy and email sequence live by Friday. BraveBrand added an events offer this way, mostly built by his AI agent team.</li>
+      <li>Online collection points: lead magnet, quiz funnel, newsletter, events, community, offers, services.</li>
+    </ul>
+    <h3>The value ladder (Russell Brunson)</h3>
+    <ul>
+      <li>Offers at rising price points toward the same goal: free → small → course → community → program → top-tier offer.</li>
+      <li>BraveBrand: free content → <strong>$14 community</strong> → up to <strong>$100,000</strong>. Most people stay at the bottom, and that's fine — each rung is another chance for a yes.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🧪 Small Experiments (Antifragile)</h2>
+    <ul>
+      <li>Taleb: individual restaurants are fragile, but the restaurant scene is antifragile because failures teach the survivors. "If no restaurant could ever fail, we'd all be eating cafeteria food."</li>
+      <li>Be the <strong>whole food scene</strong>, not one restaurant with one bet. If new smoothies flop, the café drops them and carries on.</li>
+      <li>Because data flows back to one place you own, each failed test makes the other offers smarter. Having a "bread and butter" offer makes flops emotionally easier.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🏗️ The Five Layers of a Digital Home</h2>
+    <p style="font-size:14px;margin-bottom:8px;">Every collection point sits on the same five layers; each only works if the one before it does.</p>
+    <table>
+      <tr><th>Layer</th><th>What it is</th><th>Data he cites</th></tr>
+      <tr><td><strong>1. Offer</strong></td><td>The menu — the "urgency gateway": a promise to solve the most immediate problem ("aspirin for a headache").</td><td></td></tr>
+      <tr><td><strong>2. Copy</strong></td><td>Communicates the offer's value, entering the conversation already in the customer's head.</td><td></td></tr>
+      <tr><td><strong>3. Content</strong></td><td>Foot traffic — drives people from platforms to your home.</td><td>35% of 1,200+ failed UK online startups cited lack of search visibility (2019). Free vs. paid convert almost the same: organic social 2.2% vs. paid 2.1%; organic search 4.9% vs. paid 5.4%; email 4.9%.</td></tr>
+      <tr><td><strong>4. Landing pages</strong></td><td>One page per collection point, one job. Your homepage is the shop front, never your best seller.</td><td>Typical ~6.6% conversion; top quarter 11%+ — usually by offering one clear choice instead of five.</td></tr>
+      <tr><td><strong>5. Funnel</strong></td><td>For those not ready yet (most people): opt-in → value → one clear offer, ideally automated.</td><td>Klaviyo: automated emails (welcome, abandoned cart) bring ~41% of email revenue from ~5% of sends.</td></tr>
+    </table>
+    <div class="quote">"Traffic is rented, a list is what is owned."</div>
+  </div>
+
+  <div class="card">
+    <h2>🤖 How Businesses Get Recommended by AI</h2>
+    <ul>
+      <li>AI works like a friend recommending a café — it names one place. It looks at how widely and well your brand is <strong>mentioned</strong> across sites.</li>
+      <li><strong>Ahrefs study of 75,000 brands:</strong> the strongest predictor of appearing in Google's AI answers was <strong>brand mentions across the web</strong>, not backlinks.</li>
+      <li>YouTube is one of AI's biggest citation sources — be present on YouTube, LinkedIn, Instagram, X.</li>
+      <li><strong>What to publish:</strong> answer the questions customers ask on sales calls, emails and DMs — publicly, in depth, in many formats — to build topical authority.</li>
+      <li>Websites still matter: even after a recommendation, people do due diligence — is the site current, does the copy speak to me, are there resources? Put FAQs on your site (AI looks for them).</li>
+      <li>AI-referred visitors convert best: <strong>5.8%</strong>, the highest of any channel (Ruler data).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🏠 Inside BraveBrand's Digital Home</h2>
+    <ul>
+      <li><strong>Hallway = homepage:</strong> social proof, case studies, FAQs.</li>
+      <li><strong>Rooms = single-purpose pages:</strong> e.g. their event page with one call to action — sold out the event with no public external marketing.</li>
+      <li><strong>Roads in:</strong> YouTube (value content), Instagram (clips pointing to YouTube), a Skool community as another collection point — all linking back to the website.</li>
+      <li><strong>The $35K client:</strong> a Netherlands company with no prior contact asked ChatGPT for a boutique branding agency; BraveBrand came up. They visited the site, booked a call, and Luke closed the deal.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>💡 Conclusions</h2>
+    <ul>
+      <li>Most websites don't make money because they were never built to — they're brochures.</li>
+      <li>The difference between the empty café and the packed one isn't the coffee; it's how many ways people can spend money and whether they have a reason to come back.</li>
+      <li>The system amplifies the person running it: "AI can give you a Formula 1 car, but you need to learn how to drive it." Build yourself alongside the system — there's no shortcut.</li>
+    </ul>
+    <div class="warn-box">
+      <div class="hl-title">⚠️ Context</div>
+      The video promotes the creator's paid BraveBrand Skool community ("Digital Home Revenue System"). Statistics are cited verbally from various sources (Ahrefs, Klaviyo, Ruler, Shopify studies) and were not checked here. A few transcript sections were truncated, so some details in the opening are missing.
+    </div>
+  </div>
+
+  <footer>
+    <a href="transcripts/websites-are-dead-digital-home.txt">📄 Raw Transcript</a>
+    <span>Auto-generated by Dot DiBot · Hermes Agent</span>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
