@@ -1,0 +1,1860 @@
+We can easily give up skills to the AI
+and we may never get those skills back.
+>> This is Ethan Mollick, one of Time's 100
+most influential people in AI. He leads
+the generative AI labs at Wharton.
+When everybody has Claude advising on
+the strategy, how do you avoid sounding
+just like everyone else?
+>> You don't want the AI making those
+choices even if they're good ones. You
+want to be inserted into that process.
+I'm deciding when to insert my own
+agency into the system where I'm just
+sending off agents to do work.
+>> The adoption piece has to happen from
+scratch every every two weeks. That's
+That's what I'm feeling.
+>> So we have to purposely add friction to
+our lives in certain key areas that we
+maintain an advantage.
+>> So you will never delegate generating
+ideas to AI.
+>> I wouldn't say never delegate, but you
+>> Ethan, welcome. You teach
+entrepreneurship and innovation at
+Wharton. Time named you one of 100 most
+influential people in AI.
+About half a million people read your
+Substack, One Useful Thing, and your new
+book, Co-Intelligence, just came out.
+Welcome to the show. When you teach your
+students, you also ask them to start
+companies while they're in class, and
+you tell them to work on the most
+ambitious ideas. How do you teach
+ambition?
+>> That is always a hard question, right?
+Ambition looks like we call this
+entrepreneurial efficacy in the
+entrepreneurship world, right? Same kind
+of thing, agency.
+Um and it's actually quite tough to sort
+of do. We don't have like a playbook for
+it. But I actually find that people
+create barriers that you can kind of
+help them overcome by getting them to by
+just asking them to be more ambitious
+than being in a pure room where peers
+are more ambitious. So a lot of what I
+just ask, it's really easy to say now is
+like, what could you do more than that?
+And that was a hard question before AI
+because you stopped because you had the
+ability to get only get so much done.
+And now, as the frontier moves out,
+pushing for ambitions is much bigger
+deal.
+>> What are the coolest ideas that you've
+seen in your class?
+>> So it's funny cuz like the last version
+I taught was 6 months ago. And so they
+already that was like the beginning of a
+genetic genetic works. My next semester
+starts in January. So, I I actually,
+when...when after ChatGPT came out I had
+been following, you know, obviously,
+models for a while. But after DaVinci,
+which...which came out right a couple
+days before ChatGPT, and ChatGPT came
+out, and then a couple days later, I had
+a class, and I basically just dropped
+into the class and said, "I'm going to
+show you how to use ChatGPT." And by the
+end of the class, one of my students had
+actually stopped paying attention and
+had coded up his entire project for the
+semester during the class period. So,
+and showed me the results at the end.
+And so, every year since then, the
+ambition level has gone up further and
+further. What was most interesting this
+time was all of these people who were
+subject matter experts. I've got
+surgeons, and I have biomedical device
+people, and I've got finance people, and
+I have you know, NGO and humanitarian
+people, soldiers, all in this class. And
+suddenly, they were all building real
+stuff, right? Like, you know, and so,
+there were really interesting ideas. How
+do we track our entire supply chain? Cuz
+a lot of companies don't actually know
+their entire supply chain. And how we
+figure out where is the financial
+weakness in that chain and we might have
+to watch out for. Really interesting set
+of ideas.
+Uh there was a bunch of really
+interesting stuff around um like
+specific problems in medicine about how
+do you actually give information to
+patients in ways they understand as
+opposed to just forms. So, I mean, just
+really interesting, but very narrow,
+right? Focused on something people know.
+And part of what is interesting is like
+software can be many things. And if
+you're trying to think about solving a
+problem that you have deep experience
+in, suddenly, there's a lot of
+capabilities there that that are really
+exciting.
+>> Are there any problems that you're
+telling them to avoid solving?
+>> There among those of us who teach
+entrepreneurship at at some of the
+leading business schools, we you know,
+we used to exchange notes about the
+topics we see people address over and
+over again that we know will never work
+out, but like we're always conflicted.
+Should we tell them it's not going to
+work out or let them try and figure it
+out for themselves? So, there's a few
+that that are sort of standard problems
+that are actually kind of a good example
+of where
+technology hits its limit. One of the
+most common is we are going to replace
+brokers for houses, right? It seems like
+a really big like you're paying a couple
+percent to these people who like are
+doing increasingly less work for you.
+This obviously a case of
+disintermediation, and every time the
+idea fails because it turns out there's
+a deep social integration of political
+integration and legal integration of
+brokers into the process that you just
+can't dislodge. So, sometimes the
+reality of the world is quite different
+than what you people think. And then the
+other is
+students thinking too narrowly about
+their student problems. So, everyone
+always wants, you know, better ways to
+like get homemade food to them
+or better ways to, you know, hold stuff
+between semesters that probably aren't
+as universal once you're out of out of
+college.
+>> This is so interesting you're mentioning
+these ideas and then I can draw
+parallels to businesses that actually
+worked. Like DoorDash was solving the
+problem of delivering food on campus.
+And then when you talked about real
+estate, like Airbnb, right? We we would
+have thought like, oh, who would ever
+rent
+an apartment from strangers? Like yes,
+there's social element of trust, but
+then Airbnb took over and now we trust
+Airbnb. How do you know your idea is not
+going to survive
+>> Well, I don't know. That's why you don't
+tell people, right? Like these are the
+highest failure rate ideas, but
+obviously because they want to do it,
+right? Because they keep coming up.
+They're not bad ideas. The whole idea is
+you can't filter them out initially.
+Like there should be a better way to buy
+and sell a house, right? And you know,
+people do want home cooked meals more
+easily than a meal delivery service,
+which is sort of what they're asking for
+now. It's like, how do I have my mother
+cook a meal for me? Is essentially what
+they're crack this. There's demand for
+it, but they're harder problems than
+people think. And in some ways AI makes
+it more ambitious, right? Because it's
+no longer the technical piece, but the
+numbers look really good and then they
+just hit a point where it's like, oh,
+there is a challenge here. So, whoever
+cracks it makes a lot of money, but also
+an idea that everyone is we've seen
+people throw themselves against over and
+over again. So, maybe some people who
+are watching or listening will be the
+ones to to break the real estate broker
+experience, but it's not as easy as it
+appears, I guess.
+>> Exactly. It's like, when do you give up?
+Because there are so many shiny things
+around you and you can build things in a
+day, right? It's so hard to focus on a
+problem when you hit the wall. Do you
+agree with this phrase, it is as easy to
+work on a big problem as on small
+problems? Basically, the amount of
+effort that you put in to building a
+small business versus large business is
+the same because you're going to have
+the same headache firing people. Do you
+agree with that?
+>> In general, like I mean
+I think if you're trying to build a
+business from scratch, right? Aim big
+because you may not get there anyway,
+right? And also ambition helps motivate
+people. It gets you the best people to
+work for you. It creates a real
+self-fulfilling prophecy, right? But I
+also think that it is there are phases
+to a business, right? So that initial
+phase might be difficult no matter what.
+Scaling presents its own challenges
+versus running a small business, right?
+So they're they're not quite equivalent,
+right? Like trying to get to the next
+level, you know, if you're going to
+raise a series B and a series C, that's
+very different than you're running, you
+know, a like a you know, a local
+business of some sort, right? So I I
+think that
+>> Different skill set.
+>> Yeah, yeah. I mean, if you start from a
+blank slate, right? And you want to take
+over the world, go fully ambitious. And
+but I also, by the way, I think that you
+know, we keep talking about ideas. I
+think people aren't being ambitious
+enough about the kinds of ideas they
+pursue partially because of there's sort
+of a Silicon Valley mindset about
+software, right? And I think a lot about
+I I study the history of technology
+among other things and I've done work on
+it. And if you look at who got like
+really rich during the Industrial
+Revolution, right? It wasn't people
+selling steam engines. Even though this
+keeps being the analogy in Silicon
+Valley, it's like, "I want to sell a
+pick and shovel." You don't want to sell
+picks and shovels. You want to dig a
+gold mine with new gold mine technology.
+And I feel like we're kind of missing
+that point here. If if you can make a
+business more efficient, just do it
+yourself right now, right? Overcome
+those barriers directly.
+>> What is going to happen to software
+companies when you think about
+entrepreneurship? Is it really worth
+starting a software company these days?
+>> So, I think, you know, it's good news
+for entrepreneurship overall. Like the
+early data looks really good and you can
+understand why it's a really good idea.
+I think everyone's a little too like
+SAS-brained at this point, right? Which
+is like, "What do you do to make money?
+Software as a service." And I think that
+that is under threat, right? Like it's a
+different sort of environment than it
+was before. I spend a lot of time with
+big companies now as well as
+entrepreneurs and there are people
+getting it. There there's a lot of
+conflict over what the future of
+software looks like. On the other hand,
+I think software is increasingly
+becoming something that's table stakes
+for doing a lot of other interesting
+work. So, I kind of would love to see
+more entrepreneurs branch out from
+software being the thing they sell to
+actually making or doing something
+because there's never been a better time
+to do that.
+>> What do you think is the future of SAS?
+Cuz we're seeing all these companies
+like Copy AI, right? That has started a
+few years ago, but now I think their
+revenue is going down significantly
+because of AI, cuz it's basically the
+new models are replacing what they were
+doing.
+>> So, it's kind of interesting, right? You
+have a bunch of stuff happening at once.
+On one hand, everybody's a coder now. I
+mean, and that's not just a theoretical
+thing, right? So, there's this great set
+of studies out of Anthropic suggesting
+that actually managers now write better
+code than coders, at least in first
+passes, right? Cuz it's about giving
+clear instructions more than being great
+at code. Um and things are transforming
+quite quickly, right? You've got 100
+times more productive people. So,
+companies are also completely in a mess
+as a result, but they all have their
+targets on, you know, SAS vendors,
+right? company out there that doesn't
+want to think about how to become more
+independent, how we build our own tools.
+And so, it'll be a while before they get
+that all right. Uh and a lot of them are
+still very happy. I mean, you know, as
+far as I know, you know, both OpenAI and
+Anthropic still use Slack. They, you
+know, from Salesforce, they still
+probably use Workday. So, like, there'll
+be more choices being made about what
+kind of software vendor to go with, but
+I think the more interesting thing is
+that companies are realizing that a lot
+of these startups that were selling them
+stuff are just selling them the things
+they could build already, right? They
+don't have their own LLMs. So, they're
+selling LLM capabilities to them that
+they already have. And that's creating a
+really interesting dynamic.
+>> So, what do you think is going to happen
+in a couple of years? Cuz I already see
+myself, like, for example, we're using
+the software, but because we're getting
+to the limit of the number of
+subscribers and the price is going to
+raise. And I'm like, I'm like, can we
+just try and vibe code this and like
+connect Amazon services for like the
+newsletter stuff, right? I don't know.
+Like, what do you think is going to
+happen in a couple years?
+>> I think that software will be
+democratized, right? So, it like the
+whole thing I I teach at Wharton, I
+teach MBA students, right? I teach
+undergrads, and a lot of the MBA
+students aren't technical. So, like, the
+key to success for, you know, the last
+10 years has been find a technical
+person who can code for you.
+I think it's incredibly freeing to view
+this like other kinds of fields where
+you can get approached in different
+kinds of way, right? There'll be
+software-heavy companies where you
+really need top engineers working with
+AI to succeed. And then there's going to
+be like software as a toolkit that we
+get things done. And I think
+democratizing that's incredibly helpful,
+right? I mean, you don't want to be a
+software company. You want to make your
+newsletter, you want to make your
+videos,
+and you know, there were things standing
+in your way. And software, by the way,
+is one of them, right? It was also you
+needed to be able to do your own
+finance. I mean, when I did my first
+startup company, I did not realize it
+was late '90s, first internet bubble. Um
+but I did not realize that um you could
+pay somebody a couple cents a pay period
+to handle taxes for your employees. So,
+I would calculate taxes in Excel every
+week for the first few weeks, not
+realizing you could just do that. So,
+even just advice, all of the kind of
+pieces you get like make this much
+easier now than it ever was.
+>> This part of the episode is sponsored by
+MongoDB. Companies want AI agents to do
+real work, but a lot of them get stuck
+right before launch. The agent forgets
+important details, and giving it access
+to all your company's data, like
+customer records and internal emails,
+feels risky. Nobody knows what the agent
+will see or who's responsible if it
+makes a mistake. MongoDB just launched
+Atlas Agent Engine to help with this.
+It's one place to build, deploy, and
+govern your agents. Before the agent
+does anything, the system checks if it's
+allowed to do it. Each agent runs in its
+own separate space. Rules set by the
+company can't be changed by an employee
+or by another agent, and every action is
+saved together with the name of the
+person or agent who allowed it. The
+agent also has memory. It remembers what
+it learned last time, so it doesn't
+start from zero and doesn't spend tokens
+rereading the same things. That means it
+gets more accurate over time, and you
+pay less. And it doesn't need you to
+move your data. It can reach into
+Salesforce, Snowflake, S3, or your own
+internal systems and use the data where
+it already lives. You can use AI models
+from OpenAI, Anthropic, or Google, and
+change them later without starting over.
+It runs on Atlas, the same platform that
+more than 75%of Fortune 100 companies
+already trust in 130 regions. The link
+is in the description.
+>> using AI in the process of it. I really
+like the study that you mentioned, the
+the Kenyan entrepreneurs, where people
+had experience in business they used AI
+and it helped improve their strategy
+versus people who did not have
+experience. Can you talk about that when
+everyone is using AI to strategize a
+lot?
+>> Yeah, so it was interesting study with
+GPT-4, right? Long obsolete system.
+There's now 180 models better than
+GPT-4, 19 of which can run on your
+phone. Um so, you know, big difference
+and it was only giving advice. So, the
+fact that I think the number was 18%
+profit increase for the best
+entrepreneurs, like that's a crazy
+number. Like we do studies all the time.
+We try to move the needle on
+entrepreneurship. That is a crazy
+number, but it only helped entrepreneurs
+who are already being successful because
+it helped them expand in the sort of way
+that you're talking about. Entrepreneurs
+who are already failing couldn't
+implement the advice. They were already
+going down the hole and there was no way
+to kind of pull back. So, it was So, we
+know this stuff can be effective and
+that was before coding, right? That was
+literally what should I do now? And
+entrepreneurship like turns out by the
+way about 50%of Americans have had a
+good idea of or they think they have had
+a good idea for business in the last 5
+years and almost nobody pursues it all
+these barriers. So, even just the advice
+to overcome those barriers is a really
+golden age for entrepreneurship compared
+to what we've had before.
+>> How do you know when to trust it? You
+mentioned your models. Do you think the
+study will no longer apply because your
+model is so much better or you still
+need to have this judgment?
+>> I talk about this in the new book, but I
+think
+there there are sort of four things you
+need to use AI successfully and that's
+deep knowledge, right? Some expertise in
+something. And that's by the way like
+entrepreneurship is all about getting
+disciplined expertise, right? You go to
+industry or you interview people, you
+know, you learn about the industry, you
+test ideas out. I mean, that is building
+expertise and I think that's every bit
+as important as it was, right?
+Otherwise, you're just sharing cloud
+ideas and cloud ideas are look all very
+similar to each other, right? Second is
+wide knowledge. Increasingly important
+for entrepreneurship is knowing a little
+bit about the fields you're not in,
+right? So, if you're in software you
+should know a little bit design and a
+little bit about accounting because that
+helps you apply the AI more widely. And
+then agency which we've been discussing
+a little bit here. And then finally some
+sense of taste like selecting good ideas
+out out of the the slot pile is also
+really helpful. So, I think that what
+we're seeing with the more agentic
+systems is they can run longer periods
+of time, right? Like GPT-4 could do 4
+minutes of work independently with a 50%
+success rate. Now we're up well over 17
+hours of work, but you still need to be
+able to have some guidance in these
+systems. And even as they get really
+good, it turns out the human touch
+actually does matter cuz variation is
+what makes entrepreneurs successful.
+>> Yeah, and that's the whole challenge,
+right? When everybody has Claude and
+Claude is advising or ChatGPT, whatever
+they're using, advising on the strategy,
+how do you avoid sounding just like
+everyone else?
+>> Yeah, I mean, it's kind of funny because
+you you realize that people are more
+important than we thought
+or that some people thought, right? So
+everybody who was early on to using
+Claude as a good writer back, you know,
+when, you know, Opus 4.5 or whatever,
+they were writing really well and for a
+while nobody knew what Claude writing
+sounded like. And now, if you look open
+like LinkedIn or X, it's just like
+nauseating, right? It's like what's
+carrying the weight, what is it, right?
+It's just all the same stuff. And even
+not just the little phrases, like the
+way it approaches things, the kind of
+language it uses. And you're like, well,
+they should I If you didn't hire a
+marketer, you're probably making a
+mistake. Now the marketer could do a lot
+more work than they could do before, but
+their human variation actually matters
+quite a bit. And I think we're seeing
+that in a lot of other cases, which is
+the AI
+pushes people towards the sort of a
+consensus strategy or view. We have some
+experiments where we found that we can
+make the ideas almost as diverse as a
+group of people, but if you map the
+ideas that that the AI has come up with
+and map the ideas a group of humans come
+up with, the AI still doesn't cover the
+full range of human ideas even if you're
+pushing it really hard. So this
+variation piece is going to become
+increasingly important. Like what are
+you adding to the system to guide or
+steer it so you're not just Claude-ing
+about everything? And then we'd be okay,
+like it's okay if you're using Claude
+for finance and that's not your
+competitive advantage. But in the area
+where you are narrowly aiming, you need
+to stand out, you need a differentiator,
+you need a moat that has to be human to
+some extent even as the models get
+incredibly capable.
+>> Yeah, you mentioned taste and this is a
+question I ask a lot of my guests. How
+do you work on taste? What do you tell
+your students?
+>> We know a little bit about teaching
+people taste, right? I like you need to
+see good and bad examples of things. So
+like you want people to explain to you
+how to pull something apart. So, I I one
+of the
+one of I I bring into
+art professor actually in my classes now
+who talks about sort of thinking about
+like how do you how does a designer see
+the world, right? So, you get this kind
+of perspective like what makes a font
+good or bad? What makes an image
+interesting or not? And so, I think we
+need language to discuss things for
+taste, right? If you talk to somebody
+who really understands movies, they have
+a taste for movies that's individual,
+but they can probably talk widely about
+that. In the same way like venture
+capitalism like venture capitalism are
+all about taste, right? They develop a
+sense of taste for particular kind of
+problem space or not. So, I I think that
+seeing a lot of variations really
+important. Learning to be disciplined
+about this is another example of why I
+think education has some value here.
+Um being exposed to lots of options. I
+mean, those help give you a sense of
+taste that you need.
+>> How is it different from judgment? Cuz
+AI is doing a lot of judgment calls.
+Like you present the data and analyzes
+it, tells you like this is a better
+decision. How is it different when you
+approach it from the taste perspective?
+>> I don't like the idea of judgment per se
+because AI is obviously doing judgment.
+You can't do a 17-hour task without the
+AI making judgment calls. Just like we
+we don't have creativity in the list cuz
+the AI is obviously making creative
+decisions. The question is whether they
+match the kind of judgment and creative
+decisions you would make, right? So, we
+can call that under taste or knowledge,
+but it's it's a kind of a different
+question, right? So, judgment is this
+hard thing we don't really know how to
+teach and we don't really have a good
+example of it, but some people, you
+know, what context is that judgment
+happening and becomes the question. So,
+it's a hard it's a hard thing to ask,
+right? Is like what is judgment? And so,
+the AI is exercising some kind There's
+obviously a human judgment element
+that's different, but we haven't had to
+build the language around
+differentiating these things. I I kind
+of think about what's happening in math
+right now, right? Which is
+this sort of explosion of proofs
+generated by AI. And one of the things
+mathematicians will tell you when you
+talk to them is a bunch of revelations
+about their field or maybe
+clarifications about their field that
+outsiders didn't know, right? There's an
+aesthetic element to math that actually
+matters, right? To to a mathematician
+that if you if the proof doesn't help
+teach you something beautiful or
+interesting, there's no value in it for
+the field of math even if we've solved
+this problem, who cares? And like, so
+we're starting to differentiate things
+that we didn't have to differentiate
+before because the only kind of judgment
+intelligence we have is human, so we
+didn't have to come with a different
+category.
+>> And it's so interesting when I think
+about elegance and taste and judgment,
+it seems like people who have experience
+in the field are better positioned to
+learn that versus someone who's just
+starting out instead of getting time to
+learn basic things, they need to go
+straight into judgment, straight into
+taste. Is that how the market is
+progressing with AI?
+>> There's a couple things happening at one
+time sort of when you think about
+markets and education, right? So first
+of all, we are temporarily in a crisis
+in universities. I mean, we're always in
+a crisis in universities, so this is not
+new. Anyone who's been in education
+knows this, but we are in a temporary AI
+crisis, right? And we already kind of
+know the outlines of that solution,
+which is AI is incredibly good tutor
+when used as a tutor, and it's a very
+bad if you're just cheating and getting
+answers from it. Even if you think
+you're learning, you're not, right? So
+eventually we'll have AI tutors outside
+of class. Instead of class, we'll do
+more action learning. I mean, if you've
+been into business school, law school,
+you've already done these kind of case
+studies and discussions and activities
+and, you know, we'll do in-class tests.
+We'll figure it out.
+The real problem is where people
+actually have dealt have developed taste
+and judgment is in the world, right? And
+I we had this great deal for the last
+few thousand years, which I would send
+you, you know, a newly trained recruit
+who didn't know anything,
+and we had apprenticeship, right? That's
+how the last 4,000 years of white-collar
+training have operated. So you'd get a
+really junior person who is desperate to
+show you they were good. They'd work for
+cheap because they wanted to move up the
+and they would do the work that a middle
+manager didn't want to do. And in
+return, they would get a little bit of
+pay, they'd get to show off their stuff,
+and they'd learn the ropes. And the
+middle manager would get their to work
+passed off to somebody who could at
+least do some of the work for them and
+make their lives easier, right? And
+that's how they moved up the management
+chain. And that all broke, right?
+Because every, you know, your incentives
+as an intern or as a first-year
+associate or whatever you are, your
+incentives are 100%deliver the best
+product you can. Who's better than you?
+Claude or ChatGPT or Gemini? So you will
+deliver Claude or ChatGPT or Gemini
+answers. And this is not like being
+digitally native because you don't know
+what you're delivering. You're just
+handing stuff over. And every middle
+manager has realized, why would I give
+feedback to a human who takes a lot of
+time to do the work? I could just have
+Claude do it myself. So, we've just
+broken the entire system that forms
+professional taste and judgment, and we
+haven't figured out a full replacement
+yet.
+>> What are your thoughts? What are you
+telling your students?
+>> So, I think that there are a couple
+things. One is at the individual level,
+we now have to start being really
+disciplined about when we're going
+through cognitive surrender, when we're
+giving stuff up to AI. And that's really
+hard to do. We're built like First of
+all, entrepreneurship, which which is
+what I teach right and what we've been
+talking about here, like that's about
+trying to make your life as easy as
+possible so you can focus on the hard
+stuff, right? Um and, you know, but then
+you learn nothing, right, as a result of
+that. But, it's also true in every other
+aspect of life. Like, we can easily give
+up skills to the AI, and I think we all
+feel tempted every day to do this.
+And we may never get those skills back.
+So, we have to purposely add friction to
+our lives in certain key areas so we
+maintain an advantage, but we're not
+incentivized to do so. So, at the
+individual level, it's going to be
+making choices. At the organizational
+level,
+companies are going to do one of two
+things. Um they're going to either
+follow the easy path or hard path. And I
+worry about the easy path, which is only
+hire senior people. And we're seeing
+some signs of that. I know you've had
+some economists on talk about this.
+There's some early signals that junior
+jobs might be threatened. We're not 100%
+sure yet. Um as you um
+you know, or the other option, the
+harder option, is that we actually make
+training a serious part of jobs, right?
+So, you actually have to give people
+time to be inefficient and learn on the
+job. And we rather than learning be sort
+of an accidental thing, we'll have to
+teach them. Maybe you have to actually
+add an extra year to universities that
+we teach you to be a, you know, a Google
+person or a McKinsey person or, you
+know, whatever it is. And there's a year
+of customized training for you to teach
+you because we know how to teach and
+assess people in classrooms that we
+don't know how to do in the real world
+anymore.
+>> This is such a tough problem. And then
+I'm thinking about a professional who
+even completed that step, and they
+graduate being good enough, but not
+exceptional. And the models keep
+improving. What is happening to these
+good enough people?
+>> So, everything is too early to tell
+anything yet, right?
+>> I know, but do you ever like when I
+think about like where are we headed?
+>> Yeah. I mean, I But, also, how long is
+good enough good enough, right? Like,
+the issue is right? Like, I mean, that's
+progressing, too. So, you know, this
+concept that we developed in our first
+paper where we examined this, we called
+the jagged frontier that AI is good at
+some stuff you wouldn't expect and bad
+at some stuff you wouldn't expect, and
+it's hard to know in advance what that
+is. As long as the frontier remains
+pretty jagged,
+there are always bottlenecks that humans
+kind of need to fill in. And those can
+be really weird ones. Like, if you think
+about like, AI replaces the lawyer.
+Well, it turns out a lawyer does lots of
+things with friction in the world that
+the AI can't necessarily do, even if you
+had a robot doing the work, right? Cuz
+there's human systems they interact
+with. There's legal requirements they
+interact with. Some people want to talk
+to a human. So, there creates these
+bottlenecks that that that actually
+reward different talents than before.
+You see this happening in coding, too,
+right? Like, what makes a good coder now
+is completely different than 3 years ago
+cuz you're not writing code anymore. So,
+I think one thing I would say is good
+enough is a bundle of skills, and it may
+very well be the people who are like
+mediocre coders but really good at the
+vision about building software.
+>> Or communication.
+>> Right. Yeah, or communication. And And
+those will change, too, over time,
+right? I'm not going to say the AI will
+never do that task. It probably will.
+So, I think we're going to see ourselves
+ping-ponging across what skills are
+valuable in a really rapid way without
+an easy answer.
+>> Yeah, and I really like the jagged
+frontier study, and I was getting
+thoughts maybe it's us who don't
+understand models good enough because
+sometimes you re-prompt and you get the
+result that you wanted.
+>> Well, my one of my favorite phenomena is
+watching people who know nothing about a
+field getting the AI to do like
+impossible things. You're like, wait,
+how did you do that? You're like, I just
+asked. You're like, you can't ask the AI
+for that. And they did, and it like
+works. You're like, oh, great, you know,
+what are we doing here? So, there I
+mean, there is this sort of weird
+phenomenon. There I mean, there's two
+things that we know make you better at
+AI. It used to be AI was a level mostly
+a leveler, right? If you're a bad
+performer, you got a boost. That still
+is that way. But what we're increasingly
+seeing, and there's some nice results
+from Anthropic as well as some other
+studies that suggest that the people who
+are most have the most expertise get the
+most gains from AI at this stage. And
+that wasn't true until agents kind of
+came around in the last year or so. Um
+but the other thing we know is that
+there's some AI whispering ability that
+is like knowing how the AI thinks, that
+might be sort of theory of mind. Like if
+I know people really well and I get to
+know the mind of Claude or ChatGPT or
+Gemini whatever I'm using, I become more
+effective in working with it. Um and so
+those are sort of two different skill
+sets. And then there's like a mysterious
+third category, which is like some
+people seem to be good at this in ways
+we don't know. There's this great study
+by Alex Eames and a few others. He's now
+at um he was at Chicago, now he's at
+DeepMind. Um but they measured people
+creating agents for negotiation. And a
+couple interesting things. One thing
+they found is your skill multiplier
+becomes much higher because the agent
+engages in many negotiations. So a small
+difference in skills in creating good
+agents has a huge impact on bottom line.
+The second thing they found was that the
+people who are good at creating agents
+are not necessarily people who would be
+the best negotiators in real life. I
+mean even there was even a gender
+divide. So one of the uh things that we
+find repeatedly in studies um for wide
+variety of reasons is that um women tend
+to outperform in negotia-underperform in
+negotiation. And there's been a lot of
+work on this. It's been a big topic of
+concern, but women made much better
+negotiation agents than men did. And you
+know, and again, we don't actually know
+like I don't even know how to teach you
+how to do that necessarily. This is
+>> a management skill?
+>> I mean there is a management skill.
+There's a theory of mind skill. There's
+an expertise piece. But like things are
+happening so quickly that you know, we
+like again, we can't pull them apart
+that easily.
+>> Does this and? I I just had Felix from
+Anthropic in the studio, and he was
+talking about how it's very important to
+try and understand your workflow, in
+like what's going on in your head when
+you create a perfect text or when you
+go through a perfect negotiation like
+what was your thinking like so you can
+translate that onto AI. And this is how
+you build a workflow.
+>> I feel like that's kind of made up. I
+mean it might be true. To me the analogy
+that makes the most sense as somebody
+who's run organizations and managed
+people is like thinking of AI like a
+team I'm delegating work to. And if I
+can do a good job delegating to a team
+and realizing where a team goes wrong,
+which is very different than knowing my
+own process, right? The AI will not
+replicate my process and part of what I
+try and do is like preserve stuff for me
+that way also, right? Like I write all
+you know, I mean it might seem crazy
+since I do Substack and X everything I
+mean I write all my own stuff, right? I
+write first drafts of everything on my
+own. I mean yeah, I would type it all
+out, right? Because if I don't do that,
+um the AI is very seductive and will
+absolutely like dominate what I'm
+thinking in any direction and then
+you're just going to read like Claude
+results filtered through me. And we
+>> Do you use voice at all or?
+>> I use voice sometimes for this. Um I
+find like to just typing on a computer
+is easier um for a lot of this stuff.
+But yeah, voice and like you know, and
+like you get good at figuring out your
+generally ideas. Like for me weirdly um
+I come up with my best ideas is during
+soul cycling which I think I'm the only
+uh guy in the oldest person in the room
+and someone you know, and but somehow
+being a loud room where I'm biking and
+people are yelling at me about achieving
+my goals. I tune it all out and I'm I
+come up with good ideas. I don't know
+why. But everyone has it learns their
+own way of thinking. I've talked to
+another scientist who like I need to be
+extremely overtired one day a week and
+then I come up with my best ideas. So
+like you figure stuff out in that kind
+of front, but you also have to preserve
+parts of what you do that are very
+human. I don't think it's necessarily
+about replicating my human process. It's
+about preserving a human process and
+then delegating work the way I would to
+a team. Like I have a really good idea.
+Here's how I want you to execute on that
+idea.
+>> So you will never delegate generating
+ideas to AI. Is that what you're saying?
+>> I wouldn't say never delegate, but you
+have to be careful. I mean we actually
+have old evidence on this. Brainstorming
+was invented I think 1955 and by 1957 we
+knew it was a bad idea. Because
+basically anytime you do a group
+ideation process,
+your your ideas become fixated on
+whoever says the first idea out the gate
+and then there's a judgment process. And
+so you anchor on other people's ideas.
+So you lose natural variation. So the
+way you should do brainstorming before
+any group process is write everyone
+writes down ideas individually and then
+only start generating ideas as a group
+once you've done individual idea
+generation. And you end up with much
+better ideas with higher diversity,
+right? Same thing with AI. You should
+absolutely use AI for idea generation,
+but only after you've generated ideas
+for yourself.
+>> So here's what happens after a single
+podcast. When I learn something new
+about AI, I go ahead and change some
+processes in my company. See if it
+works. See if the models are really
+powerful enough to handle that thing
+that I just delegated and then I write
+about it. I don't type my emails like
+Evan does. I actually talk to my AI and
+then added them, and I also have a
+person helping me with that. But it's
+basically a summary of what we tried
+with AI, what worked and what didn't,
+and, of course, a lot of strategic
+stuff: how I navigate this media career
+and building businesses as a mom, as a
+woman, as an immigrant. So, if you want
+to get a closer look at my process,
+subscribe to my free newsletter Future
+Proof and let's grow together.
+>> And you talked about this effortful
+thinking and having AI as a companion.
+Can you describe that process?
+>> Yeah, I mean, I think that what you want
+to do is
+you're kind of trying to mentally sweat
+while doing this. Like if you're not
+kind of put if it's not uncomfortable,
+you're probably not doing enough
+learning or thinking. Like it works just
+like exercise or anything else, right?
+And so in learning we call this
+desirable difficulties. Like if you're
+not encountering difficulties, you're
+not learning. And so there's certain
+mental processes like ideation that
+can't be streamlined that much, right?
+And it's very tempting to do that, and
+we don't we've learned to recognize the
+cost of like we never walk around or you
+know, we never you know, we never
+exercise. We haven't learned the same
+kind of thing with our brains cuz there
+was no alternative, right? You know, you
+could Google something, but that was not
+the same kind of thing as AI do my
+thinking for me. So, I think that we
+have to be recognizing that we're doing
+that kind of effortful work.
+>> So interesting cuz I got to thinking
+that maybe like the way I get ideas
+could be a workflow. Like maybe there is
+something that's happening in my life
+that leads me towards certain idea and
+maybe AI can help me
+pinpoint.
+>> It can. I mean, I just think you have to
+be careful. By the way, there is a in
+ideation there's something called the
+equal odds rule that turns out to be
+true, which is that some people generate
+both more ideas and those people
+generate more ideas generate better
+ideas than most other people. And it's
+not necessarily deeply correlated with
+intelligence. There's creativity is a
+trait. Some people are just more
+creative. So, if you're less creative, I
+think we don't need to hold creativity
+on a pedestal, right? Then maybe AI is
+helping you out more, right? Generating
+ideas.
+>> Yeah.
+>> If it's an area that you have
+competitive advantage kind of going back
+to where we were before or writing or
+whatever it is, or podcasting, right? We
+can generate an AI podcast. It will not
+be as good as an expert having done this
+a lot and thinking through this. So, at
+least for now, that human edge, right,
+is is a real one, and that's where you
+want to make sure you're not really
+giving stuff up, right? I worry less. I
+mean, ideation is just one of many
+traits. Like, most people don't have
+good ideas, that is okay. We lionize
+ideas too much, right? Execution, you
+know, emotional connection, there's lots
+of other great things people could do.
+And so, you want to be strategic about
+when you're using these systems.
+>> I really like what you said about who
+generate more ideas tend to generate
+more good ideas, and I think we just
+need to be learning how to constantly
+generate things. And like, maybe write
+them down, or test them out, cuz it's so
+easy to test out ideas.
+>> Yeah, I think that that
+ideas that don't do anything aren't that
+useful. The whole discipline of
+entrepreneurship before AI, right, was
+built around this idea, especially
+Silicon Valley entrepreneurship and the
+lean startup and all the other dominant
+methods, strategies that we teach people
+to become good entrepreneurs, all of
+those strategies come from this idea of
+learning at the cheapest cost you can,
+right? So, it was all about like, don't
+just come with a beautiful idea in the
+building, right? As the cost of software
+development dropped, the goal was get
+out there and talk to people. Show them
+your product, right? Do customer
+interviews, create minimum viable
+products, and learn quickly. And then,
+all the VCs sort of reoriented around
+this, too, right? It was originally
+built around giving you a giant check to
+scale your idea, and it became how do we
+give you seed rounds and pre-seed rounds
+and Y Combinator, all the basically
+entire evolution of entrepreneurship was
+based around the idea that it got
+cheaper and cheaper to test ideas over
+time. And so, now we're really at rock
+bottom cheapness, right? Like, you you
+can
+don't treat AI is not a customer when
+you simulate customers, but it's a
+pretty good first pass at being a
+simulated customer. There's no no longer
+an excuse to not at least push your
+ideas a little bit.
+>> Yeah. Do you think a good idea is worth
+more now versus 5 years ago?
+>> I think a good idea is worth more when
+combined with execution, right? I think
+that there is that you that idea alone
+has never been worth that much. I mean,
+it's great, but, you know, one of the
+conflicts that typically happens in in
+entrepreneurship classes all everywhere
+is the person who came up with an idea
+wants all the credit for the idea. And
+one of the things you see is you know,
+as sort of a semester goes on and then a
+lot of startups out of Wharton turn into
+real businesses and raise lots of money
+and end up being very successful. But
+you kind of see the process of like, oh,
+everyone treats the person who came with
+the idea is like that was the amazing
+thing. And then by the time you're you
+know, 6 months in, the idea has changed.
+It's rarely the idea that has made
+everything successful, right? It's it's
+a set of everything else. So, I think
+ideas have always been sort of a dime a
+dozen and the AI can generate those
+ideas now better than anyone else. But
+if you actually execute on them, there's
+real value there.
+>> I agree 100%. And when executing ideas,
+you become a manager, either of people
+or agents. And there are so many people
+who are now not forced, but they have to
+manage agents because of their work.
+What are the tips that you will give
+them? The management tips that they
+should be deploying?
+>> It's the revenge of the MBAs, right?
+Like I teach at
+you know, I I I I
+you know, I teach at a business school.
+So, it's like a very it's gratifying to
+be like, haha, everyone has to be a
+manager now. You know,
+all my business people were looking for
+technical people and now all the
+technical people need management skills.
+But I actually those management skills
+do apply, right? So, what you need to
+turns out, I mean, we've been doing a
+lot of experiments with that at the
+generative AI lab at Wharton, which is
+what I I lead. And a lot of the
+experiments basically show, you know,
+look, techniques that work on people
+work on AI. And so, I think what you
+need to be thinking about is how do you
+manage a process? Because one of the
+dangers of an AI of of the cost of an AI
+system is have assigning a lot of work
+not even the token cost, just the effort
+cost of monitoring work is quite high.
+So, we built all these systems for doing
+that, right? So, if I'm specifying
+things for an agent, I will specify
+things like here are the points I want
+you to check in with me on about the
+work. Here's where I want you to give me
+diverse examples that I can select from
+so I make a choice, right? I'm deciding
+when to insert my own agency into the
+system rather than just sending off
+agents to do work. I am making sure to
+specify what good and bad looks like in
+really clear clear ways. And
+I'm watching really early on the process
+to see whether or not there's a failure
+in my ability to communicate to the
+agent, right? Often times they'll head
+off in a direction that sort of say
+like, you know, Claude has its own
+obsessions, right? They'll head off in
+those directions unless you intervene
+quite early on and often. So, you know,
+those management skills about thinking
+about am I clearly specifying what I
+need? Am I get you know, am I
+establishing a feedback loop, right? Am
+I dealing with it, you know, reducing
+uncertainty over the course of a
+project?
+Those things end up really applying
+here.
+>> Interesting. What what is the biggest
+mistake that you think people are making
+when they're managing those agents?
+>> I think they're trusting the agents too
+much.
+You'll get an amazing result. Like I I
+everyone loves sort of I do a lot of
+single prompt like this is awesome kind
+of stuff. But the guidance process is
+incredibly important. And I think that
+you can be very disempowering
+both because the agent knows things you
+don't, but also because the interfaces
+we have to work with AI now are
+increasingly hostile to augmentation and
+embracing automation, right? They hide
+the chain of thought, right? And and
+even the chain of thought summaries no
+longer appear. It's supposed to feel
+more like magic and that's disastrous
+for being a human in a loop. I don't
+think we can be in the loop anymore, but
+managers are not really in the loop.
+They assign work and they have people
+check in on them. So, we have to now
+create forced positions for the AI to
+report back to us. Otherwise, they will
+try and do magic for you and you don't
+want that.
+>> Can you describe a process in your own
+workflow where you can show us how you
+create this result and how we create the
+feedback loop so that people can learn
+how to do
+>> Sure. Like I was exploring a sort of
+random topic that interests me in the
+humanities, which is and I've done this
+for entrepreneurial pitching as well,
+which is there is a lot of research that
+stories have shapes, right? And so
+and so like there's a rise and fall
+stories and you know, and like
+Cinderella stories and this is like a
+long-standing question. And I actually
+did some research before with primitive
+LLMs
+about whether or not we could take
+entrepreneurial pitches and find the
+shape of a good pitch. So, it's a topic
+that really interests me for a long time
+and as agents have gotten better, one of
+the things I've had them do is assign
+them to explore this topic, right? And
+And there's a few things there. One of
+them is
+you know, I was assigned them to kind of
+generate a bunch of ideas and how to do
+this and then I but I didn't have it
+then execute its favorite idea cuz that
+would have been bad. So I had to give it
+feedback part way through. So give me a
+bunch of ways that you might approach
+this figure out what the shape of story
+research is real. Yeah and then I you
+know, I was like and that would
+speculate for me a little just like I
+would for a student. Give me some
+thoughts about how you might approach
+this give it feedback again. Great. Why
+don't you execute one two three and four
+first draft of all of them show me the
+results and then let's pick which
+example works better from this. Great. I
+really like what you're doing with three
+here but number two has this really nice
+feature. Let's talk about how we combine
+those together, right? Why do you let's
+you know, can you show me where the
+you know, this looks wrong. Can you show
+me why you think this went wrong? So
+it's almost like a Socratic method kind
+of thing of me guiding the AI and give
+myself lots of choice points where the
+really tedious annoying work get you
+know, figure out where 5,000 story of
+5,000 stories are build the semantic
+coding tools. I let the AI do so I get
+the interesting work for myself and like
+that's if there's one message of sort of
+the latest book and where I'm most
+desperate to try and communicate with
+corporate America. It's like we have an
+automation world that will be bad for
+everybody in a lot of ways but an
+augmentation world is like the dream of
+work, right? You do the interesting
+stuff and the AI does the crap stuff and
+you get to just direct an organization
+and it's really fun.
+>> Before we keep going, I'd love to get to
+know you a little better. I share a lot
+about my work here and I'm curious about
+yours. What do you do and what you'd
+like more help with? We've put together
+a little survey your answers will help
+me decide what to cover in future
+conversations and what resources to put
+together for you. I'll leave the link in
+the description. Please, please, please
+take a couple minutes and tell me about
+you, about your business, about your
+ambition so I can make better content
+for you. I really, really appreciate
+you. Thank you so much for doing this.
+>> The problem with this that I see is that
+the models progress so fast. So you
+build a workflow, you describe things,
+and then I don't know, the new model
+comes out and they tell you it's better
+to not give it a workflow because it's
+so good at understanding what data to
+use for a particular workflow; and
+sometimes it thinks about things you
+didn't think about, and it can make a
+better workflow. How often do you have
+to rewrite the whole thing?
+>> So, that's not a workflow I was giving
+you, right? That wasn't step one I do
+this and step two I do this. This was
+the way I would manage a researcher team
+or you know, or a startup team.
+>> So, it's a one-off thing.
+>> Everything everything's an interaction
+where I'm learning from what the system
+does. I don't know in advance what it's
+going to be good or bad at. If you're
+trying to launch a startup company, have
+a deeper conversation, reach some sort
+of conclusion, come with a marketing
+plan, you know, do financial analysis.
+All of these involve lots of choices.
+You don't want the AI making those
+choices even if they're good ones. You
+want to be in, you know, inserted into
+that process. So, it's sort of a meta
+process, right? The idea is like assume
+you're a really smart person or a really
+incredible team doing work, but you
+still want to be your work. When should
+you talk to the AI about this, right?
+You still want that visibility into the
+system. Otherwise, you're just it's just
+Claude. Even if it's brighter than you,
+you're inserting nothing into the
+process anymore. And so, anyone could
+type the same sentence to get the same
+result.
+>> What are the skills? I know you wrote
+about it. What are the skills that
+you're just delegating to AI? And you
+You said you can't wait to
+delegate a few skills.
+>> Basically, everything having to do with
+So, fact-checking is great. The Now,
+>> And it's really good at it.
+>> It's really good. Actually, it's kind of
+it's creating a kind of crisis in how
+good it is. I So, with my latest book,
+when I delegated to the to the AI
+to to fact-check it, right? And I had
+human fact-checkers. It's a big release,
+right? But not only did the AI spot
+errors that I made, but even more often
+it spotted errors in the stuff I was
+citing. So, it's like table two in this
+really complicated academic you know,
+paper has an error. And I'm like, "What
+do I do with this?" Like, do I Like,
+what you know, we have a whole method of
+correct like correction in science that
+doesn't make any sense anymore because
+it's It It found an error in an AP story
+I was citing that it was
+cited the wrong city an event took place
+at. Like, it's like meta fact
+correction, right? So, like superhuman
+fact-checking. And I've been
+fact-checked by the New Yorker and other
+things. Like, this was pretty amazing.
+And then there's just like a lot of like
+busy work, right? That the AI does
+really well. Like, never fill out
+another student form for your child if
+you can avoid it, right? Like,
+immunization forms it does really well.
+So, you know, um, and, you know, then
+there's the tempting line of like, oh,
+should I have it do all my mandatory
+training for me? And the answer is like,
+not yet, I think. But, um, so, I think
+that there When I talk about deskilling
+myself, like, I cannot wait to deskill
+myself on a whole bunch of useless
+things I had to be good at doing.
+Filling out forms, you know, the
+particular kinds of legal documents,
+signing NDAs. Like, I want it to be able
+to handle those things cuz I think it's
+well within the range of what the AI can
+do.
+>> That worries me a little because uh I
+had this thing uh a couple days ago. I
+was on an airplane. So, the Wi-Fi was
+really shitty and I had to fill in the
+form. So, I asked my dot to fill it in
+for me, but I just said fill it in. But,
+what it did, it sent it. And I only
+realized in the morning and I'm like, oh
+my god. And my team was like texting me,
+this doesn't sound like you.
+And I'm like, oops. But, then I realized
+how convenient that was. Like, because
+it completely took it off my to-do list.
+And it kind of scares me because dot
+drafts all the replies and I just
+correct maybe 10%of it, but it's so
+good. And I'm like, what what's going to
+happen?
+>> So, I I had to set a line where I have a
+dot and I also have uh Codex scheduled
+tasks going a couple times a day
+summarizing stuff and and giving me
+what's happening in my world. And um,
+and I won't send drafts to anyone who I
+like I have I write stuff to myself to
+people who I have any kind of connection
+with or I feel bad doing it, right? So,
+that's another line I'm trying to do. It
+drafts a lot of nice rejections for
+people aren't students yet, questions
+about my class. But, I I mean, I had the
+same thing where the AI emailed my dean
+about something, you know, when I was
+like, don't do this. And so, but this is
+part of why also this sort of yolo no
+trus-you know, trusting everything.
+Like, you do have to build a a set of
+trust with this just like with people.
+And like, once you build that, you're
+like, okay, I know why it fired off that
+message, right? Dot is a little too
+proactive. I mean, again, no hiding
+stuff, right? Like, when I have a
+scheduled task running in Codex, I have
+a system prompt, right? And I have I
+understand the context it's in and I've
+been tweaking that that prompt for it
+over time to make it good. And, you
+know, and using it for low stakes before
+higher stakes. And dot just encouraged
+you like, oh, yeah, just ask it
+questions. But, we don't know its system
+prompt. We don't know. There's no place
+to change the instructions about how
+proactive it should be. And that's a
+little more ominous.
+>> I think you could. It's just when things
+are moving so fast, it's so hard for me
+to find time and reprogram my whole
+system because there's this new thing
+that just came out.
+>> I actually also think that part of what
+makes dot and muse do what they do is
+they're much more magical. Like there
+are less opportunities to get yourself
+deep into what they do. And in some
+cases that's great, right? Who wants to
+worry about it? And the other, I don't
+know the behavior I'm expecting. So it
+might trust has to go after experience,
+right? And there is a little bit of
+danger of like we're taking too much
+stuff off our plate too quickly. Not
+because writing a you know an NDA and
+signing it back is useful. I I trust
+that the AI will do a good job spotting
+errors in an NDA, right? In fact, if I
+my gut feeling would be it would be too
+nervous about signing NDAs,
+>> Oh, yeah. Yeah.
+>> are like not that important and are like
+you know, but like it would be too
+nervous about it. But so like the
+question becomes how do you start to
+work with that? And look, I've had to
+work with build human teams many times
+over my life, and there's a
+trust-building process. And what I worry
+a little bit is being taken out of the
+loop of not the AI doing the work, but
+the trust-building process of
+understanding what the AI wants to do.
+>> If you're used to models, the model
+families feel fairly similar to each
+other. So like I I I had a good feeling
+for the you know for the four series you
+know and the GPT-5 series, right? And
+then but then you have a new kind of
+pre-trainer or a new model comes along
+and suddenly like you know Opus 5.5
+doesn't feel quite like Opus 4.6 and you
+don't trust the same way. So there is
+this issue and I I mean
+>> By the way, if you're having this
+problem personally, can you imagine
+what's happening at companies right now?
+Like organizations
+they're being forcibly updated to
+everything and like you show up and like
+your cloud code just updated overnight
+for and you did training for 500 people
+and now this is like they've decided
+everything has different names now.
+>> What are you telling managers of those
+organizations?
+>> So what most of them are doing is it
+turns out like
+the thing to is LLMs are so unreasonably
+effective at everything that almost all
+their sins are forgiven, right? So like
+they don't have a choice. Like it's
+either like and most of them adapt,
+right? I mean I think muddling through
+is underestimated as the default for
+humanity, right? Like, and I often point
+out to organizations, like"look,
+if you had told me in advance before
+COVID that, um, every organization on
+the planet would have to leave their
+office with no notice and not come back
+for a year and a half with no
+contingency, no planning, you would have
+thought like, if you had predicted in
+advance, you would say, like' hey, about
+20%of companies will go under as a
+result of this,'right?" As far as I can
+tell not one of the 5,000 biggest
+companies in the United States went
+under as a result of COVID. We adapted
+and I think that people are better at
+adapting than we think. We have a whole
+bunch of systems that are built around
+normal times and normal technology that
+are all absolutely breaking right now.
+But I think we're people are proving to
+be more durable than we think. Not
+everyone and not every organization but
+more than you think.
+>> Yeah, it's just making some of us upset.
+>> Yeah, I mean but well it is upsetting
+and
+coordination is really hard, right? Like
+and I get used to something and it gets
+updated and like it's not even the model
+this as much as the interface has
+changed it like with when do I trust
+that that's changing all the time. It's
+your intimate personal assistant and
+they're giving a brain surgery every day
+with no notice.
+>> You know what what was upsetting for me
+last week? Uh so I had this whole
+process of coming up with questions for
+the podcast, selecting titles and
+thumbnails and I have all the data from
+my previous podcast and then I just
+asked uh go on the the new Gemini's
+model just I'm interviewing this person,
+come up with questions. Just that
+without giving any context. And it went
+like it gathered all the amazing data,
+and then, what was striking for me, it
+went into my granola, found out that 2
+months ago I had a conversation with a
+YouTube strategist, and they pinpointed
+something about that type of guests that
+I don't remember, and it was never in my
+strategy just because, you know, we just
+talked and that's it.
+And it mentioned that and it created the
+whole workflow based on that and I'm
+like oh. So now I realize there's so
+much data that I haven't included in my
+process which makes it probably not the
+best process in the world because Argon
+is so powerful now at identifying those
+things.
+>> Have you had anything
+>> well I mean this is all of academia
+right now. Like we are we we you know,
+you talked to lots of academics and
+we've been doing science roughly the
+same way, you know, for a hundred years
+or so and there's all of this stuff that
+is like improvised and jerry-rigged and
+limited by what humans we are. And
+like we don't know what to do. Like
+forget like the obvious stuff. Floods of
+junk papers coming after every academic
+like, you know, that that like and the
+first wave of trivial but true papers,
+right? That we had to deal with that.
+Now we're like starting to get AI doing
+really good research. And then also just
+like to get really nitty on the gritty
+on the science side, like there's also
+this kind of crazy thing which is like
+you kind of realize that all of science
+is p-hacking to some degree because
+we're humans. We have to select topics
+that interest us. So we we're
+pre-selecting topics that we think are
+interesting, right? And that we think
+will result in a paper. And now the AI
+doesn't care about any of that. So it
+can generate infinite number of topics
+and papers. And like how do we fit that
+into a science that was human-driven? So
+that's a long winded way of saying like
+yes, all the time, right? All the time
+I'm like I put my book in and it's like
+have you thought about this or there
+it's starting to be like deep
+contradictions. Like chapters 5, 7, and
+9 have raised a question you don't
+really address. You're like, oh wow, I
+actually did. Like I've I've had lots of
+human readers and it's not going to
+bother any of them. I I know I've
+written lots of, you know, written
+books, but I'm like, oh, that's a really
+profound point that I was like, you
+know, and so what do I do with that,
+right? And like then the level goes up
+and it's no longer like little nitpicky
+points of like, oh, chapter four, you're
+vague about this. It's now like, oh,
+yeah, that is a really deep question
+about human autonomy. And like compared
+to the AI's ability to get things done,
+that's really difficult. Like I you
+know, it it cannot write my book yet,
+right? For a variety of reasons, but
+wow, it has some profound things to say.
+And like my obligation to incorporate
+that.
+>> What would be your advice to people who
+are again women we talked about people
+who are upset with the process changing
+all the time. What is the mindset hack
+that they should be adopting to just go
+through it and thrive with it?
+>> I think you have to have a little bit of
+excitement and curiosity. I think
+there's a mindset of like I think we all
+are nervous and a little resentful and
+like you know, I'm a very like
+enthusiastic person usually I have all
+sorts of stuff and like there is no
+doubt that that is real, right? And I
+think it's okay to acknowledge that.
+It's also okay to acknowledge that you
+have imposter syndrome because we all
+do. Like I'm as up to speed as anyone,
+you are too. Everyone's making this up.
+You've had Anthropic and OpenAI people
+in this chair, they're making it up,
+right? We're all figuring this out as we
+go along. So, I think it's okay to feel
+nervous. Like, leaving aside existential
+anxiety, I think it's okay to feel
+nervous, it's okay to feel a little
+resentful. I think that there's also a
+positive side, and I think that's kind
+of how I view the like, but suddenly
+you're able to do so much more. So, part
+of what I do is focus on the more you
+can do, and with a sense of play and
+experimentation, and that can help you
+get into better mindset.
+And just acknowledge the resentment's
+real. Like, it is annoying, and like,
+the labs are not doing us any favors.
+Like, they don't have an unreasonably
+good technology, and then they just keep
+doing new stuff with it, and sometimes
+it works, sometimes it doesn't.
+Sometimes they'll just cancel a whole
+thing that you depended on for a while.
+Like, when you interview professors,
+like, half of them want to quit, and the
+other half thinks it's the most exciting
+time they've ever worked. And I think
+you see the same thing with executives,
+even entrepreneurs, right? There's like
+half that's like, I didn't sign up for
+this, right? Like, I didn't want to do
+it this way.
+>> But it is what it is. Uh I had a
+question about local models. When do you
+think they're applicable for individual
+users? Cuz I tried a few of them, and it
+don't think I'm ready to delegate stuff
+to local models cuz they're a few steps
+behind the frontier. But at the same
+time, with this all progressing so fast,
+we're going to have, you know, Argo and
+Astra on our phones in a few years.
+What happens to an average user? Do you
+think we're going to use local models
+more, and what happens to those large
+companies? What do you think is going to
+happen in like, say, 5 years? Cuz I
+think there's a research that says by
+2030, 50%of enterprise tasks are going
+to be run locally.
+Do you think
+>> that's a made-up number that has no
+basis in reality. I mean, I I mean,
+first of all, when I talk to
+enterprises, right? A lot of them don't
+want to run local inference, and they
+certainly don't want you having a local
+like, they don't want every machine
+running a model, right? Like, they
+they've been using SAS vendors for
+years, it's not that weird, you know?
+The token costs are an issue, and
+they're thinking about that, but like, I
+think a lot of people So, this is a meta
+point about AI, which is people keep
+fixating on the problems of today and
+assuming they'll last forever. You know,
+all the legal stuff that we had to do to
+be like, is it is you know, can this do
+NDAs? We need specialized legal AIs. No,
+just better models. So, I think it's
+it's a little easy to get fixated and
+not ride the exponential.
+>> Is there an overarching thing that we
+should be thinking about when thinking
+about the progress with AI?
+>> I think continually being more ambitious
+and trying to aim to have at least a
+couple things that don't work yet.
+Unsaturated personal benchmarks that
+you're kind of aiming for or business
+ideas.
+>> So, I can still not get a high taste
+academic paper from scratch out of these
+systems.
+>> Mhm.
+>> So, I can get academic papers that are
+true and correctly written, but they're
+not interesting and they're not telling
+us anything fundamentally new. So,
+that's a big one for me as an academic
+who studies systems. I mean, you can't
+vibe code a true startup from scratch at
+this stage. Like, you can't take an idea
+and say execute. I mean, that's a big
+gap, right? Between that and reality.
+You know, I do a lot of work in game
+development. That's been a topic I wrote
+about. I've done stuff in and we're
+getting closer, but like the game
+development from scratch, there's still
+lots of interactions. Writing a good
+story that I actually want to read,
+right? That's coherent. So, there's a
+lot of them out there when you kind of
+all of these would have seemed
+ridiculous as as even possibilities, you
+know, 2 years ago, but we're close.
+>> That's exactly what can be I'm a
+fascinating and frightening because the
+overarching thing of you know, a good
+game, good research is taste again,
+right? What if in 2 years AI learns
+taste? I know we talked about not
+projecting the problems into far into
+the future, but what do you think the
+future going to look like when AI learns
+the taste?
+>> I still So, I mean, we can speculate at
+any point that AI just does all human
+stuff better, right? And at that point,
+I don't have anything useful to say,
+right? In some ways cuz it's like it
+just does stuff. I think that the
+jaggedness is underestimated
+continuously. And I think the nature of
+what taste is gets underestimated as
+well, which is that when we talk about
+taste, right? We mean your taste.
+And that universal like like there's
+still going to be some similar-ness to
+the AI systems in the for the
+foreseeable future
+>> Mhm.
+>> that will become tiring for most people
+under most circumstances. A cloud idea
+is, you know, cloud websites. Like and
+you can get it to do incredible stuff
+with your taste added in. So, there
+still remains jaggedness at the outside
+edges. When that goes away, I mean, what
+do we do? We shrug and say then we're,
+you know, what I don't have an answer at
+that stage.
+>> know. Advice talks of these corporations
+are about to IPO. I guess that's a
+pillar, safety pillar. Thank you so
+much, Ethan. That was very interesting,
+very entertaining, and thank you for
+sharing your workflows. And please read
+Ethan's new book, and I really, really
+like your Substack.
+>> Thank you so much, and this is a real
+pleasure. Awesome.
+>> If AI makes it easier to build things,
+how do you decide what's actually worth
+building? Watch my conversation, by the
+way, one of my most favorite
+conversations on this channel with Brian
+Chesky. We talk about how he comes up
+with ideas and thinks about what people
+need. Click here to watch.
