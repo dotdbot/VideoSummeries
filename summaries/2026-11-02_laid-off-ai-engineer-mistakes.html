@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laid off as an AI engineer (don't make my mistake)</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-ai { background: #1a2744; color: var(--accent); }
+    .badge-biz { background: #2d1a5c; color: #bc8cff; }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #2d0a0a; border: 1px solid var(--red); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--red); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    ul, ol { padding-left: 20px; }
+    li { margin-bottom: 8px; font-size: 14px; line-height: 1.7; }
+    .quote { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+    th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--surface2); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-ai">🤖 AI</span>
+      <span class="badge badge-biz">💼 Business</span>
+    </div>
+    <h1>Laid off as an AI engineer (don't make my mistake)</h1>
+    <div class="meta">
+      <span>📺 Michael Hoff</span>
+      <span>📅 November 2, 2026</span>
+      <span>⏱️ 9:33</span>
+      <a href="https://www.youtube.com/watch?v=vAzcFVSGGJM" target="_blank" style="color:var(--accent);">▶ Watch on YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/vAzcFVSGGJM" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> Michael Hoff was laid off from an AI startup that focused on ServiceNow, where he wrote deterministic, compiler-like code. Looking back, he lists five mistakes: <strong>(1)</strong> he dismissed AI after it failed on one hard problem and <strong>never re-tested it</strong>; <strong>(2)</strong> he argued with colleagues who said <strong>"AI will get better"</strong> when he should have prepared for it; <strong>(3)</strong> he ignored the <strong>speed gains</strong> because he disliked AI-written code, while teammates shipped more features; <strong>(4)</strong> he <strong>held onto the craft</strong> of coding, even for throwaway scripts; <strong>(5)</strong> discouragement turned into a <strong>shame loop</strong>. What saved him was not AI skill but his <strong>boring, specialized ServiceNow background</strong>, and he has never been out of work for more than a month. His advice: <strong>use the tools, and specialize in a niche with real barriers to entry, then add AI skills on top.</strong>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box"><div class="val">~10 yrs</div><div class="lbl">In tech, mostly ServiceNow</div></div>
+    <div class="stat-box"><div class="val yellow">5</div><div class="lbl">Mistakes that led to the layoff</div></div>
+    <div class="stat-box"><div class="val">&lt; 1 month</div><div class="lbl">Longest time he's been out of work</div></div>
+  </div>
+
+  <div class="card">
+    <h2>🏢 Background: His Role at the Startup</h2>
+    <ul>
+      <li>He worked at an AI startup built around <strong>ServiceNow</strong>, a large enterprise platform that companies use for IT tickets, workflows and internal apps.</li>
+      <li>He held several roles: first a <strong>ServiceNow consultant</strong> converting applications mostly by hand, then an engineer <strong>building tools to automate those conversions</strong>, and later a <strong>forward deployed engineer</strong> working directly with clients.</li>
+      <li>His main project let a user draw a diagram of an application (a "universal application notation") and turned it into a working ServiceNow app. He wrote the <strong>deterministic code</strong> that produced the ServiceNow pieces. No AI was involved in that step; he compared it to a compiler.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>❌ Mistake 1: Not Using AI, Even at an AI Company</h2>
+    <ul>
+      <li>At the time, AI tools weren't consistent enough to produce the <strong>exact XML</strong> ServiceNow needs for <strong>update sets</strong> (how changes move between environments). AI-generated update sets were broken and didn't work in a live environment.</li>
+      <li>He decided AI "wasn't enough for real work" and <strong>stopped paying attention</strong>. That was the actual mistake.</li>
+      <li>He wasn't wrong about the tools then. He judged AI on <strong>one very hard problem</strong> and never checked again as it improved.</li>
+    </ul>
+    <div class="quote">"You don't have to bet your whole workflow on it, but you do have to keep testing it."</div>
+    <ul>
+      <li><strong>Fix:</strong> set aside a small part of each week to try new tools, even on tasks where you expect them to fail.</li>
+      <li>This mistake wasn't fatal by itself, but it led to all the others.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>❌ Mistake 2: Ignoring People Who Said "AI Will Get Better"</h2>
+    <ul>
+      <li>Some teammates said, "We don't need to think too hard about this part; AI will get better and handle it." He strongly disagreed, arguing that if AI got that good, none of them would have jobs.</li>
+      <li>The irony: he <strong>predicted the outcome correctly</strong> and said so to his team. But he used that prediction as a reason to dig in instead of a reason to prepare. He treated it as an argument to win, not a warning.</li>
+    </ul>
+    <div class="quote">"Not liking the direction doesn't change the direction."</div>
+    <ul>
+      <li><strong>Fix:</strong> take your own prediction seriously, check it regularly, and become the person on the team <strong>who knows how to use AI</strong>, not the one arguing against it.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>❌ Mistake 3: Ignoring the Speed-Ups</h2>
+    <ul>
+      <li>He disliked AI-assisted code from colleagues: "crazy band-aids", lots of repetition, odd structures bolted on.</li>
+      <li>He was proud of his own code and understood every line, but it took a long time to write. Meanwhile, <strong>teammates shipped many more features</strong>.</li>
+      <li>The business cares about <strong>what ships and whether it works for the client</strong>, not how much you like your code. When deciding who to keep, the person shipping is safer than the one with "the prettiest pull requests".</li>
+      <li><strong>Fix (meet in the middle):</strong> use AI to get a working version fast, then apply your standards to <strong>reviewing and cleaning it up</strong> instead of writing every line by hand.</li>
+      <li>Speed was what the company could actually see, and it was the one thing he wasn't giving them.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>❌ Mistake 4: Holding Onto the Craft</h2>
+    <ul>
+      <li>Much of his resistance was personal: he liked writing code and solving hard problems himself, and letting AI do that felt like giving away the part of the job he cared about.</li>
+      <li><strong>The evidence:</strong> as a forward deployed engineer, he mostly wrote <strong>temporary scripts</strong> for clients that nobody would maintain. That's an ideal use case for AI, with no architecture to protect, and he was <em>still</em> slow to adopt it. So the code-quality argument no longer applied.</li>
+      <li>He calls this the <strong>real reason behind the first three mistakes</strong>.</li>
+      <li><strong>Fix:</strong> separate the craft from the job. Keep hand-coding your own projects if you enjoy it, but at work the job is solving the problem.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>❌ Mistake 5: Letting It Get to His Head (the Shame Loop)</h2>
+    <ul>
+      <li>As the job changed, he got discouraged about his skills and "wallowed in it", feeling that what he was good at no longer mattered.</li>
+      <li><strong>The loop:</strong> feeling down → avoiding new tools because you don't want to be bad at something again → staying in your comfort zone → falling further behind → feeling worse.</li>
+      <li><strong>Fix:</strong> treat the feeling as <strong>information, not a verdict</strong>. Feeling behind means you are behind, and being behind is fixable.</li>
+      <li>If it's affecting your life beyond discouragement, talk to someone "instead of watching 10 more YouTube videos".</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🛟 What Actually Saved Him</h2>
+    <ul>
+      <li>Not his AI skills, but his <strong>"boring" background</strong>: most of his ~10 years in tech were in ServiceNow, and little of it was in a formal software engineering role.</li>
+      <li>Because of it, he landed on his feet quickly and has <strong>never been out of work for more than a month</strong>.</li>
+      <li><strong>The reason is less competition:</strong> ServiceNow is specialized. Employers expect certifications and real platform experience, and few people have both.</li>
+      <li>General software jobs, by contrast, are "a really crowded line", since anyone with an AI subscription can now do parts of that work.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>✅ Conclusions &amp; Recommendations</h2>
+    <table>
+      <tr><th>Do this</th><th>Why</th></tr>
+      <tr><td><strong>Re-test AI tools every week</strong></td><td>A tool that failed last year may work now. Don't judge AI by one hard problem.</td></tr>
+      <tr><td><strong>Act on your predictions</strong></td><td>If you see where things are heading, prepare instead of arguing.</td></tr>
+      <tr><td><strong>Ship fast, then refine</strong></td><td>Let AI produce a first draft and put your standards into review. Companies see speed.</td></tr>
+      <tr><td><strong>Separate craft from job</strong></td><td>Hand-code for fun; at work, solve the problem.</td></tr>
+      <tr><td><strong>Treat "behind" as fixable</strong></td><td>Break the shame loop; get help if it goes deeper.</td></tr>
+      <tr><td><strong>Specialize + stack AI</strong></td><td>Pick a boring platform or industry with real barriers to entry, get good at it, then add AI skills. The combination is harder to replace than either alone.</td></tr>
+    </table>
+    <div class="quote">"Almost every mistake I made came from resisting tools instead of learning them. … Don't make my mistake, use the tools, and have something specialized to fall back on."</div>
+    <div class="warn-box">
+      <div class="hl-title">⚠️ Context</div>
+      This is a personal story from one person, with no data beyond his own experience. It includes plugs for his newsletter (subscribe.michaelhoff.io) and a related video on the tech job market. The layoff "was a while ago"; he doesn't give a date or company name.
+    </div>
+  </div>
+
+  <footer>
+    <a href="transcripts/laid-off-ai-engineer-mistakes.txt">📄 Raw Transcript</a>
+    <span>Auto-generated by Dot DiBot · Hermes Agent</span>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
