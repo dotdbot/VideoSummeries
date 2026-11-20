@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Just Sold — Jeremy Lefebvre</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-stocks { background: #2d2000; color: var(--yellow); }
+    .badge-macro { background: #3d1a1a; color: var(--red); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #2d0a0a; border: 1px solid var(--red); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--red); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--red); font-family: monospace; }
+    .stat-box .val.green { color: var(--green); }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    ul, ol { padding-left: 20px; }
+    li { margin-bottom: 8px; font-size: 14px; line-height: 1.7; }
+    .quote { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+    th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--surface2); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .down { color: var(--red); font-weight: 600; }
+    .up { color: var(--green); font-weight: 600; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-stocks">📈 Stocks</span>
+      <span class="badge badge-macro">🌍 Market</span>
+    </div>
+    <h1>I Just Sold</h1>
+    <div class="meta">
+      <span>📺 Financial Education (Jeremy Lefebvre)</span>
+      <span>📅 November 18, 2026</span>
+      <span>⏱️ 39:43</span>
+      <a href="https://www.youtube.com/watch?v=zKQzbjBwGVM" target="_blank" style="color:var(--accent);">▶ Watch on YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/zKQzbjBwGVM" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> In about six weeks the Nasdaq (QQQ) fell <strong>13.5%</strong> while chip stocks crashed: Nvidia −37%, Micron −35%, CoreWeave −48%, SanDisk −54%. Jeremy's ~$5M public account held up better than in 2022. If you've lost more than the Nasdaq, he says you're <strong>lazy, over-risked, or don't know what you're doing</strong>, and he warns against <strong>margin, call options, leveraged ETFs and skipping bear cases</strong>. SaaS stocks are falling partly because of money moving into the <strong>Anthropic IPO</strong>. He <strong>sold ~$144K of Cheesecake Factory</strong> in a private portfolio because its run has "stolen returns from the future", and bought <strong>Celsius, Netflix, American Express, SoFi and Wynn</strong>.
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box"><div class="val">−13.5%</div><div class="lbl">QQQ in ~6 weeks</div></div>
+    <div class="stat-box"><div class="val">−54%</div><div class="lbl">SanDisk</div></div>
+    <div class="stat-box"><div class="val yellow">$144K</div><div class="lbl">Cheesecake Factory sold</div></div>
+    <div class="stat-box"><div class="val green">~31%</div><div class="lbl">His Netflix base-case CAGR</div></div>
+  </div>
+
+  <div class="card">
+    <h2>🩸 The Damage (less than 1.5 months)</h2>
+    <table>
+      <tr><th>Asset</th><th>Move</th></tr>
+      <tr><td>S&amp;P 500</td><td class="down">−6.5%</td></tr>
+      <tr><td>QQQ (Nasdaq 100)</td><td class="down">−13.5%</td></tr>
+      <tr><td>AMD</td><td class="down">−20%+</td></tr>
+      <tr><td>Micron</td><td class="down">~−35%</td></tr>
+      <tr><td>Nvidia</td><td class="down">−37%</td></tr>
+      <tr><td>CoreWeave</td><td class="down">−48%</td></tr>
+      <tr><td>SanDisk</td><td class="down">−54%</td></tr>
+    </table>
+    <h3>Past month across assets</h3>
+    <ul>
+      <li>Bitcoin <strong>−23%</strong>, Ethereum <strong>−27%</strong>, silver <strong>−21.5%</strong>, gold down double digits (rare), commodity index (GSG) <strong>~−12%</strong>.</li>
+      <li><strong>Copper −14%</strong>: "Dr. Copper" can signal recession, though part of it is fear that fewer data centers get built.</li>
+      <li><strong>Oil (WTI) −21%</strong> month-to-date, only halfway through the month.</li>
+      <li>Falling commodities are good news for inflation in 2027, but not guaranteed: tariffs and the Middle East conflict brought inflation back after 2024 looked like the dragon was slain.</li>
+    </ul>
+    <h3>His portfolio</h3>
+    <ul>
+      <li>"I'm the captain now" (Captain Phillips): Wall Street controls the short term, whether you have $10K or $10M.</li>
+      <li>His public account (started ~2018, now pushing <strong>$5M</strong>) is holding up far better than in 2022, when he lost more than the Nasdaq and had to tighten up.</li>
+      <li>Cheesecake Factory keeps rising (now <strong>$250K+</strong> in the public account); AMD swung +4% that day (~$50K move).</li>
+      <li><strong>Winners through the sell-off:</strong> RH up, ELF and EL up double digits, Cheesecake Factory up double digits, Celsius up nearly 20%.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🪞 If You've Lost More Than the Nasdaq: Three Groups</h2>
+    <ol>
+      <li><strong>Lazy:</strong> not listening to earnings calls, not researching, not watching your portfolio. He looks at his almost daily, even if he usually doesn't trade. "If you're not watching your money, it's going to go bye-bye."</li>
+      <li><strong>Too much risk:</strong> down 20–30% in a month means you were too concentrated, often piling into Nvidia, Micron and SanDisk because chips were hot. He had the same expensive lesson in 2022.</li>
+      <li><strong>Don't know what you're doing:</strong> income statements, valuation, balance sheets, cash flow, projections, hedging. (Pitch: 94 spots left in his private group; the initiation fee doubles on January 1.)</li>
+    </ol>
+    <ul>
+      <li>"Fortunes" will be made over the next 5–10 years; people overestimate the short term and underestimate the long term. Comebacks are common, including his own after 2022.</li>
+      <li>There's always money somewhere: in full crashes, from puts and shorts and then from buying at huge discounts; coming out of every major correction in the past 80–100 years, buyers did very well.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>💾 Chip Stocks</h2>
+    <ul>
+      <li>Many chip stocks are down <strong>40–60%</strong> from highs, so expect <strong>tax-loss harvesting</strong> over the next ~6 weeks; sentiment can get even worse.</li>
+      <li>But don't "throw them in the casket": they could easily start to rebound next year. Their sentiment swings from euphoria to "end of the world".</li>
+      <li>They won't bottom until people give up on call options and margin is unwound.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🚫 Stay Away From These Four Things</h2>
+    <h3>1. Margin</h3>
+    <ul>
+      <li>Robinhood customers increased margin by about <strong>127% year over year</strong> (his reading of recent data), fueling the blow-off tops.</li>
+      <li>Margin turns a 40% drawdown into a 70% one, which needs hundreds of percent to recover, plus margin calls and interest (e.g. 7%) while you lose.</li>
+      <li>Buffett, roughly: if you're smart you don't need it; if you're dumb you shouldn't use it.</li>
+    </ul>
+    <h3>2. Call options</h3>
+    <ul>
+      <li>Weekly and short-dated calls on chips are getting "wrecked week after week" by people betting on the comeback. The bottom comes when they finally give up.</li>
+    </ul>
+    <h3>3. Leveraged ETFs</h3>
+    <ul>
+      <li>DRAM ETF, 2x SanDisk, 2x Micron, 2x Nvidia: a 30% drop can mean ~60% losses. Margin plus leveraged ETFs has wiped some portfolios out entirely.</li>
+    </ul>
+    <h3>4. Ignoring bear cases</h3>
+    <ul>
+      <li>Always run a bear case: what if the CEO leaves or "gets hit by a bus", or the government hurts the business model?</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>☁️ SaaS Stocks</h2>
+    <ul>
+      <li>He sold all his <strong>ServiceNow</strong> ~1–2 months ago; it has now fallen below $90. He doesn't trust CEO Bill McDermott's "big talk": revenue only in line, profitability tanking, and still a rich valuation.</li>
+      <li>Still invested: <strong>Salesforce ~4%</strong> of the public account ($202K) and <strong>Palantir 3%+</strong> ($156K).</li>
+      <li><strong>Why SaaS is falling:</strong> the <strong>Anthropic IPO</strong> (he says it goes public "tomorrow"), one of the biggest ever, is sucking money out of other assets, especially SaaS, since investors see Anthropic as "the ultimate SaaS play" that can do everything for businesses, including cybersecurity.</li>
+      <li>He's less negative than the market. Palantir has the best numbers; its rich valuation is getting more attractive over time.</li>
+      <li>He prefers <strong>Salesforce</strong> over ServiceNow: double-digit growth at a much cheaper valuation, and he trusts Benioff and his team. Salesforce reports in two weeks.</li>
+      <li>Anthropic won't "run the whole game", but it is a competitive threat to some or all SaaS companies.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🍰 What He Sold: Cheesecake Factory (CAKE)</h2>
+    <ul>
+      <li>He bought at <strong>$30-something</strong> in 2023–24; it's now <strong>~$120</strong>.</li>
+      <li><strong>"Stealing returns from the future":</strong> when a stock rises far faster than the business grows, future gains are pulled forward. His base case is now under a 20% CAGR, with a <strong>~14% midpoint</strong>, while other stocks offer 20–30%.</li>
+      <li>Sold <strong>1,222 shares (~$144K)</strong> in a private portfolio, <strong>none in the public account yet</strong>. If it reaches $125–140 he'll start trimming the public account too, probably not all of it.</li>
+      <li>It's still everywhere for him: the public account, his #2 Patreon holding, and nearly every private portfolio. It was one of his highest-conviction plays of the last 2–3 years.</li>
+      <li>Examples of the same effect: Palantir and Nvidia were above $200 last year and are ~$150 now; Tesla is down over five years.</li>
+      <li>He asked Gemini what he was missing; it named him as the YouTuber most associated with owning Cheesecake Factory.</li>
+      <li>He also sold two other stocks, disclosed only in his private group.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🛒 What He Bought and His Targets</h2>
+    <table>
+      <tr><th>Stock</th><th>Price</th><th>Amount</th></tr>
+      <tr><td>Celsius</td><td>low $30s</td><td>~$33K</td></tr>
+      <tr><td>Wynn Resorts</td><td>low $80s</td><td>200 shares (~$17K)</td></tr>
+      <tr><td>SoFi</td><td>~$14</td><td>$36K+</td></tr>
+      <tr><td>Netflix</td><td>~$59</td><td>~$33K</td></tr>
+      <tr><td>American Express</td><td>low $300s</td><td>~$24K</td></tr>
+    </table>
+    <h3>Celsius</h3>
+    <ul>
+      <li>"Very conservative" base case: 10% revenue and 20% net income growth a year, reaching ~$4.8B revenue and $656M net income by 2030, at a 29–34 P/E, gives a <strong>mid-20s% CAGR</strong>. His bull case is deep into the 30s%.</li>
+      <li>Expects it back at <strong>$100+</strong> in the next few years.</li>
+    </ul>
+    <h3>Netflix</h3>
+    <ul>
+      <li>Base case: <strong>$78B revenue</strong> and <strong>$27.5B net income</strong> by 2030 at a 25–30 P/E gives a <strong>31% midpoint CAGR</strong>. Even 10 points lower (21%) he'd take "all day".</li>
+    </ul>
+    <h3>American Express</h3>
+    <ul>
+      <li>Base case: 8% revenue and 12% net income growth, reaching <strong>$113B revenue</strong> and <strong>$20B net income</strong> by 2030 at a 28–33 P/E gives <strong>~30% CAGR</strong> (still 20–25% with lower multiples). He calls it "easy money": wealthy clients who keep renewing.</li>
+      <li><strong>Bear case:</strong> 5% revenue and 8% net income growth, $101B revenue and $17B net income at 20–25 P/E — still a teens% CAGR that beats the market.</li>
+    </ul>
+    <h3>Wynn Resorts</h3>
+    <ul>
+      <li>Its Middle East (UAE) property opens in less than a year; he's buying before the 2027 hype cycle. A rough start to the decade (COVID, inflation), but service and property quality never slipped. He expects a "banger" end to the 2020s.</li>
+    </ul>
+    <h3>SoFi</h3>
+    <ul>
+      <li>~$18B market cap. He thinks it can become a <strong>top-10 financial institution in the world</strong> (hundreds of billions) within 10 years, if Anthony Noto avoids over-leverage and it gets through recessions. A smaller position because banks carry risk.</li>
+    </ul>
+    <div class="warn-box">
+      <div class="hl-title">⚠️ Context</div>
+      These are Jeremy's personal opinions and projections, not advice. The video repeatedly promotes his paid private group (94 spots left, fee doubling January 1). "Celsius the wealthiest" in the auto-transcript refers to Celsius Holdings, and "the Flix" to Netflix. The ~$59 Netflix price is as stated in the video. The Robinhood margin figure and the Anthropic IPO timing are his remarks and weren't checked here.
+    </div>
+  </div>
+
+  <footer>
+    <a href="transcripts/jeremy-i-just-sold-cake.txt">📄 Raw Transcript</a>
+    <span>Auto-generated by Dot DiBot · Hermes Agent</span>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>
