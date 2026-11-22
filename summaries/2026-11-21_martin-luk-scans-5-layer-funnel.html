@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Martin Luk Scans For Stocks</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --surface2: #21262d;
+      --border: #30363d; --accent: #58a6ff; --green: #3fb950;
+      --yellow: #d29922; --red: #f85149; --text: #e6edf3; --muted: #8b949e;
+      --orange: #f0883e; --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .back { color: var(--accent); text-decoration: none; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; }
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .badge-en { background: #0d3320; color: var(--green); }
+    .badge-stocks { background: #2d2000; color: var(--yellow); }
+    .badge-trade { background: #2d1a5c; color: var(--purple); }
+    header { margin-bottom: 32px; }
+    header h1 { font-size: 28px; font-weight: 700; margin: 12px 0 8px; }
+    header .meta { color: var(--muted); font-size: 14px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+    .video-embed { width: 100%; aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 32px; border: 1px solid var(--border); }
+    .video-embed iframe { width: 100%; height: 100%; border: none; }
+    .tl-dr { background: #1a2744; border: 1px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin-bottom: 24px; font-size: 15px; line-height: 1.8; }
+    .tl-dr strong { color: var(--accent); }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--accent); }
+    .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--yellow); }
+    .stats-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; flex: 1 1 140px; text-align: center; }
+    .stat-box .val { font-size: 24px; font-weight: 800; color: var(--green); font-family: monospace; }
+    .stat-box .val.yellow { color: var(--yellow); }
+    .stat-box .val.red { color: var(--red); }
+    .stat-box .lbl { font-size: 11px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    ul, ol { padding-left: 20px; }
+    li { margin-bottom: 8px; font-size: 14px; line-height: 1.7; }
+    .quote { background: var(--surface2); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 12px 16px; margin: 12px 0; font-style: italic; font-size: 14px; color: var(--muted); }
+    .warn-box { background: #2d1a00; border: 1px solid var(--yellow); border-radius: 8px; padding: 14px 18px; margin: 12px 0; font-size: 14px; }
+    .warn-box .hl-title { font-weight: 700; color: var(--yellow); margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
+    th { text-align: left; padding: 8px 12px; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid var(--surface2); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">← Back to all summaries</a>
+
+  <header>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="badge badge-en">🇺🇸 English</span>
+      <span class="badge badge-stocks">📈 Stocks</span>
+      <span class="badge badge-trade">🎯 Trading</span>
+    </div>
+    <h1>How Martin Luk Scans For Stocks</h1>
+    <div class="meta">
+      <span>📺 James Muninn</span>
+      <span>📅 November 21, 2026</span>
+      <span>⏱️ 35:23</span>
+      <a href="https://www.youtube.com/watch?v=2z3zi_iDb70" target="_blank" style="color:var(--accent);">▶ Watch on YouTube</a>
+    </div>
+  </header>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/2z3zi_iDb70" allowfullscreen></iframe>
+  </div>
+
+  <div class="tl-dr">
+    <strong>TL;DR:</strong> After reconstructing <strong>480 of Martin Luk's livestreamed 2026 trades</strong>, James Muninn argues his famous 1-minute entry isn't even in the top three reasons for his <strong>+969%</strong> 2025 USIC win. Every trade passes a <strong>5-layer funnel</strong>: (1) <strong>market regime</strong> from four live signals (his own P&amp;L, watchlist migration, anchor leaders, QQQ vs. IWM), (2) <strong>leading/weak themes</strong>, (3) <strong>liquid watchlist buckets</strong> built from three TradingView scans, (4) <strong>daily pullback structure</strong> (~2/3 of longs are pullbacks to rising EMAs or anchored VWAP; &lt;10% are breakouts), and only then (5) a <strong>tight ~2% intraday trigger</strong>. No oscillators, no breadth indicators, no chasing.
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box"><div class="val">480</div><div class="lbl">2026 trades reconstructed</div></div>
+    <div class="stat-box"><div class="val yellow">$1.5B</div><div class="lbl">Median daily $ volume traded</div></div>
+    <div class="stat-box"><div class="val">~2/3</div><div class="lbl">Longs = pullbacks</div></div>
+    <div class="stat-box"><div class="val red">~2%</div><div class="lbl">Initial stop</div></div>
+  </div>
+
+  <div class="card">
+    <h2>🧭 Step 1 — Market Regime: Four Live Signals</h2>
+    <p style="font-size:14px;margin-bottom:8px;">Deciding whether to press, size down or flip short. He tried breadth indicators (% of stocks above their 20/50-day MA) and dropped them: thousands of slow, illiquid S&amp;P names say nothing about fast momentum leaders.</p>
+    <ol>
+      <li><strong>His own P&amp;L feedback.</strong> With ~2% stops, open positions act as market probes. If 8 of the last 10 entries fail, "your own trade feedback is more accurate than any other indicator." In late August 2026 poor long feedback made him switch to the short side while indexes still looked fine.</li>
+      <li><strong>Watchlist migration.</strong> Stocks in his leading, mediocre and lagging lists are demoted step by step as they lose their moving averages. At that point nearly <strong>50%</strong> of his names sat in the lagging list.</li>
+      <li><strong>Anchor leaders.</strong> In late June 2026 Corning (GLW) surged 40% in a week and he named it his anchor for market strength. Five days later it gapped down and closed below its 9 EMA; within 48 hours he cut six semi/hardware longs and rotated into tactical shorts.</li>
+      <li><strong>QQQ vs. IWM.</strong> Since 2008, every Nasdaq correction of roughly 15–20%+ (10+ samples) started with small-cap relative weakness. "A necessary factor but not a sufficient factor. I'm not predicting the market. I'm just going to react."</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>🔥 Step 2 — Leading &amp; Weak Themes</h2>
+    <ul>
+      <li>Never short a laggard in a strong sector; short the weakest names in a weak sector — the more stocks look weak in it, the better. The same logic in reverse for longs.</li>
+      <li>Balance: about <strong>90% chart/price action, 10% theme awareness</strong>. Example: AAOI in April 2026 — bought because the optical group led his scans, not a deep thesis; the pullback entry rode ~30% over three weeks.</li>
+      <li>His 2026 trades clustered in five themes: <strong>memory &amp; semis, optical hardware, space &amp; defense, crypto proxies, quantum computing</strong>.</li>
+      <li><strong>Hong Kong time-zone edge:</strong> the US open is 9:30 pm and the close 4:00 am (hard for exits), but in his daytime South Korea, Taiwan and Hong Kong markets are open. Seeing SK Hynix roll over under its moving averages in early October gave him conviction to short US memory names (SanDisk, the leveraged SK Hynix product SKHY). Six of nine SKHY trades were small stop-outs before the October breakdown short paid <strong>13R+</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🖥️ Step 3 — TradingView Workspace, Scans &amp; Buckets</h2>
+    <h3>Four workspace details</h3>
+    <ul>
+      <li><strong>Zero oscillators</strong> — no RSI, MACD or Stochastic.</li>
+      <li>A custom <strong>ADR and low-of-day distance box</strong> (top right): in two seconds he checks the low-of-day stop is within half an ADR and under 3%, then fires market orders in a small separate Interactive Brokers window.</li>
+      <li>Volume shown in <strong>dollars</strong> on a log chart, never share count.</li>
+      <li>Color-flagged watchlists in the sidebar, with pre-market extension, catalyst news and a 5-day countdown to earnings.</li>
+    </ul>
+    <h3>Three screener presets</h3>
+    <table>
+      <tr><th>Scan</th><th>When</th><th>What it does</th></tr>
+      <tr><td><strong>Potent</strong></td><td>Every evening (~100 charts)</td><td>Yesterday's big gainers: liquid stocks above the 50 EMA with a strong daily gain on heavy dollar volume. In late Oct 2026 he raised the dollar-volume floor toward $100M and filtered out clinical biotechs and flat merger buyouts. Reviewing ~100 charts that were still +6% at the bottom shows which sectors took leadership (e.g. copper, semis, software, healthcare).</td></tr>
+      <tr><td><strong>Pre-market gapper</strong></td><td>30 min before the open</td><td>Liquid earnings/catalyst movers gapping 4%+ on real pre-market volume. Uses a $15M filter but only adds names above $100M to watchlists.</td></tr>
+      <tr><td><strong>Leader</strong></td><td>Sunday (~10 min)</td><td>Ranks liquid names by 1-month performance to catch steady "stair-steppers" missed by the daily scans and feel what's working.</td></tr>
+    </table>
+    <ul style="margin-top:12px;">
+      <li>He always reviews existing watchlists <em>before</em> running screeners.</li>
+      <li>Potent hits are almost never immediate buys — e.g. AEHR's huge green breakout bar meant the low-risk entry was gone; he parks such names and waits 2–3 weeks for a pullback to rising EMAs.</li>
+    </ul>
+    <h3>Liquidity and buckets</h3>
+    <ul>
+      <li>Early on he traded thin, double-digit-ADR small caps. As his account grew he moved to liquidity: ideally <strong>$500M+ a day</strong> or ~$10B+ market cap. The median stock he traded in 2026 did <strong>$1.5B</strong> a day — less slippage and cleaner multi-week trends.</li>
+      <li><strong>Buckets from two EMAs:</strong> leading = price above the 50 EMA and the 50 above the 150; lagging = the exact opposite; everything else = mediocre.</li>
+      <li>In September 2026 he dropped his tier-2 list and split each bucket into two shelves: <strong>$500M+</strong> and <strong>$100–500M</strong> daily dollar volume. Plus a permanent "pillar" list of institutional heavyweights.</li>
+      <li>Actionable ideas go into a main list split into indexes, longs, shorts, focus and tracking.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📊 Step 4 — Daily Selection: 3–5 Focus Names</h2>
+    <div class="quote">"I think the biggest influence from Kristjan to me is defining your stop and tightening your stop" — not the textbook patterns.</div>
+    <ul>
+      <li>About <strong>two-thirds of longs</strong> are pullbacks into rising moving averages (9/21 EMA) or anchored VWAP; horizontal range breakouts are <strong>fewer than 1 in 10</strong>. Since 2024 obvious range highs get shaken out, while leaders pulling back to the 9 or 21 EMA launch straight off support without building tight flags.</li>
+      <li><strong>The "handshake" entry</strong> (from Brian Shannon's anchored VWAP framework). ASTS: broke out of a ~3-month base, ran, pulled back toward its rising 9 EMA, gapped up and faded into the anchored VWAP from the prior swing high. He bought the 5-minute candle breakout with a stop under 2% (possibly ~1.25%).</li>
+      <li><strong>Episodic pivots</strong> (Pradeep Bonde): if the opening bar is already ~6% wide and stretched above daily MAs, he won't chase. Unless the intraday range tightens against pre-market highs, he parks it on tracking and waits for the rising 9 EMA to catch up (e.g. on a "delayed EP" like Palantir).</li>
+      <li><strong>Shorts:</strong> nearly <strong>three-quarters</strong> fade weak multi-day bounces into a declining 9, 21 or 50 EMA — e.g. SanDisk losing the 50 EMA it surfed all the way up, then bouncing into it. He avoids shorting into weakness in the first 15–30 minutes and often uses inverse ETFs (SOXS, SNDQ) instead of fighting borrow and squeezes.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>⏱️ Step 5 — Intraday Entry &amp; Tight Stops</h2>
+    <ul>
+      <li><strong>Opening range lesson</strong> (Feb 2026 Cantonese interview): many losers last year undercut the opening range low, stopped him out, then went back up. In the second half of the year he traded less in the first 15–30 minutes. He still takes a 1-minute opening-range breakout if the range is very tight or volume huge, but increasingly waits for a 15-minute pullback — ideally one that undercuts the opening range low and breaks out again, which has a higher success rate.</li>
+      <li><strong>Four timeframes aligned</strong> — Rivian (RIVN), late Nov 2025: a sharp weekly undercut and reclaim, a tight Qullamaggie-style daily range, converging EMAs touching the swing-high anchored VWAP on the hourly, and a clean 5-minute pullback breakout. A raised stop banked <strong>+6.4%</strong> two weeks later, right before RIVN ripped another 12% without him — a trade-off he accepts.</li>
+      <li><strong>Anchored VWAP placement</strong> (IONQ, early 2025): besides obvious swing highs/lows, he shifts the anchor 1–3 days to wherever the line best fits earlier reactions.</li>
+      <li><strong>Stop discipline</strong> — ONDS, December stream: the low of day was 3%+ away on a 16% ADR stock, so he bought near 7.70 and put a ~2% stop under a 1-minute level around 7.55. It was clipped next morning for −1R before ONDS rallied 16% without him — the cost of keeping losses tiny so one 10R winner pays for ten probes. A non-low-of-day stop lowers the win rate but tightens risk a lot; he refuses to move stops after entry.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🔁 Daily Routine &amp; 5 Rules</h2>
+    <ul>
+      <li><strong>Asian afternoon:</strong> check Korean and Taiwanese chip bellwethers like SK Hynix for theme clues.</li>
+      <li><strong>~1 hour before the US open:</strong> flip through the potent scan, update leading/mediocre/lagging, check pre-market gappers, trim the focus list to 3–5 setups.</li>
+      <li><strong>First ~2 hours of the session:</strong> trade with market entries and separate hard stop orders, then sleep rather than staying up until 4–5 am. Plus the 10-minute Sunday leader scan.</li>
+    </ul>
+    <div class="quote">"I'm just focusing on getting the entries with the tightest risk before a range expansion."</div>
+    <ol>
+      <li>Let your last 10 trades and watchlist migration decide how hard to press.</li>
+      <li>Align with the strongest or weakest sector theme before touching a ticker.</li>
+      <li>Filter ruthlessly for institutional dollar volume so size never breaks the strategy.</li>
+      <li>Stalk pullbacks and weak bounces into key moving averages and anchored VWAP; don't chase extended candles.</li>
+      <li>Keep every initial stop tight enough that a string of −1R probes never stops you from catching the next multi-week leader.</li>
+    </ol>
+    <div class="warn-box">
+      <div class="hl-title">⚠️ Context</div>
+      An independent creator's study (interview and stream clips of Luk plus Muninn's own reconstruction of 480 trades), not Luk's official system. Figures are as stated in the video and description. The video promotes a paid membership (app.qullamaggiedeepdive.com). The auto-transcript garbles some names ("Martin Luke", "Anders Holdings" = Ondas Holdings, "Kule Maggi" = Qullamaggie). Tight stops on volatile stocks mean frequent small losses and long losing streaks. Related: the earlier Martin Luk video and the Qullamaggie/Martin Luk tweets on this site.
+    </div>
+  </div>
+
+  <footer>
+    <a href="transcripts/martin-luk-scans-5-layer-funnel.txt">📄 Raw Transcript</a>
+    <span>Auto-generated by Dot DiBot · Hermes Agent</span>
+  </footer>
+</div>
+
+<script src="../protect.js"></script>
+<script src="../copy-btn.js"></script>
+</body>
+</html>

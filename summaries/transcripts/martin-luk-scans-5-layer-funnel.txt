@@ -1,0 +1,925 @@
+969%
+in a single year.
+After reconstructing 480 of Martin
+Luke's live stream trades in 2026, I
+found his entry pattern isn' even in the
+top three reasons he made it.
+Before he ever looks at a one-minute
+candle, every trade passes through five
+strict layers.
+Market regime first, leading theme
+second, liquid watchlist buckets third,
+daily pullback structure fourth, and
+only then the intraday trigger.
+No black box AI, no breath oscillators,
+and no chasing extended breakouts.
+In this masterclass, we're opening his
+entire stock selection engine from top
+to bottom.
+The four live regime signals that
+flipped him short before the market
+cracked, his custom TradingView
+workspace and three live scans, and the
+tight 2% intraday triggers he runs from
+Hong Kong.
+Step one is market regime.
+Deciding whether to press the gas, size
+down, or flip short.
+Early on, Luke tested standard breadth
+indicators like the percentage of stocks
+above their 20-day or 50-day moving
+average.
+He dropped them because thousands of
+slow, illiquid S&P components don't tell
+us what fast-moving momentum leaders are
+doing.
+>> I just found them
+not really that useful
+compared to just browsing through my own
+stock universe.
+>> Instead of breadth oscillators, he
+relies on four concrete signals, and the
+first one is his own P and L feedback.
+Because he enters with tight stops
+around 2%, his open positions act as
+real-time market probes.
+When breakouts and pullbacks start
+failing eight times out of 10, that
+losing streak isn't noise to ignore.
+It's the earliest warning that the
+environment has shifted.
+>> And if you're getting stopped out very
+frequently, like
+maybe the from your past 10 trades, the
+past 10 entries,
+maybe eight of them failed or even
+10 of them then
+then your your own trade feedbacks is
+is more accurate than any other
+indicator.
+>> Watch how he used that exact feedback in
+late August 2026, even while the major
+indexes still looked constructive on the
+surface.
+>> Mm.
+I think yeah, there are like
+a few reasons
+behind it and
+and the first one is actually the the
+poor feedbacks from my longs.
+Although I I I know like many of the
+trades are the I actually
+the bad trades
+and the fair trades, so
+but still like I
+I got
+uh
+really really few
+uh
+little traction from the longs in the
+in the past week.
+Yeah, I think the trade feedbacks is one
+of the main reasons that I
+change uh switch my focus to the short
+side.
+And
+the second reason is definitely like the
+charts. I think
+>> His second regime gauge is the head
+count inside his own three core watch
+lists,
+leading, mediocre, and lagging.
+Every stock in those lists earned its
+spot by leading at some point in recent
+months.
+When former leaders lose their moving
+averages, he doesn't delete them.
+He demotes them step by step from
+leading down to mediocre and finally
+into lagging.
+>> Mainly I
+I'm just using the number of stocks in
+my what
+in the
+in my three watch lists.
+Like they're the one that generally
+fast movers with a high ADR that I that
+I
+I love to trade and this also
+is probably also
+the leader like they they probably be
+the leaders like at least
+maybe maybe like in the past in the past
+months or or
+or quarters like because
+they have to be the leaders
+so that I can include them like at I can
+find them in in my in my screens and
+then I can add them in my watch list but
+eventually like after they turn week
+then they
+and then I degraded them like gradually
+from the leading and then
+to the mediocre and the lagging
+right now
+nearly like 50% of my of the stocks in
+my watch list are at the lagging watch
+list like the weakest names.
+>> His third signal is watching anchor
+leaders, the institutional bellwethers
+carrying the strongest theme in the
+market.
+In late June 2026 optical fiber leader
+Corning had just surged 40% in a single
+week and Luke named GLW his anchor for
+overall market strength.
+Five days later Corning gapped down hard
+and closed below its daily 9 EMA.
+Within 48 hours he cleared six
+semiconductor and hardware longs from
+his book and rotated straight into
+tactical shorts.
+>> I think I will keep monitoring Corning I
+I think I will treat Corning as my
+as my anchor on the
+on the market strength.
+>> His fourth regime check compares the
+Nasdaq 100 ETF QQQ against small caps in
+the Russell 2000 IWM.
+Studying every major Nasdaq correction
+since 2008 he noticed small caps
+consistently cracked first.
+That divergence puts him on alert though
+never in prediction mode.
+It's a warning sign to tighten risk and
+react only when price confirms.
+>> Most of the
+I mean like after
+the financial crisis 2008
+all all of the correction
+that is larger than a 20%
+I I think maybe the 15%
+I'm not sure about that but either 15 or
+20% on the cues
+starts with a relative weakness on the
+Russell.
+And
+yeah, all of them. I think there are
+there are like
+more than 10
+samples
+in the past 15 years.
+I mean more than 15 years from 17 years.
+Does it mean the market is
+is going to go down? Definitely not but
+like it is a
+necessary factor
+but not a sufficient factor.
+I'm not predicting the market. I'm just
+going to
+react.
+>> Once market regime sets his directional
+bias, step two is identifying the
+strongest and weakest themes.
+Luke doesn't hunt for an isolated chart
+in a vacuum.
+If semiconductors or optical networking
+names are surging together, he refuses
+to short the one lagging stock in that
+group.
+And when a sector cracks across the
+board, he wants the weakest names inside
+that weak group.
+>> I think the first thing that I look at
+is the is the
+is the sector or the or the theme
+itself.
+Are they doing well or not?
+So
+I don't want
+I don't want to short the stock
+where is is peers or
+or his sector is doing very well but but
+it's a laggard in in that in a strong
+sector.
+So I don't want to short the laggard in
+a strong sector.
+We would like to focus on
+on the stock
+in a weak in a weak sector.
+So one
+the more stocks in the more stocks look
+weak within that sector, the better the
+the sector I would like to short and
+vice versa.
+So yeah, that's the
+big picture behind is the first thing is
+the sector in the theme.
+And then going to the individual stock.
+>> Still, he keeps narrative in its proper
+place.
+Roughly 90% chart and price action, 10%
+theme awareness.
+Take Applied Optoelectronics, AAOI, in
+April 2026.
+He didn't buy it because of a deep
+fundamental thesis on data center
+transceivers.
+He saw the optical group leading on his
+scans, entered the pullback into rising
+moving averages, and rode the swing up
+nearly 30% over three weeks.
+Across my 2026 dataset, his trades
+clustered tightly around five recurring
+themes
+memory and semis, optical hardware,
+space and defense, crypto proxies, and
+quantum computing.
+Trading US stocks from Hong Kong means
+the New York open hits at 9:30 at night,
+and the close lands at 4:00 in the
+morning.
+For exit management, that time zone is
+tough.
+For reading global semiconductor and
+hardware themes though, living in East
+Asia became an unexpected daytime edge.
+>> No.
+And also this is the advantage of
+trading in the in the in Hong Kong time
+zone.
+Like I can
+I can really
+trade the uh the East East Asia markets.
+The
+South Korea,
+Taiwan and Hong Kong.
+Yeah, the first time that I that feel
+it's
+the the time zone is
+is getting an advantage.
+>> During his Hong Kong daytime hours,
+South Korean memory giant SK Hynix and
+Taiwanese chipmakers are already open
+and trading hours before US pre-market
+wakes up.
+Watching SK Hynix roll over beneath its
+moving averages in early October gave
+him real-time conviction to press shorts
+on US memory peers like SanDisk, SNDK,
+and the leveraged SK Hynix product,
+SKHY.
+That edge still demands strict risk
+control.
+In my 2026 trade model, six of his nine
+SKHY trades were small, fast stop outs
+before his October breakdown short
+delivered more than 13R.
+>> Yeah, and uh also the other I think the
+other major reason, another reason why
+that I
+lean towards the short side is actually
+SK Hynix charts, the South Korean charts
+of SK Hynix.
+>> Before running a single scan in step
+three, look at the four custom details
+on Martin Luke's TradingView workspace.
+First, zero oscillators, no RSI, MACD,
+or stochastic anywhere on the screen.
+Second, upper right sits a modified ADR
+and low of day distance box, letting him
+check in two seconds whether a low of
+day stop stays inside half an ADR and
+under 3% before firing market orders in
+a tiny separate Interactive Brokers
+window.
+Third, along the bottom, volume is
+measured strictly in dollars on a
+logarithmic chart, never raw share
+count.
+And fourth, his right sidebar stacks
+color-flagged watch lists with
+pre-market extension above catalyst news
+and a five-day countdown to the next
+earnings report.
+He feeds his entire universe with just
+three simple stock screener presets,
+pre-market, potent, and leader.
+Let's hear him walk through all three
+himself.
+>> Uh so this is my
+pre-market scanner.
+So I'm using 15 million for this
+scanner, but
+um
+I usually
+uh will only
+adding the stocks above 100 million into
+my watch list, so it doesn't really
+matter.
+This is for the pre-market gappers.
+And I also use this potent scans.
+So this one
+um captures the
+the big movers, the big gainers
+um
+from yesterday.
+Last trading day.
+The last one will be the leader scan.
+The leader scan is only um
+I only use the leader scan in in uh
+on weekends.
+So trying to
+um to see are there any leading
+leading sectors or any stocks that
+uh
+that didn't captured in my previous two
+scanners.
+>> Zooming into his evening workhorse
+first, the daily potent scan catches
+fresh momentum expansion.
+Liquid stocks above their 50-day EMA,
+printing a strong daily gain on heavy
+institutional dollar volume.
+In late October 2026, he tightened that
+screen further, stripping out noisy
+clinical stage biotechs and flat merger
+buyouts while lifting his dollar volume
+floor toward 100 million a day.
+>> I think I maybe I changed it a little
+bit.
+Maybe I'm I would like trying to change
+the like the
+dollar volume to like 100 million
+maybe.
+I think I could
+and also I
+uh
+yeah, I think I filter some
+biotechs out on my potent watchlist.
+And also added this one trying to um
+exclude the
+the buyouts or the the merger.
+>> Here's how that potent scan fits into
+his actual pre-market routine.
+He always reviews his existing
+watchlists before touching any screener.
+And after flipping through roughly 100
+potent charts down to plus 6%, he uses
+the cluster of winners to spot which
+sectors just took leadership.
+>> So the reason is actually I I wanted to
+do the weekend routine uh
+right now like pre-market
+because I got a lot of a lot of
+questions
+um asking me how do I
+find the stocks?
+Like why
+um why adding these stocks into the main
+watch list and also like the details of
+doing the weekend scans.
+Oh, so generally I will
+I will start um
+from managing the watch list first to
+take a look at the existing stocks um
+rather than like doing the screeners and
+adding
+the new stocks.
+So just finish the potent scans.
+[clears throat]
+Looks like we've run out of time,
+but um one thing to say that is um you
+can see that I run out I mean I I
+finished
+um
+checking all the charts of uh
+the potent scans. I think probably there
+should be
+a
+100 of them, yeah.
+And yeah, you can see like the
+after 100 of them like the bottom one is
+still like up more than 6%
+and it
+it's
+it generally means that the
+previous trading day was super strong
+and
+and yeah, we got a lot of
+copper names are doing strong
+um
+last Friday.
+So
+apart from the semis and the softwares
+and also we got a lot of healthcare
+names also doing
+very strong.
+>> Crucially, stocks hitting the potent
+scan are almost never immediate buys.
+When a name like AEHR flashes a massive
+green breakout bar, the low risk entry
+is already gone. So he parks it in his
+watch list and waits two or three weeks
+for price to pull back into rising
+moving averages.
+Alongside potent, 30 minutes before the
+bell, he checks a quick pre-market
+gapper scan, flagging liquid earnings
+and catalyst movers gapping
+or more on real pre-market volume.
+>> They they are having a really strong
+green candle
+which is
+extended and
+like it it's
+um the best entry has has already gone.
+Um
+at the moment when I add them into the
+watch list
+but then I'm like
+I will
+probably after several weeks, maybe two
+or three weeks later
+the leaders will pull back into the EMAs
+maybe forming some
+ranges or just a
+just a pullback.
+>> His third screen runs once a week on
+Sunday
+the weekend leader scan.
+Ranked purely by one month percentage
+performance across liquid names, it
+takes him about 10 minutes top to bottom
+to catch persistent stair steppers that
+never printed a single explosive potent
+day.
+>> Start with the leader scan first so I
+I will run the leader scan on every
+weekend
+so trying to like to rank the stocks by
+the monthly performance
+and
+to see whether like I
+somehow missed some of the leaders in
+the daily scans and also get the feeling
+um
+of what what's working in the market
+right now.
+Like every week I will go through the
+whole
+the whole list of the
+of the leaders like going from the top
+to the
+to the bottom.
+So I spend around like 10
+10 minutes going through all of them and
+>> Notice what ties all three scans
+together as his account scaled
+liquidity over raw volatility.
+Earlier in his career he hunted thin
+double digit ADR small caps.
+By 2026 the median stock he actually
+traded moved $1.5 billion a day in
+volume, because institutional liquidity
+lets him size up with minimal slippage
+and powers cleaner multi-week trends.
+>> So you trade much
+much more high ADR names before or makes
+you change the stock selection
+preference.
+Probably the um
+the liquidity.
+Like I
+I prefer trading liquid stocks
+um
+as my account grows.
+I really like trading the liquid ones.
+By the ones at least maybe have like
+500 million dollar volume per day
+or at least with maybe 10 billion market
+cap or
+>> Every scan candidate gets sorted into
+three structural buckets using just two
+moving averages.
+The 50 EMA and the 150 EMA.
+Price above the 50 and 50 above the 150
+goes into leading.
+The exact inverse goes into lagging.
+Anything tangled in between sits in
+mediocre.
+In September 2026 he scrapped his old
+tier two list and split each bucket into
+two liquidity shelves
+above 500 million a day on top and 100
+to 500 million underneath.
+From those buckets plus a permanent
+pillar list of institutional
+heavyweights he promotes tonight's
+actionable ideas into E main split
+cleanly into indexes, longs, shorts,
+focus, and tracking.
+>> So two rules. The first rule is
+the stock the price it should be above
+the 50 EMA
+and the second is the 50 EMA
+needs to be above the 15
+and the lagging watch list is
+completely opposite.
+Just flipping the rules in the leading
+watch list
+around
+so the price the stock needs to be under
+the 50 EMA and the 50 EMA
+is under the 150 EMA.
+And I also
+uh on this weekend you can see I I've
+get rid of my tier two watch list.
+And I combine
+and I re-like do a little bit of
+revamp or like a um
+modification
+like of for both
+the all three the lagging mediocre and
+the leading watch list into like
+two sections
+each like the
+by the daily dollar volume.
+So there's
+the ones that is higher than the 500
+million dollar volume
+and the one
+the ones that between
+uh 100 and 500 million.
+>> Step four is narrowing dozens of leading
+and lagging charts down to three to five
+focus names for tonight's session.
+Many traders assume Luke copied
+Christian Kulla Magy's classic breakout
+patterns line for line.
+Listen to what he says actually carried
+over,
+not the textbook pattern, but the
+obsession with defining and tightening
+the stop.
+>> I think lots of people many people are
+focusing
+a lot
+on the
+setups and the
+the the
+technical side or like pattern side
+pattern side of uh
+of trading of of
+Christian's trading.
+And the thing is
+not necessarily
+true or like
+not the perfect weight of
+of learning from him.
+I think the biggest influence from
+Christian to me is
+defining your stop
+and tighten your stop
+uh
+>> When we classify every directional long
+in my 2026 data set, about two thirds of
+pullbacks into rising moving averages or
+anchored VWAP, while horizontal range
+breakouts make up fewer than one in ten.
+Post 2024 markets routinely punished
+obvious range highs with immediate
+shakeouts, whereas leaders pulling back
+into the nine or 21 EMA launched
+straight off support without spending
+weeks building a tight flag.
+>> After pulling back into the
+support level, support areas,
+the stock is just going to
+to make a move off the lows.
+But they won't waste any time near the
+lows like chopping around near the lows
+or like going sideways and for a few
+more days
+waiting for the um for the range
+contraction like
+like forming really tight range and then
+have a really clean breakout.
+That's that's really
+uh uncommon in the past one or two
+years.
+I
+figured out that like the breakouts
+starting to um
+to be
+to to work less if less effectively or
+have has a lower win rate.
+And also I
+just flipped the short side around and
+then it will be the long side and they
+are really similar.
+>> His signature pullback variation is what
+he calls the handshake entry, a play he
+picked up studying with trader Brian
+Shannon's anchored VWAP framework.
+On AST SpaceMobile, ASTS, the stock
+broke out of a three month base, ran up
+and pulled back toward its rising nine
+EMA.
+When it gapped up at the open and faded
+straight into the anchored VWAP drawn
+from the prior swing high, that touch
+formed the handshake, setting up a five
+minute candle breakout with a stop under
+two percent.
+>> So ASTS um
+is a gap and fade entry or I call it the
+handshake entry. So I bought the
+pullback
+after stock
+um gaps up
+uh uh the open
+And then it face right into the anchor
+free web from the previous swing high.
+So you see ASTS is a has a huge base.
+Um
+around a three month base.
+Have a lick up, pulls back to the rising
+nine gap up and then pull back into the
+anchor VWAP and also the previous highs.
+And then I
+bought the five minute candle breakout.
+And this is a very typical pullback buy.
+Um
+that is working
+very nice this year.
+So I bought it
+when it breaks out from the five minute
+candle high,
+which is around um a two percent stop.
+Or maybe even less than that.
+I made
+I may set the stop at the
+bar low, which is around point
+1.25%
+I'm not sure about that, but it
+definitely less than 2%.
+>> What about massive earnings or news
+gaps? The catalyst setups Pradeep Bonde
+popularized as episodic pivots.
+If the opening bar is already 6% wide
+and stretched far above the daily moving
+averages, Luke won't chase it just
+because the headline is exciting.
+Unless intraday range contracts tightly
+against pre-market highs, he parks the
+gapper on tracking and waits for the
+rising nine EMA to catch up.
+>> You trade any delayed EP? Take Palantir
+as an example. How much pullback or what
+scenario would you want to see before
+you would consider it?
+I don't know much about delayed EP.
+Personally, like after
+such a huge gap up and um
+and being extended from the
+from the rising EMAs,
+generally I'm I'm not a fan of like um
+entering
+entering any stock
+at this type of uh extension.
+So I
+yeah, I don't know. I maybe
+maybe I wanted at least the nine to
+catch up a little bit first.
+>> When market regime flips bearish, he
+doesn't invent a new system.
+He turns the pullback playbook upside
+down.
+Nearly three quarters of his directional
+shorts fade weak multi-day bounces into
+a declining nine, 21 or 50 EMA, just
+like Sandisk losing its 50 EMA after
+months of surfing it on the way up.
+And instead of fighting hard to borrow
+locates or early gap squeezes on
+individual tickers, he frequently
+expresses semiconductor and memory
+shorts through liquid inverse ETFs like
+SOXS and SNDQ.
+>> I really don't like shorting
+into the weakness, especially the first
+15 30 minutes after the open.
+Especially SNDK
+during this whole uptrend is serving the
+50 EMA and now
+it's starting to lose the 50 EMA and
+then we've got a bounce into the
+declining 50
+which is the first time after this
+uptrend.
+>> Step five begins at 9:30 p.m. in Hong
+Kong when the US cash session opens.
+In a February 2026 Cantonese interview,
+translated here in full, Luke explained
+why he stopped firing aggressively in
+the opening minutes and started waiting
+for opening range shakeouts to clear
+first.
+>> Because actually last year, maybe in the
+first half of the year, I hadn't noticed
+this yet.
+Last year I just felt there were maybe a
+lot of shakeouts or that I was often
+getting stopped out.
+But gradually I found that a lot of my
+losing trades were ones that hit my
+stop,
+dropped below the opening range low and
+then went back up. So at that point I
+noticed these patterns.
+Then in the second half of the year, I
+traded less and less in the first 15 to
+30 minutes.
+But of course, sometimes there are some
+really good ones, maybe on the one
+minute.
+really likes to trade the one minute
+opening range high breakout. So if the
+opening range high is really tight or
+the volume is really big, I'll still
+trade the one minute breakout.
+But now more and more I wait for maybe
+the 15 minute pullback. Ideally it even
+undercuts the opening range
+low
+because usually I find that if it
+undercuts and then breaks out again an
+intraday breakout, the success rate is a
+bit higher.
+>> When an intraday trigger fires, he wants
+four time frames lining up behind the
+same level.
+Look at his Rivian trade, R I V N,
+entered in late November 2025.
+A sharp weekly undercut and reclaim, a
+tight Kule Maggi style range on the
+daily, converging moving averages
+kissing the swing high anchored VWAP on
+the hourly, and a clean five minute
+pullback breakout for the trigger.
+A race stop banked a 6.4% gain two weeks
+later, right before Rivian ripped
+another 12% the next day without him. A
+trade-off he accepts without blinking.
+>> So right after
+it breaks out from this five minute
+pullback,
+yes, I'm just just putting
+putting a resist
+arm of
+of not taking it.
+So the EMA
+is converging in one hourly
+also near the anchor VWAP
+from this uh
+kind of you can say a swing high or the
+first day of the pullback.
+And I need more
+more
+more and most importantly the weekly
+structure. I really love the
+pullback and then
+sharp reclaim.
+Another daily it shows kind of a
+range.
+If you really
+um
+trying to draw a line, you can see this
+a tiny range.
+Like Christian always loves to draw draw
+those range.
+>> Notice how he treats anchored VWAP on
+daily charts like IONQ in early 2025.
+Rather than anchoring mechanically on
+the single highest wick, he nudges the
+anchor one to three days around the turn
+until the line captures the cleanest
+cluster of prior support and resistance
+touches.
+>> Apart from a very absolute one, like a
+swing high or a swing low, I sometimes
+fine tune it maybe one to two days, two
+to three days to see where the anchored
+VWAP fits its earlier price action best,
+where it has the most reaction, where
+price gets to the anchored VWAP and
+there's resistance, there's a reversal.
+So it doesn't have to be on the day of
+the highest point. I don't do that
+myself.
+>> Before firing a market order, he glances
+at the custom indicator in the top right
+corner of his TradingView chart showing
+20-day ADR percent alongside real-time
+distance to the low of the day.
+On Anders Holdings, ONDS, during his
+December stream, the low of the day sat
+more than 3% away on a 16% ADR mover.
+Instead of taking a wide low of day
+stop, he bought near 770 and tucked a
+tighter 2% stop under a local one-minute
+level around 755.
+The next morning, ONDS clipped that stop
+for minus one R before rallying 16%
+without him, the exact cost of keeping
+every loss tiny, so one 10 R winner pays
+for 10 probes.
+>> Want to Anders to undercut the
+anchor of VWAP here.
+Maybe pulls back to the
+9 EMA.
+760-ish.
+Oh, I just
+I I just bought some
+ONDS.
+This would be 3% stop.
+Mm.
+I'm going to take
+around 2% stop here.
+>> If you're setting non-low of the non-low
+of day stop, uh
+you definitely a
+lower win rate
+but it helps me to tighten my stop
+quite a lot and
+and I think it's worth it
+I just don't like like moving my stops
+based on the like after I entered the
+trade
+I'm afraid that that could become a like
+a bad habit
+and I just don't like to do that
+>> Put all five layers together and his
+entire operation fits into a repeatable
+daily rhythm
+During Asian afternoon hours he checks
+South Korean and Taiwanese semiconductor
+bellwethers like SK Hynix for early
+theme clues
+Before the US open he spends roughly an
+hour flipping through his daily potent
+scan updating leading mediocre and
+lagging checking pre-market gappers and
+trimming E-mini focus down to three to
+five setups
+From the market open and for about two
+hours he trades the opening window with
+market entries and separate hard stop
+orders Then goes to sleep rather than
+staying up for the close adding a
+10-minute leader scan every Sunday
+>> If I have to watch till the close then
+yeah I have to
+stay awake till 4:00 or even like 5:00
+p.m. in the morning
+>> Strip away the watch lists the Hong Kong
+hours and the custom trading view
+scripts and every step in Martin Luke's
+universe points to a single mathematical
+objective
+>> I I'm just
+focusing on getting the
+getting the entries with the tightest
+risk
+before
+before a range expansion
+I would
+kind of describe it like that
+>> We don't need 50 indicators paid alert
+rooms or macro predictions to build a
+professional universe
+First let our own last 10 trades and
+watchlist migration dictate how hard we
+press
+Second align with the strongest or
+weakest sector theme before touching a
+single ticker.
+Third,
+filter ruthlessly for institutional
+dollar volume so size never breaks the
+strategy.
+Fourth, stalk pullbacks and weak bounces
+into key moving averages and anchored
+VWAP rather than chasing extended
+candles.
+And fifth, keep every initial stop tight
+enough that a string of minus one R
+probes never stops us from catching the
+next multi-week leader.
+If you want the full data behind every
+study, interactive trade breakdowns, and
+our complete research library, become a
+member at kullamaggideepdive.com.
+The link is right below in the
+description.
